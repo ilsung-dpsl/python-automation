@@ -26,7 +26,7 @@ def Chrome_Run_Main():
 
         #   "tests/b_type_randing_recommand_keyword_search_integration.py"
             "tests/signupforfree_complete.py"
-        #   "tests/prospecing_single_contact_view_contacts_check.py"
+        #   "tests/prospecting_single_contact_view_contacts_check.py"
 
     ]
 
