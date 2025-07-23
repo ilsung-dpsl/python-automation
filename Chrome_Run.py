@@ -22,10 +22,11 @@ def Chrome_Run_Main():
        #    "tests/prospecting_enterpriseplan_lead_open_limit5000_check.py",
        #    "tests/prospecting_insufficient_credit_modal_upgrade_my_plan_click.py",
         #  "tests/dev_prospecting_insufficient_credit_modal_charge_credit_click.py",
-        #  "tests/dev_charge_credit_complete.py"
+        #  "tests/dev_charge_credit_complete.py",
+        "tests/prospecting_addtolist_flow_check.py"
 
         #   "tests/b_type_randing_recommand_keyword_search_integration.py"
-            "tests/signupforfree_complete.py"
+         #   "tests/signupforfree_complete.py"
         #   "tests/prospecting_single_contact_view_contacts_check.py"
 
     ]
