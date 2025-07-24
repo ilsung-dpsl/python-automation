@@ -32,6 +32,10 @@ FREE_PRD3_PW = "!deepsales@36"
 FREE_PRD4_ACCOUNT = "ilsung.baek+prd4@deepsales.com"
 FREE_PRD4_PW = "!deepsales@36"
 
+#무료회원 6 - 확인용 prd5
+FREE_PRD5_ACCOUNT = "ilsung.baek+prd5@deepsales.com"
+FREE_PRD5_PW = "!deepsales@36"
+
 #딥세일즈 계정 공용 비밀번호
 COMMON_PW = "!deepsales@36"
 
