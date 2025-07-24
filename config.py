@@ -1,3 +1,5 @@
+import json
+
 # config.py
 
 #인증번호 확인용 > 구글 지메일
@@ -42,3 +44,13 @@ COMMON_PW = "!deepsales@36"
 # 회원가입 계정 - ilsung.baek+pa1@deepsales.com (생성)
 #ilsung.baek+pa2@deepsales.com (생성), ilsung.baek+pa3@deepsales.com (생성), ilsung.baek+pa4@deepsales.com (생성)
 #ilsung.baek+pa5@deepsales.com (생성)
+
+
+#json 설정 (counter)
+def read_counter():
+    with open("config.json", "r") as f:
+        return json.load(f)["counter"]
+
+def write_counter(new_value):
+    with open("config.json", "w") as f:
+        json.dump({"counter": new_value}, f)

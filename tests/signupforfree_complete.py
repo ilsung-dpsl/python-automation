@@ -1,6 +1,7 @@
 import re
 
 import config
+from config import read_counter, write_counter
 
 # Gmail API를 위한 OAuth 범위
 SCOPES = ['https://www.googleapis.com/auth/gmail.readonly']
@@ -45,8 +46,8 @@ def test_signupforfree_complete(page):
     page.get_by_role("button", name="무료로 시작하기").nth(1).click()
     page.wait_for_timeout(1000)
 
-    i = 6
-    page.get_by_placeholder("예) deepsales@deepsales.com").fill(f"ilsung.baek+pa{i}@deepsales.com")
+    count = read_counter()
+    page.get_by_placeholder("예) deepsales@deepsales.com").fill(f"ilsung.baek+pa{count}@deepsales.com")
     page.get_by_role("button", name="전송").click()
     page.wait_for_timeout(10000)
 
@@ -93,6 +94,10 @@ def test_signupforfree_complete(page):
     page.get_by_role("button", name="Start Now").click()
     page.wait_for_timeout(1000)
 
+    count += 1
+    write_counter(count)
+
+    print (f"counter : {count}")
 #    page.locator(".max-w-\\[calc\\(100\\%-296px-16px\\)\\] > div > div > div").first.click()
 #    page.wait_for_timeout(2000)
 #    page.locator(".max-w-\\[calc\\(100\\%-296px-16px\\)\\] > div > div > div").first.click()
