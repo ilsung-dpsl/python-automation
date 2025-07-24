@@ -30,6 +30,9 @@ def test_prospecting_addtolist_flow_check(page):
     page.wait_for_timeout(500)
     page.get_by_role("button", name="생성하기").click()
     page.wait_for_timeout(2000)
+
+    assert "test 1" in page.content(), "마이리스트 폴더 생성 실패 - 리스트 생성 실패"
+
     page.get_by_role("switch", name="default").click()
     page.get_by_role("switch", name="test").click()
     page.get_by_role("button", name="확인", exact=True).click()
