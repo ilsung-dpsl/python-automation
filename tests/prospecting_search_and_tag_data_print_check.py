@@ -33,6 +33,6 @@ def test_prospecting_search_and_tag_data_print_check(page):
     assert "Retail" in page.content(), "탐색하기 > 리드 데이터 > 산업군 2 - Retail 확인 실패"
 
     assert "창준 백" in page.content(), "탐색하기 > 리드 데이터 1 성함 확인 실패"
-    assert "만성 정" in page.content(), "탐색하기 > 리드 데이터 2 성함 확인 실패"
+    assert "성기 임" in page.content(), "탐색하기 > 리드 데이터 2 성함 확인 실패"
 
     print("----- AI 키워드 검색 후, Industry 필터에 산업군 추천 태그 노출, 필터 값, 결과 값 정상 작동 확인 (한글) 테스트 시작 -> 성공 ------")

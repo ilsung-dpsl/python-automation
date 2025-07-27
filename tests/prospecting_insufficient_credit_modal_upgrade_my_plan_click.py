@@ -16,12 +16,12 @@ def test_prospecting_insufficient_credit_modal_upgrade_my_plan_click(page):
     page.get_by_role("button", name="Start Now").click()
     page.wait_for_timeout(1000)
     page.get_by_placeholder("예: 일본 화장품 제조사 세일즈 매니저").click()
-    page.get_by_placeholder("예: 일본 화장품 제조사 세일즈 매니저").fill("석유 회사를 찾아줘")
+    page.get_by_placeholder("예: 일본 화장품 제조사 세일즈 매니저").fill("walmart 회사의 직원정보를 찾아줘")
     page.get_by_placeholder("예: 일본 화장품 제조사 세일즈 매니저").press("Enter")
 
     page.wait_for_timeout(5000)
 
-    page.locator("div").filter(has_text=re.compile(r"^Sudhakar KamalanathanCEO연락처 확인Kuwait Petroleum CorporationKuwaitWholesale$")).get_by_role("button").click()
+    page.locator("div").filter(has_text=re.compile(r"^Aparna Kulkarni소프트웨어 엔지니어연락처 확인WalmartUnited StatesRetail$")).get_by_role("button").click()
     page.wait_for_timeout(4000)
     page.get_by_role("button", name="요금제 업그레이드").click()
     page.wait_for_timeout(3000)

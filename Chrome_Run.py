@@ -15,17 +15,18 @@ def Chrome_Run_Main():
     #       "tests/dashboard_mylist_contacts_count_check.py",
     #       "tests/dashboard_gotomyaccount_move.py",
     #       "tests/prospecting_setup_your_account_move.py",
-    #       "tests/prospecting_search_and_tag_data_print_check.py",
-    #       "tests/prospecting_freeplan_revenue_funding_technologies_lock_check.py",
-    #       "tests/prospecting_freeplan_revenue_funding_technologies_disable_check.py",
-    #       "tests/prospecting_freeplan_lead_open_limit100_check.py",
-    #       "tests/prospecting_enterpriseplan_lead_open_limit5000_check.py",
-    #       "tests/prospecting_insufficient_credit_modal_upgrade_my_plan_click.py",
-     #      "tests/dev_prospecting_insufficient_credit_modal_charge_credit_click.py",
-     #      "tests/dev_charge_credit_complete.py",
-     #      "tests/prospecting_addtolist_flow_check.py",
-     #      "tests/prospecting_company_view_employees_check.py",
-        "tests/prospecting_contacts_name_click_and_contact_detail_check.py"
+           "tests/prospecting_search_and_tag_data_print_check.py",
+           "tests/prospecting_freeplan_revenue_funding_technologies_lock_check.py",
+         "tests/prospecting_freeplan_revenue_funding_technologies_disable_check.py",
+          "tests/prospecting_freeplan_lead_open_limit100_check.py",
+     #      "tests/prospecting_enterpriseplan_lead_open_limit5000_check.py",
+           "tests/prospecting_insufficient_credit_modal_upgrade_my_plan_click.py",
+    #       "tests/dev_prospecting_insufficient_credit_modal_charge_credit_click.py",
+    #       "tests/dev_charge_credit_complete.py",
+            "tests/prospecting_addtolist_flow_check.py",
+            "tests/prospecting_company_view_employees_check.py",
+            "tests/prospecting_contacts_name_click_and_contact_detail_check.py",
+            "tests/prospecting_quickview_contact_check.py"
 
      #   "tests/b_type_randing_recommand_keyword_search_integration.py"
          #   "tests/signupforfree_complete.py"

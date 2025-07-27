@@ -20,7 +20,7 @@ def test_prospecting_freeplan_lead_open_limit100_check(page):
     page.wait_for_timeout(5000)
 
     for i in range(1, 5, 1):
-        page.locator("div").filter(has_text=re.compile(fr"^162 페이지 중 {i} 페이지페이지 바로가기$")).get_by_role("button").nth(1).click()
+        page.locator("div").filter(has_text=re.compile(fr"^401 페이지 중 {i} 페이지페이지 바로가기$")).get_by_role("button").nth(1).click()
         print(f"{i} 페이지 체크 확인 ")
         page.wait_for_timeout(500)
 
