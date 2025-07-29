@@ -10,8 +10,8 @@ def test_usageanalysis_section_check(page):
     page.get_by_placeholder("비밀번호").fill(config.FREE_PW)
     page.get_by_role("button", name="로그인").click()
     page.wait_for_timeout(1000)
-    page.get_by_role("button", name="Start Now").click()
-    page.wait_for_timeout(1000)
+ #   page.get_by_role("button", name="Start Now").click()
+ #   page.wait_for_timeout(1000)
     page.get_by_role("link", name="대시보드").click()
     page.wait_for_timeout(5000)
 

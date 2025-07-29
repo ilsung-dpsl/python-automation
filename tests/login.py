@@ -9,9 +9,9 @@ def test_login(page):
     page.get_by_placeholder("이메일").fill(config.FREE_ACCOUNT)
     page.get_by_placeholder("비밀번호").fill(config.FREE_PW)
     page.get_by_role("button", name="로그인").click()
-    page.wait_for_timeout(1000)
-    page.get_by_role("button", name="Start Now").click()
-    page.wait_for_timeout(1000)
+    page.wait_for_timeout(5000)
+  #  page.get_by_role("button", name="Start Now").click()
+  #  page.wait_for_timeout(1000)
 
     assert "왼쪽 메뉴에서 필터를 선택하여 회사 검색을 시작하세요." in page.content(), "로그인 후 탐색하기 페이지 이동 실패 - 로그인 실패 1"
 

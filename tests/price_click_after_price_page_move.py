@@ -5,7 +5,7 @@ def test_price_click_after_price_page_move(page):
     page.get_by_role("banner").get_by_role("link", name="가격").click()
     page.wait_for_timeout(3000)
 
-    assert "요금제 및 가격" in page.content(), "요금제 및 가격 페이지 이동 실패 - 요금제 및 가격 타이틀 확인 x"
+    assert "당신의 세일즈를 위한 맞춤형 요금제" in page.content(), "요금제 및 가격 페이지 이동 실패 - 요금제 및 가격 타이틀 확인 x"
     assert "Free" in page.content(), "요금제 및 가격 페이지 이동 실패 - Free 플랜 영역 확인 x"
     assert "Pro" in page.content(), "요금제 및 가격 페이지 이동 실패 - Pro 플랜 영역 확인 x"
     assert "Elite" in page.content(), "요금제 및 가격 페이지 이동 실패 - Elite 플랜 영역 확인 x"

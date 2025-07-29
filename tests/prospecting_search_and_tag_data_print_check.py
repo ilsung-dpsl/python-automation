@@ -13,9 +13,9 @@ def test_prospecting_search_and_tag_data_print_check(page):
     page.get_by_placeholder("비밀번호").fill(config.FREE_PW)
     page.get_by_role("button", name="로그인").click()
     page.wait_for_timeout(1000)
-    page.get_by_role("button", name="Start Now").click()
+#    page.get_by_role("button", name="Start Now").click()
 
-    page.wait_for_timeout(2000)
+ #   page.wait_for_timeout(2000)
 
     page.get_by_role("button").filter(has_text=re.compile(r"^$")).nth(3).click()
     page.get_by_placeholder("예: 일본 화장품 제조사 세일즈 매니저").fill("한국 화장품 유통회사를 찾아줘")
