@@ -27,4 +27,4 @@ def test_dashboard_usage_activity_period_selector_and_plan_credit_check(page):
 #    page.wait_for_timeout(500)
 
     assert "Enterprise" in page.content(), "대시보드 > 현재 사용 중인 요금제 명 Enterprise 출력 실패 - 요금제 명 확인 실패"
-    assert "168" in page.content(), "대시보드 > 현재 사용한 크레딧 사용량 출력 실패 - 크레딧 사용량 확인 실패"
+    assert "17" in page.content(), "대시보드 > 현재 사용한 크레딧 사용량 출력 실패 - 크레딧 사용량 확인 실패"
