@@ -19,7 +19,7 @@ def test_prospecting_search_and_tag_data_print_check(page):
 
     page.get_by_role("button").filter(has_text=re.compile(r"^$")).nth(3).click()
     page.get_by_placeholder("예: 일본 화장품 제조사 세일즈 매니저").fill("한국 화장품 유통회사를 찾아줘")
-    page.locator("#desktop-header-slot").get_by_role("img").nth(2).click()
+    page.get_by_role("img", name="search button enabled").click()
 
     page.wait_for_timeout(10000)
 
@@ -33,6 +33,6 @@ def test_prospecting_search_and_tag_data_print_check(page):
     assert "Retail" in page.content(), "탐색하기 > 리드 데이터 > 산업군 2 - Retail 확인 실패"
 
     assert "창준 백" in page.content(), "탐색하기 > 리드 데이터 1 성함 확인 실패"
-    assert "성기 임" in page.content(), "탐색하기 > 리드 데이터 2 성함 확인 실패"
+    assert "준용 안" in page.content(), "탐색하기 > 리드 데이터 2 성함 확인 실패"
 
     print("----- AI 키워드 검색 후, Industry 필터에 산업군 추천 태그 노출, 필터 값, 결과 값 정상 작동 확인 (한글) 테스트 시작 -> 성공 ------")

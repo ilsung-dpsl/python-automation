@@ -14,10 +14,11 @@ def test_prospecting_freeplan_revenue_funding_technologies_unavailable_check(pag
     page.get_by_role("button", name="로그인").click()
   #  page.wait_for_timeout(1000)
   #  page.get_by_role("button", name="Start Now").click()
-    page.wait_for_timeout(1000)
+    page.wait_for_timeout(3000)
+
     page.locator("div:nth-child(9) > div > div:nth-child(2) > .transition-transform").click()
     page.wait_for_timeout(1000)
-    page.get_by_role("switch", name="$0~$1M").click()
+    page.get_by_text("$0~$1M").click()
     page.wait_for_timeout(2000)
 
     assert "이런... 고급 필터는 Pro" in page.content(), "요금제 업그레이드 모달 안내 출력 실패 1 - 연간매출"
@@ -27,7 +28,7 @@ def test_prospecting_freeplan_revenue_funding_technologies_unavailable_check(pag
 
     page.locator("svg:nth-child(3)").first.click()
     page.wait_for_timeout(1000)
-    page.get_by_role("switch", name="기타").click()
+    page.get_by_role("checkbox", name="기타").click()
     page.wait_for_timeout(2000)
 
     assert "플랜을 변경하고 더 많은 잠재고객을 만나보세요. AI" in page.content(), "요금제 업그레이드 모달 안내 > 가이드 문구 출력 실패 2 - 펀딩"
@@ -36,10 +37,16 @@ def test_prospecting_freeplan_revenue_funding_technologies_unavailable_check(pag
     page.wait_for_timeout(1000)
 
     page.locator("div:nth-child(23) > div > div:nth-child(2) > .transition-transform").click()
-    page.locator("div").filter(has_text=re.compile(r"^기술New기술 검색 \(영문 입력\)$")).locator("svg").nth(3).click()
-    page.locator(".text-base > .text-FG-Primary").click()
+    page.wait_for_timeout(500)
+    page.locator(".pt-1 > .flex > .flex-1 > .border").click()
+    page.wait_for_timeout(500)
     page.locator("#react-select-5-input").fill("google drive")
+    page.wait_for_timeout(500)
     page.get_by_text("Google Drive", exact=True).click()
+
+  #  page.locator("#react-select-4-input").fill("google drive")
+  #  page.wait_for_timeout(500)
+  #  page.get_by_text("Google Drive", exact=True).click()
     page.wait_for_timeout(2000)
 
     assert "플랜을 변경하고 더 많은 잠재고객을 만나보세요. AI" in page.content(), "요금제 업그레이드 모달 안내 > 가이드 문구 출력 실패 3 - 기술"

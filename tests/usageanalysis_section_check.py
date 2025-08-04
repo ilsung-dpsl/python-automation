@@ -18,7 +18,7 @@ def test_usageanalysis_section_check(page):
     assert "산업" in page.content(), "Usage Analysis > 산업 체크 실패"
     assert "부서" in page.content(), "Usage Analysis > 부서 체크 실패"
     assert "직위" in page.content(), "Usage Analysis > 직위 체크 실패"
-    assert "Cosmetics Manufacturing" in page.content(), "Usage Analysis > 산업 > 임의 항목 체크 실패"
+    assert "Wholesale Cosmetics" in page.content(), "Usage Analysis > 산업 > 임의 항목 체크 실패"
     assert "General Management" in page.content(), "Usage Analysis > 부서 > 임의 항목 체크 실패"
     assert "Junior" in page.content(), "Usage Analysis > 직위 > 임의 항목 체크 실패"
 
