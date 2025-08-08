@@ -38,18 +38,25 @@ FREE_PRD4_PW = "!deepsales@36"
 FREE_PRD5_ACCOUNT = "ilsung.baek+prd5@deepsales.com"
 FREE_PRD5_PW = "!deepsales@36"
 
-#무료회원 7 - 확인용 prd6
+#무료회원 6 - 확인용 prd6
 FREE_PRD6_ACCOUNT = "ilsung.baek+prd6@deepsales.com"
 FREE_PRD6_PW = "!deepsales@36"
 
-
+FREE_PA8_ACCOUNT = "ilsung.baek+pa8@deepsales.com"
+FREE_PA8_PW = "!deepsales@36"
 
 #딥세일즈 계정 공용 비밀번호
 COMMON_PW = "!deepsales@36"
 
+#링크드인 로그인 정보
+LINKEDIN_ACCOUNT = "starbictoli@naver.com"
+LINKEDIN_PW = "1@qordlftjd"
+
 # 회원가입 계정 - ilsung.baek+pa1@deepsales.com (생성)
 #ilsung.baek+pa2@deepsales.com (생성), ilsung.baek+pa3@deepsales.com (생성), ilsung.baek+pa4@deepsales.com (생성)
-#ilsung.baek+pa5@deepsales.com (생성)
+#ilsung.baek+pa5@deepsales.com (생성), ilsung.baek+pa6@deepsales.com (생성), ilsung.baek+pa7@deepsales.com (생성)
+#ilsung.baek+pa8@deepsales.com (생성), ilsung.baek+pa9@deepsales.com (생성), ilsung.baek+pa10@deepsales.com (생성),
+#ilsung.baek+pa11@deepsales.com (생성), ilsung.baek+pa12@deepsales.com (생성), ilsung.baek+pa13@deepsales.com (생성)
 
 
 #json 설정 (counter)

@@ -45,13 +45,15 @@ def test_prospecing_single_contact_view_contacts_check(page):
             if view_contacts_text == "연락처 확인":
                 print(f"연락처 확인 {i+1} 버튼 : {view_contacts_text} -> 버튼 클릭")
                 btn.click()
+
                 found = True
 
-                page.wait_for_timeout(2000)
+                #연락처 확인 버튼 선택 후 3초 기다림으로 대기값 변경 - 20250806
+                page.wait_for_timeout(3000)
 
                 # 확인됨 버튼 변경 및 크레딧 사용 토스트 메시지 확인 후 for 종료
                 assert "확인됨" == page.locator("button:has-text('확인됨')").nth(i).inner_text(), f"연락처 확인 버튼 클릭 하지 못했거나, 클릭 했음에도 확인됨 변경 실패 1 > 연락처 확인 버튼 {i+1}"
-                assert "1 크래딧이 사용되었습니다." == page.get_by_role("alert").filter(has_text="크래딧이 사용되었습니다.").inner_text(), "크레딧 소모 토스트 메시지 출력 실패 - 연락처 확인 실패 2"
+                assert "1 크레딧이 사용되었습니다." == page.get_by_role("alert").filter(has_text="크레딧이 사용되었습니다.").inner_text(), "크레딧 소모 토스트 메시지 출력 실패 - 연락처 확인 실패 2"
                 print("----- 탐색하기 > 단일 연락처 > 연락처 확인 동작 확인 테스트 시작 -> 성공 -----")
                 break
         # 버튼을 찾고 클릭했으면 반복 종료

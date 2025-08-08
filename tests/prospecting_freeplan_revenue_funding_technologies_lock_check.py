@@ -1,10 +1,12 @@
+from logging import exception
+
 import cv2
 import numpy as np
 
 import config
 
 
-def compare_images(img1_path, img2_path, threshold=0.63):
+def compare_images(img1_path, img2_path, threshold=0.56):
     print("----- 이미지 비교 체크 함수 시작 -----")
     """
     두 이미지 파일을 비교하여 유사도 반환
@@ -67,6 +69,7 @@ def test_prospecting_freeplan_revenue_funding_technologies_lock_check(page):
             print("✅ 탐색하기 > 연간 매출 > LOCK 아이콘 SVG가 기준 이미지와 일치합니다.")
         else:
             print("❌ 탐색하기 > 연간 매출 > LOCK 아이콘 SVG가 기준 이미지와 다릅니다.")
+            raise Exception("연간 매출 > LOCK 아이콘 SVG가 기준 이미지와 다름 > 테스트 실패")
     else:
         print("❌ SVG 요소를 찾지 못했습니다.")
 
@@ -86,6 +89,7 @@ def test_prospecting_freeplan_revenue_funding_technologies_lock_check(page):
             print("✅ 탐색하기 > 펀딩 > LOCK 아이콘 SVG가 기준 이미지와 일치합니다.")
         else:
             print("❌ 탐색하기 > 펀딩 > LOCK 아이콘 SVG가 기준 이미지와 다릅니다.")
+            raise Exception("펀딩 > LOCK 아이콘 SVG가 기준 이미지와 다름 > 테스트 실패")
     else:
         print("❌ SVG 요소를 찾지 못했습니다.")
 
@@ -105,6 +109,7 @@ def test_prospecting_freeplan_revenue_funding_technologies_lock_check(page):
             print("✅ 탐색하기 > 기술 > LOCK 아이콘 SVG가 기준 이미지와 일치합니다.")
         else:
             print("❌ 탐색하기 > 기술 > LOCK 아이콘 SVG가 기준 이미지와 다릅니다.")
+            raise Exception("기술 > LOCK 아이콘 SVG가 기준 이미지와 다름 > 테스트 실패")
     else:
         print("❌ SVG 요소를 찾지 못했습니다.")
 

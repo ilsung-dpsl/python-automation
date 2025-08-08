@@ -41,6 +41,8 @@ def test_signupforfree_complete(page):
     """
     :type page: object
     """
+    print("----- 회원가입 완료 스크립트 테스트 시작 -----")
+
     page.goto("https://deepsales.com/ko/intro",wait_until="load", timeout=30000)
 #    page.goto("https://dev.deepsales.io/ko/intro",wait_until="load", timeout=30000)
     page.get_by_role("button", name="무료로 시작하기").nth(1).click()
@@ -84,34 +86,38 @@ def test_signupforfree_complete(page):
     page.locator("#react-select-2-input").fill("대한민국")
     page.get_by_text("대한민국", exact=True).click()
     page.get_by_placeholder("비밀번호 생성").fill(config.COMMON_PW)
-    page.get_by_role("switch", name="이용약관 전체 동의하기").click()
+    page.get_by_role("checkbox", name="이용약관 전체 동의하기").click()
 
     page.wait_for_timeout(7000)
 
     page.get_by_role("button", name="가입하기").click()
 
     page.wait_for_timeout(5000)
-    page.get_by_role("button", name="Start Now").click()
-    page.wait_for_timeout(1000)
 
+   # page.get_by_role("button", name="Start Now").click()
+   # page.wait_for_timeout(1000)
+
+    page.locator("#desktop-header-slot").get_by_text("탐색하기").click()
+    page.get_by_role("paragraph").filter(has_text=re.compile(r"^필터$")).click()
+
+    assert "탐색하기" == page.locator("#desktop-header-slot").get_by_text("탐색하기").inner_text(), \
+        "회원가입 완료 후 탐색하기 이동 > '탐색하기' 타이틀 문구 확인 실패 - 회원가입 완료 실패 1"
+    assert "필터" == page.get_by_role("paragraph").filter(has_text=re.compile(r"^필터$")).inner_text(), \
+        "회원가입 완료 후 탐색하기 이동 > 필터 > '필터' 타이틀 문구 확인 실패 - 회원가입 완료 실패 2"
+
+    print("회원가입 완료 후 탐색하기 이동 성공")
+    
     count += 1
     write_counter(count)
 
     print (f"counter : {count}")
-#    page.locator(".max-w-\\[calc\\(100\\%-296px-16px\\)\\] > div > div > div").first.click()
-#    page.wait_for_timeout(2000)
-#    page.locator(".max-w-\\[calc\\(100\\%-296px-16px\\)\\] > div > div > div").first.click()
-
-#    page.get_by_role("button").filter(has_text=re.compile(r"^$")).nth(2).click()
-#    page.wait_for_timeout(2000)
-#    page.get_by_role("button").filter(has_text=re.compile(r"^$")).nth(2).click()
-
-#    assert f"ilsung.baek+pa{i}@deepsales.com" in page.content(), "탐색하기 > 계정 확인 실패 - 회원가입 실패"
 
     page.get_by_role("link").filter(has_text="대시보드").click()
     page.wait_for_timeout(6000)
 
-    assert "백 일성님" in page.content(), "대시보드 환영문구 확인 실패 - 회원가입 실패 1"
-    assert "크레딧 15/" in page.content(), "대시보드 > 크레딧 보유량 확인 실패 - 회원가입 실패 2"
+    assert "백 일성님\n환영합니다!" in page.get_by_text("백 일성님 환영합니다!").inner_text(), \
+        "대시보드 환영문구 확인 실패 - 회원가입 실패 3"
+    assert "크레딧 15/" in page.content(), \
+        "대시보드 > 크레딧 보유량 확인 실패 - 회원가입 실패 3"
 
-    print("테스트 완료")
+    print("----- 회원가입 완료 스크립트 테스트 시작 -> 성공 -----")

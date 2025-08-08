@@ -16,7 +16,8 @@ def test_prospecting_freeplan_lead_open_limit100_check(page):
    # page.wait_for_timeout(1000)
     page.get_by_placeholder("예: 일본 화장품 제조사 세일즈 매니저").click()
     page.get_by_placeholder("예: 일본 화장품 제조사 세일즈 매니저").fill("미국에서 화장품 수입하는 회사 찾아줘")
-    page.locator("#desktop-header-slot").get_by_role("img").nth(2).click()
+    #탐색하기 > 검색창 > 검색 버튼 클릭 케이스 수정 - 20250805
+    page.get_by_role("img", name="search button enabled").click()
     page.wait_for_timeout(5000)
 
     for i in range(1, 5, 1):
