@@ -31,7 +31,8 @@ def Chrome_Run_Main():
     #            "tests/prospecting_quickview_addtolist_flow.py",
     #            "tests/prospecting_quickview_companyname_link_move.py",
     #            "tests/prospecting_company_companyname_click_and_company_info_move.py",
-                "tests/prospecting_quickview_contact_linkedin_move.py",
+    #            "tests/prospecting_quickview_contact_linkedin_move.py",
+                "tests/prospecting_quickview_company_check.py"
 
     #            "tests/b_type_randing_recommand_keyword_search_integration.py",
     #            "tests/signupforfree_complete.py",
