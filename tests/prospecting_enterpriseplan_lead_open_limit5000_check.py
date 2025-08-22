@@ -15,6 +15,7 @@ def test_prospecting_enterpriseplan_lead_open_limit5000_check(page):
     page.wait_for_timeout(500)
 #    page.get_by_role("button", name="Start Now").click()
 #    page.wait_for_timeout(1000)
+    page.get_by_placeholder("예: 일본 화장품 제조사 세일즈 매니저").click()
     page.get_by_placeholder("예: 일본 화장품 제조사 세일즈 매니저").fill("화장품을 유통하는 회사")
     page.get_by_placeholder("예: 일본 화장품 제조사 세일즈 매니저").press("Enter")
 

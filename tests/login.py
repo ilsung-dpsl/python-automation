@@ -16,7 +16,7 @@ def test_login(page):
     assert "왼쪽 메뉴에서 필터를 선택하여 회사 검색을 시작하세요." in page.content(), "로그인 후 탐색하기 페이지 이동 실패 - 로그인 실패 1"
 
     page.get_by_role("link").filter(has_text="대시보드").click()
-    page.wait_for_timeout(5000)
+    page.wait_for_timeout(2000)
     page.get_by_text("BAEK ILSUNG님 환영합니다!").click()
 
     assert "BAEK ILSUNG님" in page.content(), "대시보드: 환영문구 확인 -> 로그인 실패"

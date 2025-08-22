@@ -67,7 +67,7 @@ def test_prospecting_quickview_contact_view_contacts_check(page):
                     popup_button = page.locator("section button:has-text('연락처 확인')")
 
                     popup_btn_count = popup_button.count()
-                    print(f"퀵뷰 > 연락처 확인 버튼 개수 카운트 : {popup_btn_count}")
+                    print(f"퀵뷰 > 연락처 확인 버튼 개수 카운드 : {popup_btn_count}")
 
                     popup_email_view_contacts = popup_button.nth(0)
 
@@ -100,7 +100,7 @@ def test_prospecting_quickview_contact_view_contacts_check(page):
         try:
             print(f"다음 페이지 이동 케이스 시작 - {page_number} 페이지 확인")
 
-            next_button = page.locator("div").filter(has_text=re.compile(fr"^70 페이지 중 {page_number} 페이지페이지 바로가기$")).get_by_role("button").nth(
+            next_button = page.locator("div").filter(has_text=re.compile(fr"^20 페이지 중 {page_number} 페이지페이지 바로가기$")).get_by_role("button").nth(
                 1)
 
             print(f"next_button count : {next_button.count()}")

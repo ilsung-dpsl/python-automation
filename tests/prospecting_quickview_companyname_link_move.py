@@ -3,7 +3,7 @@ import numpy as np
 
 import config
 
-def compare_images(img1_path, img2_path, threshold=0.67):
+def compare_images(img1_path, img2_path, threshold=0.65):
     print("----- 이미지 비교 체크 함수 시작 -----")
     """
     두 이미지 파일을 비교하여 유사도 반환
@@ -48,7 +48,11 @@ def test_prospecting_quickview_companyname_link_move(page):
 
     print("탐색하기 > 검색 완료")
 
+    #최근 1개월 이내 아래의 데이터 중복 노출로 인해, 주석처리 - 20250819 -> 20일 수정됨
     page.locator("[id=\"__next\"]").get_by_text("Japan, Okayama").click()
+
+    #최근 1개월 이내 데이터 중복 노출로 인해 아래의 코드로 변경 - 20250819
+    #page.get_by_text("Japan, Okayama").first.click()
 
     with page.expect_popup() as page1_info:
         page.get_by_role("article").get_by_text("Hayashibara", exact=True).click()
@@ -58,7 +62,7 @@ def test_prospecting_quickview_companyname_link_move(page):
 
     svg_element = page1.locator("img").nth(1)
 
-    # 탐색하기 > 필터 > 연간 매출 > LOCK 자물쇠 아이콘 이미지 확인
+    # 탐색하기 > 퀵뷰 (회사) > 회사 로고 이미지 확인
     if svg_element:
         svg_element.scroll_into_view_if_needed()
 

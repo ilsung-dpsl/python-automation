@@ -26,7 +26,7 @@ def test_prospecting_quickview_contact_linkedin_move(page):
         page.get_by_role("article").locator("section").filter(has_text="Camden YumoriProduct Manager").get_by_role("img").click()
     page1 = page1_info.value
 
-    page1.wait_for_timeout(2000)
+    page1.wait_for_timeout(5000)
 
     #링크드인 페이지 로그인 절차 진행
     page1.get_by_role("button", name="로그인").click()

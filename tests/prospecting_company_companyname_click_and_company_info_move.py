@@ -18,7 +18,12 @@ def test_prospecting_company_companyname_click_and_company_info_move(page):
 
     print("탐색하기 > 검색 완료")
 
+    #최근 1개월 이내 데이터 중복 노출 이슈로 인해 아래의 코드 주석처리 - 20250819 -> 20일 수정됨
     page.get_by_role("tab", name="회사(3)").click()
+
+    #최근 1개월 이내 데이터 중복 노출 이슈로 인해 아래의 코드로 수정 - 20250819
+    #page.get_by_role("tab", name="회사(4)").click()
+
     page.wait_for_timeout(1000)
 
     with page.expect_popup() as page1_info:
