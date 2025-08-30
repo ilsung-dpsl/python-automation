@@ -11,7 +11,7 @@ def test_mylist_detail_enterpriseplan_exporttocsv_check(page):
     page.get_by_placeholder("비밀번호").fill(config.ENTERPRISE_SUB_PW)
     page.get_by_role("button", name="로그인").click()
 
-    page.wait_for_timeout(1000)
+    page.wait_for_timeout(2000)
     page.get_by_role("link", name="마이 리스트").click()
     page.wait_for_timeout(1000)
 
@@ -35,7 +35,7 @@ def test_mylist_detail_enterpriseplan_exporttocsv_check(page):
     print("마이리스트 상세 페이지 (일반 폴더) > 미확인 연락처 포함 모달 출력 확인 완료")
 
     page.get_by_role("button", name="확인", exact=True).click()
-    page.wait_for_timeout(2000)
+    page.wait_for_timeout(1000)
 
     assert "3 크레딧이 사용되었습니다." ==  page.locator("div").filter(has_text=re.compile(r"^3 크레딧이 사용되었습니다\.$")).nth(1).inner_text(), \
         "CSV 내보내기 완료 후 크레딧 사용 토스트 메시지 출력 실패 - CSV 내보내기 실패 3"

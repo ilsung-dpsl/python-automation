@@ -58,6 +58,9 @@ FREE_PA17_PW = "!deepsales@36"
 FREE_PA19_ACCOUNT = "ilsung.baek+pa19@deepsales.com"
 FREE_PA19_PW = "!deepsales@36"
 
+FREE_PA24_ACCOUNT = "ilsung.baek+pa24@deepsales.com"
+FREE_PA24_PW = "!deepsales@36"
+
 TEAM_OWNER_ACCOUNT = "ilsung.baek+pa15@deepsales.com"
 TEAM_OWNER_PW = "!deepsales@36"
 
@@ -78,7 +81,8 @@ LINKEDIN_PW = "1@qordlftjd"
 #ilsung.baek+pa5@deepsales.com (생성), ilsung.baek+pa6@deepsales.com (생성), ilsung.baek+pa7@deepsales.com (생성)
 #ilsung.baek+pa8@deepsales.com (생성), ilsung.baek+pa9@deepsales.com (생성), ilsung.baek+pa10@deepsales.com (생성),
 #ilsung.baek+pa11@deepsales.com (생성), ilsung.baek+pa12@deepsales.com (생성), ilsung.baek+pa13@deepsales.com (생성)
-#ilsung.baek+pa14@deepsales.com (생성), ilsung.baek+pa17@deepsales.com (생성),
+#ilsung.baek+pa14@deepsales.com (생성), ilsung.baek+pa17@deepsales.com (생성), ilsung.baek+pa23@deepsales.com (생성)
+#ilsung.baek+pa24@deepsales.com (생성)
 # 아래의 계정은 Enterprise 멤버 소속임
 # ilsung.baek+pa20@deepsales.com (생성), ilsung.baek+pa21@deepsales.com (생성), ilsung.baek+pa22@deepsales.com (생성)
 

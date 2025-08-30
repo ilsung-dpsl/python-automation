@@ -53,18 +53,18 @@ def test_prospecting_addtolist_flow_check(page):
     page.get_by_text("기본2(2 미확인)백 일성").click()
     page.wait_for_timeout(3000)
 
-    #Default 폴더에 추가한 리드 데이터 확인 수정 - 20250805
-    assert "Leroy Daleen" in page.content(), "Default 폴더 test 1의 리드 1번 성함 확인 실패 - 리스트에 추가 실패 1"
-    assert "Gayle Botti" in page.content(), "Default 폴더 test 1의 리드 2번 성함 확인 실패 - 리스트에 추가 실패 1"
+    #Default 폴더 > 데이터 위치 변경으로 인한 리드 데이터 정보 수정 - 20250829
+    assert "Gayle Botti" in page.content(), "Default 폴더 test 1의 리드 1번 성함 확인 실패 - 리스트에 추가 실패 1"
+    assert "Stalin Stalinsjc" in page.content(), "Default 폴더 test 1의 리드 2번 성함 확인 실패 - 리스트에 추가 실패 1"
     page.get_by_role("button", name="리스트로 돌아가기").click()
 
     page.wait_for_timeout(3000)
     page.locator("div").filter(has_text=re.compile(r"^test 1$")).nth(1).click()
     page.wait_for_timeout(3000)
 
-    #test 1 폴더에 추가한 리드 데이터 확인 수정 - 20250805
-    assert "Leroy Dalee" in page.content(), "일반 폴더 test 1의 리드 1번 성함 확인 실패 - 리스트에 추가 실패 2"
-    assert "Gayle Botti" in page.content(), "일반 폴더 test 1의 리드 2번 성함 확인 실패 - 리스트에 추가 실패 2"
+    #test 폴더 > 데이터 위치 변경으로 인한 리드 데이터 정보 수정 - 20250829
+    assert "Gayle Botti" in page.content(), "일반 폴더 test 1의 리드 1번 성함 확인 실패 - 리스트에 추가 실패 2"
+    assert "Stalin Stalinsjc" in page.content(), "일반 폴더 test 1의 리드 2번 성함 확인 실패 - 리스트에 추가 실패 2"
 
     page.get_by_role("button", name="리스트로 돌아가기").click()
 

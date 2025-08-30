@@ -17,13 +17,16 @@ def test_prospecting_quickview_contact_linkedin_move(page):
     print("탐색하기 > 검색 완료")
 
     #첫번째 리드의 담당자 위치 열 선택
-    page.locator(".truncate > .flex-1").first.click()
+    #page.locator(".truncate > .flex-1").first.click()
+    #두번쨰 리드의 담당자 위치 열 선택으로 변경 -> 데이터 정렬 위치 변경으로 인한 코드 수정 - 20250827
+    page.locator("div:nth-child(2) > div:nth-child(5) > .flex-1").first.click()
 
     page.wait_for_timeout(1000)
 
     #퀵뷰 > 링크드인 아이콘 선택
     with page.expect_popup() as page1_info:
-        page.get_by_role("article").locator("section").filter(has_text="Camden YumoriProduct Manager").get_by_role("img").click()
+        page.get_by_role("article").locator("section").filter(has_text="Marina ShumaievaProduct").get_by_role("img").click()
+
     page1 = page1_info.value
 
     page1.wait_for_timeout(5000)
@@ -37,12 +40,13 @@ def test_prospecting_quickview_contact_linkedin_move(page):
     page1.locator("#base-sign-in-modal").get_by_role("button", name="로그인").click()
     page1.wait_for_timeout(5000)
 
-    assert "https://www.linkedin.com/in/camdenyumori/" == page1.url, \
+    assert "https://www.linkedin.com/in/marinashumaieva/" == page1.url, \
         "링크드인 페이지 url 이동 실패 - 퀵뷰 > 링크드인 페이지 이동 실패 1"
-    assert "Camden Yumori " == page1.get_by_label("Camden Yumori", exact=True).inner_text(), \
+    assert "Marina Shumaieva " == page1.get_by_label("Marina Shumaieva", exact=True).inner_text(), \
         "링크드인 페이지 > 성함 확인 실패 - 퀵뷰 > 링크드인 페이지 이동 실패 2"
-    assert "Product @ Gusto | Ex Google, Apple" == page1.get_by_text("Product @ Gusto | Ex Google,").nth(2).inner_text(), \
+    assert "Product Manager at Apple , Music&AI | Ex-Google | Founder" == page1.get_by_text("Product Manager at Apple ,").nth(2).inner_text(), \
         "링크드인 페이지 > 직함 및 회사 정보 확인 실패 - 퀵뷰 > 링크드인 페이지 이동 실패 3"
+
 
 
     print("----- 탐색하기 > 퀵뷰 > 링크드인 선택 시 해당 링크드인 페이지 이동 확인 테스트 시작 -> 성공 -----")

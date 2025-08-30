@@ -40,13 +40,13 @@ def test_team_management_team_owner_invite_member_flow_check(page):
         "팀관리 > 팀오너 계정으로 팀 초대 완료 후 멤버 > 이메일 추가 실패 - 팀 초대 요청 실패 2"
     assert "멤버" == page.get_by_text("멤버").nth(1).inner_text(), \
         "팀관리 > 팀오너 계정으로 팀 초대 완료 후 멤버 > 멤버 노출 실패 - 팀 초대 요청 실패 3"
-    assert "대기중" == page.get_by_text("대기중").nth(1).inner_text(), \
+    #대기중 버튼 위치 인덱스 없이 누르는 것으로 코드 수정 - 20250827
+    assert "대기중" == page.get_by_text("대기중").inner_text(), \
         "팀관리 > 팀오너 계정으로 팀 초대 완료 후 멤버 > 상태 > 대기중 노출 실패 - 팀 초대 요청 실패 4"
 
-
     print("팀 관리 > 팀오너 멤버 초대 요청 완료")
-
     page.get_by_text("내보내기").nth(1).click()
+
     page.wait_for_timeout(1000)
 
     page.get_by_role("button", name="내보내기").click()
