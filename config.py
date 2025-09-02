@@ -61,6 +61,9 @@ FREE_PA19_PW = "!deepsales@36"
 FREE_PA24_ACCOUNT = "ilsung.baek+pa24@deepsales.com"
 FREE_PA24_PW = "!deepsales@36"
 
+FREE_PA25_ACCOUNT = "ilsung.baek+pa25@deepsales.com"
+FREE_PA25_PW = "!deepsales@36"
+
 TEAM_OWNER_ACCOUNT = "ilsung.baek+pa15@deepsales.com"
 TEAM_OWNER_PW = "!deepsales@36"
 
@@ -90,9 +93,6 @@ LINKEDIN_PW = "1@qordlftjd"
 # 회원가입 계정 - 유료 계정 전환 내역
 # ilsung.baek+pa15@deepsales.com (생성) - Team 계정
 # ilsung.baek+pa16@deepsales.com (생성) - Enterprise 계정
-
-
-
 
 #json 설정 (counter)
 def read_counter():
