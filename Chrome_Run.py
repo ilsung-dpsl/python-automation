@@ -64,10 +64,12 @@ def Chrome_Run_Main():
         #"tests/team_management_team_member_join_the_team_flow_check.py",
         #"tests/team_management_team_member_leave_the_team_flow_check.py",
         #"tests/company_setup_and_main_page_check.py",
-        #"tests/company_register_flow_check.py",
-        #"tests/company_register_for_a_new_company_flow_check.py",
-        "tests/account_and_settings_my_profile_input_add_edit_flow_check.py",
-        "tests/account_and_settings_my_profile_membership_withdrawal_flow_check.py"
+#        "tests/company_register_flow_check.py",
+#        "tests/company_register_for_a_new_company_flow_check.py",
+#        "tests/account_and_settings_my_profile_input_add_edit_flow_check.py",
+#        "tests/account_and_settings_my_profile_membership_withdrawal_flow_check.py",
+        "tests/account_and_settings_team_owner_my_profile_leave_company_flow_check.py",
+        "tests/account_and_settings_freeplan_my_profile_leave_company_flow_check.py"
     ]
 
     exit_code = pytest.main(test_files + ["-s", "-v", "--disable-warnings"])

@@ -250,5 +250,9 @@ def test_account_and_settings_my_profile_input_add_edit_flow_check(page):
     page.get_by_role("button", name="확인").click()
     page.wait_for_timeout(1000)
 
+    #소속회사 떠나기 후 저장 클릭 코드 추가 - 20250902
+    page.get_by_role("button", name="저장").click()
+    page.wait_for_timeout(1000)
+
     print("내 프로필 > 소속된 회사 떠나기 처리 후 모든 작업 완료")
     print("----- 계정 및 설정 > 내 프로필 > 모든 정보 기업 후 저장 / 추가 / 수정 확인 테스트 시작 -> 성공 -----")
