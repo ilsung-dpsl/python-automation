@@ -14,7 +14,8 @@ def test_prospecing_single_contact_view_contacts_check(page):
  #   page.get_by_role("button", name="Start Now").click()
  #   page.wait_for_timeout(1000)
     page.get_by_placeholder("예: 일본 화장품 제조사 세일즈 매니저").click()
-    page.get_by_placeholder("예: 일본 화장품 제조사 세일즈 매니저").fill("구글 회사의 정보를 알려줘")
+    #쿠웨이트 오일 관련 검색어로 변경 - 20250903
+    page.get_by_placeholder("예: 일본 화장품 제조사 세일즈 매니저").fill("Kuwait Oil의 직급이 시니어인 직원 정보를 찾아줘")
     page.get_by_placeholder("예: 일본 화장품 제조사 세일즈 매니저").press("Enter")
 
     page.wait_for_timeout(5000)
@@ -31,6 +32,7 @@ def test_prospecing_single_contact_view_contacts_check(page):
 
         print(f"🔍 탐색하기 {current_page} 페이지에서 '연락처 확인' 버튼 찾는 중...")
         buttons = page.locator("button:has-text('연락처 확인')")
+
         found = False
         print(f"연락처 확인 count : {buttons.count()}")
 
@@ -60,8 +62,8 @@ def test_prospecing_single_contact_view_contacts_check(page):
         if found:
             break
 
-        # 해당 페이지 내 연락처 확인 버튼이 없으면, 탐색하기 > 다음 페이지 버튼 찾기 및 클릭
-        next_button = page.locator("div").filter(has_text=re.compile(fr"^401 페이지 중 {current_page} 페이지페이지 바로가기$")).get_by_role("button").nth(1)
+        # 해당 페이지 내 연락처 확인 버튼이 없으면, 탐색하기 > 다음 페이지 버튼 찾기 및 클릭 / 9페이지로 수정 - 20250903
+        next_button = page.locator("div").filter(has_text=re.compile(fr"^9 페이지 중 {current_page} 페이지페이지 바로가기$")).get_by_role("button").nth(1)
 
         # 해당 페이지 > 다음 페이지 버튼 활성화 체크
         if next_button.is_visible() and next_button.is_enabled():

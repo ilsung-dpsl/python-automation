@@ -9,14 +9,16 @@ def test_prospecting_quickview_contact_view_contacts_check(page):
     page.goto("https://deepsales.com/ko/intro")
     page.get_by_role("button", name="로그인").click()
     page.wait_for_timeout(1000)
-    page.get_by_placeholder("이메일").fill(config.FREE_PA8_ACCOUNT)
-    page.get_by_placeholder("비밀번호").fill(config.FREE_PA8_PW)
+    #Free plan의 pa25 계정 정보 변경 - 20250903
+    page.get_by_placeholder("이메일").fill(config.FREE_PA25_ACCOUNT)
+    page.get_by_placeholder("비밀번호").fill(config.FREE_PA25_PW)
     page.get_by_role("button", name="로그인").click()
     page.wait_for_timeout(1000)
     #page.get_by_role("button", name="Start Now").click()
     #page.wait_for_timeout(1000)
 
-    page.get_by_placeholder("예: 일본 화장품 제조사 세일즈 매니저").fill("구글 회사의 직급 시니어인 직원정보를 찾아줘")
+    #검색으를 Kuwait Oil의 직급이 시니어인 직원 정보를 찾아줘 검색어 입력으로 변경 - 20250903
+    page.get_by_placeholder("예: 일본 화장품 제조사 세일즈 매니저").fill("Kuwait Oil의 직급이 시니어인 직원 정보를 찾아줘")
     # 탐색하기 > 검색창 > 검색버튼 클릭하는 코드 수정 - 20250805
     page.get_by_placeholder("예: 일본 화장품 제조사 세일즈 매니저").press("Enter")
 
@@ -51,10 +53,11 @@ def test_prospecting_quickview_contact_view_contacts_check(page):
                 row_location_current = row_current - 1
 
                 #연락처 확인 버튼이 있는 리드 데이터의 담당자 위치 열을 선택해서, 퀵뷰를 오픈하는 로직
-                if "United States" == page.get_by_text("United States").nth(row_location_current).inner_text():
-                    page.get_by_text("United States").nth(row_location_current).click()
+                #산업군 > Oil, Gas, and Mining 선택 변경으로 인한 코드 수정 - 20250903
+                if "Oil, Gas, and Mining" == page.get_by_text("Oil, Gas, and Mining").nth(row_location_current).inner_text():
+                    page.get_by_text("Oil, Gas, and Mining").nth(row_location_current).click()
                     page.wait_for_timeout(3000)
-                    print(f"United States next : {row_location_current + 1}")
+                    print(f"Kuwait next : {row_location_current + 1}")
 
                 print("🟢 해당 리드 행 클릭하여 상세정보 열기")
 
@@ -100,7 +103,8 @@ def test_prospecting_quickview_contact_view_contacts_check(page):
         try:
             print(f"다음 페이지 이동 케이스 시작 - {page_number} 페이지 확인")
 
-            next_button = page.locator("div").filter(has_text=re.compile(fr"^20 페이지 중 {page_number} 페이지페이지 바로가기$")).get_by_role("button").nth(
+            #쿠풰이트 오일 관련 검색어 변경 후 9페이지로 변경되어 수정 - 20250903
+            next_button = page.locator("div").filter(has_text=re.compile(fr"^9 페이지 중 {page_number} 페이지페이지 바로가기$")).get_by_role("button").nth(
                 1)
 
             print(f"next_button count : {next_button.count()}")

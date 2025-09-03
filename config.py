@@ -94,6 +94,9 @@ LINKEDIN_PW = "1@qordlftjd"
 # ilsung.baek+pa15@deepsales.com (생성) - Team 계정
 # ilsung.baek+pa16@deepsales.com (생성) - Enterprise 계정
 
+
+
+
 #json 설정 (counter)
 def read_counter():
     with open("config.json", "r") as f:

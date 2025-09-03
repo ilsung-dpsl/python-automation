@@ -74,10 +74,11 @@ def test_signupforfree_complete(page):
     # 5. 원래 페이지로 돌아와 인증번호 입력
     page.bring_to_front()
 
-    page.get_by_placeholder("OTP를 입력해주세요").click()
+    #
+    page.get_by_placeholder("인증번호를 입력해주세요").click()
     print(f"[Verification number] {code}")
     page.wait_for_timeout(2000)
-    page.get_by_placeholder("OTP를 입력해주세요").fill(code)
+    page.get_by_placeholder("인증번호를 입력해주세요").fill(code)
     page.get_by_role("button", name="확인").click()
 
     page.get_by_placeholder("성 (영문 입력)").fill("백")
