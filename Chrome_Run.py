@@ -71,7 +71,13 @@ def Chrome_Run_Main():
 #        "tests/account_and_settings_team_owner_my_profile_leave_company_flow_check.py",
 #        "tests/account_and_settings_freeplan_my_profile_leave_company_flow_check.py",
 #        "tests/account_and_settings_company_info_no_company_affiliation_setup_check.py",
-        "tests/account_and_settings_freeplan_payment_and_plan_charging_credit_payment_info_not_display_check.py"
+        "tests/account_and_settings_freeplan_payment_and_plan_charging_credit_payment_info_not_display_check.py",
+        "tests/account_and_settings_team_member_payment_and_plan_charging_credit_payment_info_not_display_check.py",
+        "tests/account_and_settings_team_owner_payment_and_plan_charging_credit_payment_infor_display_check.py",
+        "tests/account_and_settings_team_member_go_to_team_management_link_move.py",
+        "tests/account_and_settings_team_owner_payment_info_register_card_flow_check.py",
+        "tests/account_and_settings_team_owner_payment_and_plan_payment_info_show_detail_link_move.py"
+
     ]
 
     exit_code = pytest.main(test_files + ["-s", "-v", "--disable-warnings"])

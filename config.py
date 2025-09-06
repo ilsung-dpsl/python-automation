@@ -67,9 +67,12 @@ FREE_PA25_PW = "!deepsales@36"
 TEAM_OWNER_ACCOUNT = "ilsung.baek+pa15@deepsales.com"
 TEAM_OWNER_PW = "!deepsales@36"
 
+TEAM_MEMBER_ACCOUNT = "ilsung.baek+pa14@deepsales.com"
+TEAM_MEMBER_PW = "!deepsales@36"
+
+
 ENTERPRISE_MEMBER_PA20_ACC = "ilsung.baek+pa20@deepsales.com"
 ENTERPRISE_MEMBER_PA20_PW = "!deepsales@36"
-
 
 
 #딥세일즈 계정 공용 비밀번호

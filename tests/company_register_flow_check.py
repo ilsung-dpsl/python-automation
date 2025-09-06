@@ -29,8 +29,9 @@ def test_company_register_flow_check(page):
     page.locator("#react-select-2-input").fill("deepsales")
     page.wait_for_timeout(1000)
 
-    #deepsales 옵션 2번쨰 선택 코드로 변경 - 20250902
-    page.locator("#react-select-2-option-1").get_by_text("DeepSales").click()
+    #deepsales 옵션 1번쨰 선택 코드로 재변경 - 20250904
+    page.locator("#react-select-2-option-0").get_by_text("DeepSales").click()
+    #page.locator("#react-select-2-option-1").get_by_text("DeepSales").click()
     page.wait_for_timeout(1000)
 
     page.get_by_text("회사 페이지 등록하기").click()
