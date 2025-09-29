@@ -20,7 +20,7 @@ def test_login(page):
     lnb_hover_target.hover()
     page.wait_for_timeout(2000)
 
-    #20250926 - LNB > 사이드바 메뉴 펼치 버튼 선택 코드 추가
+    #20250926 - LNB > 사이드바 메뉴 펼침  버튼 선택 코드 추가
     page.get_by_role("button").first.click()
     page.wait_for_timeout(2000)
 
