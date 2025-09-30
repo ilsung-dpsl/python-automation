@@ -15,8 +15,8 @@ def test_prospecting_contacts_name_click_and_contact_detail_check(page):
   #  page.wait_for_timeout(1000)
     page.get_by_placeholder("예: 일본 화장품 제조사 세일즈 매니저").click()
     page.get_by_placeholder("예: 일본 화장품 제조사 세일즈 매니저").fill("한국 화장품 유통 회사 중 직급이 매니저인 담당자를 찾아줘")
-    #탐색하기 > 검색창 > 검색버튼 클릭하는 코드 수정 - 20250805
-    page.get_by_role("img", name="search button enabled").click()
+    #20250930 - 탐색하기 UI 변경으로 프롬프트 창 > 검색 버튼 코드 수정
+    page.locator("label").get_by_role("img").nth(1).click()
 
     page.wait_for_timeout(5000)
 

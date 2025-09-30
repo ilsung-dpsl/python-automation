@@ -70,14 +70,16 @@ def test_prospecting_quickview_contact_view_contacts_check(page):
                     popup_button = page.locator("section button:has-text('연락처 확인')")
 
                     popup_btn_count = popup_button.count()
-                    print(f"퀵뷰 > 연락처 확인 버튼 개수 카운드 : {popup_btn_count}")
+                    print(f"퀵뷰 > 연락처 확인 버튼 개수 카운트 : {popup_btn_count}")
 
-                    popup_email_view_contacts = popup_button.nth(0)
+                    #20250930 - 탐색하기 UI 변경으로 이메일 연락처 > 연락처 확인 버튼 위치 코드 수정
+                    popup_email_view_contacts = popup_button.nth(1)
 
                     #퀵뷰 > 이메일 연락처 > [연락처 확인] 버튼 활성화 확인
                     if popup_email_view_contacts.is_visible():
                         popup_email_view_contacts.click()
                         page.wait_for_timeout(2000)
+
                         assert "확인됨" == page.locator("section button:has-text('확인됨')").nth(0).inner_text(), \
                             "퀵뷰(연락처) > 이메일 연락처 [확인됨] 변경 처리 실패 - 퀵뷰 연락처 확인 실패 1"
                         assert "1 크레딧이 사용되었습니다." == page.get_by_role("alert").filter(
