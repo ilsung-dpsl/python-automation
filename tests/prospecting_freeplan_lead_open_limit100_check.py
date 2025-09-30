@@ -18,7 +18,8 @@ def test_prospecting_freeplan_lead_open_limit100_check(page):
     page.get_by_placeholder("예: 일본 화장품 제조사 세일즈 매니저").fill("미국에서 화장품 수입하는 회사 찾아줘")
     #20250930 - 탐색하기 UI 변경으로 인해, 탐색하기 > 프롬프트 검색 버튼 코드 수정
     page.locator("label").get_by_role("img").nth(1).click()
-    page.wait_for_timeout(5000)
+    #20250930 - 리드 데이터 출력 늦게 출력되는 현상이 간헐적으로 발생하여 5초 -> 10초로 코드 수정
+    page.wait_for_timeout(10000)
 
     for i in range(1, 5, 1):
         page.locator("div").filter(has_text=re.compile(fr"^401 페이지 중 {i} 페이지페이지 바로가기$")).get_by_role("button").nth(1).click()
