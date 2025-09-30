@@ -12,13 +12,26 @@ def test_dashboard_mylist_contacts_count_check(page):
   #  page.wait_for_timeout(1000)
   #  page.get_by_role("button", name="Start Now").click()
     page.wait_for_timeout(1000)
-    page.get_by_role("link", name="대시보드").click()
+
+    #20250930 - 탐색하기 ui(LNB 영역) 변경으로 인한 LNB 숨김처리됨 -> LNB 마우스 호버하는 코드 추가 및 수정
+    lnb_hover_target = page.get_by_text("대시보드탐색하기발견하기마이 리스트").first
+    lnb_hover_target.hover()
+    page.wait_for_timeout(2000)
+
+    # 20250930 - LNB > 사이드바 메뉴 펼침  버튼 선택 코드 추가
+    page.get_by_role("button").first.click()
+    page.wait_for_timeout(2000)
+
+    # 20250930 - LNB > 대시보드 메뉴 영역 선택 위치 변경으로 인한 코드 수정
+    page.get_by_role("link", name="대시보드").nth(1).click()
+    page.wait_for_timeout(2000)
 
     page.wait_for_timeout(7000)
 
     assert "마이 리스트" in page.content(), "대시보드 > 마이리스트 영역 > 타이틀 문구 노출 확인 실패 1"
     assert "저장" in page.content(), "대시보드 > 마이리스트 영역 > 저장 문구 노출 확인 실패 2"
-    assert "6,605" in page.content(), "대시보드 > 마이리스트 영역 > 저장 카운트 개수 확인 실패 3"
+    #20250930 - 마이리스트 저장 카운트 개수 수정
+    assert "6,611" in page.content(), "대시보드 > 마이리스트 영역 > 저장 카운트 개수 확인 실패 3"
     assert "확인되지 않은" in page.content(), "대시보드 > 마이리스트 영역 > 미확인된 문구 노출 확인 실패 4"
     assert "6,385" in page.content(), "대시보드 > 마이리스트 영역 > 미확인된 연락처 카운트 개수 확인 실패 5"
 
