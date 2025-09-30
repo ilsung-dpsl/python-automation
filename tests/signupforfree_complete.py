@@ -92,18 +92,30 @@ def test_signupforfree_complete(page):
     page.wait_for_timeout(7000)
 
     page.get_by_role("button", name="가입하기").click()
-
     page.wait_for_timeout(5000)
 
    # page.get_by_role("button", name="Start Now").click()
    # page.wait_for_timeout(1000)
 
-    page.locator("#desktop-header-slot").get_by_text("탐색하기").click()
-    page.get_by_role("paragraph").filter(has_text=re.compile(r"^필터$")).click()
+
+    #20250930 - 탐색하기 ui(LNB 영역) 변경으로 인한 LNB 숨김처리됨 -> LNB 마우스 호버하는 코드 추가 및 수정
+    lnb_hover_target = page.get_by_text("대시보드탐색하기발견하기마이 리스트").first
+    lnb_hover_target.hover()
+    page.wait_for_timeout(2000)
+
+    #20250930 - LNB > 사이드바 메뉴 펼침  버튼 선택 코드 추가
+    page.get_by_role("button").first.click()
+    page.wait_for_timeout(2000)
+
+    #20250930 - LNB > 탐색하기 메뉴 영역 선택 위치 변경으로 인한 코드 수정
+    page.get_by_role("link", name="탐색하기").nth(1).click()
+    page.wait_for_timeout(2000)
+
+    #page.get_by_role("paragraph").filter(has_text=re.compile(r"^필터$")).click()
 
     assert "탐색하기" == page.locator("#desktop-header-slot").get_by_text("탐색하기").inner_text(), \
         "회원가입 완료 후 탐색하기 이동 > '탐색하기' 타이틀 문구 확인 실패 - 회원가입 완료 실패 1"
-    assert "필터" == page.get_by_role("paragraph").filter(has_text=re.compile(r"^필터$")).inner_text(), \
+    assert "필터" == page.get_by_text("필터").inner_text(), \
         "회원가입 완료 후 탐색하기 이동 > 필터 > '필터' 타이틀 문구 확인 실패 - 회원가입 완료 실패 2"
 
     print("회원가입 완료 후 탐색하기 이동 성공")
@@ -113,7 +125,8 @@ def test_signupforfree_complete(page):
 
     print (f"counter : {count}")
 
-    page.get_by_role("link").filter(has_text="대시보드").click()
+    #20250930 - 탐색하기 UI 변경(LNB 레이아웃)으로 인한 대시보드 선택 코드 수정
+    page.get_by_role("link", name="대시보드").nth(1).click()
     page.wait_for_timeout(6000)
 
     assert "백 일성님\n환영합니다!" in page.get_by_text("백 일성님 환영합니다!").inner_text(), \
