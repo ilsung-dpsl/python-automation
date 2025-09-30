@@ -49,9 +49,12 @@ def test_prospecting_quickview_company_check(page):
 
     print("탐색하기 > 검색 완료")
 
-    page.get_by_role("tab", name="회사(96)").click()
+    #20250930 - 회사 카운트 변경으로 인한 코드 수정
+    page.get_by_role("tab", name="회사 (99)").click()
     page.wait_for_timeout(1000)
-    page.locator(".truncate > .flex-1").first.click()
+
+    #20250930 - 탐색하기 ui 변경으로 인한 2번째 회사 리드 선택 코드 수정
+    page.get_by_text("Corporate Travel Serviceswww.").click()
     page.wait_for_timeout(3000)
 #    with page.expect_popup() as page1_info:
 #        page.get_by_role("article").get_by_text("Corporate Travel Services").click()

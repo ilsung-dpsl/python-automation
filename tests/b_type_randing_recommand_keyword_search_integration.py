@@ -16,7 +16,8 @@ def test_b_type_randing_recommendation_keyword_search_integration(page):
     page.get_by_role("button", name="로그인").click()
 #    page.wait_for_timeout(1000)
 #    page.get_by_role("button", name="Start Now").click()
-    page.wait_for_timeout(7000)
+    #20250930 - 대기 시간 7초 -> 10초로 변경
+    page.wait_for_timeout(10000)
 
    # assert "기술 협력을 위한 인도 SaaS R&D 엔지니어" in page.get_by_role("textbox", name="search button enabled").inner_text(), "추천검색어 1 출력 실패 - 탐색하기 연동 실패 1"
 

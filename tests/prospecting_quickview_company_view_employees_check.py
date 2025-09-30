@@ -10,6 +10,7 @@ def test_prospecting_quickview_company_view_employees_check(page):
     page.get_by_placeholder("비밀번호").fill(config.FREE_PRD6_PW)
     page.get_by_role("button", name="로그인").click()
     page.wait_for_timeout(1000)
+
     page.get_by_placeholder("예: 일본 화장품 제조사 세일즈 매니저").fill("일본 화장품 제조사 세일즈 매니저")
     page.get_by_placeholder("예: 일본 화장품 제조사 세일즈 매니저").press("Enter")
 
@@ -17,15 +18,12 @@ def test_prospecting_quickview_company_view_employees_check(page):
 
     print("탐색하기 > 검색 완료")
 
-    # 최근 1개월 이내 데이터 중복 노출 이슈로 인해 아래의 코드 주석처리 - 20250819 -> 20일 수정됨
-    page.get_by_role("tab", name="회사(3)").click()
-
-    # 최근 1개월 이내 데이터 중복 노출 이슈로 인해 아래의 코드로 수정 - 20250819
-    #page.get_by_role("tab", name="회사(4)").click()
-
+    #20250930 - 회사 카운트 변경으로 인한 코드 수정
+    page.get_by_role("tab", name="회사 (15)").click()
     page.wait_for_timeout(1000)
-    # 최근 1개월 이내 데이터 중복 노출 이슈로 인해 아래의 코드 주석처리 - 20250819 -> 20일 수정됨
-    page.get_by_text("Japan").nth(2).click()
+
+    #20250930 - 탐색하기 UI 변경으로 인한 코드 수정 (리드 > 회사명 선택)
+    page.get_by_text("Wave Corporation Co.,Ltd.wave").click()
 
     # 최근 1개월 이내 데이터 중복 노출 이슈로 인해 아래의 코드로 수정 - 20250819
     #page.get_by_text("Japan").nth(3).click()
