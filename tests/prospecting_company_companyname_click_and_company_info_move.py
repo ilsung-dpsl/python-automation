@@ -18,19 +18,20 @@ def test_prospecting_company_companyname_click_and_company_info_move(page):
 
     print("탐색하기 > 검색 완료")
 
-    #최근 1개월 이내 데이터 중복 노출 이슈로 인해 아래의 코드 주석처리 - 20250819 -> 20일 수정됨
-    page.get_by_role("tab", name="회사(3)").click()
+    #20250930 - 회사 카운트 수 변경으로 인한 코드 수정
+    page.get_by_role("tab", name="회사 (15)").click()
 
     #최근 1개월 이내 데이터 중복 노출 이슈로 인해 아래의 코드로 수정 - 20250819
     #page.get_by_role("tab", name="회사(4)").click()
 
     page.wait_for_timeout(1000)
 
+    #20250930 - 탐색하기 UI 변경 및 Nikko Chemicals 중복으로 인한 위치 변경 코드 수정
     with page.expect_popup() as page1_info:
-        page.locator("[id=\"__next\"]").get_by_text("Nikko Chemicals").click()
+        page.get_by_text("Nikko Chemicals").nth(1).click()
     page1 = page1_info.value
 
-    page.wait_for_timeout(3000)
+    page1.wait_for_timeout(3000)
 
     assert "Nikko Chemicals" == page1.locator(".text-\\[18px\\]").first.inner_text(), \
         "회사정보 페이지 > 회사명칭 확인 실패 - 회사리스트 > 회사명 선택 후 회사 정보 페이지 이동 실패 1"

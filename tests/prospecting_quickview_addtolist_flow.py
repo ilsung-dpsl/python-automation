@@ -11,14 +11,17 @@ def test_prospecting_quickview_addtolist_flow(page):
     page.get_by_placeholder("비밀번호").fill(config.FREE_PRD6_PW)
     page.get_by_role("button", name="로그인").click()
     page.wait_for_timeout(1000)
-    page.get_by_placeholder("예: 일본 화장품 제조사 세일즈 매니저").fill("일본의 여행 가이드 업체의 직급이 매니저인 사람을 찾아줘")
+
+    #20250930 -
+    page.get_by_placeholder("예: 일본 화장품 제조사 세일즈 매니저").fill("일본의 여행 가이드 업체의 직급이 매니저인 사람")
     page.get_by_placeholder("예: 일본 화장품 제조사 세일즈 매니저").press("Enter")
 
     page.wait_for_timeout(5000)
 
     print("탐색하기 > 검색 완료")
 
-    page.locator(".truncate > .flex-1").first.click()
+    #20250930 - 탐색하기 ui 변경 및 리드 위치 변경으로 인한 코드 수정
+    page.get_by_text("Ryo Hayashi세일즈 매니저연락처 확인Japan").click()
     page.wait_for_timeout(2000)
 
     page.get_by_role("button", name="리스트에 추가").click()
@@ -34,12 +37,23 @@ def test_prospecting_quickview_addtolist_flow(page):
     print("탐색하기 > 퀵뷰 > 리스트에 추가 완료")
 
 
-    #퀵뷰 > [X] 버튼 선택 후 퀵븁 닫음
-    page.get_by_role("main").get_by_role("button").filter(has_text=re.compile(r"^$")).nth(2).click()
+    #20250930 - 탐색하기 UI 변경으로 인한 퀵뷰 > [X] 버튼 선택 후 퀵뷰 닫음 코드 수정
+    page.get_by_role("main").get_by_role("button").filter(has_text=re.compile(r"^$")).nth(3).click()
+    page.wait_for_timeout(2000)
 
-    #마이리스트로 이동
-    page.get_by_role("link", name="마이 리스트").click()
-    page.wait_for_timeout(1000)
+    # 20250930 - 탐색하기 ui(LNB 영역) 변경으로 인한 LNB 숨김처리됨 -> LNB 마우스 호버하는 코드 추가 및 수정
+    lnb_hover_target = page.get_by_text("대시보드탐색하기발견하기마이 리스트").first
+    lnb_hover_target.hover()
+    page.wait_for_timeout(2000)
+
+    # 20250930 - LNB > 사이드바 메뉴 펼침  버튼 선택 코드 추가
+    page.get_by_role("button").first.click()
+    page.wait_for_timeout(2000)
+
+    # 20250930 - LNB > 마이 리스트 메뉴 영역 선택 위치 변경으로 인한 코드 수정
+    page.get_by_role("link", name="마이 리스트").nth(1).click()
+    page.wait_for_timeout(2000)
+
     page.get_by_text("기본1(1 미확인)백 일성").click()
     page.wait_for_timeout(1000)
 

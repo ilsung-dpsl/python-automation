@@ -54,8 +54,9 @@ def test_prospecting_quickview_companyname_link_move(page):
     #최근 1개월 이내 데이터 중복 노출로 인해 아래의 코드로 변경 - 20250819
     #page.get_by_text("Japan, Okayama").first.click()
 
+    #20250930 - 탐색하가 UI 변경으오 인한 첫번쨰 리드의 퀵뷰 > 회사명 선택 코드 수정
     with page.expect_popup() as page1_info:
-        page.get_by_role("article").get_by_text("Hayashibara", exact=True).click()
+        page.get_by_text("Hayashibara", exact=True).nth(2).click()
     page1 = page1_info.value
 
     page1.wait_for_timeout(3000)
