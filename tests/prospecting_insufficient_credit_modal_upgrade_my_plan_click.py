@@ -21,8 +21,8 @@ def test_prospecting_insufficient_credit_modal_upgrade_my_plan_click(page):
 
     page.wait_for_timeout(5000)
 
-    #연락처 확인 리드 변경 > 첫번쨰 페이지 3번쨰 리드 - 20250819
-    page.locator("div").filter(has_text=re.compile(r"^Ajay BSenior Director연락처 확인WalmartUnited StatesRetail$")).get_by_role("button").click()
+    #20250930 - 연락처 확인 리드 재변경 > 첫번쨰 페이지 2번째 리드로 변경
+    page.locator("div").filter(has_text=re.compile(r"^Efren Macasaet솔루션 아키텍트연락처 확인WalmartUnited StatesRetail$")).get_by_role("button").click()
     page.wait_for_timeout(4000)
     page.get_by_role("button", name="요금제 업그레이드").click()
     page.wait_for_timeout(3000)
@@ -30,6 +30,6 @@ def test_prospecting_insufficient_credit_modal_upgrade_my_plan_click(page):
     assert "당신의 세일즈를 위한 맞춤형 요금제" in page.content(), "요금제 및 가격 페이지 > 타이틀 문구 출력 실패 - 플랜 페이지 이동 실패 1"
     #assert "플랜 변경하기" in page.content(), "요금제 및 가격 페이지 > 플랜 변경 버튼 출력 실패 - 플랜 페이지 이동 실패 2"
     #요금제 및 가격 페이지 > Elite 영역 > [플랜 변경하기] 버튼 확인으로 변경 - 20250805
-    assert "플랜 변경하기" in page.locator("div").filter(has_text=re.compile(r"^Elite인기 상품\$96플랜 변경하기$")).get_by_role("button").inner_text(), "요금제 및 가격 페이지 > ELite > 플랜 변경하기 버튼 출력 실패 - 플랜 페이지 이동 실패 2"
+    assert "컨설팅 받기" in page.locator("div").filter(has_text=re.compile(r"^Enterprise별도 문의컨설팅 받기$")).get_by_role("button").inner_text(), "요금제 및 가격 페이지 > Enterprise > 컨설팅 받ㄱ; 버튼 출력 실패 - 플랜 페이지 이동 실패 2"
 
     print("----- 연락처 확인 시 크레딧이 부족할 경우 모달 노출 시 Upgrade my plan 버튼 클릭 시 플랜 페이지로 이동 테스트 시작 -> 성공 -----")
