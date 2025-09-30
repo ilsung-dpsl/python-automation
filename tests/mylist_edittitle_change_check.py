@@ -10,10 +10,22 @@ def test_mylist_edittitle_change_check(page):
     page.get_by_placeholder("비밀번호").fill(config.FREE_PA8_PW)
     page.get_by_role("button", name="로그인").click()
     page.wait_for_timeout(1000)
-    page.get_by_role("link", name="마이 리스트").click()
-    page.wait_for_timeout(1000)
+
+    # 20250930 - 탐색하기 ui(LNB 영역) 변경으로 인한 LNB 숨김처리됨 -> LNB 마우스 호버하는 코드 추가 및 수정
+    lnb_hover_target = page.get_by_text("대시보드탐색하기발견하기마이 리스트").first
+    lnb_hover_target.hover()
+    page.wait_for_timeout(2000)
+
+    # 20250930 - LNB > 사이드바 메뉴 펼침  버튼 선택 코드 추가
+    page.get_by_role("button").first.click()
+    page.wait_for_timeout(2000)
+
+    # 20250930 - LNB > 마이 리스트 메뉴 영역 선택 위치 변경으로 인한 코드 수정
+    page.get_by_role("link", name="마이 리스트").nth(1).click()
+    page.wait_for_timeout(5000)
 
     print("마이리스트 메인 페이지 진입 완료")
+
     page.get_by_role("button", name="리스트 만들기").click()
     page.wait_for_timeout(1000)
     page.get_by_role("textbox", name="/50").fill("test 1")
@@ -22,7 +34,9 @@ def test_mylist_edittitle_change_check(page):
     page.wait_for_timeout(1000)
 
     print("마이리스트 > 일반 폴더 1 생성 완료")
-    page.locator("[id=\"headlessui-menu-button-:r13:\"]").click()
+
+    #20250930 - 마이리스트 > test 1 일반 폴더 > 더보기 버튼 선택 코드 수정
+    page.locator("div:nth-child(3) > div:nth-child(6) > div").click()
     page.wait_for_timeout(1000)
     page.get_by_role("menuitem", name="제목 편집").click()
     page.wait_for_timeout(1000)
@@ -47,8 +61,9 @@ def test_mylist_edittitle_change_check(page):
     print("마이리스트 > 일반 폴더 제목 편집 완료")
     page.get_by_role("button", name="리스트로 돌아가기").click()
     page.wait_for_timeout(1000)
-    page.locator("[id=\"headlessui-menu-button-:r1g:\"]").click()
-    page.wait_for_timeout(1000)
+
+    #20250930 - 마이리스트 > test 1 일반 폴더 > 더보기 버튼 선택 코드 수정
+    page.locator("div:nth-child(3) > div:nth-child(6) > div").click()
     page.get_by_role("menuitem", name="리스트 삭제").click()
 
     print("----- 마이리스트 > 임의 폴더 제목 편집 변경 확인 테스트 시작 -> 성공 -----")
