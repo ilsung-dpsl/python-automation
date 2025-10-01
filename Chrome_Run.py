@@ -1,6 +1,6 @@
 import pytest
 
-def Chrome_Run_Main():
+def test_Chrome_Run_Main():
     test_files = [
 #        "tests/signupforfree_move.py",
 #        "tests/login.py",
@@ -17,13 +17,13 @@ def Chrome_Run_Main():
 #        "tests/prospecting_setup_your_account_move.py",
 #        "tests/prospecting_search_and_tag_data_print_check.py",
 #        "tests/prospecting_freeplan_revenue_funding_technologies_lock_check.py",
-#      "tests/prospecting_freeplan_revenue_funding_technologies_disable_check.py",
-#       "tests/prospecting_freeplan_lead_open_limit100_check.py",
+#        "tests/prospecting_freeplan_revenue_funding_technologies_disable_check.py",
+#        "tests/prospecting_freeplan_lead_open_limit100_check.py",
 #        "tests/prospecting_enterpriseplan_lead_open_limit5000_check.py",
 #        "tests/prospecting_insufficient_credit_modal_upgrade_my_plan_click.py",
 #        "tests/prospecting_addtolist_flow_check.py",
-    #    "tests/dev_prospecting_insufficient_credit_modal_charge_credit_click.py",
-   #    "tests/dev_charge_credit_complete.py",
+   #     "tests/dev_prospecting_insufficient_credit_modal_charge_credit_click.py",
+   #     "tests/dev_charge_credit_complete.py",
 #        "tests/prospecting_contacts_name_click_and_contact_detail_check.py",
 #        "tests/prospecting_quickview_contact_check.py",
 #        "tests/prospecting_quickview_contact_view_contacts_check.py",
@@ -41,7 +41,7 @@ def Chrome_Run_Main():
 #        "tests/discover_freeplan_industry_or_keyword_search_limit_check.py",
 #        "tests/discover_freeplan_viewmore_click.py",
 #       "tests/discover_industry_and_title_search.py",
-#        "tests/discover_card_prospecting_now_check.py",
+#       "tests/discover_card_prospecting_now_check.py",
 #        "tests/mylist_freeplan_exporttocsv_limit_check.py",
 #        "tests/mylist_edittitle_change_check.py",
 #        "tests/mylist_delete_list_check.py",
@@ -54,7 +54,7 @@ def Chrome_Run_Main():
 #        "tests/mylist_detail_contact_view_contacts_check.py",
 #        "tests/mylist_detail_freeplan_upgrade_myplan_modal_upgrade_myplan_click.py",
 #        "tests/team_management_free_invite_member_limit_check.py",
-#       "tests/team_management_enterprise_seat_full_charge_and_invite_member_limit_check.py",
+#        "tests/team_management_enterprise_seat_full_charge_and_invite_member_limit_check.py",
 #        "tests/team_management_free_team_owner_addseat_click.py",
 #        "tests/team_management_team_owner_invite_member_flow_check.py",
 #        "tests/team_management_team_owner_other_team_member_invite_limit_check.py",
@@ -71,16 +71,15 @@ def Chrome_Run_Main():
 #        "tests/account_and_settings_company_info_no_company_affiliation_setup_check.py",
         "tests/account_and_settings_freeplan_payment_and_plan_charging_credit_payment_info_not_display_check.py",
         "tests/account_and_settings_team_member_payment_and_plan_charging_credit_payment_info_not_display_check.py",
-        "tests/account_and_settings_team_owner_payment_and_plan_charging_credit_payment_infor_display_check.py",
+        "tests/account_and_settings_team_owner_payment_and_plan_charging_credit_payment_info_display_check.py",
         "tests/account_and_settings_team_member_go_to_team_management_link_move.py",
         "tests/account_and_settings_team_owner_payment_info_register_card_flow_check.py",
         "tests/account_and_settings_team_owner_payment_and_plan_payment_info_show_detail_link_move.py"
-
     ]
 
 
-    exit_code = pytest.main(test_files + ["-s", "-v", "--disable-warnings", "--junitxml=report.xml",
-        "--alluredir=allure-results"])
+    exit_code = pytest.main(test_files + ["-s", "-v", "--disable-warnings", "--junitxml=report.xml", "--alluredir=allure-results"])
+
 
     if exit_code == 0:
         print("모든 테스트 성공")
@@ -88,5 +87,5 @@ def Chrome_Run_Main():
         print(f"X 테스트 실패: 종료 코드 {exit_code}")
 
 if __name__ == "__main__":
-    Chrome_Run_Main()
+    test_Chrome_Run_Main()
 
