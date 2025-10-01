@@ -1,6 +1,6 @@
 import pytest
 
-def test_Chrome_Run_Main():
+def Chrome_Run_Main():
     test_files = [
 #        "tests/signupforfree_move.py",
 #        "tests/login.py",
@@ -87,5 +87,5 @@ def test_Chrome_Run_Main():
         print(f"X 테스트 실패: 종료 코드 {exit_code}")
 
 if __name__ == "__main__":
-    test_Chrome_Run_Main()
+    Chrome_Run_Main()
 
