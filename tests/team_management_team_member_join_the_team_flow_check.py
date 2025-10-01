@@ -12,8 +12,11 @@ def test_team_management_team_member_join_the_team_flow_check(page):
     page.get_by_role("button", name="로그인").click()
     page.wait_for_timeout(1000)
 
-    page.get_by_role("button").filter(has_text=re.compile(r"^$")).nth(3).click()
+    #20251001 - 상단 우측 마이페이지 버튼 선택 코드 수정
+    #page.get_by_role("button").filter(has_text=re.compile(r"^$")).nth(3).click()
+    page.get_by_role("button").nth(3).click()
     page.wait_for_timeout(1000)
+
     page.get_by_text("팀 관리").click()
     page.wait_for_timeout(1000)
 
@@ -57,12 +60,16 @@ def test_team_management_team_member_join_the_team_flow_check(page):
         print(f"초대된 팀 가입하기 버튼 카운트 : {join_the_team_btn_count}")
         page1.get_by_role("link", name="초대된 팀 가입하기").nth(join_the_team_btn_count - 1).click()
 
-    page1.wait_for_timeout(2000)
+    #20251001 대기시간 2초 -> 3초로 증가
+    page1.wait_for_timeout(3000)
     print("팀 멤버 초대 메일 > 초대된 팀에 가입하기 링크 연동 완료")
 
     page2 = page2_info.value
-    page2.get_by_role("button").filter(has_text=re.compile(r"^$")).nth(3).click()
+
+    #20251001 - 상단 우측 마이페이지 버튼 선택 코드 수정
+    page2.get_by_role("button").nth(3).click()
     page2.wait_for_timeout(1000)
+
     page2.get_by_text("로그아웃").click()
     page2.wait_for_timeout(1000)
 
@@ -85,8 +92,8 @@ def test_team_management_team_member_join_the_team_flow_check(page):
         "팀 관리 > 첫번째 멤버 > 이메일 확인 실패 - 팀 합류 실패 3"
     assert "팀 크레딧: 월간 600 크레딧" == page2.get_by_text("팀 크레딧: 월간 600 크레딧").inner_text(), \
         "팀 관리 > 팀 크레딧 정보 확인 실패 - 팀 합류 실패 4"
-    #팀 오너 크레딧 사용으로 인한 잔여 크레딧 개수 수정 - 20250911
-    assert "잔여 크레딧: 584/1184" == page2.get_by_text("잔여 크레딧: 584/").inner_text(), \
+    #20251001 - 팀 오너 크레딧 사용으로 인한 잔여 크레딧 개수 수정
+    assert "잔여 크레딧: 572/1172" == page2.get_by_text("잔여 크레딧: 572/").inner_text(), \
         "팀 관리 > 잔여 크레딧 정보 확인 실패 - 팀 합류 실패 5"
     assert "ilsung.baek+pa19@deepsales.com" == page2.get_by_text("ilsung.baek+pa19@deepsales.com").inner_text(), \
         "팀 관리 > 팀 합류한 이메일 정보 확인 실패 - 팀 합류 실패 6"

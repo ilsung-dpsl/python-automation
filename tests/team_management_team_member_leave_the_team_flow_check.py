@@ -12,12 +12,16 @@ def test_team_management_team_member_leave_the_team_flow_check(page):
     page.get_by_role("button", name="로그인").click()
     page.wait_for_timeout(1000)
 
-    page.get_by_role("button").filter(has_text=re.compile(r"^$")).nth(3).click()
+    #20251001 - 상단 우측 마이페이지 버튼 선택 코드 수정
+    #page.get_by_role("button").filter(has_text=re.compile(r"^$")).nth(3).click()
+    page.get_by_role("button").nth(3).click()
     page.wait_for_timeout(1000)
+
     page.get_by_text("팀 관리").click()
     page.wait_for_timeout(1000)
 
     print("팀 관리 페이지 진입 완료")
+
     page.get_by_role("button", name="맴버 초대하기").click()
     page.wait_for_timeout(1000)
     page.get_by_role("button", name="지금은 괜찮아요, 그냥 초대").click()
@@ -61,8 +65,12 @@ def test_team_management_team_member_leave_the_team_flow_check(page):
     print("팀 멤버 초대 메일 > 초대된 팀에 가입하기 링크 연동 완료")
 
     page2 = page2_info.value
-    page2.get_by_role("button").filter(has_text=re.compile(r"^$")).nth(3).click()
+
+    # 20251001 - 상단 우측 마이페이지 버튼 선택 코드 수정
+    # page.get_by_role("button").filter(has_text=re.compile(r"^$")).nth(3).click()
+    page2.get_by_role("button").nth(3).click()
     page2.wait_for_timeout(1000)
+
     page2.get_by_text("로그아웃").click()
     page2.wait_for_timeout(1000)
 

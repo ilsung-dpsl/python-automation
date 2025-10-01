@@ -13,7 +13,9 @@ def test_team_management_team_owner_delete_member(page):
     page.get_by_role("button", name="로그인").click()
     page.wait_for_timeout(1000)
 
-    page.get_by_role("button").filter(has_text=re.compile(r"^$")).nth(3).click()
+    #20251001 - 상단 우측 마이페이지 버튼 선택 코드 수정
+    #page.get_by_role("button").filter(has_text=re.compile(r"^$")).nth(3).click()
+    page.get_by_role("button").nth(3).click()
     page.wait_for_timeout(1000)
 
     page.get_by_text("팀 관리").click()
