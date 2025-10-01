@@ -1,3 +1,5 @@
+from traceback import print_stack
+
 import config
 import re
 
@@ -15,8 +17,10 @@ def test_account_and_settings_my_profile_input_add_edit_flow_check(page):
 
     print("로그인 후 탐색하기 페이지 진입 완료")
 
-    page.get_by_role("button").filter(has_text=re.compile(r"^$")).nth(3).click()
+    # 20251001 - 상단 우측 마이페이지 버튼 선택 코드 수정
+    page.get_by_role("button").nth(3).click()
     page.wait_for_timeout(1000)
+
     page.get_by_text("계정 및 설정").click()
     page.wait_for_timeout(1000)
 
@@ -55,25 +59,26 @@ def test_account_and_settings_my_profile_input_add_edit_flow_check(page):
     page.get_by_role("option", name="Product").locator("div").click()
     page.wait_for_timeout(1000)
 
-#    page.locator(".css-b62m3t-container > .border > .text-base > div:nth-child(2)").first.click()
-#    page.wait_for_timeout(2000)
-
-#    page.get_by_role("option", name="Product").locator("div").click(force=True)
-#    page.wait_for_timeout(1000)
-
     print("내 프로필 > 부서 > Product 설정 완료")
 
-    page.locator("[id=\":r1f:-form-item\"] > .css-b62m3t-container > .border > .text-base > .text-FG-Primary.css-124rwol").click()
+    #20251001 - 직급 입력창 선택 코드 수정
+    page.locator(".border.rounded-\\[6px\\].bg-\\[\\#ffffff\\].hover\\:cursor-pointer.\\!min-h-10.border-Border-Inversed > .text-base > .text-FG-Primary.css-124rwol").click()
     page.wait_for_timeout(1000)
+
+    print("직급 > 입력창 선택")
 
     page.locator("#react-select-5-input").fill("매니저")
     page.wait_for_timeout(500)
+
+    print("직급 > 입력창 > 매니저 입력")
 
     page.locator("#react-select-5-input").press("Enter")
     page.wait_for_timeout(1000)
 
     print("내 프로필 > 직급 > 매니저 설정 완료")
-    page.locator("[id=\"\\:r1f\\:-form-item\"] > .css-b62m3t-container > .border > .text-base > div:nth-child(2)").click()
+
+    #20251001 - 직함 입력창 선택 코드 수정
+    page.locator("[id=\":r18:-form-item\"] > .flex.flex-col.gap-5 > .flex.flex-col > .relative > div > .css-b62m3t-container > .border > .text-base > .text-FG-Primary.css-124rwol").click()
     page.wait_for_timeout(1000)
 
     page.locator("#react-select-7-input").fill("manager")
@@ -87,7 +92,8 @@ def test_account_and_settings_my_profile_input_add_edit_flow_check(page):
     page.get_by_role("radio", name="남성").click()
     page.wait_for_timeout(1000)
 
-    page.locator("[id=\":r1q:-form-item\"] > .css-b62m3t-container > .border > .text-base > .text-FG-Primary.css-124rwol").dblclick()
+    #20251001 - 나라(국적) 입력창 선택 코드 수정
+    page.locator("[id=\":r1i:-form-item\"] > .css-b62m3t-container > .border > .text-base > .text-FG-Primary.css-124rwol").dblclick()
     page.wait_for_timeout(1000)
 
     page.locator(
@@ -97,17 +103,16 @@ def test_account_and_settings_my_profile_input_add_edit_flow_check(page):
     page.locator("#react-select-8-input").fill("일본")
     page.wait_for_timeout(1000)
 
-
     page.get_by_text("일본", exact=True).click()
     page.wait_for_timeout(1000)
 
     print("내 프로필 > 나라(국적) > 일본 설정 완료")
 
-    #기존에 설정된 언어 삭제 후 재설정 - 20250830
-    page.locator("[id=\"\\:r1r\\:-form-item\"] > .css-b62m3t-container > .border > div:nth-child(2) > div").first.click()
+    #20251001 - 기존에 설정된 언어 삭제 후 재설정 코드 재수정
+    page.locator(".p-1.text-FG-Tertiary").click()
     page.wait_for_timeout(1000)
 
-    page.locator("[id=\":r1r:-form-item\"] > .css-b62m3t-container > .border > .text-base > .text-FG-Primary").click()
+    page.locator(".border.rounded-\\[6px\\].bg-\\[\\#ffffff\\].hover\\:cursor-pointer.\\!min-h-10.border-Border-Inversed > .text-base > .text-FG-Primary").click()
     page.wait_for_timeout(1000)
 
     page.get_by_role("option", name="한국어").get_by_role("checkbox").click()

@@ -15,7 +15,8 @@ def test_company_setup_and_main_page_check(page):
 
     print("로그인 후 탐색하기 페이지 진입 완료")
 
-    page.get_by_role("button").filter(has_text=re.compile(r"^$")).nth(3).click()
+    #20251001 - 상단 우측 마이페이지 버튼 선택 코드 수정
+    page.get_by_role("button").nth(3).click()
     page.wait_for_timeout(1000)
 
     assert "설정하기" == page.get_by_text("설정하기", exact=True).inner_text(), \

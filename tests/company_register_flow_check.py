@@ -17,7 +17,8 @@ def test_company_register_flow_check(page):
 
     print("로그인 후 탐색하기 페이지 진입 완료")
 
-    page.get_by_role("button").filter(has_text=re.compile(r"^$")).nth(3).click()
+    # 20251001 - 상단 우측 마이페이지 버튼 선택 코드 수정
+    page.get_by_role("button").nth(3).click()
     page.wait_for_timeout(1000)
 
     page.get_by_text("회사 정보", exact=True).click()
@@ -43,13 +44,15 @@ def test_company_register_flow_check(page):
     page.locator(".text-\\[18px\\]").first.click()
     page.wait_for_timeout(1000)
 
-    page.get_by_role("button").filter(has_text=re.compile(r"^$")).nth(3).click()
+    #20251001 - 상단 우측 마이페이지 버튼 선택 코드 수정
+    page.get_by_role("button").nth(3).click()
     page.wait_for_timeout(1000)
 
     page.get_by_text("팀 관리").click()
     page.wait_for_timeout(1000)
 
-    page.get_by_role("button").filter(has_text=re.compile(r"^$")).nth(3).click()
+    #20251001 - 상단 우측 마이페이지 버튼 선택 코드 수정
+    page.get_by_role("button").nth(3).click()
     page.wait_for_timeout(1000)
 
     page.get_by_text("회사 정보").click()
