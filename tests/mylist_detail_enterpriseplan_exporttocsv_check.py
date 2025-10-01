@@ -10,13 +10,25 @@ def test_mylist_detail_enterpriseplan_exporttocsv_check(page):
     page.get_by_placeholder("이메일").fill(config.ENTERPRISE_SUB_ACCOUNT)
     page.get_by_placeholder("비밀번호").fill(config.ENTERPRISE_SUB_PW)
     page.get_by_role("button", name="로그인").click()
-
     page.wait_for_timeout(2000)
-    page.get_by_role("link", name="마이 리스트").click()
+
+    # 20250930 - 탐색하기 ui(LNB 영역) 변경으로 인한 LNB 숨김처리됨 -> LNB 마우스 호버하는 코드 추가 및 수정
+    lnb_hover_target = page.get_by_text("대시보드탐색하기발견하기마이 리스트").first
+    lnb_hover_target.hover()
+    page.wait_for_timeout(2000)
+
+    # 20250930 - LNB > 사이드바 메뉴 펼침  버튼 선택 코드 추가
+    page.get_by_role("button").first.click()
+    page.wait_for_timeout(2000)
+
+    # 20250930 - LNB > 마이 리스트 메뉴 영역 선택 위치 변경으로 인한 코드 수정
+    page.get_by_role("link", name="마이 리스트").nth(1).click()
     page.wait_for_timeout(1000)
 
     print("마이리스트 페이지 진입 완료")
-    page.locator("div").filter(has_text=re.compile(r"^test 1$")).nth(1).click()
+
+    # 20250930 - 마이리스트 > test 1 (일반 폴더) 선택 코드 수정
+    page.get_by_text("test 1").click()
     page.wait_for_timeout(1000)
     print("마이리스트 상세 페이지 (일반 폴더) 진입 완료")
 
@@ -30,7 +42,7 @@ def test_mylist_detail_enterpriseplan_exporttocsv_check(page):
     assert "미확인 연락처는 내보낼 수 없습니다." == page.get_by_text("미확인 연락처는 내보낼 수 없습니다").inner_text(), \
         "미확인 연락처 포함 모달 > 타이틀 문구 확인 실패 - 미확인 연락처 모달 노출 실패 1"
     assert "확인" == page.get_by_role("button", name="확인", exact=True).inner_text(), \
-        "미확인 연락처 포함 모달 > 확인 버튼 출력 실패 - 미확인 연락처 모달 노출 실패 2"
+        "미확인 연락처 포함 모달 > 확인 버튼 출력 실패 - 미확인 #연락처 모달 노출 실패 2"
 
     print("마이리스트 상세 페이지 (일반 폴더) > 미확인 연락처 포함 모달 출력 확인 완료")
 

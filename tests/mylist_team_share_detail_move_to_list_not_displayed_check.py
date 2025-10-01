@@ -11,8 +11,18 @@ def test_mylist_team_share_detail_move_to_list_not_displayed_check(page):
     page.get_by_role("button", name="로그인").click()
     page.wait_for_timeout(1000)
 
-    page.get_by_role("link", name="마이 리스트").click()
-    page.wait_for_timeout(6000)
+    # 20250930 - 탐색하기 ui(LNB 영역) 변경으로 인한 LNB 숨김처리됨 -> LNB 마우스 호버하는 코드 추가 및 수정
+    lnb_hover_target = page.get_by_text("대시보드탐색하기발견하기마이 리스트").first
+    lnb_hover_target.hover()
+    page.wait_for_timeout(2000)
+
+    # 20250930 - LNB > 사이드바 메뉴 펼침  버튼 선택 코드 추가
+    page.get_by_role("button").first.click()
+    page.wait_for_timeout(2000)
+
+    # 20250930 - LNB > 마이 리스트 메뉴 영역 선택 위치 변경으로 인한 코드 수정
+    page.get_by_role("link", name="마이 리스트").nth(1).click()
+    page.wait_for_timeout(1000)
 
     print("마이리스트 진입 완료")
 
