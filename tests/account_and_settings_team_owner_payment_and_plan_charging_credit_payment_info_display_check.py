@@ -1,7 +1,7 @@
 import config
 import re
 
-def test_account_and_settings_team_owner_payment_and_plan_charging_credit_payment_infor_display_check(page):
+def test_account_and_settings_team_owner_payment_and_plan_charging_credit_payment_info_display_check(page):
     print("----- 유료 회원(팀오너) > 결제 및 요금제 > 크레딧 충전하기 / 결제 정보 영역 노출 확인 테스트 시작 -----")
 
     page.goto("https://deepsales.com/ko/intro")
@@ -15,7 +15,8 @@ def test_account_and_settings_team_owner_payment_and_plan_charging_credit_paymen
 
     print("탐색하기 페이지 진입 완료")
 
-    page.get_by_role("button").filter(has_text=re.compile(r"^$")).nth(3).click()
+    # 20251001 - 상단 우측 마이페이지 버튼 선택 코드 수정
+    page.get_by_role("button").nth(3).click()
     page.wait_for_timeout(1000)
 
     page.get_by_text("결제 및 요금제").click()

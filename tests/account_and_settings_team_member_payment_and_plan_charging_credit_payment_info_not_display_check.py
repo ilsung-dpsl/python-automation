@@ -14,7 +14,9 @@ def test_account_and_settings_team_member_payment_and_plan_charging_credit_payme
     page.wait_for_timeout(1000)
 
     print("탐색하기 페이지 진입 완료")
-    page.get_by_role("button").filter(has_text=re.compile(r"^$")).nth(3).click()
+
+    #20251001 - 상단 우측 마이페이지 버튼 선택 코드 수정
+    page.get_by_role("button").nth(3).click()
     page.wait_for_timeout(1000)
 
     page.get_by_text("결제 및 요금제").click()
