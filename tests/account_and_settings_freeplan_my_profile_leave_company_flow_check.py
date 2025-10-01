@@ -13,7 +13,8 @@ def test_account_and_settings_freeplan_my_profile_leave_company_flow_check(page)
     page.get_by_role("button", name="로그인").click()
     page.wait_for_timeout(1000)
 
-    page.get_by_role("button").filter(has_text=re.compile(r"^$")).nth(3).click()
+    # 20251001 - 상단 우측 마이페이지 버튼 선택 코드 수정
+    page.get_by_role("button").nth(3).click()
     page.wait_for_timeout(1000)
 
     page.get_by_text("회사 정보", exact=True).click()
@@ -35,7 +36,8 @@ def test_account_and_settings_freeplan_my_profile_leave_company_flow_check(page)
 
     print("회사 정보 > 회사 설정 완료")
 
-    page.get_by_role("button").filter(has_text=re.compile(r"^$")).nth(3).click()
+    # 20251001 - 상단 우측 마이페이지 버튼 선택 코드 수정
+    page.get_by_role("button").nth(3).click()
     page.wait_for_timeout(1000)
 
     page.get_by_text("계정 및 설정").click()
