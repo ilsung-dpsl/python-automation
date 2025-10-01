@@ -13,7 +13,9 @@ def test_team_management_free_team_owner_addseat_click(page):
     page.get_by_role("button", name="로그인").click()
     page.wait_for_timeout(1000)
 
-    page.get_by_role("button").filter(has_text=re.compile(r"^$")).nth(3).click()
+    #20251001 - 상단 우측 마이페이지 버튼 선택 코드 수정
+    #page.get_by_role("button").filter(has_text=re.compile(r"^$")).nth(3).click()
+    page.get_by_role("button").nth(3).click()
     page.wait_for_timeout(1000)
 
     page.get_by_text("팀 관리").click()
@@ -34,10 +36,13 @@ def test_team_management_free_team_owner_addseat_click(page):
 
     print("Free > 요금제 페이지 진입 완료")
 
+    #20251001 - A안 랜딩페이지 > 상단 > 탐색하기 선택 코드 수정
     page.get_by_role("banner").get_by_role("link", name="탐색하기").click()
     page.wait_for_timeout(2000)
 
-    page.get_by_role("button").filter(has_text=re.compile(r"^$")).nth(3).click()
+    #20251001 - 상단 우측 마이페이지 버튼 선택 코드 수정
+    #page.get_by_role("button").filter(has_text=re.compile(r"^$")).nth(3).click()
+    page.get_by_role("button").nth(3).click()
     page.wait_for_timeout(1000)
 
     page.get_by_text("로그아웃").click()
@@ -49,7 +54,9 @@ def test_team_management_free_team_owner_addseat_click(page):
     page.get_by_role("button", name="로그인").click()
     page.wait_for_timeout(1000)
 
-    page.get_by_role("button").filter(has_text=re.compile(r"^$")).nth(3).click()
+    #20251001 - 상단 우측 마이페이지 버튼 선택 코드 수정
+    #page.get_by_role("button").filter(has_text=re.compile(r"^$")).nth(3).click()
+    page.get_by_role("button").nth(3).click()
     page.wait_for_timeout(1000)
 
     page.get_by_text("팀 관리").click()
@@ -59,7 +66,7 @@ def test_team_management_free_team_owner_addseat_click(page):
     page.get_by_text("좌석 추가").click()
     page.wait_for_timeout(1000)
 
-    assert "플랜 변경하기" in page.locator("div").filter(has_text=re.compile(r"^Elite인기 상품\$96플랜 변경하기$")).get_by_role("button").inner_text(), \
+    assert "플랜 변경하기" in page.locator("div").filter(has_text=re.compile(r"^Free\$0잠재고객을 처음 찾을 때, 부담 없이 시작하세요\.플랜 변경하기$")).get_by_role("button").inner_text(), \
         "팀관리 > Team owner > 좌석 추가 선택 후 요금제 페이지 > Elite > [플랜 변경하기] 버튼 확인 실패 - Team 오너 > 요금제 페이지 이동 실패 1"
     assert "요금제별 주요 기능 비교" == page.get_by_role("heading", name="요금제별 주요 기능 비교").inner_text(), \
         "팀관리 > Team owner > 좌석 추가 선택 후 요금제 페이지 > 요금제별 주요 기능 비교 영역 타이틀 문구 확인 실패 - Team 오너 > 요금제 페이지 이동 실패 2"
