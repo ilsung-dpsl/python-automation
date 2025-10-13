@@ -45,9 +45,18 @@ def test_mylist_detail_freeplan_upgrade_myplan_modal_upgrade_myplan_click(page):
 
     assert "당신의 세일즈를 위한 맞춤형 요금제" == page.get_by_role("heading", name="당신의 세일즈를 위한 맞춤형 요금제").inner_text(), \
         "업그레이드 모달 > 요금제 업그레이드 선택 후 플랜페이지 > 타이틀 문구 확인 실패 - 플랜페이지 이동 실패 1"
-    assert "플랜 변경하기" in page.locator("div").filter(has_text=re.compile(r"^Pro\$39플랜 변경하기$")).get_by_role("button").inner_text(), \
+
+
+    #20251013 - "올해 마지막 기회!" 텍스트가 존재하는지 확인하여, 할인페이지 유무를 판단
+    promo_locator = page.get_by_text("올해 마지막 기회!")
+
+    if promo_locator.count() > 0:
+        print("요금제 할인 프로모션 페이지 진입")
+        assert "플랜 변경하기" in page.locator("div").filter(has_text=re.compile(r"^Pro\$39\$19\.5-50%플랜 변경하기$")).get_by_role("button").inner_text(), \
+        "업그레이드 모달 > 요금제 업그레이드 선택 후 플랜페이지 > Pro > [플랜 변경하기] 버튼 확인 실패 - 플랜페이지 이동 실패 1"
+    else:
+        print("일반 요금제 페이지 진입")
+        assert "플랜 변경하기" in page.locator("div").filter(has_text=re.compile(r"^Pro\$39플랜 변경하기$")).get_by_role("button").inner_text(), \
         "업그레이드 모달 > 요금제 업그레이드 선택 후 플랜페이지 > Pro > [플랜 변경하기] 버튼 확인 실패 - 플랜페이지 이동 실패 1"
 
     print("----- 마이 리스트 상세 > csv 내보내기 시 요금제 업그레이드 모달 > 요금제 업그레이드 선택 시 플랜 페이지 이동 확인 테스트 시작 -> 성공 -----")
-
-
