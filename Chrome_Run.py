@@ -66,14 +66,14 @@ def Chrome_Run_Main():
 #        "tests/company_register_for_a_new_company_flow_check.py",
 #        "tests/account_and_settings_my_profile_input_add_edit_flow_check.py",
 #        "tests/account_and_settings_my_profile_membership_withdrawal_flow_check.py",
-#        "tests/account_and_settings_team_owner_my_profile_leave_company_flow_check.py",
-#        "tests/account_and_settings_freeplan_my_profile_leave_company_flow_check.py",
-#        "tests/account_and_settings_company_info_no_company_affiliation_setup_check.py",
-#        "tests/account_and_settings_freeplan_payment_and_plan_charging_credit_payment_info_not_display_check.py",
-#        "tests/account_and_settings_team_member_payment_and_plan_charging_credit_payment_info_not_display_check.py",
-#        "tests/account_and_settings_team_owner_payment_and_plan_charging_credit_payment_info_display_check.py",
-#        "tests/account_and_settings_team_member_go_to_team_management_link_move.py",
-#        "tests/account_and_settings_team_owner_payment_info_register_card_flow_check.py",
+        "tests/account_and_settings_team_owner_my_profile_leave_company_flow_check.py",
+        "tests/account_and_settings_freeplan_my_profile_leave_company_flow_check.py",
+        "tests/account_and_settings_company_info_no_company_affiliation_setup_check.py",
+        "tests/account_and_settings_freeplan_payment_and_plan_charging_credit_payment_info_not_display_check.py",
+        "tests/account_and_settings_team_member_payment_and_plan_charging_credit_payment_info_not_display_check.py",
+        "tests/account_and_settings_team_owner_payment_and_plan_charging_credit_payment_info_display_check.py",
+        "tests/account_and_settings_team_member_go_to_team_management_link_move.py",
+        "tests/account_and_settings_team_owner_payment_info_register_card_flow_check.py",
         "tests/account_and_settings_team_owner_payment_and_plan_payment_info_show_detail_link_move.py"
     ]
 
