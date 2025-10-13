@@ -79,7 +79,7 @@ def Chrome_Run_Main():
 
 
     #exit_code = pytest.main(test_files + ["-s", "-v", "--disable-warnings", "--junitxml=report.xml", "--alluredir=allure-results"])
-    exit_code = pytest.main(test_files + ["-s", "-v", "--disable-warnings", "--junitxml=report.xml"])
+    exit_code = pytest.main(test_files + ["-s", "-v", "--disable-warnings", "--junitxml=reports/report.xml"])
 
     if exit_code == 0:
         print("모든 테스트 성공")
