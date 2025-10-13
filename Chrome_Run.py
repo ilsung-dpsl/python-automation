@@ -52,7 +52,7 @@ def Chrome_Run_Main():
 #        "tests/mylist_team_share_detail_delete_not_displayed_check.py",
 #       "tests/mylist_detail_contact_delete_check.py",
 #        "tests/mylist_detail_contact_view_contacts_check.py",
-#        "tests/mylist_detail_freeplan_upgrade_myplan_modal_upgrade_myplan_click.py",
+        "tests/mylist_detail_freeplan_upgrade_myplan_modal_upgrade_myplan_click.py",
 #        "tests/team_management_free_invite_member_limit_check.py",
 #        "tests/team_management_enterprise_seat_full_charge_and_invite_member_limit_check.py",
 #        "tests/team_management_free_team_owner_addseat_click.py",
@@ -69,17 +69,17 @@ def Chrome_Run_Main():
 #        "tests/account_and_settings_team_owner_my_profile_leave_company_flow_check.py",
 #        "tests/account_and_settings_freeplan_my_profile_leave_company_flow_check.py",
 #        "tests/account_and_settings_company_info_no_company_affiliation_setup_check.py",
-        "tests/account_and_settings_freeplan_payment_and_plan_charging_credit_payment_info_not_display_check.py",
-        "tests/account_and_settings_team_member_payment_and_plan_charging_credit_payment_info_not_display_check.py",
-        "tests/account_and_settings_team_owner_payment_and_plan_charging_credit_payment_info_display_check.py",
-        "tests/account_and_settings_team_member_go_to_team_management_link_move.py",
-        "tests/account_and_settings_team_owner_payment_info_register_card_flow_check.py",
+#        "tests/account_and_settings_freeplan_payment_and_plan_charging_credit_payment_info_not_display_check.py",
+#        "tests/account_and_settings_team_member_payment_and_plan_charging_credit_payment_info_not_display_check.py",
+#        "tests/account_and_settings_team_owner_payment_and_plan_charging_credit_payment_info_display_check.py",
+#        "tests/account_and_settings_team_member_go_to_team_management_link_move.py",
+#        "tests/account_and_settings_team_owner_payment_info_register_card_flow_check.py",
         "tests/account_and_settings_team_owner_payment_and_plan_payment_info_show_detail_link_move.py"
     ]
 
 
-    exit_code = pytest.main(test_files + ["-s", "-v", "--disable-warnings", "--junitxml=report.xml", "--alluredir=allure-results"])
-
+    #exit_code = pytest.main(test_files + ["-s", "-v", "--disable-warnings", "--junitxml=report.xml", "--alluredir=allure-results"])
+    exit_code = pytest.main(test_files + ["-s", "-v", "--disable-warnings"])
 
     if exit_code == 0:
         print("모든 테스트 성공")
