@@ -1,5 +1,3 @@
-from httplib2 import ProxyInfo
-
 import config
 import re
 
