@@ -62,7 +62,7 @@ def Chrome_Run_Main():
         "tests/prospecting_quickview_contact_check.py",
         # 31번 - 퀵뷰(Quick view_contact) > view contact 정상 작동 여부 확인
         "tests/prospecting_quickview_contact_view_contacts_check.py",
-        # 32번 - 퀵뷰(Quick view_contact) > add to list 정상 작동 여부 확인\
+        # 32번 - 퀵뷰(Quick view_contact) > add to list 정상 작동 여부 확인
         "tests/prospecting_quickview_addtolist_flow.py",
         # 33번 - 퀵뷰(Quick view_contact) 회사 정보에서 회사명칭 클릭 시 해당 회사 페이지로 이동
         "tests/prospecting_quickview_companyname_link_move.py",

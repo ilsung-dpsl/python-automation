@@ -14,7 +14,7 @@ def browser_context_args():
 
 @pytest.fixture(scope="session")
 def browser(playwright_instance):
-    browser = playwright_instance.chromium.launch(headless=False)
+    browser = playwright_instance.chromium.launch(headless=False, slow_mo=300)
     yield browser
     browser.close()
 
