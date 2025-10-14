@@ -55,7 +55,7 @@ def Chrome_Run_Main():
         # 26번 - 리스트에 추가 정상 동작 확인
         "tests/prospecting_addtolist_flow_check.py",
         # 28번 - 회사 검색 후 View Employees 버튼 클릭 시 선택한 회사가 Company 필터 설정된 상태로 Prospecting 검색 결과 노출
-        "tests/prospecting_company_view_employees_check.py"
+        "tests/prospecting_company_view_employees_check.py",
         # 29번 - Contact 리스트 중 담당자 이름 클릭 시 담당자 상세 페이지로 이동
         "tests/prospecting_contacts_name_click_and_contact_detail_check.py",
         # 30번 -퀵뷰(Quick view_contact) 정상 노출
