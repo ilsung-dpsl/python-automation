@@ -4,7 +4,7 @@ import config
 
 
 def test_prospecting_insufficient_credit_modal_upgrade_my_plan_click(page):
-    print("----- 연락처 확인 시 크레딧이 부족할 경우 모달 노출 시 Upgrade my plan 버튼 클릭 시 플랜 페이지로 이동 테스트 시작 -----")
+    print("----- 23번 - 연락처 확인 시 크레딧이 부족할 경우 모달 노출 시 Upgrade my plan 버튼 클릭 시 플랜 페이지로 이동 테스트 시작 -----")
 
     page.goto("https://deepsales.com/ko/intro", wait_until="load", timeout=30000)
     page.get_by_role("button", name="로그인").click()

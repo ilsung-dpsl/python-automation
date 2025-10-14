@@ -2,7 +2,7 @@ import config
 import re
 
 def test_account_and_settings_company_info_no_company_affiliation_setup_check(page):
-    print("소속된 회사가 없을 경우, 회사 정보 > [설정하기] 버튼 노출 및 선택 시 회사 설정 페이지 이동 확인 테스트 시작 -----")
+    print("---- 72번 - 소속된 회사가 없을 경우, 회사 정보 > [설정하기] 버튼 노출 및 선택 시 회사 설정 페이지 이동 확인 테스트 시작 -----")
 
     page.goto("https://deepsales.com/ko/intro")
     page.get_by_role("button", name="로그인").click()

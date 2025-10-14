@@ -2,7 +2,7 @@ import config
 import re
 
 def test_discover_persona_setup_check(page):
-    print("----- 발견하기 최초 진입 시 퍼소나 설정 안내 모달 표시 및 퍼소나 설정 추가 확인 테스트 시작 -----")
+    print("----- 39번 - 발견하기 최초 진입 시 퍼소나 설정 안내 모달 표시 및 퍼소나 설정 추가 확인 테스트 시작 -----")
 
     page.goto("https://deepsales.com/ko/intro")
     page.get_by_role("button", name="로그인").click()

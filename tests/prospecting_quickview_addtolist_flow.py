@@ -2,7 +2,7 @@ import re
 import config
 
 def test_prospecting_quickview_addtolist_flow(page):
-    print("----- 퀵뷰 > 리스트에 추가 시 정상 동작 여부 확인 테스트 시작 -----")
+    print("----- 32번 - 퀵뷰 > 리스트에 추가 시 정상 동작 여부 확인 테스트 시작 -----")
 
     page.goto("https://deepsales.com/ko/intro")
     page.get_by_role("button", name="로그인").click()

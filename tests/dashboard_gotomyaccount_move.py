@@ -2,7 +2,7 @@ import config
 
 
 def test_dashboard_gotomyaccount_move(page):
-    print("----- Go to my account 버튼 클릭 시, Account & Setting > My account로 이동 테스트 시작 (한글) -----")
+    print("----- 15번 - Go to my account 버튼 클릭 시, Account & Setting > My account로 이동 테스트 시작 (한글) -----")
     page.goto("https://deepsales.com/ko/intro",wait_until="load", timeout=30000)
     page.get_by_role("button", name="로그인").click()
     page.wait_for_timeout(1000)

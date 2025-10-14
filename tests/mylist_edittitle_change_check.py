@@ -1,7 +1,7 @@
 import config
 
 def test_mylist_edittitle_change_check(page):
-    print("----- 마이리스트 > 임의 폴더 제목 편집 변경 확인 테스트 시작 -----")
+    print("----- 45번 - 마이리스트 > 임의 폴더 제목 편집 변경 확인 테스트 시작 -----")
 
     page.goto("https://deepsales.com/ko/intro")
     page.get_by_role("button", name="로그인").click()

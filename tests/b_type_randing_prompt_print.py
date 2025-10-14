@@ -1,7 +1,7 @@
 import re
 
 def test_b_type_randing_prompt_print(page):
-    print("----- B안 랜딩페이지 > 프롬프트 영역 확인 테스트 시작 ------")
+    print("----- 4번. B안 랜딩페이지 > 프롬프트 영역 확인 테스트 시작 ------")
     page.goto("https://deepsales.com/ko/search",wait_until="load", timeout=30000)
 
 

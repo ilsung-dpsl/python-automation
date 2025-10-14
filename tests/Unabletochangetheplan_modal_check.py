@@ -4,7 +4,7 @@ import config
 
 
 def test_unabletochangetheplan_modal_check(page):
-    print("------ 요금제 변경 불가 모달 출력 확인 및 팀오너 권한 확인 테스트 시작 ------")
+    print("------ 10번 - 요금제 변경 불가 모달 출력 확인 및 팀오너 권한 확인 테스트 시작 ------")
     page.goto("https://deepsales.com/ko/intro",wait_until="load", timeout=50000)
     page.get_by_role("button", name="로그인").click()
     page.wait_for_timeout(1000)

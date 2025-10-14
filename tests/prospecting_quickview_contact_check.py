@@ -1,7 +1,7 @@
 import config
 
 def test_prospecting_quickview_contact_check(page):
-    print("----- 탐색하기 > 임의 리드 > 퀵뷰 (Quick view contact) 노출 확인 테스트 시작 -----")
+    print("----- 30번 - 탐색하기 > 임의 리드 > 퀵뷰 (Quick view contact) 노출 확인 테스트 시작 -----")
 
     page.goto("https://deepsales.com/ko/intro")
     page.get_by_role("button", name="로그인").click()

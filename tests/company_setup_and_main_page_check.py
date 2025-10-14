@@ -2,7 +2,7 @@ import config
 import re
 
 def test_company_setup_and_main_page_check(page):
-    print("----- 회사 정보 > setup 버튼 및 메인 페이지 진입 테스트 시작 -----")
+    print("----- 63번 - 회사 정보 > setup 버튼 및 메인 페이지 진입 테스트 시작 -----")
 
     page.goto("https://deepsales.com/ko/intro")
     page.get_by_role("button", name="로그인").click()

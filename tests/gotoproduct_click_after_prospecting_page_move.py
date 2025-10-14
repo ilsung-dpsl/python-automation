@@ -4,7 +4,7 @@ import config
 
 
 def test_gotoproduct_click_after_prospecting_page_move(page):
-        print("---- 제품 이용하기 페이지 이동 확인 케이스 시작 ----")
+        print("---- 7번 - 제품 이용하기 페이지 이동 확인 케이스 시작 ----")
         page.goto("https://deepsales.com/ko/intro", wait_until="load", timeout=50000)
         page.get_by_role("button", name="로그인").click()
         page.wait_for_timeout(1000)

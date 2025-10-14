@@ -2,7 +2,7 @@
 import config
 
 def test_discover_freeplan_viewmore_click(page):
-    print("----- Free plan 사용자가 발견하기 > 더보기 선택 시 요금제 업그레이드 모달 노출 테스트 시작  -----")
+    print("----- 41번 - Free plan 사용자가 발견하기 > 더보기 선택 시 요금제 업그레이드 모달 노출 테스트 시작  -----")
 
     page.goto("https://deepsales.com/ko/intro")
     page.get_by_role("button", name="로그인").click()

@@ -2,7 +2,7 @@ import re
 import config
 
 def test_prospecting_contacts_name_click_and_contact_detail_check(page):
-    print("----- 탐색하기 > 성함 선택 후 담당자 상세 화면 이동 확인 테스트 시작 -----")
+    print("----- 29번 - 탐색하기 > 성함 선택 후 담당자 상세 화면 이동 확인 테스트 시작 -----")
 
     page.goto("https://deepsales.com/ko/intro")
     page.get_by_role("button", name="로그인").click()

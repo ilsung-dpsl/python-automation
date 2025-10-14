@@ -2,7 +2,7 @@ import config
 
 
 def test_prospecting_setup_your_account_move(page):
-    print("----- 검색 이력이 없는 신규 가입 사용자일때 Set up your account 노출 (한글) 테스트 시작 -----")
+    print("----- 16번 - 검색 이력이 없는 신규 가입 사용자일때 Set up your account 노출 (한글) 테스트 시작 -----")
     print("계정 정보: ilsung.baek+prd2@deepsales.com, PW: !deepsales@36")
 
     page.goto("https://deepsales.com/ko/intro",wait_until="load", timeout=30000)

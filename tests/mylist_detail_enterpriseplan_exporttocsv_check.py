@@ -2,7 +2,7 @@ import config
 import re
 
 def test_mylist_detail_enterpriseplan_exporttocsv_check(page):
-    print("----- 마이리스트 상세 > 유료회원 > csv 내보내기 시 미확인 연락처 포함 모달 및 크레딧 사용 메시지 출력 테스트 시작 -----")
+    print("----- 49번 - 마이리스트 상세 > 유료회원 > csv 내보내기 시 미확인 연락처 포함 모달 및 크레딧 사용 메시지 출력 테스트 시작 -----")
 
     page.goto("https://deepsales.com/ko/intro")
     page.get_by_role("button", name="로그인").click()

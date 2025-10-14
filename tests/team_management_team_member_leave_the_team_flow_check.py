@@ -2,7 +2,7 @@ import config
 import re
 
 def test_team_management_team_member_leave_the_team_flow_check(page):
-    print("----- (팀 멤버) 팀관리 > 팀 떠난 후 무료 회원 전환 및 15 크레딧 부여 확인 테스트 시작 -----")
+    print("----- 62번 - (팀 멤버) 팀관리 > 팀 떠난 후 무료 회원 전환 및 15 크레딧 부여 확인 테스트 시작 -----")
 
     page.goto("https://deepsales.com/ko/intro")
     page.get_by_role("button", name="로그인").click()

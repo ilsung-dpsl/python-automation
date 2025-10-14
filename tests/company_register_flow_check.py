@@ -4,7 +4,7 @@ import config
 import re
 
 def test_company_register_flow_check(page):
-    print("----- 회사 정보 메인 > 등록하기 -> 회사 등록 후 확인 테스트 시작 -----")
+    print("----- 64번 - 회사 정보 메인 > 등록하기 -> 회사 등록 후 확인 테스트 시작 -----")
 
     page.goto("https://deepsales.com/ko/intro")
     page.get_by_role("button", name="로그인").click()

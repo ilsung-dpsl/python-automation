@@ -1,7 +1,7 @@
 import config
 
 def test_prospecting_quickview_company_view_employees_check(page):
-    print("----- 퀵뷰(회사) > 직원 정보 확인 선택 시 탐색결과 반영 확인 테스트 시작 -----")
+    print("----- 38번 - 퀵뷰(회사) > 직원 정보 확인 선택 시 탐색결과 반영 확인 테스트 시작 -----")
 
     page.goto("https://deepsales.com/ko/intro")
     page.get_by_role("button", name="로그인").click()

@@ -2,7 +2,7 @@ import config
 import re
 
 def test_prospecting_quickview_contact_linkedin_move(page):
-    print("----- 탐색하기 > 퀵뷰 > 링크드인 선택 시 해당 링크드인 페이지 이동 확인 테스트 시작 -----")
+    print("----- 35번 - 탐색하기 > 퀵뷰 > 링크드인 선택 시 해당 링크드인 페이지 이동 확인 테스트 시작 -----")
 
     page.goto("https://deepsales.com/ko/intro")
     page.get_by_role("button", name="로그인").click()

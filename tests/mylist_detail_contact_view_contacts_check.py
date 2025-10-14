@@ -2,7 +2,7 @@ import config
 import re
 
 def test_mylist_detail_contact_view_contacts_check(page):
-    print("----- 마이리스트 상세 > 임의 연락처 > 연락처 확인 시 동작 확인 테스트 시작 -----")
+    print("----- 53번 - 마이리스트 상세 > 임의 연락처 > 연락처 확인 시 동작 확인 테스트 시작 -----")
 
     page.goto("https://deepsales.com/ko/intro")
     page.get_by_role("button", name="로그인").click()

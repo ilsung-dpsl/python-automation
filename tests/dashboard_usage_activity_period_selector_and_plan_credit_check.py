@@ -2,7 +2,7 @@ import config
 
 
 def test_dashboard_usage_activity_period_selector_and_plan_credit_check(page):
-    print("----- Usage Activity에 기간별 평균 크레딧 사용 활동 노출 현재 사용중인 요금제, 크레딧 정상 노출 확인 테스트 시작 -----")
+    print("----- 11번 - Usage Activity에 기간별 평균 크레딧 사용 활동 노출 현재 사용중인 요금제, 크레딧 정상 노출 확인 테스트 시작 -----")
     page.goto("https://deepsales.com/ko/intro",wait_until="load", timeout=30000)
     page.get_by_role("button", name="로그인").click()
     page.wait_for_timeout(1000)

@@ -4,7 +4,7 @@ import config
 import re
 
 def test_account_and_settings_my_profile_input_add_edit_flow_check(page):
-    print("----- 계정 및 설정 > 내 프로필 > 모든 정보 기업 후 저장 / 추가 / 수정 확인 테스트 시작 -----")
+    print("----- 67번 - 계정 및 설정 > 내 프로필 > 모든 정보 기업 후 저장 / 추가 / 수정 확인 테스트 시작 -----")
 
     page.goto("https://deepsales.com/ko/intro")
     page.get_by_role("button", name="로그인").click()

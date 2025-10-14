@@ -1,5 +1,5 @@
 def test_signupforfree_move(page):
-    print("--- 회원가입 페이지 이동 테스트 시작 ---")
+    print("--- 1번 - 회원가입 페이지 이동 테스트 시작 ---")
     page.goto("https://deepsales.com/ko/intro",wait_until="load", timeout=60000)
     page.locator("button:has-text('무료로 시작하기')").nth(1).click()
 

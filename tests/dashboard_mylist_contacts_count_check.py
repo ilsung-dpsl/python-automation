@@ -2,7 +2,7 @@ import config
 
 
 def test_dashboard_mylist_contacts_count_check(page):
-    print("----- My lists 영역에 저장한 연락처, 미확인 연락처 표시 확인 테스트 시작-----")
+    print("----- 14번 - My lists 영역에 저장한 연락처, 미확인 연락처 표시 확인 테스트 시작-----")
     page.goto("https://deepsales.com/ko/intro",wait_until="load", timeout=60000)
     page.get_by_role("button", name="로그인").click()
     page.wait_for_timeout(1000)

@@ -2,7 +2,7 @@ import config
 import re
 
 def test_mylist_detail_freeplan_exporttocsv_limit_check(page):
-    print("----- 무료 회원, 마이리스트 상세 > CSV 내보내기 시 요금제 업그레이드 모달 노출 테스트 시작 -----")
+    print("----- 48번 - 무료 회원, 마이리스트 상세 > CSV 내보내기 시 요금제 업그레이드 모달 노출 테스트 시작 -----")
     page.goto("https://deepsales.com/ko/intro")
     page.get_by_role("button", name="로그인").click()
     page.wait_for_timeout(1000)

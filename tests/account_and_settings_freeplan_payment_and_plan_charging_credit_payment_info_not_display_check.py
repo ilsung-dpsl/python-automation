@@ -2,7 +2,7 @@ import config
 import re
 
 def test_account_and_settings_freeplan_charging_credit_payment_info_not_display_check(page):
-    print("----- 무료회원(유료 결제 내역 있음) > 크레딧 충전하기 / 결제정보 미노출 확인 테스트 시작 -----")
+    print("----- 73번 - 무료회원(유료 결제 내역 있음) > 크레딧 충전하기 / 결제정보 미노출 확인 테스트 시작 -----")
 
     page.goto("https://deepsales.com/ko/intro")
     page.get_by_role("button", name="로그인").click()

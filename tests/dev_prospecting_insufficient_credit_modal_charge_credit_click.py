@@ -1,7 +1,7 @@
 
 
 def test_prospecting_insufficient_credit_modal_charge_credit_click(page):
-    print("----- 연락처 확인 시 크레딧이 부족할 경우 모달 노출 시 Charge credit 클릭 시 크레딧 충전 모달 노출 확인 테스트 시작 (DEV 기준으로 작성) -----")
+    print("----- 24번 - 연락처 확인 시 크레딧이 부족할 경우 모달 노출 시 Charge credit 클릭 시 크레딧 충전 모달 노출 확인 테스트 시작 (DEV 기준으로 작성) -----")
     page.goto("https://dev.deepsales.io/ko/intro", wait_until="load", timeout=30000)
     page.get_by_role("button", name="로그인").click()
     page.wait_for_timeout(1000)

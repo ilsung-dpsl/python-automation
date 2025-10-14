@@ -34,7 +34,7 @@ def compare_images(img1_path, img2_path, threshold=0.56):
 
 
 def test_prospecting_freeplan_revenue_funding_technologies_lock_check(page):
-    print("----- (Free 플랜) 탐색하기 > 필터 > 연간 매출 / 펀딩 / 기술 > 사용불가 이미지 체크 테스트 시작 -----")
+    print("----- 18번 - (Free 플랜) 탐색하기 > 필터 > 연간 매출 / 펀딩 / 기술 > 사용불가 이미지 체크 테스트 시작 -----")
     
     page.goto("https://deepsales.com/ko/intro",wait_until="load", timeout=50000)
     page.get_by_role("button", name="로그인").click()

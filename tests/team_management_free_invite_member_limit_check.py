@@ -2,7 +2,7 @@ import config
 import re
 
 def test_team_management_free_invite_member_limit_check(page):
-    print("----- 팀관리 > Free 계정 멤버 초대 시 초대 불가 모달 노출 확인 테스트 시작 -----")
+    print("----- 55번 - 팀관리 > Free 계정 멤버 초대 시 초대 불가 모달 노출 확인 테스트 시작 -----")
 
     page.goto("https://deepsales.com/ko/intro")
     page.get_by_role("button", name="로그인").click()

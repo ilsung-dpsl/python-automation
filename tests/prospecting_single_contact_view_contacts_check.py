@@ -2,7 +2,7 @@ import re
 import config
 
 def test_prospecing_single_contact_view_contacts_check(page):
-    print("----- 탐색하기 > 단일 연락처 > 연락처 확인 동작 확인 테스트 시작 -----")
+    print("----- 22번 - 탐색하기 > 단일 연락처 > 연락처 확인 동작 확인 테스트 시작 -----")
 
     page.goto("https://deepsales.com/ko/intro", wait_until="load", timeout=30000)
     page.get_by_role("button", name="로그인").click()

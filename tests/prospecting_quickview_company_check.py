@@ -32,7 +32,7 @@ def compare_images(img1_path, img2_path, threshold=0.60):
 
 
 def test_prospecting_quickview_company_check(page):
-    print("----- 퀵뷰(회사) 정보 노출 확인 테스트 시작 -----")
+    print("----- 36번 - 퀵뷰(Quickview_company) 정보 노출 확인 테스트 시작 -----")
 
     page.goto("https://deepsales.com/ko/intro")
     page.get_by_role("button", name="로그인").click()

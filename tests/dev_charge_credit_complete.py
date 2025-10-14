@@ -1,7 +1,7 @@
 import re
 
 def test_charge_credit_complete(page):
-    print("----- 크레딧 충전하기 > 충전 완료 테스트 시작 > DEV 기준으로 작성 -----")
+    print("----- 25번 - 크레딧 충전하기 > 충전 완료 테스트 시작 > DEV 기준으로 작성 -----")
 
     page.goto("https://dev.deepsales.io/ko/intro", wait_until="load", timeout=30000)
     page.get_by_role("button", name="로그인").click()

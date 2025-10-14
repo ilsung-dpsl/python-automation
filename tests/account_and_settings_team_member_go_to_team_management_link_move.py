@@ -2,7 +2,7 @@ import config
 import re
 
 def test_account_and_settings_team_member_go_to_team_management_link_move(page):
-    print("----- 팀멤버 > 결제 및 요금제 > 팀 관리로 이동 노출 및 링크 이동 확인 테스트 시작 -----")
+    print("----- 76번 - 팀멤버 > 결제 및 요금제 > 팀 관리로 이동 노출 및 링크 이동 확인 테스트 시작 -----")
 
     page.goto("https://deepsales.com/ko/intro")
     page.get_by_role("button", name="로그인").click()

@@ -1,7 +1,7 @@
 import config
 
 def test_prospecting_company_companyname_click_and_company_info_move(page):
-    print("----- 회사 리스트 중 회사 이름 선택 시 회사 상세페이지 이동 확인 테스트 시작 -----")
+    print("----- 34번 - 회사 리스트 중 회사 이름 선택 시 회사 상세페이지 이동 확인 테스트 시작 -----")
 
     page.goto("https://deepsales.com/ko/intro")
     page.get_by_role("button", name="로그인").click()

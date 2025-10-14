@@ -2,7 +2,7 @@ import config
 import re
 
 def test_login(page):
-    print("--- 로그인 테스트 시작 ---")
+    print("--- 3번 - 로그인 테스트 시작 ---")
     page.goto("https://deepsales.com/ko/search",wait_until="load", timeout=50000)
     page.get_by_role("button", name="로그인").click()
     page.wait_for_timeout(1000)

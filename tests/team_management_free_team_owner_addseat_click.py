@@ -2,7 +2,7 @@ import config
 import re
 
 def test_team_management_free_team_owner_addseat_click(page):
-    print("팀 관리 > Free / Team 오너 계정으로 [좌석 추가] 선택 시 요금 페이지 이동 확인 테스트 시작")
+    print("---- 57번 - 팀 관리 > Free / Team 오너 계정으로 [좌석 추가] 선택 시 요금 페이지 이동 확인 테스트 시작 ----")
 
     page.goto("https://deepsales.com/ko/intro")
     page.get_by_role("button", name="로그인").click()

@@ -2,7 +2,7 @@ import config
 import re
 
 def test_team_management_team_owner_other_team_member_invite_limit_check(page):
-    print("----- 팀관리 > 팀오너 계정에서, 다른 팀 초대된 멤버 초대 시 팀 초대 불가 모달 노출 확인 테스트 시작-----")
+    print("----- 59번 - 팀관리 > 팀오너 계정에서, 다른 팀 초대된 멤버 초대 시 팀 초대 불가 모달 노출 확인 테스트 시작-----")
 
     page.goto("https://deepsales.com/ko/intro")
     page.get_by_role("button", name="로그인").click()

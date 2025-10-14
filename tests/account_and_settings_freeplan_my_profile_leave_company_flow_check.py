@@ -2,7 +2,7 @@ import config
 import re
 
 def test_account_and_settings_freeplan_my_profile_leave_company_flow_check(page):
-    print("----- 계정 및 설정 > 팀오너가 아닌 경우 > 내 프로필 > 소속회사 떠나기 플로우 확인 테스트 시작 -----")
+    print("----- 71번 - 계정 및 설정 > 팀오너가 아닌 경우 > 내 프로필 > 소속회사 떠나기 플로우 확인 테스트 시작 -----")
 
     page.goto("https://deepsales.com/ko/intro")
     page.get_by_role("button", name="로그인").click()

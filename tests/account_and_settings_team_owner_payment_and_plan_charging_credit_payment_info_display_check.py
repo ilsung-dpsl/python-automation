@@ -2,7 +2,7 @@ import config
 import re
 
 def test_account_and_settings_team_owner_payment_and_plan_charging_credit_payment_info_display_check(page):
-    print("----- 유료 회원(팀오너) > 결제 및 요금제 > 크레딧 충전하기 / 결제 정보 영역 노출 확인 테스트 시작 -----")
+    print("----- 75번 - 유료 회원(팀오너) > 결제 및 요금제 > 크레딧 충전하기 / 결제 정보 영역 노출 확인 테스트 시작 -----")
 
     page.goto("https://deepsales.com/ko/intro")
     page.get_by_role("button", name="로그인").click()

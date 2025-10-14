@@ -1,7 +1,7 @@
 import config
 
 def test_mylist_team_share_detail_move_to_list_not_displayed_check(page):
-    print("----- 마이리스트 상세 (팀공유) > 리스트로 이동 버튼 미노출 확인 테스트 시작 -----")
+    print("----- 50번 - 마이리스트 상세 (팀공유) > 리스트로 이동 버튼 미노출 확인 테스트 시작 -----")
 
     page.goto("https://deepsales.com/ko/intro")
     page.get_by_role("button", name="로그인").click()

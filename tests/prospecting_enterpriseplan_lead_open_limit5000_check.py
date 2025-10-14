@@ -4,7 +4,7 @@ import config
 
 
 def test_prospecting_enterpriseplan_lead_open_limit5000_check(page):
-    print("----- Enterprise 회원이 검색 결과 리스트에서 5000개 이상 연락처 탐색 시 업그레이드 모달 노출 확인 테스트 시작 -----")
+    print("----- 21번 - Enterprise 회원이 검색 결과 리스트에서 5000개 이상 연락처 탐색 시 업그레이드 모달 노출 확인 테스트 시작 -----")
 
     page.goto("https://deepsales.com/ko/intro",wait_until="load", timeout=30000)
     page.get_by_role("button", name="로그인").click()

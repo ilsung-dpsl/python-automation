@@ -41,7 +41,7 @@ def test_signupforfree_complete(page):
     """
     :type page: object
     """
-    print("----- 회원가입 완료 스크립트 테스트 시작 -----")
+    print("----- 2번 - 회원가입 완료 스크립트 테스트 시작 -----")
 
     page.goto("https://deepsales.com/ko/intro",wait_until="load", timeout=30000)
 #    page.goto("https://dev.deepsales.io/ko/intro",wait_until="load", timeout=30000)

@@ -1,7 +1,7 @@
 import config
 
 def test_discover_industry_and_title_search(page):
-    print("----- 발견하기 > 산업군 + 타이틀 문구 키워드 검색 테스트 시작 -----")
+    print("----- 42번 - 발견하기 > 산업군 + 타이틀 문구 키워드 검색 테스트 시작 -----")
 
     page.goto("https://deepsales.com/ko/intro")
     page.get_by_role("button", name="로그인").click()

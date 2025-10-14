@@ -2,7 +2,7 @@ import config
 import re
 
 def test_mylist_create_list_check(page):
-    print("----- 마이리스트 > 리스트 생성 확인 테스트 시작 -----")
+    print("----- 47번 - 마이리스트 > 리스트 생성 확인 테스트 시작 -----")
 
     page.goto("https://deepsales.com/ko/intro")
     page.get_by_role("button", name="로그인").click()

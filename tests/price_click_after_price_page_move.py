@@ -1,5 +1,5 @@
 def test_price_click_after_price_page_move(page):
-    print("---- 요금제 및 결제 페이지 이동 확인 케이스 시작 ----")
+    print("---- 8번 - 요금제 및 결제 페이지 이동 확인 케이스 시작 ----")
     page.goto("https://deepsales.com/ko/intro",wait_until="load", timeout=50000)
     page.wait_for_timeout(1000)
     page.get_by_role("banner").get_by_role("link", name="가격").click()

@@ -3,7 +3,7 @@ import re
 
 def test_mylist_freeplan_exporttocsv_limit_check(page):
 
-    print("----- 마이리스트 > Free 플랜 사용자 csv 내보내기 시 요금제 제한 안내 모달 노출 확인 테스트 시작 -----")
+    print("----- 44번 - 마이리스트 > Free 플랜 사용자 csv 내보내기 시 요금제 제한 안내 모달 노출 확인 테스트 시작 -----")
 
     page.goto("https://deepsales.com/ko/intro")
     page.get_by_role("button", name="로그인").click()

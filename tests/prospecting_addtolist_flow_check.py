@@ -2,7 +2,7 @@ import config
 import re
 
 def test_prospecting_addtolist_flow_check(page):
-    print("----- 탐색하기 > 리스트에 추가 동작 확인 테스트 시작 -----")
+    print("----- 26번 - 탐색하기 > 리스트에 추가 동작 확인 테스트 시작 -----")
 
     page.goto("https://deepsales.com/ko/intro")
     page.get_by_role("button", name="로그인").click()

@@ -2,7 +2,7 @@ import config
 import re
 
 def test_company_register_for_a_new_company_flow_check(page):
-    print("----- 회사 정보 > 회사 정보 생성 페이지에서, 필수 정보 정상 입력 확인 테스트 시작 -----")
+    print("----- 65번 - 회사 정보 > 회사 정보 생성 페이지에서, 필수 정보 정상 입력 확인 테스트 시작 -----")
 
     page.goto("https://deepsales.com/ko/intro")
     page.get_by_role("button", name="로그인").click()

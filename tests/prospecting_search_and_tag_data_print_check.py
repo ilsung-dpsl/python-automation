@@ -4,7 +4,7 @@ import config
 
 
 def test_prospecting_search_and_tag_data_print_check(page):
-    print("----- AI 키워드 검색 후, Industry 필터에 산업군 추천 태그 노출, 필터 값, 결과 값 정상 작동 확인 (한글) 테스트 시작 ------")
+    print("----- 17번 - AI 키워드 검색 후, Industry 필터에 산업군 추천 태그 노출, 필터 값, 결과 값 정상 작동 확인 (한글) 테스트 시작 ------")
     page.goto("https://deepsales.com/ko/intro", wait_until="load", timeout=50000)
 
     page.get_by_role("button", name="로그인").click()

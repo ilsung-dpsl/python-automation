@@ -2,7 +2,7 @@ import config
 import re
 
 def test_account_and_settings_team_owner_payment_and_plan_payment_info_show_detail_link_move(page):
-    print("----- 유료회원 (팀오너) > 결제 및 요금제 > 결제 정보 > 상세정보 표시 선택 시 결제 정보 페이지 이동 확인 테스트 시작 -----")
+    print("----- 78번 - 유료회원 (팀오너) > 결제 및 요금제 > 결제 정보 > 상세정보 표시 선택 시 결제 정보 페이지 이동 확인 테스트 시작 -----")
 
     page.goto("https://deepsales.com/ko/intro")
     page.get_by_role("button", name="로그인").click()

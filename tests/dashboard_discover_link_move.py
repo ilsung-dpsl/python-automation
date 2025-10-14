@@ -2,7 +2,7 @@ import config
 
 
 def test_dashboard_discover_link_move(page):
-    print("----- 대시보드 > 발행일 기준 최신 상위 6개 Discover 노출, 클릭 시 Discover 항목 선택 결과로 연결 테스트 시작 -----")
+    print("----- 13번 - 대시보드 > 발행일 기준 최신 상위 6개 Discover 노출, 클릭 시 Discover 항목 선택 결과로 연결 테스트 시작 -----")
     page.goto("https://deepsales.com/ko/intro",wait_until="load", timeout=30000)
     page.get_by_role("button", name="로그인").click()
     page.wait_for_timeout(1000)

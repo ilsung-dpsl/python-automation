@@ -30,7 +30,7 @@ def compare_images(img1_path, img2_path, threshold=0.65):
     return similarity >= threshold
 
 def test_prospecting_quickview_companyname_link_move(page):
-    print("------ 탐색하기 > 퀵뷰 > 회사정보 > 회사명칭 선택 후 해당 회사페이지 이동 테스트 시작 -----")
+    print("------ 33번 - 탐색하기 > 퀵뷰 > 회사정보 > 회사명칭 선택 후 해당 회사페이지 이동 테스트 시작 -----")
 
     page.goto("https://deepsales.com/ko/intro")
     page.get_by_role("button", name="로그인").click()
