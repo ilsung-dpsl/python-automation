@@ -1,0 +1,5 @@
+# .venv 폴더 전체를 무시
+.venv/
+
+# 하지만 .venv/images 폴더와 그 안의 내용물은 무시하지 않음
+!/.venv/images/
