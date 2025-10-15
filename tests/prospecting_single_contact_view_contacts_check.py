@@ -30,7 +30,7 @@ def test_prospecting_single_contact_view_contacts_check(page):
     while current_page <= max_pages:
         page.wait_for_timeout(5000)
 
-        print(f"🔍 탐색하기 {current_page} 페이지에서 '연락처 확인' 버튼 찾는 중...")
+        print(f"[돋보기] 탐색하기 {current_page} 페이지에서 '연락처 확인' 버튼 찾는 중...")
         buttons = page.locator("button:has-text('연락처 확인')")
 
         found = False
