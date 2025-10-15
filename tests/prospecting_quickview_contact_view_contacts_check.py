@@ -48,7 +48,7 @@ def test_prospecting_quickview_contact_view_contacts_check(page):
             print(f"연락처 확인 버튼 활성화 여부 : {test_check}")
 
             if row.is_visible():
-                print(f"👉 {row_current}번째 행에서 연락처 확인 버튼 발견!")
+                print(f"[->] {row_current}번째 행에서 연락처 확인 버튼 발견!")
 
                 row_location_current = row_current - 1
 
@@ -88,12 +88,12 @@ def test_prospecting_quickview_contact_view_contacts_check(page):
                         page.wait_for_timeout(2000)
                         #assert False == page.locator("section button:has-text('확인됨')").nth(0).is_visible(), \
                         #    "퀵뷰(연락처) > 확인됨 비활성화 처리 안됨 - 퀵뷰 연락처 확인 실패 3"
-                        print("✅ 팝업 내 연락처 확인 버튼 클릭 완료")
+                        print("[V] 팝업 내 연락처 확인 버튼 클릭 완료")
                     else:
-                        print("⚠️ 팝업 내 버튼이 없습니다.")
+                        print("[!] 팝업 내 버튼이 없습니다.")
                         raise Exception("퀵뷰 > 이메일 연락처 > [연락처 확인] 버튼 없음 -> 퀵뷰 연락처 확인 실패 4")
                 except TimeoutError:
-                    print("❌ 팝업이 열리지 않았습니다 (Timeout)")
+                    print("[X] 팝업이 열리지 않았습니다 (Timeout)")
                     raise Exception("퀵뷰가 열리지 않았음 -> 퀵뷰 연락처 확인 실패 5")
                 found = True
                 break  # 찾았으면 더 이상 탐색 안 함
@@ -114,16 +114,16 @@ def test_prospecting_quickview_contact_view_contacts_check(page):
             if next_button.is_visible():
                 page.wait_for_timeout(2000)
                 next_button.click()
-                print("➡️ 다음 페이지로 이동")
+                print("[->] 다음 페이지로 이동")
                 page.wait_for_timeout(3000)
             else:
-                print("❌ 다음 버튼이 비활성화됨")
+                print("[X] 다음 버튼이 비활성화됨")
                 break
         except:
-            print("❌ 다음 버튼을 찾을 수 없습니다.")
+            print("[X] 다음 버튼을 찾을 수 없습니다.")
             #continue
             break
 
     # 결과 처리
     if not found:
-        raise Exception("❌ 테스트 실패: 4페이지 모두 확인했지만 '연락처 확인' 버튼을 찾지 못했습니다.")
+        raise Exception("[X] 테스트 실패: 4페이지 모두 확인했지만 '연락처 확인' 버튼을 찾지 못했습니다.")
