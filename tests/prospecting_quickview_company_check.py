@@ -12,12 +12,12 @@ def compare_images(img1_path, img2_path, threshold=0.60):
     img2 = cv2.imread(img2_path)
 
     if img1 is None or img2 is None:
-        print("❌ 이미지 파일 로드 실패")
+        print("[X] 이미지 파일 로드 실패")
         return False
 
     # 크기가 다르면 비교 전 resize
     if img1.shape != img2.shape:
-        print("⚠ 이미지 크기 불일치. img2를 img1 크기로 resize합니다.")
+        print("[!] 이미지 크기 불일치. img2를 img1 크기로 resize합니다.")
         img2 = cv2.resize(img2, (img1.shape[1], img1.shape[0]))
 
     # 이미지 차이 계산
@@ -26,7 +26,7 @@ def compare_images(img1_path, img2_path, threshold=0.60):
     total_pixels = diff.size
     similarity = 1 - (non_zero / total_pixels)
 
-    print(f"🔍 이미지 유사도: {similarity * 100:.2f}%")
+    print(f"[돋보기] 이미지 유사도: {similarity * 100:.2f}%")
     return similarity >= threshold
 
 
@@ -59,6 +59,33 @@ def test_prospecting_quickview_company_check(page):
 #    with page.expect_popup() as page1_info:
 #        page.get_by_role("article").get_by_text("Corporate Travel Services").click()
 #    page1 = page1_info.value
+
+    page1.wait_for_timeout(3000)
+
+    svg_element = page1.locator("img").nth(1)
+
+    # 탐색하기 > 퀵뷰 (회사) > 회사 로고 이미지 확인
+    if svg_element:
+        svg_element.scroll_into_view_if_needed()
+
+        test_capture_path = ".venv/images/svg_company_info_logo1.png"
+        svg_element.screenshot(path=test_capture_path)
+        print(f"[저장] SVG 캡처 저장: {test_capture_path}")
+
+        # [V] 기준 이미지와 비교
+        reference_path = ".venv/images/svg_company_info_logo.png"
+        is_same = compare_images(test_capture_path, reference_path)
+
+        if is_same:
+            print("[V] 회사정보 페이지 > 회사 로고 SVG가 기준 이미지와 일치합니다. > ")
+        else:
+            print("[X] 회사정보 페이지 > 회사 로고 SVG가 기준 이미지와 다릅니다.")
+            raise Exception("회사정보 페이지 > 회사 로고 SVG SVG가 기준 이미지와 다름 - 해당 회사정보 페이지 이동 실패 1")
+    else:
+        print("[X] SVG 요소를 찾지 못했습니다.")
+
+
+
 
     assert "Corporate Travel Services" == page.get_by_role("article").get_by_text(
         "Corporate Travel Services").inner_text(), \
