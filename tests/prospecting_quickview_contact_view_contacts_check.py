@@ -59,7 +59,7 @@ def test_prospecting_quickview_contact_view_contacts_check(page):
                     page.wait_for_timeout(3000)
                     print(f"Kuwait next : {row_location_current + 1}")
 
-                print("🟢 해당 리드 행 클릭하여 상세정보 열기")
+                print("[O] 해당 리드 행 클릭하여 상세정보 열기")
 
                 # 오른쪽 팝업 대기
                 try:
