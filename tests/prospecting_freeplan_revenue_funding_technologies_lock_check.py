@@ -49,6 +49,7 @@ def test_prospecting_freeplan_revenue_funding_technologies_lock_check(page):
 #   page.locator("div:nth-child(21) > .flex.justify-between > div:nth-child(2) > svg").first.click()
 #   page.locator("div:nth-child(23) > .flex.justify-between > div:nth-child(2) > svg").first.click()
 
+    #20241015 - 필터 > 연간 매출 > 자물쇠 아이콘 코드 위치 수정
     svg_element = page.query_selector("div:nth-child(9) > div > div:nth-child(2) > svg")
     svg_element_2 = page.query_selector("div:nth-child(21) > div > div:nth-child(2) > svg")
     svg_element_3 = page.query_selector("div:nth-child(23) > div > div:nth-child(2) > svg")
@@ -59,7 +60,7 @@ def test_prospecting_freeplan_revenue_funding_technologies_lock_check(page):
 
         test_capture_path = ".venv/images/svg_prospecitng_revenue_lock1.png"
         svg_element.screenshot(path=test_capture_path)
-        print(f"📸 SVG 캡처 저장: {test_capture_path}")
+        print(f"[저장] SVG 캡처 저장: {test_capture_path}")
 
         # [V] 기준 이미지와 비교
         reference_path = ".venv/images/svg_prospecting_revenue_lock.png"

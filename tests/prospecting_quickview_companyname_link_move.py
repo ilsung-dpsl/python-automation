@@ -67,19 +67,19 @@ def test_prospecting_quickview_companyname_link_move(page):
     if svg_element:
         svg_element.scroll_into_view_if_needed()
 
-        test_capture_path = ".venv/images/svg_quickview_company_company_logo1.png"
+        test_capture_path = ".venv/images/svg_company_info_logo1.png"
         svg_element.screenshot(path=test_capture_path)
         print(f"[저장] SVG 캡처 저장: {test_capture_path}")
 
         # [V] 기준 이미지와 비교
-        reference_path = ".venv/images/svg_quickview_company_company_logo.png"
+        reference_path = ".venv/images/svg_company_info_logo.png"
         is_same = compare_images(test_capture_path, reference_path)
 
         if is_same:
-            print("[V] 탐색하기 > 퀵뷰 (Company) > 회사 로고 SVG가 기준 이미지와 일치합니다. > ")
+            print("[V] 회사 정보 페이지 > 회사 로고 SVG가 기준 이미지와 일치합니다. > ")
         else:
-            print("[X] 탐색하기 > 퀵뷰 (Company) > 회사 로고 SVG가 기준 이미지와 다릅니다.")
-            raise Exception("탐색하기 > 퀵뷰 (Company) > 회사 로고 SVG SVG가 기준 이미지와 다름 - 해당 회사정보 페이지 이동 실패 1")
+            print("[X] 회사 정보 페이지 > 회사 로고 SVG가 기준 이미지와 다릅니다.")
+            raise Exception("회사 정보 페이지 > 회사 로고 SVG SVG가 기준 이미지와 다름 - 해당 회사정보 페이지 이동 실패 1")
     else:
         print("[X] SVG 요소를 찾지 못했습니다.")
 

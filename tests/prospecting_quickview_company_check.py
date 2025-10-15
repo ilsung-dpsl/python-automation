@@ -56,9 +56,9 @@ def test_prospecting_quickview_company_check(page):
     #20250930 - 탐색하기 ui 변경으로 인한 2번째 회사 리드 선택 코드 수정
     page.get_by_text("Corporate Travel Serviceswww.").click()
     page.wait_for_timeout(3000)
-#    with page.expect_popup() as page1_info:
-#        page.get_by_role("article").get_by_text("Corporate Travel Services").click()
-#    page1 = page1_info.value
+    with page.expect_popup() as page1_info:
+        page.get_by_role("article").get_by_text("Corporate Travel Services").click()
+    page1 = page1_info.value
 
     page1.wait_for_timeout(3000)
 
@@ -68,35 +68,35 @@ def test_prospecting_quickview_company_check(page):
     if svg_element:
         svg_element.scroll_into_view_if_needed()
 
-        test_capture_path = ".venv/images/svg_company_info_logo1.png"
+        test_capture_path = ".venv/images/svg_quickview_company_company_logo1.png"
         svg_element.screenshot(path=test_capture_path)
         print(f"[저장] SVG 캡처 저장: {test_capture_path}")
 
         # [V] 기준 이미지와 비교
-        reference_path = ".venv/images/svg_company_info_logo.png"
+        reference_path = ".venv/images/svg_quickview_company_company_logo.png"
         is_same = compare_images(test_capture_path, reference_path)
 
         if is_same:
-            print("[V] 회사정보 페이지 > 회사 로고 SVG가 기준 이미지와 일치합니다. > ")
+            print("[V] 퀵뷰 (회사) > 회사 로고 SVG가 기준 이미지와 일치합니다. > ")
         else:
-            print("[X] 회사정보 페이지 > 회사 로고 SVG가 기준 이미지와 다릅니다.")
-            raise Exception("회사정보 페이지 > 회사 로고 SVG SVG가 기준 이미지와 다름 - 해당 회사정보 페이지 이동 실패 1")
+            print("[X] 퀵뷰 (회사) > 회사 로고 SVG가 기준 이미지와 다릅니다.")
+            raise Exception("퀵뷰 (회사) > 회사 로고 SVG SVG가 기준 이미지와 다름 - 해당 회사정보 페이지 이동 실패 1")
     else:
         print("[X] SVG 요소를 찾지 못했습니다.")
 
-
-
+    print("퀵뷰 (회사) > 회사 로고 이미지 비교 성공")
 
     assert "Corporate Travel Services" == page.get_by_role("article").get_by_text(
         "Corporate Travel Services").inner_text(), \
-        "퀵뷰 (회사) > 회사 명칭 확인 실패 - 퀵뷰 노출 확인 실패 1"
+        "퀵뷰 (회사) > 회사 명칭 확인 실패 - 퀵뷰 노출 확인 실패 2"
     assert "1996" == page.get_by_text("1996").inner_text(), \
-        "퀵뷰 (회사) > 설립 연도 확인 실패 - 퀵뷰 노출 확인 실패 2"
+        "퀵뷰 (회사) > 설립 연도 확인 실패 - 퀵뷰 노출 확인 실패 3"
     # assert "Administrative and Support Services" == page.get_by_role("article").get_by_text("Administrative and Support").inner_text(), \
     #    "퀵뷰 (회사) > 산업군 확인 실패 - 퀵뷰 노출 확인 실패 2"
     assert "직원 정보 확인" == page.get_by_role("article").get_by_role("button", name="직원 정보 확인").inner_text(), \
-        "퀵뷰 (회사) > [직원정보확인] 버튼 출력 실패 - 퀵뷰 노출 확인 실패 3"
+        "퀵뷰 (회사) > [직원정보확인] 버튼 출력 실패 - 퀵뷰 노출 확인 실패 4"
 
+    print("퀵뷰 (회사) > 회사 명칭 / 설립 연도 / 직원정보확인 모두 확인 완료")
     print("----- 퀵뷰(회사) 정보 노출 확인 테스트 시작 -> 성공 -----")
 
 """
@@ -110,16 +110,16 @@ def test_prospecting_quickview_company_check(page):
         svg_element.screenshot(path=test_capture_path)
         print(f"📸 SVG 캡처 저장: {test_capture_path}")
 
-        # ✅ 기준 이미지와 비교
+        # [V] 기준 이미지와 비교
         reference_path = ".venv/images/svg_quickview_company_logo.png"
         is_same = compare_images(test_capture_path, reference_path)
 
         if is_same:
-            print("✅ 탐색하기 > 퀵뷰(회사) > 회사 로고 SVG가 기준 이미지와 일치합니다.")
+            print("[V] 탐색하기 > 퀵뷰(회사) > 회사 로고 SVG가 기준 이미지와 일치합니다.")
         else:
-            print("❌ 탐색하기 > 퀵뷰(회사) > 회사 로고 SVG가 기준 이미지와 다릅니다.")
+            print("[X] 탐색하기 > 퀵뷰(회사) > 회사 로고 SVG가 기준 이미지와 다릅니다.")
             raise Exception("탐색하기 > 퀵뷰(회사) > 회사 로고 SVG가 기준 이미지와 다름 > 테스트 실패")
     else:
-        print("❌ SVG 요소를 찾지 못했습니다.")
+        print("[X] SVG 요소를 찾지 못했습니다.")
 """
 
