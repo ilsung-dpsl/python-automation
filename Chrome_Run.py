@@ -69,7 +69,7 @@ def Chrome_Run_Main():
         # 34번 - 회사 리스트 중 회사 이름 클릭 시 회사 상세 페이지로 이동
         "tests/prospecting_company_companyname_click_and_company_info_move.py",
         # 35번 - Quick view_contact Linkedin 클릭 시 연결된 링크드인 URL로 이동
-        #"tests/prospecting_quickview_contact_linkedin_move.py",
+        "tests/prospecting_quickview_contact_linkedin_move.py",
         # 36번 - Quick view_company 정상 노출
         "tests/prospecting_quickview_company_check.py",
         # 37번 - 퀵뷰(Quick view_company) 회사 정보에서 회사명칭 클릭 시 해당 회사 페이지로 이동
