@@ -21,8 +21,8 @@ def test_prospecting_insufficient_credit_modal_upgrade_my_plan_click(page):
 
     page.wait_for_timeout(5000)
 
-    #20250930 - 연락처 확인 리드 재변경 > 첫번쨰 페이지 2번째 리드로 변경
-    page.locator("div").filter(has_text=re.compile(r"^Efren Macasaet솔루션 아키텍트연락처 확인WalmartUnited StatesRetail$")).get_by_role("button").click()
+    #20251016 - 연락처 확인 리드 재변경 > 첫번쨰 페이지 3번째 리드로 변경
+    page.locator("div").filter(has_text=re.compile(r"^Tony Gonzales어소시에이트연락처 확인WalmartUnited StatesRetail$")).get_by_role("button").click()
     page.wait_for_timeout(4000)
     page.get_by_role("button", name="요금제 업그레이드").click()
     page.wait_for_timeout(3000)
