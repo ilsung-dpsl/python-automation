@@ -27,8 +27,9 @@ def test_unabletochangetheplan_modal_check(page):
     page.get_by_role("link").filter(has_text=re.compile(r"^$")).nth(1).click()
     page.wait_for_timeout(1000)
 
-    page.get_by_role("banner").get_by_role("link", name="가격").click()
-    page.wait_for_timeout(1000)
+    # 20251024 - 가격 페더 삭제로 인해, 가격 페이지 접근 URL로 코드 수정
+    page.goto("https://deepsales.com/ko/pricing/standard", wait_until="load", timeout=50000)
+    page.wait_for_timeout(2000)
 
     page.get_by_role("button", name="플랜 변경").nth(2).click()
     page.wait_for_timeout(1000)

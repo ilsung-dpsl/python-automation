@@ -5,7 +5,8 @@ def test_b_type_randing_bottom_recommendation_keyword_check(page):
     page.wait_for_timeout(2000)
     #20251021 - 동작별 2, 0.5초 대기 코드 추가
     page.get_by_text("일본의 패션 브랜드 상품기획자에 대해 알려줘").click()
-    page.wait_for_timeout(500)
+    #20251024 - 동작별 2, 0.5초 -> 1초 대기 코드 수정
+    page.wait_for_timeout(1000)
     page.get_by_role("textbox").click()
     page.wait_for_timeout(1000)
 

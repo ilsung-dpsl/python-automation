@@ -77,8 +77,9 @@ def test_account_and_settings_my_profile_input_add_edit_flow_check(page):
 
     print("내 프로필 > 직급 > 매니저 설정 완료")
 
-    #20251001 - 직함 입력창 선택 코드 수정
-    page.locator("[id=\":r18:-form-item\"] > .flex.flex-col.gap-5 > .flex.flex-col > .relative > div > .css-b62m3t-container > .border > .text-base > .text-FG-Primary.css-124rwol").click()
+    #20251024 - 직함 입력창 > v 버튼 누르는 것으로 코드 변경
+    #page.locator("[id=\":r18:-form-item\"] > .flex.flex-col.gap-5 > .flex.flex-col > .relative > div > .css-b62m3t-container > .border > .text-base > .text-FG-Primary.css-124rwol").click()
+    page.locator("div").filter(has_text=re.compile(r"^EnglishManager언어추가$")).locator("svg").nth(1).click()
     page.wait_for_timeout(1000)
 
     page.locator("#react-select-7-input").fill("manager")
@@ -92,8 +93,9 @@ def test_account_and_settings_my_profile_input_add_edit_flow_check(page):
     page.get_by_role("radio", name="남성").click()
     page.wait_for_timeout(1000)
 
-    #20251001 - 나라(국적) 입력창 선택 코드 수정
-    page.locator("[id=\":r1i:-form-item\"] > .css-b62m3t-container > .border > .text-base > .text-FG-Primary.css-124rwol").dblclick()
+    #20251024 - 나라(국적) 입력창 > [v] 선택하는 코드로 변경
+    #page.locator("[id=\":r1i:-form-item\"] > .css-b62m3t-container > .border > .text-base > .text-FG-Primary.css-124rwol").dblclick()
+    page.locator("div").filter(has_text=re.compile(r"^나라\(국적\)\*대한민국$")).locator("svg").click()
     page.wait_for_timeout(1000)
 
     page.locator(

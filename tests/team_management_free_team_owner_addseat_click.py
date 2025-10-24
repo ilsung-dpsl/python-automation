@@ -36,8 +36,8 @@ def test_team_management_free_team_owner_addseat_click(page):
 
     print("Free > 요금제 페이지 진입 완료")
 
-    #20251001 - A안 랜딩페이지 > 상단 > 탐색하기 선택 코드 수정
-    page.get_by_role("banner").get_by_role("link", name="탐색하기").click()
+    #20251024 - 헤더 > 탐색하기 삭제로 인하 제품 이용하기 버튼 이동으로 변경
+    page.get_by_role("button", name="제품 이용하기").click()
     page.wait_for_timeout(2000)
 
     #20251001 - 상단 우측 마이페이지 버튼 선택 코드 수정
