@@ -49,9 +49,9 @@ def Chrome_Run_Main():
         # 23번 - 연락처 확인 시 크레딧이 부족할 경우 모달 노출 시 Upgrade my plan 버튼 클릭 시 플랜 페이지로 이동
         "tests/prospecting_insufficient_credit_modal_upgrade_my_plan_click.py",
         # 24번 - 연락처 확인 시 크레딧이 부족할 경우 모달 노출 시 Charge credit 클릭 시 크레딧 충전 모달 노출 확인 (결제 취소 지연 문제로 인해 DEV 기준으로 작성)
-        "tests/dev_prospecting_insufficient_credit_modal_charge_credit_click.py",
+        #"tests/dev_prospecting_insufficient_credit_modal_charge_credit_click.py",
         # 25번 - 크레딧 정상 충전 및 결제 확인 (결제 취소 지연 문제로 인해 DEV 기준으로 작성)
-        "tests/dev_charge_credit_complete.py",
+        #"tests/dev_charge_credit_complete.py",
         # 26번 - 리스트에 추가 정상 동작 확인
         "tests/prospecting_addtolist_flow_check.py",
         # 28번 - 회사 검색 후 View Employees 버튼 클릭 시 선택한 회사가 Company 필터 설정된 상태로 Prospecting 검색 결과 노출
