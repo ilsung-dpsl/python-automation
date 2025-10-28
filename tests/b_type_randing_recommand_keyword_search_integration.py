@@ -26,10 +26,13 @@ def test_b_type_randing_recommendation_keyword_search_integration(page):
     element = page.locator("input[placeholder='예: 일본 화장품 제조사 세일즈 매니저']")
     prompt_inputtext = element.input_value()
 
+    #20251024 - 대기 시간 1초 추가
+    page.wait_for_timeout(1000)
+
     assert "기술 협력을 위한 인도 SaaS R&D 엔지니어" == prompt_inputtext, "탐색하기 > 검색창 > 임의 추천검색어 1 출력 실패 - 탐색하기 연동 실패"
     assert "인도" in page.content(), "탐색하기 > 필터 > 위치 > 인도 키워드 출력 실패 - 탐색하기 연동 실패"
     assert "기술, 정보 및 인터넷" in page.content(), "탐색하기 > 필터 > 산업군 > 키워드 출력 실패 - 탐색하기 연동 실패"
     #리드 데이터 1 성함 변경 - 20250805
     assert "Professional Services" in page.content(), "탐색하기 > 리드 영역 > 산업군 > 'Professional Services' 출력 실패 - 탐색하기 연동 실패"
 
-    print("---- ")
+    print("---- 6번 - B안 랜딩페이지 > 임의 추천검색어 1 검색 후 로그인 시 탐색하기 연동 확인 테스트 시작 -> 성공 ----")
