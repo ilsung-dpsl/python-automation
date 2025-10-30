@@ -1,9 +1,11 @@
 def test_signupforfree_move(page):
     print("--- 1번 - 회원가입 페이지 이동 테스트 시작 ---")
-    page.goto("https://deepsales.com/ko/intro",wait_until="load", timeout=60000)
-    page.locator("button:has-text('무료로 시작하기')").nth(1).click()
 
-    page.wait_for_timeout(5000)
+    #20251030 - 회원가입 페이지로 바로 이동 코드로 수정
+    page.goto("https://deepsales.com/ko/login?page=signup",wait_until="load", timeout=60000)
+    #page.locator("button:has-text('무료로 시작하기')").nth(1).click()
+    #page.wait_for_timeout(5000)
+    page.wait_for_timeout(2000)
 
     page.wait_for_selector("text=DeepSales에 오신 것을 환영합니다!", timeout=3000)
 

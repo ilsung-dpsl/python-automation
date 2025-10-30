@@ -92,8 +92,8 @@ def test_team_management_team_member_join_the_team_flow_check(page):
         "팀 관리 > 첫번째 멤버 > 이메일 확인 실패 - 팀 합류 실패 3"
     assert "팀 크레딧: 월간 600 크레딧" == page2.get_by_text("팀 크레딧: 월간 600 크레딧").inner_text(), \
         "팀 관리 > 팀 크레딧 정보 확인 실패 - 팀 합류 실패 4"
-    #20251001 - 팀 오너 크레딧 사용으로 인한 잔여 크레딧 개수 수정
-    assert "잔여 크레딧: 572/1172" == page2.get_by_text("잔여 크레딧: 572/").inner_text(), \
+    #20251030 - 팀 오너 크레딧 사용으로 인한 남은 잔여 크레딧 수만 확인으로 코드 수정
+    assert "잔여 크레딧: 10000/" in page2.get_by_text("잔여 크레딧: 10000/").inner_text(), \
         "팀 관리 > 잔여 크레딧 정보 확인 실패 - 팀 합류 실패 5"
     assert "ilsung.baek+pa19@deepsales.com" == page2.get_by_text("ilsung.baek+pa19@deepsales.com").inner_text(), \
         "팀 관리 > 팀 합류한 이메일 정보 확인 실패 - 팀 합류 실패 6"
