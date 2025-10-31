@@ -28,7 +28,7 @@ def test_signupforfree_change_email_register_check(page):
     page.get_by_role("button", name="확인").click()
     page.wait_for_timeout(1000)
 
-    print("----- 3번 - 회원가입 변경 > 이메일 등록 확인 테스트 시작 -> 성공-----")
+    print("----- 79번 - 회원가입 변경 > 이메일 등록 확인 테스트 시작 -> 성공-----")
 
 
 
