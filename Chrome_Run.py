@@ -154,7 +154,7 @@ def Chrome_Run_Main():
         # 77번 - Payment information에 Register a card 클릭 시, 카드 등록 플로우 진행
         "tests/account_and_settings_team_owner_payment_info_register_card_flow_check.py",
         # 78번 - Payment information > show detail 클릭 시 Payment information 페이지로 이동
-        "tests/account_and_settings_team_owner_payment_and_plan_payment_info_show_detail_link_move.py"
+        "tests/account_and_settings_team_owner_payment_and_plan_payment_info_show_detail_link_move.py",
         # 80번 - 에디터픽 메인 카드 노출 확인
         "tests/editorspick_card_check.py",
         # 81번 - 무료 회원일 경우, 에디터픽 상세 > 연락처 3개 정보 노출 확인
