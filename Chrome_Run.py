@@ -5,7 +5,9 @@ def Chrome_Run_Main():
         # 1번 - 무료로 시작하기 -> 회원가입
         "tests/signupforfree_move.py",
         # 2번 - 회원가입 완료 -> 회원가입 페이지 제거로 블락 처리
-        #"tests/signupforfree_complete.py",
+        #"tests/signupforfree_complete.py","
+        # 79번 - 회원가입 변경 > 이메일 등록 확인
+        "tests/signupforfree_change_email_register_check.py",
         # 3번 - 로그인 완료
         "tests/login.py",
         # 4번 - B안 랜딩 페이지 > 프롬프트 영역 확인
@@ -153,6 +155,16 @@ def Chrome_Run_Main():
         "tests/account_and_settings_team_owner_payment_info_register_card_flow_check.py",
         # 78번 - Payment information > show detail 클릭 시 Payment information 페이지로 이동
         "tests/account_and_settings_team_owner_payment_and_plan_payment_info_show_detail_link_move.py"
+        # 80번 - 에디터픽 메인 카드 노출 확인
+        "tests/editorspick_card_check.py",
+        # 81번 - 무료 회원일 경우, 에디터픽 상세 > 연락처 3개 정보 노출 확인
+        "tests/editorspick_detail_freeplan_3_contact_open_check.py",
+        # 82번 - 에디터픽 상세 > 링크드인 연동 확인 
+        "tests/editorspick_detail_linkedin_link_move_check.py",
+        # 83번 - 세일즈 에이전트 UI 확인 
+        "tests/salesagent_ui_check.py",
+        # 84번 - 세일즈 에이전트 > Starter > 상담하기 등록 확인
+        "tests/salesagent_start_counseling_register_check.py"
     ]
 
     exit_code = pytest.main(test_files + ["-s", "-v", "--disable-warnings", "--junitxml=reports/report.xml", "--alluredir=allure-results"])
