@@ -21,7 +21,7 @@ def Chrome_Run_Main():
         # 8번 - "가격" 선택 시, 결제 페이지로 이동
         "tests/price_click_after_price_page_move.py",
         # 9번 - 요금제 결제 정상 진행 및 영수증 노출 확인 (결제 전까지로 수정 필요 / 보류)
-
+        "tests/price_upgrade_to_the_pro_plan_payment_check.py",
         # 10번 - "플랜 변경" 선택 시, 팀오너 권한 확인
         "tests/unabletochangetheplan_modal_check.py",
         # 11번 - 사용 내역에 기간별 평균 크레딧 사용 활동 노출,. 현재 사용중인 요금제, 크레딧 정상 노출 확인
@@ -157,13 +157,17 @@ def Chrome_Run_Main():
         "tests/account_and_settings_team_owner_payment_and_plan_payment_info_show_detail_link_move.py",
         # 80번 - 에디터픽 메인 카드 노출 확인
         "tests/editorspick_card_check.py",
-        # 81번 - 무료 회원일 경우, 에디터픽 상세 > 연락처 3개 정보 노출 확인
+        # 81번 - 에디터픽 상세 > 데이터 문의하기 등록 확인
+        "tests/editorspick_detail_contactus_register_check.py",
+        # 82번 - 무료 회원일 경우, 에디터픽 상세 > 연락처 3개 정보 노출 확인
         "tests/editorspick_detail_freeplan_3_contact_open_check.py",
-        # 82번 - 에디터픽 상세 > 링크드인 연동 확인 
+        # 83번 - 유료 회원일 경우, 에디터픽 상세 > 연락처 모든 정보 노출 확인
+        "tests/editorspick_detail_enterpriseplan_all_contact_open_check.py",
+        # 84번 - 에디터픽 상세 > 링크드인 연동 확인
         "tests/editorspick_detail_linkedin_link_move_check.py",
-        # 83번 - 세일즈 에이전트 UI 확인 
+        # 85번 - 세일즈 에이전트 UI 확인
         "tests/salesagent_ui_check.py",
-        # 84번 - 세일즈 에이전트 > Starter > 상담하기 등록 확인
+        # 86번 - 세일즈 에이전트 > Starter > 상담하기 등록 확인
         "tests/salesagent_start_counseling_register_check.py"
     ]
 
