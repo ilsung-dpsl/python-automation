@@ -45,13 +45,15 @@ def test_prospecting_quickview_company_check(page):
     page.get_by_placeholder("예: 일본 화장품 제조사 세일즈 매니저").fill("멕시코 위주의 여행 상품을 파는 업체를 찾아줘")
     page.get_by_placeholder("예: 일본 화장품 제조사 세일즈 매니저").press("Enter")
 
-    page.wait_for_timeout(5000)
+    #20251105 - 대기 시간 5초 -> 7초로 증가
+    page.wait_for_timeout(7000)
 
     print("탐색하기 > 검색 완료")
 
     #20250930 - 회사 카운트 변경으로 인한 코드 수정
     page.get_by_role("tab", name="회사 (99)").click()
-    page.wait_for_timeout(1000)
+    #20251105 - 대기 시간 1초 -> 2초로 수정
+    page.wait_for_timeout(2000)
 
     #20250930 - 탐색하기 ui 변경으로 인한 2번째 회사 리드 선택 코드 수정
     page.get_by_text("Corporate Travel Serviceswww.").click()
