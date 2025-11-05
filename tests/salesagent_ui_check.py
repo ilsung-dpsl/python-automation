@@ -2,7 +2,7 @@ import re
 import config
 
 def test_salesagent_ui_check(page):
-    print("---- 83번 - 세일즈 에이전트 UI 확인 테스트 시작 ----")
+    print("---- 85번 - 세일즈 에이전트 UI 확인 테스트 시작 ----")
 
     page.goto("https://deepsales.com/ko/intro")
     page.wait_for_timeout(1000)
@@ -22,4 +22,4 @@ def test_salesagent_ui_check(page):
     assert "상담하기" == page.get_by_role("button", name="상담하기").nth(2).inner_text(), \
         "세일즈 에이전트 UI > Enterprise > [상담하기] 버튼 노출 확인 실패 - 세일즈 에이전트 UI 확인 실패 5"
 
-    print("---- 83번 - 세일즈 에이전트 UI 확인 테스트 시작 -> 성공 ----")
+    print("---- 85번 - 세일즈 에이전트 UI 확인 테스트 시작 -> 성공 ----")
