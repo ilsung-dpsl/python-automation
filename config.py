@@ -64,6 +64,10 @@ FREE_PA24_PW = "!deepsales@36"
 FREE_PA25_ACCOUNT = "ilsung.baek+pa25@deepsales.com"
 FREE_PA25_PW = "!deepsales@36"
 
+#20251105 - 무료 회원 계정 하나 추가
+FREE_PA45_ACCOUNT = "ilsung.baek+pa45@deepsales.com"
+FREE_PA45_PW = "!deepsales@36"
+
 TEAM_OWNER_ACCOUNT = "ilsung.baek+pa15@deepsales.com"
 TEAM_OWNER_PW = "!deepsales@36"
 
