@@ -10,12 +10,12 @@ def Chrome_Run_Main():
         "tests/signupforfree_change_email_register_check.py",
         # 3번 - 로그인 완료
         "tests/login.py",
-        # 4번 - B안 랜딩 페이지 > 프롬프트 영역 확인
-        "tests/b_type_randing_prompt_print.py",
-        # 5번 - B안 랜딩 > 추천검색어 3 입력 확인
-        "tests/b_type_randing_bottom_recommendation_keyword_check.py",
-        # 6번 - B안 래딩 > 추천검색어 1번 -> 탐색하기 연동 확인
-        "tests/b_type_randing_recommand_keyword_search_integration.py",
+        # 4번 - B안 랜딩 페이지 > 프롬프트 영역 확인 (테스트 스크립트 제외)
+        #"tests/b_type_randing_prompt_print.py",
+        # 5번 - B안 랜딩 > 추천검색어 3 입력 확인 (테스트 스크립트 제외)
+        #"tests/b_type_randing_bottom_recommendation_keyword_check.py",
+        # 6번 - B안 래딩 > 추천검색어 1번 -> 탐색하기 연동 확인 (테스트 스크립트 제외)
+        #"tests/b_type_randing_recommand_keyword_search_integration.py",
         # 7번 - 제품 이용하기 연동 확인
         "tests/gotoproduct_click_after_prospecting_page_move.py",
         # 8번 - "가격" 선택 시, 결제 페이지로 이동
@@ -86,7 +86,7 @@ def Chrome_Run_Main():
         # 41번 - Free plan 사용자가 더보기(view more) 버튼 클릭 시 요금제 업그레이드 모달 노출
         "tests/discover_freeplan_viewmore_click.py",
         # 42번 - 산업군 필터와 타이틀 검색 정상 작동
-        "tests/discover_industry_and_title_search.py",
+        "tests/discover_industry_and_title_search.py",###
         # 43번 - Prospecting resoure > Prospecting now 버튼 클릭 시 탐색 메뉴로 이동 해당항목 표시(항목 타이틀 포함)
         "tests/discover_card_prospecting_now_check.py",
         # 44번 - Free 플랜 사용자 Export to Csv 클릭 시 모달 노출
