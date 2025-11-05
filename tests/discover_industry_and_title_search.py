@@ -29,6 +29,7 @@ def test_discover_industry_and_title_search(page):
     page.locator(".text-FG-Primary.css-124rwol").click()
 
     page.get_by_role("option", name="모든 산업").locator("div").click()
+
     print("발견하기 > 산업군 > 모든 산업군 설정 완료")
     page.get_by_placeholder("제목으로 찾기").fill("직원 수 200명 규모")
     page.get_by_placeholder("제목으로 찾기").press("Enter")
