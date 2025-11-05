@@ -2,7 +2,7 @@ import re
 import config
 
 def test_editorspick_detail_linkedin_link_move_check(page):
-    print("---- 82번 - 에디터픽 상세 > 링크드인 연동 확인 테스트 시작 ----")
+    print("---- 86번 - 에디터픽 상세 > 링크드인 연동 확인 테스트 시작 ----")
 
     page.goto("https://deepsales.com/ko/intro")
     page.wait_for_timeout(1000)
@@ -75,7 +75,7 @@ def test_editorspick_detail_linkedin_link_move_check(page):
     assert "Ejecutiva de Ventas" in page4.get_by_role("link", name="Ejecutiva de Ventas Uno Radio").inner_text(), \
         "링크드인 페이지 > 경력 사항 > 직함 노출 확인 - 에디터픽 > 링크드인 연동 확인 실패 3"
 
-    print("---- 82번 - 에디터픽 상세 > 링크드인 연동 확인 테스트 시작 -> 성공 ----")
+    print("---- 86번 - 에디터픽 상세 > 링크드인 연동 확인 테스트 시작 -> 성공 ----")
 
 
 

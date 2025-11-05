@@ -2,7 +2,7 @@ import re
 import config
 
 def test_editorspick_detail_freeplan_3_contact_open_check(page):
-    print("---- 81번 - 무료 회원일 경우, 에디터픽 상세 > 연락처 3개 정보 노출 확인 테스트 시작 ----")
+    print("---- 82번 - 무료 회원일 경우, 에디터픽 상세 > 연락처 3개 정보 노출 확인 테스트 시작 ----")
     page.goto("https://deepsales.com/ko/intro")
     page.wait_for_timeout(1000)
     page.get_by_role("banner").get_by_role("link", name="에디터 픽").click()
@@ -40,4 +40,4 @@ def test_editorspick_detail_freeplan_3_contact_open_check(page):
     assert "********@sobio.fr" == page.get_by_text("********@sobio.fr").inner_text(), \
         "에디터픽 상세 > 연락처 > 4번 연락처 이메일 미오픈 확인 실패 - 무료회원 일 경우, 에디터픽 상세 > 연락처 오픈 확인 실패 7"
 
-    print("---- 80번 - 무료 회원일 경우, 에디터픽 상세 > 연락처 3개 정보 노출 확인 테스트 시작 -> 성공 ----")
+    print("---- 82번 - 무료 회원일 경우, 에디터픽 상세 > 연락처 3개 정보 노출 확인 테스트 시작 -> 성공 ----")
