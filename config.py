@@ -99,6 +99,14 @@ CARD1_VALID_THRU = "12/26"
 CARD1_RRN_BIRTH = "870724"
 CARD1_RRN_GENDER = "1"
 
+# 20251125 - Pro 업그레이드 > 카드 결제 정보
+CARD2_CARD_NO = "4242424242424242"
+CARD2_VALID_THRU = "12/30"
+CARD2_CVC_NO = "123"
+CARD2_CONSUMER_NAME = "BAEKILSUNG"
+
+
+
 # 회원가입 계정 - ilsung.baek+pa1@deepsales.com (생성)
 #ilsung.baek+pa2@deepsales.com (생성), ilsung.baek+pa3@deepsales.com (생성), ilsung.baek+pa4@deepsales.com (생성)
 #ilsung.baek+pa5@deepsales.com (생성), ilsung.baek+pa6@deepsales.com (생성), ilsung.baek+pa7@deepsales.com (생성)
