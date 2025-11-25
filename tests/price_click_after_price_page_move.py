@@ -1,7 +1,7 @@
 def test_price_click_after_price_page_move(page):
     print("---- 8번 - 요금제 및 결제 페이지 이동 확인 케이스 시작 ----")
-    #20251024 - 가격 페더 삭제로 인해, 가격 페이지 접근 URL로 코드 수정
-    page.goto("https://deepsales.com/ko/pricing/standard",wait_until="load", timeout=50000)
+    #20251125 - 가격 할인 페이지 삭제로 인해, url 변경되었고, 일반 가격 URL로 코드 재수정
+    page.goto("https://deepsales.com/ko/pricing",wait_until="load", timeout=50000)
     page.wait_for_timeout(2000)
     #page.get_by_role("banner").get_by_role("link", name="가격").click()
     #page.wait_for_timeout(3000)

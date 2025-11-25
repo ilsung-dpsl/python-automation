@@ -4,7 +4,8 @@ import config
 def test_price_upgrade_to_the_pro_plan_payment_check(page):
     print("---- 9번 - 요금제 업그레이드 결제 > 결제 전까지 동작 확인 테스트 시작 ----")
 
-    page.goto("https://deepsales.com/ko/pricing/sale")
+    # 20251125 - 할인 가격 페이지 삭제로 인해, 일반 가격 페이지 url 변경되어 코드 수정
+    page.goto("https://deepsales.com/ko/pricing")
     page.wait_for_timeout(1000)
     page.get_by_role("button", name="로그인").click()
     page.wait_for_timeout(1000)
@@ -13,7 +14,8 @@ def test_price_upgrade_to_the_pro_plan_payment_check(page):
     page.get_by_role("button", name="로그인").click()
     page.wait_for_timeout(1000)
 
-    page.locator("div").filter(has_text=re.compile(r"^Pro\$39\$19\.5-50%플랜 변경하기$")).get_by_role("button").click()
+    # 20251125 - 일반 가격 페이지 > Pro > [플랜 변경하기] 버튼 선택 엘리먼트 코드로 수정
+    page.locator("div").filter(has_text=re.compile(r"^Pro\$39플랜 변경하기$")).get_by_role("button").click()
     page.wait_for_timeout(1000)
     page.get_by_placeholder("카드 번호").click()
     page.wait_for_timeout(500)

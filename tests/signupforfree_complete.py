@@ -1,4 +1,5 @@
 import re
+from pydoc import pager
 
 import config
 from config import read_counter, write_counter
@@ -45,7 +46,19 @@ def test_signupforfree_complete(page):
 
     page.goto("https://deepsales.com/ko/intro",wait_until="load", timeout=30000)
 #    page.goto("https://dev.deepsales.io/ko/intro",wait_until="load", timeout=30000)
-    page.get_by_role("button", name="무료로 시작하기").nth(1).click()
+
+    # 20251125 - 세일즈 에이전트 > 플랜소개 > 시작하기 -> 회원가입 변경 플로우 코드 수정
+    page.wait_for_timeout(1000)
+
+    page.get_by_role("banner").get_by_role("link", name="세일즈 에이전트").click()
+    page.wait_for_timeout(1000)
+
+    # 20251125 - 세일즈 에이전트 랜딩 페이지 > 상단 > [시작하기] 선택 코드 수정
+    page.get_by_role("button", name="시작하기").nth(1).click()
+    page.wait_for_timeout(1000)
+
+    # 20251125 - 세일즈 에이전트 랜딩 페이지 > 플랜소개 > Scale > [시작하기] 선택 코드 수정
+    page.get_by_role("button", name="시작하기").nth(3).click()
     page.wait_for_timeout(1000)
 
     count = read_counter()
@@ -97,6 +110,9 @@ def test_signupforfree_complete(page):
    # page.get_by_role("button", name="Start Now").click()
    # page.wait_for_timeout(1000)
 
+    # 20251125 - 세일즈 에이전트 페이지 > 상단 > [제품 이용하기] 선택 하는 코드 추가
+    page.get_by_role("button", name="제품 이용하기").click()
+    page.wait_for_timeout(1000)
 
     #20250930 - 탐색하기 ui(LNB 영역) 변경으로 인한 LNB 숨김처리됨 -> LNB 마우스 호버하는 코드 추가 및 수정
     lnb_hover_target = page.get_by_text("대시보드탐색하기발견하기마이 리스트").first

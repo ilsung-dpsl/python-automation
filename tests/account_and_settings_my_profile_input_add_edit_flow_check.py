@@ -56,6 +56,7 @@ def test_account_and_settings_my_profile_input_add_edit_flow_check(page):
     page.wait_for_timeout(2000)
 
 #    page.get_by_text("Product").click()
+
     page.get_by_role("option", name="Product").locator("div").click()
     page.wait_for_timeout(1000)
 

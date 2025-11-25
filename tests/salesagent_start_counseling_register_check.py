@@ -2,7 +2,7 @@ import re
 import config
 
 def test_salesagent_start_counseling_register_check(page):
-    print("---- 84번 - 세일즈 에이전트 > Starter > 상담하기 등록 확인 ----")
+    print("---- 84번 - 세일즈 에이전트 > Starter > 구독 결제 완료 전까지 동작 확인 ----")
 
     page.goto("https://deepsales.com/ko/intro")
     page.get_by_role("banner").get_by_role("link", name="세일즈 에이전트").click()
@@ -10,65 +10,68 @@ def test_salesagent_start_counseling_register_check(page):
 
     print("세일즈 에이전트 페이지 진입 완료 ")
 
-    page.get_by_role("button", name="상담하기").first.click()
+    # 20251125 - 세일즈 에이전트 > 상단 > [시작하기] 버튼 선택 코드 추가
+    page.get_by_role("button", name="시작하기").nth(1).click()
     page.wait_for_timeout(1000)
 
-    print("영업팀에 연락하기 모달 노출 완료")
+    # 20251125 - 세일즈 에이전트 > Starter > [시작하기] 버튼 선택 코드 추가
+    page.get_by_role("button", name="시작하기").nth(2).click()
+    page.wait_for_timeout(2000)
 
-    page.get_by_placeholder("이름 입력", exact=True).fill("일성")
-    page.get_by_placeholder("성 입력").fill("백")
-    page.wait_for_timeout(500)
+    print("회원가입 페이지 진입 완료")
 
-    print("영업팀에 연락하기 모달 > 이름 / 성 입력 완료")
-
-    page.get_by_placeholder("회사 이름 입력").fill("딥세일즈")
-    page.get_by_placeholder("직함 입력").fill("Sales Agent Test")
-    page.wait_for_timeout(500)
-
-    print("영업팀에 연락하기 모달 > 회사 / 직함 입력 완료")
-
-    page.locator("#react-select-2-input").fill("대한민국")
-    page.wait_for_timeout(500)
-    page.get_by_text("대한민국", exact=True).click()
-    page.wait_for_timeout(500)
-
-    print("영업팀에 연락하기 모달 > 회사 위치 입력 완료")
-
-    page.get_by_placeholder("회사 이메일 입력").fill(config.GMAIL_EMAIL)
-    page.wait_for_timeout(500)
-
-    print("영업팀에 연락하기 모달 > 회사 이메일 입력 완료")
-
-    page.locator("#react-select-3-input").fill("82")
-    page.wait_for_timeout(500)
-    page.get_by_text("+82").click()
-    page.wait_for_timeout(500)
-
-    print("영업팀에 연락하기 모달 > 나라 번호 입력 완료")
-
-    page.get_by_placeholder("- 없이 전화번호 입력").fill("01041342385")
-    page.wait_for_timeout(500)
-
-    print("영업팀에 연락하기 모달 > 전화번호 입력 완료")
-
-    page.get_by_role("textbox", name="귀하의 사업과 문의사항을 알려주세요").fill("QA 테스트 입니다. \nQA 운영 테스트 입니다. \nStarter > 상담하기 등록하기 완료 케이스 확인")
+    # 20251125 - 회원가입 페이지 > 로그인 선택 코드 추가
+    page.get_by_text("로그인").click()
     page.wait_for_timeout(1000)
 
-    print("영업팀에 연락하기 모달 > 문의사항 내용 입력 완료")
+    print("로그인 페이지 진입 완료")
 
-    page.get_by_role("button", name="제출하기").click()
+    page.get_by_placeholder("이메일").fill(config.FREE_PA46_ACCOUNT)
+    page.get_by_placeholder("비밀번호").fill(config.FREE_PA46_PW)
+    page.wait_for_timeout(500)
+
+    page.get_by_role("button", name="로그인").click()
     page.wait_for_timeout(1000)
 
-    print("영업팀에 연락하기 모달 > 문의사항 등록 완료")
+    print("로그인 완료 후 세일즈 에이전트 랜딩페이지 진입")
 
-    assert "문의 전송" == page.get_by_text("문의 전송").inner_text(), \
-        "문의 전송 완료 모달 > 문의 전송 타이틀 문구 노출 확인 - 세일즈 에이전트 > Starter > 상담하기 등록 확인 실패 1"
-    assert ("문의하신 내용은 발송되었습니다. 저희 영업팀에서 문의하신 내용을 확인하고 다시 연락드리겠습니다."
-            == page.get_by_text("문의하신 내용은 발송되었습니다. 저희 영업팀에서 문의하신 내용을 확인하고 다시 연락드리겠습니다").inner_text()), \
-        "문의 전송 완료 모달 > 문의 전송 가이드 문구 노출 확인 - 세일즈 에이전트 > Starter > 상담하기 등록 확인 실패 2"
-    assert "확인" == page.get_by_role("button", name="확인").inner_text(), \
-        "문의 전송 완료 모달 > [확인] - 세일즈 에이전트 > Starter > 삼당하기 등록 확인 실패 3"
+    page.get_by_role("button", name="시작하기").nth(2).click()
+    page.wait_for_timeout(1000)
 
-    page.get_by_role("button", name="확인").click()
+    print("토스페이먼츠 결제창 출력 상태 완료")
 
-    print("---- 84번 - 세일즈 에이전트 > Starter > 상담하기 등록 확인 -> 성공 ----")
+    page.locator("iframe[name=\"__tosspayments_payment-gateway_iframe__\"]").content_frame.get_by_role("textbox", name="카드번호 1 ~ 4 자리").fill(config.CARD1_1_4_NO)
+    page.locator("iframe[name=\"__tosspayments_payment-gateway_iframe__\"]").content_frame.get_by_role("textbox", name="카드번호 5 ~ 8 자리").fill(config.CARD1_5_8_NO)
+    page.locator("iframe[name=\"__tosspayments_payment-gateway_iframe__\"]").content_frame.get_by_role("textbox", name="카드번호 9 ~ 12 자리").fill(config.CARD1_9_12_NO)
+    page.locator("iframe[name=\"__tosspayments_payment-gateway_iframe__\"]").content_frame.get_by_role("textbox", name="카드번호 13 ~ 16 자리").fill(config.CARD1_13_16_NO)
+    page.wait_for_timeout(500)
+
+    page.locator("iframe[name=\"__tosspayments_payment-gateway_iframe__\"]").content_frame.get_by_role("textbox", name="카드 유효기간").fill(config.CARD1_VALID_THRU)
+    page.locator("iframe[name=\"__tosspayments_payment-gateway_iframe__\"]").content_frame.get_by_role("textbox", name="주민등록번호 생년월일").fill(config.CARD1_RRN_BIRTH)
+    page.locator("iframe[name=\"__tosspayments_payment-gateway_iframe__\"]").content_frame.get_by_role("textbox", name="주민등록번호 성별").fill(config.CARD1_RRN_GENDER)
+    page.wait_for_timeout(500)
+
+    page.locator("iframe[name=\"__tosspayments_payment-gateway_iframe__\"]").content_frame.get_by_role("checkbox", name="[필수] 서비스 이용 약관, 개인정보 처리 동의").check()
+    page.wait_for_timeout(1000)
+
+
+    assert "4033" == page.locator("iframe[name=\"__tosspayments_payment-gateway_iframe__\"]").content_frame.get_by_role("textbox", name="카드번호 1 ~ 4 자리").input_value(), \
+        "토스페이먼츠 결제창 > 카드번호 1~4자리 번호 확인 실패 - 세일즈 에이전트 > Starter > 구독 결제 완료 전까지 동작 확인"
+    assert "0201" == page.locator("iframe[name=\"__tosspayments_payment-gateway_iframe__\"]").content_frame.get_by_role("textbox", name="카드번호 5 ~ 8 자리").input_value(), \
+        "토스페이먼츠 결제창 > 카드번호 5~8자리 번호 확인 실패 - 세일즈 에이전트 > Starter > 구독 결제 완료 전까지 동작 확인"
+    assert "6000" == page.locator("iframe[name=\"__tosspayments_payment-gateway_iframe__\"]").content_frame.get_by_role("textbox", name="카드번호 9 ~ 12 자리").input_value(), \
+        "토스페이먼츠 결제창 > 카드번호 9~12자리 번호 확인 실패 - 세일즈 에이전트 > Starter > 구독 결제 완료 전까지 동작 확인"
+    assert "0000" == page.locator("iframe[name=\"__tosspayments_payment-gateway_iframe__\"]").content_frame.get_by_role("textbox", name="카드번호 13 ~ 16 자리").input_value(), \
+        "토스페이먼츠 결제창 > 카드번호 13~16자리 번호 확인 실패 - 세일즈 에이전트 > Starter > 구독 결제 완료 전까지 동작 확인"
+    assert "12/26" == page.locator("iframe[name=\"__tosspayments_payment-gateway_iframe__\"]").content_frame.get_by_role("textbox", name="카드 유효기간").input_value(), \
+        "토스페이먼츠 결제창 > 카드 유효기간 확인 실패 - 세일즈 에이전트 > Starter > 구독 결제 완료 전까지 동작 확인"
+    assert "870724" == page.locator("iframe[name=\"__tosspayments_payment-gateway_iframe__\"]").content_frame.get_by_role("textbox", name="주민등록번호 생년월일").input_value(), \
+        "토스페이먼츠 결제창 > 주민등록번호 앞자리 확인 실패 - 세일즈 에이전트 > Starter > 구독 결제 완료 전까지 동작 확인"
+    assert "1" == page.locator("iframe[name=\"__tosspayments_payment-gateway_iframe__\"]").content_frame.get_by_role("textbox", name="주민등록번호 성별").input_value(), \
+        "토스페이먼츠 결제창 > 주민등록번호 뒷자리 중 첫번째 성별 번호 확인 실패 - 세일즈 에이전트 > Starter > 구독 결제 완료 전까지 동작 확인"
+
+
+    page.locator("iframe[name=\"__tosspayments_payment-gateway_iframe__\"]").content_frame.get_by_role("button", name="결제 취소").click()
+    page.wait_for_timeout(1000)
+
+    print("---- 84번 - 세일즈 에이전트 > Starter > 구독 결제 완료 전까지 동작 확인 -> 성공 ----")
