@@ -68,6 +68,10 @@ FREE_PA25_PW = "!deepsales@36"
 FREE_PA45_ACCOUNT = "ilsung.baek+pa45@deepsales.com"
 FREE_PA45_PW = "!deepsales@36"
 
+#20251125 - 세일즈 에이전트 무료 회원 확인용 계정 추가
+FREE_PA46_ACCOUNT = "ilsung.baek+pa46@deepsales.com"
+FREE_PA46_PW = "!deepsales@36"
+
 TEAM_OWNER_ACCOUNT = "ilsung.baek+pa15@deepsales.com"
 TEAM_OWNER_PW = "!deepsales@36"
 
@@ -85,6 +89,15 @@ COMMON_PW = "!deepsales@36"
 #링크드인 로그인 정보
 LINKEDIN_ACCOUNT = "starbictoli@naver.com"
 LINKEDIN_PW = "1@qordlftjd"
+
+# 20251125 - 세일즈 에이전트 > 카드 결제 정보
+CARD1_1_4_NO = "4033"
+CARD1_5_8_NO = "0201"
+CARD1_9_12_NO = "6000"
+CARD1_13_16_NO = "0000"
+CARD1_VALID_THRU = "12/26"
+CARD1_RRN_BIRTH = "870724"
+CARD1_RRN_GENDER = "1"
 
 # 회원가입 계정 - ilsung.baek+pa1@deepsales.com (생성)
 #ilsung.baek+pa2@deepsales.com (생성), ilsung.baek+pa3@deepsales.com (생성), ilsung.baek+pa4@deepsales.com (생성)
