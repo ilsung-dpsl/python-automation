@@ -5,7 +5,7 @@ def Chrome_Run_Main():
         # 1번 - 무료로 시작하기 -> 회원가입
         "tests/signupforfree_move.py",
         # 2번 - 회원가입 완료 -> 회원가입 페이지 제거로 블락 처리
-        #"tests/signupforfree_complete.py","
+        "tests/signupforfree_complete.py",
         # 79번 - 회원가입 변경 > 이메일 등록 확인
         "tests/signupforfree_change_email_register_check.py",
         # 3번 - 로그인 완료
@@ -130,7 +130,7 @@ def Chrome_Run_Main():
         # 63번 - 회사 정보(company) 탭 최초 클릭시 회사 정보를 입력하지 않은 경우 설정하기(set up) 노출, Company set up_Main 화면 노출
         "tests/company_setup_and_main_page_check.py",
         # 64번 - 회사 정보 메인 (company_main) 화면에서 회사 검색 후 선택 시, Register modal 노출 및 등록 시, 회사 정보(Company) 탭 클릭 시 해당 회사 노출
-        ###"tests/company_register_flow_check.py",
+        "tests/company_register_flow_check.py",
         # 65번 - 회사 정보 생성 (Register for a new company page) 새 회사 등록 작동 확인
         "tests/company_register_for_a_new_company_flow_check.py",
         # 67번 - My Profile 모든 항목 정상 기입, 추가, 수정 가능 여부 확인
@@ -138,7 +138,7 @@ def Chrome_Run_Main():
         # 68번 - 회원 탈퇴 플로우 확인 (단, 탈퇴 전 화면까지만 확인하는 것으로 변경)
         "tests/account_and_settings_my_profile_membership_withdrawal_flow_check.py",
         # 70번 - 소속된 회사가 있을 때 Leave company 클릭 시 소속 회사 떠나기 모달 노출_팀오너일 경우
-        ###"tests/account_and_settings_team_owner_my_profile_leave_company_flow_check.py",
+        "tests/account_and_settings_team_owner_my_profile_leave_company_flow_check.py",
         # 71번 - 소속된 회사가 있을 때 Leave company 클릭 시 소속 회사 떠나기 모달 노출_ 팀오너가 아닌경우
         "tests/account_and_settings_freeplan_my_profile_leave_company_flow_check.py",
         # 72번 - 소속된 회사가 없을 때 설정하기(set up) 버튼 노출, 설정하기(set up) 버튼 클릭 시 회사 정보 페이지(company_set up) 페이지로 이동
@@ -171,7 +171,6 @@ def Chrome_Run_Main():
         "tests/salesagent_start_counseling_register_check.py",
         # 87번 - 세일즈 에이전트 > 상단 > 상담요청하기 등록 확인 - 20251125
         "tests/salesagent_request_a_consultation_register.py"
-
     ]
 
     exit_code = pytest.main(test_files + ["-s", "-v", "--disable-warnings", "--junitxml=reports/report.xml", "--alluredir=allure-results"])
