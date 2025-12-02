@@ -16,10 +16,8 @@ def test_salesagent_ui_check(page):
     # 20251202 - 세일즈 에이전트 랜딩페이지 > [플랜 확인하기] 버튼으로 변경되어 코드 수정
     assert "플랜 확인하기" == page.get_by_role("button", name="플랜 확인하기").inner_text(), \
         "세일즈 에이전트 UI > [시작하기] 버튼 노출 확인 실패 - 세일즈 에이전트 UI 확인 실패 2"
+
     # 20251202 - 바우처 및 정부 지원 관련 QA 반영으로 인해, 세일즈 에이전트 랜딩 페이지 > 정부 지원 바우처 > [잠깐!] 배치 노출 확인 코드 추가
-
-
-   ## page.locator("div").filter(has_text=re.compile(r"^잠깐!정부 지원 바우처 혜택$")).locator("div").nth(1).click()
     wait_badge = page.get_by_text("잠깐!")
     assert wait_badge.is_visible(), \
         "세일즈 에이전트 UI > 정부 지원 바우처 혜택 > [잠깐!] 배지 노출 확인 실패 - 세일즈 에이전트 UI 확인 실패 3"
