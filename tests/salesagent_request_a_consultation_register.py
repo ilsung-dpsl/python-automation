@@ -13,7 +13,8 @@ def test_salesagent_request_a_consultation_register(page):
 
     print("세일즈 에이전트 랜딩페이지 진입 완료")
 
-    page.get_by_role("button", name="상담 요청하기").click()
+    # 20251202 - 세일즈 에이전트 페이지 > 상담 요청하기 앨리먼트 코드 변경으로 코드 수정
+    page.get_by_role("button", name="상담 요청하기").first.click()
     page.wait_for_timeout(1000)
 
     print("영업팀에 연락하기 모달 출력 상태 완료")
@@ -58,10 +59,11 @@ def test_salesagent_request_a_consultation_register(page):
     assert ("문의하신 내용은 발송되었습니다. 저희 영업팀에서 문의하신 내용을 확인하고 다시 연락드리겠습니다." in
             page.locator("div").filter(has_text="문의 전송문의하신 내용은 발송되었습니다. 저희 영업팀에서 문의하신 내용을 확인하고 다시 연락드리겠습니다.확인").nth(2).inner_text()), \
         "영업팀에 문의하기 등록 후 문의 전송 모달 > 가이드 문구 확인 실패 - 세일즈 에이전트 > 상단 > 상담요청하기 등록 확인 실패 2"
-    assert "확인" == page.get_by_role("button", name="확인").inner_text(), \
+    # 20251202 - 문의 전송 모달 > 확인 버튼의 앨리먼트 요소가 변경되어 테스트 스크립트 수정함
+    assert "확인" == page.get_by_role("button", name="확인", exact=True).inner_text(), \
         "영업팀에 문의하기 등록 후 문의 전송 모달 > [확인] 버튼 확인 실패 - 세일즈 에이전트 > 상단 > 상담요청하기 등록 확인 실패 3"
 
-    page.get_by_role("button", name="확인").click()
+    page.get_by_role("button", name="확인", exact=True).click()
     page.wait_for_timeout(1000)
 
     print("---- 세일즈 에이전트 > 상단 > 상담요청하기 등록 확인 테스트 시작 -> 성공 ----")
