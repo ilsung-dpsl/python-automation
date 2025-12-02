@@ -5,8 +5,7 @@ def test_salesagent_request_a_consultation_register(page):
     print("---- 87번 - 세일즈 에이전트 > 상단 > 상담요청하기 등록 확인 테스트 시작 ----")
 
     page.goto("https://deepsales.com/ko/intro",wait_until="load", timeout=30000)
-
-    page.wait_for_timeout(1000)
+    page.wait_for_timeout(2000)
 
     page.get_by_role("banner").get_by_role("link", name="세일즈 에이전트").click()
     page.wait_for_timeout(1000)
