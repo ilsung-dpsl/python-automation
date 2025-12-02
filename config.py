@@ -99,13 +99,22 @@ CARD1_VALID_THRU = "12/26"
 CARD1_RRN_BIRTH = "870724"
 CARD1_RRN_GENDER = "1"
 
+# 20251202 - CARD1_AUTHENTICATION
+CARD1_AUTH_NAME = "백일성"
+CARD1_AUTH_PHONE = "01041342385"
+
 # 20251125 - Pro 업그레이드 > 카드 결제 정보
 CARD2_CARD_NO = "4242424242424242"
 CARD2_VALID_THRU = "12/30"
 CARD2_CVC_NO = "123"
 CARD2_CONSUMER_NAME = "BAEKILSUNG"
 
-
+# 20251202 - 정부가 인증한 AI 기반 해외 영업 지원 서비스 모달 > 바로가기 연동 URL 정보
+BOUCHER1_URL = "https://www.exportvoucher.com/portal/bizinfo/voucher_01"
+BOUCHER2_URL = "https://www.exportvoucher.com/portal/bizinfo/voucher_01"
+BOUCHER3_URL = "https://www.nipa.kr/home/bsnsAll/0/detail?bsnsDtlsIemNo=580"
+BOUCHER4_URL = "https://www.kculture.or.kr/cms/content/view/1091"
+BOUCHER5_URL = "https://kdata.or.kr/datavoucher/bg/dvi/ptDvInfoDetail.do"
 
 # 회원가입 계정 - ilsung.baek+pa1@deepsales.com (생성)
 #ilsung.baek+pa2@deepsales.com (생성), ilsung.baek+pa3@deepsales.com (생성), ilsung.baek+pa4@deepsales.com (생성)
