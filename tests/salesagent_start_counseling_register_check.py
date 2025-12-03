@@ -71,6 +71,8 @@ def test_salesagent_start_counseling_register_check(page):
     # 20251202 - 토스페이먼츠 심사 완료 후 운영 실결제로 변경되어, 본인인증 프로세스가 추가되어 테스트 스크립트 코드 추가 및 수정
     page.locator("iframe[name=\"__tosspayments_payment-gateway_iframe__\"]").content_frame.get_by_role("button", name="다음").click()
     page.wait_for_timeout(1000)
+    
+    print("토스페이먼츠 결제창2 본인 인증 창 노출 확인")
 
     page.locator("iframe[name=\"__tosspayments_payment-gateway_iframe__\"]").content_frame.get_by_role("textbox", name="이름 -").fill(config.CARD1_AUTH_NAME)
     page.wait_for_timeout(500)
