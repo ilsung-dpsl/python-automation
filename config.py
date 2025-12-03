@@ -122,7 +122,7 @@ BOUCHER5_URL = "https://kdata.or.kr/datavoucher/bg/dvi/ptDvInfoDetail.do"
 #ilsung.baek+pa8@deepsales.com (생성), ilsung.baek+pa9@deepsales.com (생성), ilsung.baek+pa10@deepsales.com (생성),
 #ilsung.baek+pa11@deepsales.com (생성), ilsung.baek+pa12@deepsales.com (생성), ilsung.baek+pa13@deepsales.com (생성)
 #ilsung.baek+pa14@deepsales.com (생성), ilsung.baek+pa17@deepsales.com (생성), ilsung.baek+pa23@deepsales.com (생성)
-#ilsung.baek+pa24@deepsales.com (생성), ilsung.baek+pa24 ~ pa50@deepsales.com 까지 생성됨
+#ilsung.baek+pa24@deepsales.com (생성), ilsung.baek+pa24 ~ pa51@deepsales.com 까지 생성됨
 
 # 아래의 계정은 Enterprise 멤버 소속임
 # ilsung.baek+pa20@deepsales.com (생성), ilsung.baek+pa21@deepsales.com (생성), ilsung.baek+pa22@deepsales.com (생성)
