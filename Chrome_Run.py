@@ -157,8 +157,8 @@ def Chrome_Run_Main():
         "tests/account_and_settings_team_owner_payment_and_plan_payment_info_show_detail_link_move.py",
         # 80번 - 에디터픽 메인 카드 노출 확인
         "tests/editorspick_card_check.py",
-        # 81번 - 에디터픽 상세 > 데이터 문의하기 등록 확인
-        "tests/editorspick_detail_contactus_register_check.py",
+        # 81번 - 에디터픽 상세 > 데이터 문의하기 등록 확인 (해당 케이스 중요도 낮음으로 자동화 테스트 항목에서 제외)
+        #"tests/editorspick_detail_contactus_register_check.py",
         # 82번 - 무료 회원일 경우, 에디터픽 상세 > 연락처 3개 정보 노출 확인
         "tests/editorspick_detail_freeplan_3_contact_open_check.py",
         # 83번 - 유료 회원일 경우, 에디터픽 상세 > 연락처 모든 정보 노출 확인
@@ -171,6 +171,10 @@ def Chrome_Run_Main():
         "tests/salesagent_start_counseling_register_check.py",
         # 87번 - 세일즈 에이전트 > 상단 > 상담요청하기 등록 확인 - 20251125
         "tests/salesagent_request_a_consultation_register.py"
+        # 88번 - 세일즈 에이전트 > 플랜 혜택 보기의 바우처 혜택 상세 보기 선택 시 정부가 인증한 AI 기반 해외 영업 지원 서비스 모달 노출 확인
+        "tests/salesagent_boucher_modal_ui_check.py",
+        # 89번 - 정부가 인증한 AI 기반 해외 영업 지원 서비스 모달 > 각 URL 연동 확인
+        "tests/salesagent_boucher_modal_link_move_check.py",
     ]
 
     exit_code = pytest.main(test_files + ["-s", "-v", "--disable-warnings", "--junitxml=reports/report.xml", "--alluredir=allure-results"])
