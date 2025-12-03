@@ -170,7 +170,7 @@ def Chrome_Run_Main():
         # 86번 - 세일즈 에이전트 > Starter > 상담하기 등록 확인
         "tests/salesagent_start_counseling_register_check.py",
         # 87번 - 세일즈 에이전트 > 상단 > 상담요청하기 등록 확인 - 20251125
-        "tests/salesagent_request_a_consultation_register.py"
+        "tests/salesagent_request_a_consultation_register.py",
         # 88번 - 세일즈 에이전트 > 플랜 혜택 보기의 바우처 혜택 상세 보기 선택 시 정부가 인증한 AI 기반 해외 영업 지원 서비스 모달 노출 확인
         "tests/salesagent_boucher_modal_ui_check.py",
         # 89번 - 정부가 인증한 AI 기반 해외 영업 지원 서비스 모달 > 각 URL 연동 확인
