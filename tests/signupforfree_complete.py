@@ -53,12 +53,12 @@ def test_signupforfree_complete(page):
     page.get_by_role("banner").get_by_role("link", name="세일즈 에이전트").click()
     page.wait_for_timeout(1000)
 
-    # 20251125 - 세일즈 에이전트 랜딩 페이지 > 상단 > [시작하기] 선택 코드 수정
-    page.get_by_role("button", name="시작하기").nth(1).click()
+    # 20251203 - 세일즈 에이전트 랜딩 페이지 > 상단 > [플랜 확인하기] 선택 코드 수정
+    page.get_by_role("button", name="플랜 확인하기").click()
     page.wait_for_timeout(1000)
 
-    # 20251125 - 세일즈 에이전트 랜딩 페이지 > 플랜소개 > Scale > [시작하기] 선택 코드 수정
-    page.get_by_role("button", name="시작하기").nth(3).click()
+    # 20251203 - 세일즈 에이전트 랜딩 페이지 > 플랜소개 > Scale > [시작하기] 선택 앨리먼트 요소 수정되어 코드 수정
+    page.get_by_role("button", name="시작하기").nth(2).click()
     page.wait_for_timeout(1000)
 
     count = read_counter()
