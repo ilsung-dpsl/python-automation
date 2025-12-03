@@ -34,7 +34,8 @@ def test_mylist_delete_list_check(page):
     page.get_by_role("textbox", name="/50").fill("test 1")
     page.wait_for_timeout(500)
     page.get_by_role("button", name="확인").click()
-    page.wait_for_timeout(1000)
+    #20251203 - 리스트 생성 후 3초 대기 시간 추가
+    page.wait_for_timeout(3000)
 
     print("리스트 생성 완료 후")
 
