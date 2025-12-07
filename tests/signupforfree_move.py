@@ -5,7 +5,8 @@ def test_signupforfree_move(page):
     page.goto("https://deepsales.com/ko/login?page=signup",wait_until="load", timeout=60000)
     #page.locator("button:has-text('무료로 시작하기')").nth(1).click()
     #page.wait_for_timeout(5000)
-    page.wait_for_timeout(2000)
+    # 20251208 - 페이지 이동 후 대기 2초 -> 3초로 변경
+    page.wait_for_timeout(3000)
 
     page.wait_for_selector("text=DeepSales에 오신 것을 환영합니다!", timeout=3000)
 
