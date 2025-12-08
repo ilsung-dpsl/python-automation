@@ -12,11 +12,11 @@ def test_prospecting_quickview_addtolist_flow(page):
     page.get_by_role("button", name="로그인").click()
     page.wait_for_timeout(1000)
 
-    #20250930 -
     page.get_by_placeholder("예: 일본 화장품 제조사 세일즈 매니저").fill("일본의 여행 가이드 업체의 직급이 매니저인 사람")
     page.get_by_placeholder("예: 일본 화장품 제조사 세일즈 매니저").press("Enter")
 
-    page.wait_for_timeout(5000)
+    #20251208 - 탐색하기 검색 후 대기 시간 5초 -> 7초로 변경
+    page.wait_for_timeout(7000)
 
     print("탐색하기 > 검색 완료")
 
@@ -36,7 +36,6 @@ def test_prospecting_quickview_addtolist_flow(page):
 
     print("탐색하기 > 퀵뷰 > 리스트에 추가 완료")
 
-
     #20250930 - 탐색하기 UI 변경으로 인한 퀵뷰 > [X] 버튼 선택 후 퀵뷰 닫음 코드 수정
     page.get_by_role("main").get_by_role("button").filter(has_text=re.compile(r"^$")).nth(3).click()
     page.wait_for_timeout(2000)
@@ -55,7 +54,8 @@ def test_prospecting_quickview_addtolist_flow(page):
     page.wait_for_timeout(2000)
 
     page.get_by_text("기본1(1 미확인)백 일성").click()
-    page.wait_for_timeout(1000)
+    # 20251208 - 대기 시간 2초로 변경
+    page.wait_for_timeout(2000)
 
     assert "Ryo Hayashi" == page.get_by_text("Ryo Hayashi").inner_text(), \
         "마이리스트 상세(Default) > 추가한 리드 성함 확인 실패 - 퀵뷰 > 리스트에 추가 실패 1"
@@ -65,11 +65,11 @@ def test_prospecting_quickview_addtolist_flow(page):
     print("마이리스트 상세 > 리스트에 추가한 데이터 확인 완료")
 
     page.locator("div").filter(has_text=re.compile(r"^이름 / 직함연락처회사담당자 위치산업군추가일자$")).get_by_role("checkbox").click()
-    page.wait_for_timeout(500)
+    page.wait_for_timeout(1000)
     page.get_by_role("button", name="삭제").click()
-    page.wait_for_timeout(500)
+    page.wait_for_timeout(1000)
     page.locator("#modal-root").get_by_role("button", name="삭제").click()
-    page.wait_for_timeout(500)
+    page.wait_for_timeout(3000)
     page.get_by_role("button", name="리스트로 돌아가기").click()
     
     print("----- 퀵뷰 > 리스트에 추가 시 정상 동작 여부 확인 테스트 시작 -> 성공 -----")

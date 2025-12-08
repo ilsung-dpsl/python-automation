@@ -17,7 +17,9 @@ def test_prospecting_company_view_employees_check(page):
     page.get_by_placeholder("예: 일본 화장품 제조사 세일즈 매니저").click()
     page.get_by_placeholder("예: 일본 화장품 제조사 세일즈 매니저").fill("삼성 sds 직원 정보를 찾아줘")
     page.get_by_placeholder("예: 일본 화장품 제조사 세일즈 매니저").press("Enter")
-    page.wait_for_timeout(5000)
+
+    #20251208 - 대기 시간 5초 -> 7초로 변경
+    page.wait_for_timeout(7000)
 
     #20251014 - 회사 1개만 노출로 변경되어 코드 수정
     page.get_by_role("tab", name="회사 (1)").click()

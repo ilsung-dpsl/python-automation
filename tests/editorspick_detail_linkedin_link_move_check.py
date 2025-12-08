@@ -68,14 +68,17 @@ def test_editorspick_detail_linkedin_link_move_check(page):
 
     page4.wait_for_timeout(5000)
 
-    #20251202 - 링크드인 연동 후 링크드인 페이지 > 성함 확인 시 앨리먼트 요소가 변경되어 코드 수정
-    #page4.get_by_role("link", name="Wanda Martinez").inner_text()
-    assert "Wanda Martinez" == page4.get_by_test_id("lazy-column").get_by_role("button", name="Wanda Martinez", exact=True).inner_text(), \
+    #20251208 - 링크드인 연동 후 링크드인 페이지 > 성함 확인 시 앨리먼트 요소가 이전 앨리먼트 요소로 다시 변경되어 재수정
+    #page4.get_by_test_id("lazy-column").get_by_role("button", name="Wanda Martinez", exact=True).inner_text()
+
+    assert "Wanda Martinez" == page4.get_by_role("link", name="Wanda Martinez").inner_text(), \
         "링크드인 페이지 > 성함 노출 확인 - 에디터픽 > 링크드인 연동 확인 실패 1"
-    #20251202 - 링크드인 연동 후 링크드인 페이지 > 성함 확인 시 앨리먼트 요소가 변경되어 코드 수정
-    #page4.get_by_role("main").get_by_text("Ejecutiva de Ventas en Uno").inner_text()
-    assert "Ejecutiva de Ventas en Uno Radio Group" == page4.get_by_test_id("lazy-column").get_by_text("Ejecutiva de Ventas en Uno").inner_text(), \
+    #20251208 - 링크드인 연동 후 링크드인 페이지 > 소속회사 / 직함 확인 시 앨리먼트 요소가 다시 변경되어 코드 재수정
+    #page4.get_by_role("link", name="Ejecutiva de Ventas Uno Radio").inner_text()
+    assert "Ejecutiva de Ventas en Uno Radio Group" == page4.get_by_role("main").get_by_text("Ejecutiva de Ventas en Uno").inner_text(), \
            "링크드인 페이지 > 소속 회사 / 직함 노출 확인 - 에디터픽 > 링크드인 연동 확인 실패 2"
+    #20251208 - 링크드인 연동 후 링크드인 페이지 > 경력사항 >
+    #page4.get_by_test_id("lazy-column").get_by_text("Ejecutiva de Ventas en Uno").inner_text()
     assert "Ejecutiva de Ventas" in page4.get_by_role("link", name="Ejecutiva de Ventas Uno Radio").inner_text(), \
         "링크드인 페이지 > 경력 사항 > 직함 노출 확인 - 에디터픽 > 링크드인 연동 확인 실패 3"
 
