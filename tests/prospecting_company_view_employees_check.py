@@ -5,7 +5,9 @@ import config
 def test_prospecting_company_view_employees_check(page):
     print("----- 28번 - 회사 탭 > 직원 정보 확인 후 탐색하기 검색 결과 노출 확인 테스트 시작 -----")
 
-    page.goto("https://deepsales.com/ko/intro")
+    page.goto("https://deepsales.com/ko/intro",wait_until="load", timeout=50000)
+    #20251209 - url 이동 시 대기 시간 1초 추가
+    page.wait_for_timeout(1000)
     page.get_by_role("button", name="로그인").click()
     page.wait_for_timeout(1000)
     page.get_by_placeholder("이메일").fill(config.FREE_PRD5_ACCOUNT)
