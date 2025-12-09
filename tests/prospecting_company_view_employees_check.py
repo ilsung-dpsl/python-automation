@@ -25,7 +25,8 @@ def test_prospecting_company_view_employees_check(page):
     page.get_by_role("tab", name="회사 (1)").click()
     page.wait_for_timeout(2000)
     page.get_by_role("button", name="직원 정보 확인").click()
-    page.wait_for_timeout(3000)
+    #20251209 - 대기 시간 3초 -> 5초로 변경
+    page.wait_for_timeout(5000)
 
     assert "Samsung SDS" == page.locator(".flex-1 > div:nth-child(2) > .flex").nth(0).inner_text(), "필터 > 회사 > Samsung SDS 키워드 확인 실패 1"
     #20251014 - 리드 데이터 위치 변경으로 인해, 데이터 성함 확인 코드 변경
