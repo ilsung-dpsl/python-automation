@@ -31,7 +31,9 @@ def test_prospecting_company_view_employees_check(page):
     assert "Samsung SDS" == page.locator(".flex-1 > div:nth-child(2) > .flex").nth(0).inner_text(), "필터 > 회사 > Samsung SDS 키워드 확인 실패 1"
     #20251014 - 리드 데이터 위치 변경으로 인해, 데이터 성함 확인 코드 변경
     assert "Katie Han" in page.content(), "리드 데이터 1 > 성함 확인 실패 2"
-    assert "Jordi Teruel" in page.content(), "리드 데이터 6 > 성함 확인 실패 3"
+    #20251209 - 리드 데이터 6번이 간헐적으로 첫페이지에 노출되지 않은 상황으로 인해 리드 데이터 2번째로 변경
+    assert "Lee Jungsoo" in page.content(), "리드 데이터 2 > 성함 확인 실패 3"
+    #assert "Jordi Teruel" in page.content(), "리드 데이터 6 > 성함 확인 실패 3"
     assert "연락처 확인" in page.content(), "리드 데이터 > 연락처 확인 버튼 출력 여부 실패 4"
 
     print("----- 회사 탭 > 직원 정보 확인 후 탐색하기 검색 결과 노출 확인 테스트 시작 -> 성공 -----")
