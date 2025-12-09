@@ -5,7 +5,7 @@ def test_price_upgrade_to_the_pro_plan_payment_check(page):
     print("---- 9번 - 요금제 업그레이드 결제 > 결제 전까지 동작 확인 테스트 시작 ----")
 
     # 20251125 - 할인 가격 페이지 삭제로 인해, 일반 가격 페이지 url 변경되어 코드 수정
-    page.goto("https://deepsales.com/ko/pricing")
+    page.goto("https://deepsales.com/ko/pricing",wait_until="load", timeout=50000)
     page.wait_for_timeout(1000)
     page.get_by_role("button", name="로그인").click()
     page.wait_for_timeout(1000)

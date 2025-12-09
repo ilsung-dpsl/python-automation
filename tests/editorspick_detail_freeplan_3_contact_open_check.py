@@ -3,7 +3,9 @@ import config
 
 def test_editorspick_detail_freeplan_3_contact_open_check(page):
     print("---- 82번 - 무료 회원일 경우, 에디터픽 상세 > 연락처 3개 정보 노출 확인 테스트 시작 ----")
-    page.goto("https://deepsales.com/ko/intro")
+
+    #20251209 - url 이동 시 로드 타임아웃 50초 코드로 수정
+    page.goto("https://deepsales.com/ko/intro", wait_until="load", timeout=50000)
     page.wait_for_timeout(1000)
     page.get_by_role("banner").get_by_role("link", name="에디터 픽").click()
     page.wait_for_timeout(1000)

@@ -4,7 +4,8 @@ import re
 def test_company_register_for_a_new_company_flow_check(page):
     print("----- 65번 - 회사 정보 > 회사 정보 생성 페이지에서, 필수 정보 정상 입력 확인 테스트 시작 -----")
 
-    page.goto("https://deepsales.com/ko/intro")
+    #20251209 - url 이동 시 로드 타임아웃 50초 코드로 수정
+    page.goto("https://deepsales.com/ko/intro", wait_until="load", timeout=50000)
     page.get_by_role("button", name="로그인").click()
     page.wait_for_timeout(1000)
     

@@ -4,7 +4,9 @@ import re
 def test_account_and_settings_team_member_go_to_team_management_link_move(page):
     print("----- 76번 - 팀멤버 > 결제 및 요금제 > 팀 관리로 이동 노출 및 링크 이동 확인 테스트 시작 -----")
 
-    page.goto("https://deepsales.com/ko/intro")
+    #20251209 - url 이동 시 로드 타임아웃 50초 코드로 수정
+    page.goto("https://deepsales.com/ko/intro", wait_until="load", timeout=50000)
+
     page.get_by_role("button", name="로그인").click()
     page.wait_for_timeout(1000)
 

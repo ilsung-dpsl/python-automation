@@ -4,7 +4,8 @@ import re
 def test_account_and_settings_team_owner_payment_and_plan_payment_info_show_detail_link_move(page):
     print("----- 78번 - 유료회원 (팀오너) > 결제 및 요금제 > 결제 정보 > 상세정보 표시 선택 시 결제 정보 페이지 이동 확인 테스트 시작 -----")
 
-    page.goto("https://deepsales.com/ko/intro")
+    #20251209 - url 이동 시 로드 타임아웃 50초 코드로 수정
+    page.goto("https://deepsales.com/ko/intro", wait_until="load", timeout=50000)
     page.get_by_role("button", name="로그인").click()
     page.wait_for_timeout(1000)
 

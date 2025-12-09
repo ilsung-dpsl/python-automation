@@ -4,7 +4,8 @@ import re
 def test_account_and_settings_team_owner_payment_and_plan_charging_credit_payment_info_display_check(page):
     print("----- 75번 - 유료 회원(팀오너) > 결제 및 요금제 > 크레딧 충전하기 / 결제 정보 영역 노출 확인 테스트 시작 -----")
 
-    page.goto("https://deepsales.com/ko/intro")
+    #20251209 - url 이동 시 로드 타임아웃 50초 코드로 수정
+    page.goto("https://deepsales.com/ko/intro", wait_until="load", timeout=50000)
     page.get_by_role("button", name="로그인").click()
     page.wait_for_timeout(1000)
 

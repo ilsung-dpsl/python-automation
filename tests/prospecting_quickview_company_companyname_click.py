@@ -32,7 +32,8 @@ def compare_images(img1_path, img2_path, threshold=0.65):
 def test_prospecting_quickview_company_companyname_click(page):
     print("------ 37번 - 퀵뷰(Quick view_company) 회사 정보에서 회사명칭 클릭 시 해당 회사 페이지로 이동 테스트 시작 -----")
 
-    page.goto("https://deepsales.com/ko/intro")
+    # 20251209 - url 이동 시 로드 타임아웃 50초 코드로 수정
+    page.goto("https://deepsales.com/ko/intro", wait_until="load", timeout=50000)
     page.get_by_role("button", name="로그인").click()
     page.wait_for_timeout(1000)
 

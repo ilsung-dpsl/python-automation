@@ -4,7 +4,8 @@ import re
 def test_signupforfree_change_email_register_check(page):
     print("----- 79번 - 회원가입 변경 > 이메일 등록 확인 테스트 시작 -----")
 
-    page.goto("https://deepsales.com/ko/intro")
+    # 20251209 - url 이동 시 로드 타임아웃 50초 코드로 수정
+    page.goto("https://deepsales.com/ko/intro", wait_until="load", timeout=50000)
     page.wait_for_timeout(1000)
     page.get_by_role("link", name="무료로 시작하기").get_by_role("button").click()
     page.wait_for_timeout(1000)

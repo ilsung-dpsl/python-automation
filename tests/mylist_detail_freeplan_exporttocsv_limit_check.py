@@ -3,7 +3,9 @@ import re
 
 def test_mylist_detail_freeplan_exporttocsv_limit_check(page):
     print("----- 48번 - 무료 회원, 마이리스트 상세 > CSV 내보내기 시 요금제 업그레이드 모달 노출 테스트 시작 -----")
-    page.goto("https://deepsales.com/ko/intro")
+
+    # 20251209 - url 이동 시 로드 타임아웃 50초 코드로 수정
+    page.goto("https://deepsales.com/ko/intro", wait_until="load", timeout=50000)
     page.get_by_role("button", name="로그인").click()
     page.wait_for_timeout(1000)
 

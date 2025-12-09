@@ -4,7 +4,8 @@ import config
 def test_editorspick_detail_linkedin_link_move_check(page):
     print("---- 86번 - 에디터픽 상세 > 링크드인 연동 확인 테스트 시작 ----")
 
-    page.goto("https://deepsales.com/ko/intro")
+    #20251209 - url 이동 시 로드 타임아웃 50초 코드로 수정
+    page.goto("https://deepsales.com/ko/intro", wait_until="load", timeout=50000)
     page.wait_for_timeout(1000)
     page.get_by_role("banner").get_by_role("link", name="에디터 픽").click()
     page.wait_for_timeout(1000)

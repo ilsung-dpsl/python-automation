@@ -4,7 +4,9 @@ import re
 def test_account_and_settings_company_info_no_company_affiliation_setup_check(page):
     print("---- 72번 - 소속된 회사가 없을 경우, 회사 정보 > [설정하기] 버튼 노출 및 선택 시 회사 설정 페이지 이동 확인 테스트 시작 -----")
 
-    page.goto("https://deepsales.com/ko/intro")
+    #20251209 - url 이동 시 로드 타임아웃 50초 코드로 수정
+    page.goto("https://deepsales.com/ko/intro", wait_until="load", timeout=50000)
+
     page.get_by_role("button", name="로그인").click()
     page.wait_for_timeout(1000)
 

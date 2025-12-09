@@ -4,7 +4,8 @@ import re
 def test_team_management_enterprise_seat_full_charge_and_invite_member_limit_check(page):
     print("팀관리 > Enterprise 계정 (4명 좌석 만석) > 팀멤버 초대 시 초대 불가 모달 노출 확인 테스트 시작 -----")
 
-    page.goto("https://deepsales.com/ko/intro")
+    # 20251209 - url 이동 시 로드 타임아웃 50초 코드로 수정
+    page.goto("https://deepsales.com/ko/intro", wait_until="load", timeout=50000)
     page.get_by_role("button", name="로그인").click()
     page.wait_for_timeout(1000)
 

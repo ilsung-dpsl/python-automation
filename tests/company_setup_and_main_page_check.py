@@ -4,7 +4,8 @@ import re
 def test_company_setup_and_main_page_check(page):
     print("----- 63번 - 회사 정보 > setup 버튼 및 메인 페이지 진입 테스트 시작 -----")
 
-    page.goto("https://deepsales.com/ko/intro")
+    #20251209 - url 이동 시 로드 타임아웃 50초 코드로 수정
+    page.goto("https://deepsales.com/ko/intro", wait_until="load", timeout=50000)
     page.get_by_role("button", name="로그인").click()
     page.wait_for_timeout(1000)
 
