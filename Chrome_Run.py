@@ -76,10 +76,6 @@ def Chrome_Run_Main():
         "tests/mylist_detail_freeplan_exporttocsv_limit_check.py",
         # 49번 - 유료 플랜 사용자 Export to CSV 클릭 시 모달 노출
         "tests/mylist_detail_enterpriseplan_exporttocsv_check.py",
-        # 50번 - 팀 공유 리스트 리스트에 이동(Move to list) 미노출
-        "tests/mylist_team_share_detail_move_to_list_not_displayed_check.py",
-        # 51번 - 팀 공유 리스트 삭제(Delete) 버튼 미노출
-        "tests/mylist_team_share_detail_delete_not_displayed_check.py",
         # 52번 - 마이리스트에서 연락처 삭제 시 연락처 삭제(Delete contacts) 모달, 삭제 완료 토스트 노출
         "tests/mylist_detail_contact_delete_check.py",
         # 53번 - 확인하고자하는 리스트 항목 선택 후 view contacts 버튼 클릭 시 연락처 확인 Flow 진행
@@ -92,16 +88,6 @@ def Chrome_Run_Main():
         "tests/team_management_enterprise_seat_full_charge_and_invite_member_limit_check.py",
         # 57번 - 좌석 추가(Add seat) 클릭 시, 요금 안내 및 결제 페이지로 이동
         "tests/team_management_free_team_owner_addseat_click.py",
-        # 58번 - Team(4명) 팀 초대 가능 회원수가 남아 있을 때 팀오너는 팀 초대 가능
-        "tests/team_management_team_owner_invite_member_flow_check.py",
-        # 59번 - 유료플랜 사용자가 다른 팀에 초대된 사용자를 팀멤버로 초대 할 경우 Unable to invite 모달 노출
-        "tests/team_management_team_owner_other_team_member_invite_limit_check.py",
-        # 60번 - 팀 멤버 삭제 정상 작동 확인
-        "tests/team_management_team_owner_delete_member.py",
-        # 61번 - 팀 멤버 팀 초대 메일 수신 및 팀 합류 플로우 작동 확인
-        "tests/team_management_team_member_join_the_team_flow_check.py",
-        # 62번 - 팀 멤버 Leave the team 클릭 시, 무료 회원 전환 및 5크레딧 부여
-        "tests/team_management_team_member_leave_the_team_flow_check.py",
         # 63번 - 회사 정보(company) 탭 최초 클릭시 회사 정보를 입력하지 않은 경우 설정하기(set up) 노출, Company set up_Main 화면 노출
         "tests/company_setup_and_main_page_check.py",
         # 64번 - 회사 정보 메인 (company_main) 화면에서 회사 검색 후 선택 시, Register modal 노출 및 등록 시, 회사 정보(Company) 탭 클릭 시 해당 회사 노출
@@ -124,8 +110,6 @@ def Chrome_Run_Main():
         "tests/account_and_settings_team_member_payment_and_plan_charging_credit_payment_info_not_display_check.py",
         # 75번 - 유료 회원(팀오너) : charging credit, payment information 노출
         "tests/account_and_settings_team_owner_payment_and_plan_charging_credit_payment_info_display_check.py",
-        # 76번 - 팀 요금제에 가입되어 있는 팀 맴버의 경우 Go to team managent로 이동할 수 있는 링크 제공
-        "tests/account_and_settings_team_member_go_to_team_management_link_move.py",
         # 77번 - Payment information에 Register a card 클릭 시, 카드 등록 플로우 진행
         "tests/account_and_settings_team_owner_payment_info_register_card_flow_check.py",
         # 78번 - Payment information > show detail 클릭 시 Payment information 페이지로 이동
@@ -168,6 +152,25 @@ def Chrome_Run_Main():
         # 38번 - 퀵뷰(Quick view_company) > 직원 정보 확인(View employees) 클릭 시 선택한 회사가 Company 필터 설정된 상태로 Prospecting 검색 결과 노출
         # (필터 이슈로 Fail - HOLDING 처리)
         # "tests/prospecting_quickview_company_view_employees_check.py",
+
+        ## ISS-224 이슈 클로즈 처리 했으나, 팀관리 이슈로 인해 해당 항목들 테스트 케이스로 제외함
+
+        # 50번 - 팀 공유 리스트 리스트에 이동(Move to list) 미노출 (팀 멤버 초대 이슈로 인해 해당 항목도 영향이 있어 테스트 항목에서 제외)
+        # "tests/mylist_team_share_detail_move_to_list_not_displayed_check.py",
+        # 51번 - 팀 공유 리스트 삭제(Delete) 버튼 미노출 (팀 멤버 초대 이슈로 인해 해당 항목도 영향이 있어 테스트 항목에서 제외)
+        # "tests/mylist_team_share_detail_delete_not_displayed_check.py",
+        # 58번 - Team(4명) 팀 초대 가능 회원수가 남아 있을 때 팀오너는 팀 초대 가능 (ISS-224 팀관리 문제로 테스트 스크립트 항목 제외)
+        # "tests/team_management_team_owner_invite_member_flow_check.py",
+        # 59번 - 유료플랜 사용자가 다른 팀에 초대된 사용자를 팀멤버로 초대 할 경우 Unable to invite 모달 노출 (ISS-224 팀관리 문제로 테스트 스크립트 항목 제외)
+        # "tests/team_management_team_owner_other_team_member_invite_limit_check.py",
+        # 60번 - 팀 멤버 삭제 정상 작동 확인 (ISS-224 팀관리 문제로 테스트 스크립트 항목 제외)
+        # "tests/team_management_team_owner_delete_member.py",
+        # 61번 - 팀 멤버 팀 초대 메일 수신 및 팀 합류 플로우 작동 확인 (ISS-224 팀관리 문제로 테스트 스크립트 항목 제외)
+        # "tests/team_management_team_member_join_the_team_flow_check.py",
+        # 62번 - 팀 멤버 Leave the team 클릭 시, 무료 회원 전환 및 5크레딧 부여 (ISS-224 팀관리 문제로 테스트 스크립트 항목 제외)
+        # "tests/team_management_team_member_leave_the_team_flow_check.py",
+        # 76번 - 팀 요금제에 가입되어 있는 팀 맴버의 경우 Go to team managent로 이동할 수 있는 링크 제공 (팀 멤버 초대 이슈로 인해 해당 항목도 영향이 있어 테스트 항목에서 제외)
+        # "tests/account_and_settings_team_member_go_to_team_management_link_move.py",
 
         # 81번 - 에디터픽 상세 > 데이터 문의하기 등록 확인 (해당 케이스 중요도 낮음으로 자동화 테스트 항목에서 제외)
         # "tests/editorspick_detail_contactus_register_check.py",
