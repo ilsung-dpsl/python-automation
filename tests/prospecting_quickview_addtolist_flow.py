@@ -1,4 +1,6 @@
 import re
+from asyncio import timeout
+
 import config
 
 def test_prospecting_quickview_addtolist_flow(page):
@@ -16,13 +18,13 @@ def test_prospecting_quickview_addtolist_flow(page):
     page.get_by_placeholder("예: 일본 화장품 제조사 세일즈 매니저").fill("일본의 여행 가이드 업체의 직급이 매니저인 사람")
     page.get_by_placeholder("예: 일본 화장품 제조사 세일즈 매니저").press("Enter")
 
-    #20251212 - 탐색하기 검색 후 대기 시간 7초 -> 10초로 변경
-    page.wait_for_timeout(10000)
+    #20251212 - 탐색하기 검색 후 이전 대기 시간 7초로 재변경
+    page.wait_for_timeout(7000)
 
     print("탐색하기 > 검색 완료")
 
-    #20250930 - 탐색하기 ui 변경 및 리드 위치 변경으로 인한 코드 수정
-    page.get_by_text("Ryo Hayashi세일즈 매니저연락처 확인Japan").click()
+    #20251212 - 탐색하기 검색 시 로딩 길어짐으로 인한 앨리먼트 요소가 나올때까지 기다리는 timeout 50초 추가
+    page.get_by_text("Ryo Hayashi세일즈 매니저연락처 확인Japan").click(timeout=50000)
     page.wait_for_timeout(2000)
 
     page.get_by_role("button", name="리스트에 추가").click()
