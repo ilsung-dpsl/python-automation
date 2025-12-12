@@ -55,8 +55,8 @@ FREE_PA9_PW = "!deepsales@36"
 FREE_PA17_ACCOUNT = "ilsung.baek+pa17@deepsales.com"
 FREE_PA17_PW = "!deepsales@36"
 
-FREE_PA19_ACCOUNT = "ilsung.baek+pa19@deepsales.com"
-FREE_PA19_PW = "!deepsales@36"
+#FREE_PA19_ACCOUNT = "ilsung.baek+pa19@deepsales.com"
+#FREE_PA19_PW = "!deepsales@36"
 
 FREE_PA24_ACCOUNT = "ilsung.baek+pa24@deepsales.com"
 FREE_PA24_PW = "!deepsales@36"
@@ -75,12 +75,12 @@ FREE_PA46_PW = "!deepsales@36"
 TEAM_OWNER_ACCOUNT = "ilsung.baek+pa15@deepsales.com"
 TEAM_OWNER_PW = "!deepsales@36"
 
-TEAM_MEMBER_ACCOUNT = "ilsung.baek+pa14@deepsales.com"
-TEAM_MEMBER_PW = "!deepsales@36"
+##TEAM_MEMBER_ACCOUNT = "ilsung.baek+pa14@deepsales.com"
+##TEAM_MEMBER_PW = "!deepsales@36"
 
 
-ENTERPRISE_MEMBER_PA20_ACC = "ilsung.baek+pa20@deepsales.com"
-ENTERPRISE_MEMBER_PA20_PW = "!deepsales@36"
+##ENTERPRISE_MEMBER_PA20_ACC = "ilsung.baek+pa20@deepsales.com"
+##ENTERPRISE_MEMBER_PA20_PW = "!deepsales@36"
 
 
 #딥세일즈 계정 공용 비밀번호
@@ -116,13 +116,13 @@ BOUCHER3_URL = "https://www.nipa.kr/home/bsnsAll/0/detail?bsnsDtlsIemNo=580"
 BOUCHER4_URL = "https://www.kculture.or.kr/cms/content/view/1091"
 BOUCHER5_URL = "https://kdata.or.kr/datavoucher/bg/dvi/ptDvInfoDetail.do"
 
-# 회원가입 계정 - ilsung.baek+pa1@deepsales.com (생성)
+# 회원가입 계정 - ilsung.baek+pa1@deepsales.com (회원가입으로 인한 생성일뿐 사용하지 않음)
 #ilsung.baek+pa2@deepsales.com (생성), ilsung.baek+pa3@deepsales.com (생성), ilsung.baek+pa4@deepsales.com (생성)
 #ilsung.baek+pa5@deepsales.com (생성), ilsung.baek+pa6@deepsales.com (생성), ilsung.baek+pa7@deepsales.com (생성)
 #ilsung.baek+pa8@deepsales.com (생성), ilsung.baek+pa9@deepsales.com (생성), ilsung.baek+pa10@deepsales.com (생성),
 #ilsung.baek+pa11@deepsales.com (생성), ilsung.baek+pa12@deepsales.com (생성), ilsung.baek+pa13@deepsales.com (생성)
 #ilsung.baek+pa14@deepsales.com (생성), ilsung.baek+pa17@deepsales.com (생성), ilsung.baek+pa23@deepsales.com (생성)
-#ilsung.baek+pa24@deepsales.com (생성), ilsung.baek+pa24 ~ ilsung.baek+pa55@deepsales.com 까지 생성됨
+#ilsung.baek+pa24@deepsales.com (생성), ilsung.baek+pa24 ~ ilsung.baek+pa58@deepsales.com 까지 생성됨
 
 # 아래의 계정은 Enterprise 멤버 소속임
 # ilsung.baek+pa20@deepsales.com (생성), ilsung.baek+pa21@deepsales.com (생성), ilsung.baek+pa22@deepsales.com (생성)
