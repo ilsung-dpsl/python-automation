@@ -116,7 +116,7 @@ def Chrome_Run_Main():
         # 82번 - 무료 회원일 경우, 에디터픽 상세 > 연락처 3개 정보 노출 확인
         "tests/editorspick_detail_freeplan_3_contact_open_check.py",
         # 83번 - 유료 회원일 경우, 에디터픽 상세 > 연락처 모든 정보 노출 확인
-        ##"tests/editorspick_detail_enterpriseplan_all_contact_open_check.py",
+        "tests/editorspick_detail_enterpriseplan_all_contact_open_check.py",
         # 84번 - 에디터픽 상세 > 링크드인 연동 확인
         "tests/editorspick_detail_linkedin_link_move_check.py",
         # 85번 - 세일즈 에이전트 UI 확인
