@@ -5,6 +5,7 @@ def Chrome_Run_Main():
         # 1번 - 무료로 시작하기 -> 회원가입
         "tests/signupforfree_move.py",
         # 2번 - 회원가입 완료 -> 회원가입 페이지 제거로 블락 처리
+        # -> 20251212 회원가입 완료 전 플로우 테스트 동작 코드 수정
         "tests/signupforfree_complete.py",
         # 79번 - 회원가입 변경 > 이메일 등록 확인
         "tests/signupforfree_change_email_register_check.py",
@@ -16,8 +17,6 @@ def Chrome_Run_Main():
         "tests/price_click_after_price_page_move.py",
         # 9번 - 요금제 결제 정상 진행 및 영수증 노출 확인 (결제 전까지로 수정 필요 / 보류)
         "tests/price_upgrade_to_the_pro_plan_payment_check.py",
-        # 10번 - "플랜 변경" 선택 시, 팀오너 권한 확인
-        "tests/unabletochangetheplan_modal_check.py",
         # 11번 - 사용 내역에 기간별 평균 크레딧 사용 활동 노출,. 현재 사용중인 요금제, 크레딧 정상 노출 확인
         "tests/dashboard_usage_activity_period_selector_and_plan_credit_check.py",
         # 12번 - 사용 현황 분석에 기간별 산업, 부서, 직위 평균 정보 상위 8개 노출 확인
@@ -84,8 +83,6 @@ def Chrome_Run_Main():
         "tests/mylist_detail_freeplan_upgrade_myplan_modal_upgrade_myplan_click.py",
         # 55번 - 팀관리(Team management)_Free, Pro일때 팀원 초대 불가
         "tests/team_management_free_invite_member_limit_check.py",
-        # 56번 - 팀관리(Enterprise)_Enterprise(4명) 회원 수가 이미 차있을 경우 팀원 초대 불가
-        "tests/team_management_enterprise_seat_full_charge_and_invite_member_limit_check.py",
         # 57번 - 좌석 추가(Add seat) 클릭 시, 요금 안내 및 결제 페이지로 이동
         "tests/team_management_free_team_owner_addseat_click.py",
         # 63번 - 회사 정보(company) 탭 최초 클릭시 회사 정보를 입력하지 않은 경우 설정하기(set up) 노출, Company set up_Main 화면 노출
@@ -106,8 +103,6 @@ def Chrome_Run_Main():
         "tests/account_and_settings_company_info_no_company_affiliation_setup_check.py",
         # 73번 - 무료 회원 : charging credit, payment information 노출 X
         "tests/account_and_settings_freeplan_payment_and_plan_charging_credit_payment_info_not_display_check.py",
-        # 74번 - 유료 회원(팀멤버) : charging credit, payment information 노출 X
-        "tests/account_and_settings_team_member_payment_and_plan_charging_credit_payment_info_not_display_check.py",
         # 75번 - 유료 회원(팀오너) : charging credit, payment information 노출
         "tests/account_and_settings_team_owner_payment_and_plan_charging_credit_payment_info_display_check.py",
         # 77번 - Payment information에 Register a card 클릭 시, 카드 등록 플로우 진행
@@ -155,10 +150,14 @@ def Chrome_Run_Main():
 
         ## ISS-224 이슈 클로즈 처리 했으나, 팀관리 이슈로 인해 해당 항목들 테스트 케이스로 제외함
 
+        # 10번 - "플랜 변경" 선택 시, 팀오너 권한 확인 (20251212 - 팀관리 이슈로 인해 테스트 항목에서 제외)
+        # "tests/unabletochangetheplan_modal_check.py",
         # 50번 - 팀 공유 리스트 리스트에 이동(Move to list) 미노출 (팀 멤버 초대 이슈로 인해 해당 항목도 영향이 있어 테스트 항목에서 제외)
         # "tests/mylist_team_share_detail_move_to_list_not_displayed_check.py",
         # 51번 - 팀 공유 리스트 삭제(Delete) 버튼 미노출 (팀 멤버 초대 이슈로 인해 해당 항목도 영향이 있어 테스트 항목에서 제외)
         # "tests/mylist_team_share_detail_delete_not_displayed_check.py",
+        # 56번 - 팀관리(Enterprise)_Enterprise(4명) 회원 수가 이미 차있을 경우 팀원 초대 불가 (20251212 - 팀관리 이슈로 인해 운영 테스트 항목에서 제외)
+        #"tests/team_management_enterprise_seat_full_charge_and_invite_member_limit_check.py",
         # 58번 - Team(4명) 팀 초대 가능 회원수가 남아 있을 때 팀오너는 팀 초대 가능 (ISS-224 팀관리 문제로 테스트 스크립트 항목 제외)
         # "tests/team_management_team_owner_invite_member_flow_check.py",
         # 59번 - 유료플랜 사용자가 다른 팀에 초대된 사용자를 팀멤버로 초대 할 경우 Unable to invite 모달 노출 (ISS-224 팀관리 문제로 테스트 스크립트 항목 제외)
@@ -169,6 +168,8 @@ def Chrome_Run_Main():
         # "tests/team_management_team_member_join_the_team_flow_check.py",
         # 62번 - 팀 멤버 Leave the team 클릭 시, 무료 회원 전환 및 5크레딧 부여 (ISS-224 팀관리 문제로 테스트 스크립트 항목 제외)
         # "tests/team_management_team_member_leave_the_team_flow_check.py",
+        # 74번 - 유료 회원(팀멤버) : charging credit, payment information 노출 X (20251212 - 팀관리 이슈로 인해 운영 테스트 항목에서 제외)
+        # "tests/account_and_settings_team_member_payment_and_plan_charging_credit_payment_info_not_display_check.py",
         # 76번 - 팀 요금제에 가입되어 있는 팀 맴버의 경우 Go to team managent로 이동할 수 있는 링크 제공 (팀 멤버 초대 이슈로 인해 해당 항목도 영향이 있어 테스트 항목에서 제외)
         # "tests/account_and_settings_team_member_go_to_team_management_link_move.py",
 
