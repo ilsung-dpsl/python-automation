@@ -37,13 +37,14 @@ def test_team_management_free_team_owner_addseat_click(page):
 
     print("Free > 요금제 페이지 진입 완료")
 
-    #20251024 - 헤더 > 탐색하기 삭제로 인하 제품 이용하기 버튼 이동으로 변경
+    #20251024 - 헤더 > 탐색하기 삭제로 인해 제품 이용하기 버튼 이동으로 변경
     page.get_by_role("button", name="제품 이용하기").click()
     page.wait_for_timeout(2000)
 
-    #20251001 - 상단 우측 마이페이지 버튼 선택 코드 수정
+    #20251001 - 상단 우측 마이페이지 버튼 선택 코드 수정 (이전에 코드 블락처리)
     #page.get_by_role("button").filter(has_text=re.compile(r"^$")).nth(3).click()
-    page.get_by_role("button").nth(3).click()
+    #20251215 - 상단 우측 마이페이지 버튼 선택 시 앨리먼트 요소가 나타낼때까지 기다리는 timeout 10초 추가
+    page.get_by_role("button").nth(3).click(timeout=10000)
     page.wait_for_timeout(1000)
 
     page.get_by_text("로그아웃").click()
