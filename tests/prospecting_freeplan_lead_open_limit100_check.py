@@ -22,7 +22,8 @@ def test_prospecting_freeplan_lead_open_limit100_check(page):
     page.wait_for_timeout(10000)
 
     for i in range(1, 5, 1):
-        page.locator("div").filter(has_text=re.compile(fr"^401 페이지 중 {i} 페이지페이지 바로가기$")).get_by_role("button").nth(1).click()
+        #20251216 - 페이징 영역 > [다음] 앨리먼트 요소가 보일때까지, 기다리는 타임아웃 10초로 코드 수정
+        page.locator("div").filter(has_text=re.compile(fr"^401 페이지 중 {i} 페이지페이지 바로가기$")).get_by_role("button").nth(1).click(timeout=10000)
         print(f"{i} 페이지 체크 확인 ")
         page.wait_for_timeout(500)
 
