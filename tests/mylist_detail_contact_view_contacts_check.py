@@ -37,9 +37,11 @@ def test_mylist_detail_contact_view_contacts_check(page):
 
     page.locator("div").filter(has_text=re.compile(r"^1 선택됨삭제연락처 확인내보내기리스트로 이동선택 해제$")).get_by_role("button").nth(1).click()
     page.wait_for_timeout(1000)
-    page.get_by_role("menuitem", name="이메일 및 전화번호 보기").click()
+    #20251217 - 앨리먼트 나올 때까지 timeout 10초 추가
+    page.get_by_role("menuitem", name="이메일 및 전화번호 보기").click(timeout=10000)
     page.wait_for_timeout(1000)
-    page.get_by_role("button", name="확인", exact=True).click()
+    #20251217 - 앨리먼트 나올 때까지 timeout 10초 추가
+    page.get_by_role("button", name="확인", exact=True).click(timeout=10000)
     page.wait_for_timeout(1000)
 
     assert "4 크레딧이 사용되었습니다." == page.locator("div").filter(has_text=re.compile(r"^4 크레딧이 사용되었습니다\.$")).nth(1).inner_text(), \
@@ -91,10 +93,11 @@ def test_mylist_detail_contact_view_contacts_check(page):
 
     page.locator("div").filter(has_text=re.compile(r"^1 선택됨삭제연락처 확인내보내기리스트로 이동선택 해제$")).get_by_role("button").nth(
         1).click()
-    page.get_by_role("menuitem", name="이메일 및 전화번호 보기").click()
+    #20251217 - 앨리먼트 나올 때까지 timeout 10초 추가
+    page.get_by_role("menuitem", name="이메일 및 전화번호 보기").click(timeout=10000)
     page.wait_for_timeout(500)
-    page.get_by_role("button", name="확인", exact=True).click()
-
+    #20251217 - 앨리먼트 나올 때까지 timeout 10초 추가
+    page.get_by_role("button", name="확인", exact=True).click(timeout=10000)
     page.wait_for_timeout(1000)
 
     assert "이런... 크레딧이 부족해요." == page.get_by_text("이런... 크레딧이 부족해요").inner_text(), \
