@@ -7,8 +7,8 @@ def Chrome_Run_Main():
         # 90번 - 회원가입 > 이메일 인증 및 입력값 확인
         "tests/signupforfree_email_verification_and_input_validation_check.py",
         # 2번 - 회원가입 완료 -> 회원가입 페이지 제거로 블락 처리
-        # -> 20251212 회원가입 완료 전 플로우 테스트 동작 코드 수정 (1달에 1번만 돌리는 케이스 - 20260111에 돌릴 예정)
-        ###"tests/signupforfree_complete.py",
+        # -> 20251212 회원가입 완료 전 플로우 테스트 동작 코드 수정 (개발 로직 변경으로 인해 20251217일 돌려봄 - 20260116에 다시 돌릴 예정)
+        "tests/signupforfree_complete.py",
         # 79번 - 회원가입 변경 > 이메일 등록 확인
         "tests/signupforfree_change_email_register_check.py",
         # 3번 - 로그인 완료
