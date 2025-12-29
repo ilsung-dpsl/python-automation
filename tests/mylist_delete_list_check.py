@@ -35,15 +35,15 @@ def test_mylist_delete_list_check(page):
     page.get_by_role("textbox", name="/50").fill("test 1")
     page.wait_for_timeout(500)
     page.get_by_role("button", name="확인").click()
-    #20251203 - 리스트 생성 후 3초 대기 시간 추가
+    #20251229 - 리스트 생성 후 3초로 원복
     page.wait_for_timeout(3000)
 
     print("리스트 생성 완료 후")
 
     #20250930 - 새로 생성한 일반 폴더 리스트 > 더보기 버튼 선택 코드 수정
     page.locator("div:nth-child(3) > div:nth-child(6) > div").click()
-    #20250930 - 대기 시간 0.5초 코드 추가
-    page.wait_for_timeout(500)
+    #20251229 - 대기 시간 0.5초 -> 3초로 수정
+    page.wait_for_timeout(3000)
 
     page.get_by_role("menuitem", name="리스트 삭제").click()
     page.wait_for_timeout(2000)

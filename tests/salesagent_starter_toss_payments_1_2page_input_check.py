@@ -1,7 +1,7 @@
 import re
 import config
 
-def test_salesagent_start_counseling_register_check(page):
+def test_salesagent_starter_toss_payments_1_2page_input_check(page):
     print("---- 84번 - 세일즈 에이전트 > Starter > 구독 결제 완료 전까지 동작 확인 ----")
 
     # 20251209 - url 이동 시 로드 타임아웃 50초 코드로 수정
