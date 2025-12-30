@@ -4,6 +4,8 @@ import config
 def test_dashboard_mylist_contacts_count_check(page):
     print("----- 14번 - My lists 영역에 저장한 연락처, 미확인 연락처 표시 확인 테스트 시작-----")
     page.goto("https://deepsales.com/ko/intro",wait_until="load", timeout=60000)
+    #20251230 - URL 이동 후 잠시 0.5 대기 시간 코드 추가
+    page.wait_for_timeout(500)
     page.get_by_role("button", name="로그인").click()
     page.wait_for_timeout(1000)
     page.get_by_placeholder("이메일").fill(config.ENTERPRISE_ACCOUNT)
@@ -11,7 +13,8 @@ def test_dashboard_mylist_contacts_count_check(page):
     page.get_by_role("button", name="로그인").click()
   #  page.wait_for_timeout(1000)
   #  page.get_by_role("button", name="Start Now").click()
-    page.wait_for_timeout(1000)
+    #20251230 - 대기 시간 1초 -> 2초로 수정
+    page.wait_for_timeout(2000)
 
     #20250930 - 탐색하기 ui(LNB 영역) 변경으로 인한 LNB 숨김처리됨 -> LNB 마우스 호버하는 코드 추가 및 수정
     lnb_hover_target = page.get_by_text("대시보드탐색하기발견하기마이 리스트").first
