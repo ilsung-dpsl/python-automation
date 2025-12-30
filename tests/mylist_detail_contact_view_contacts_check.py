@@ -59,10 +59,12 @@ def test_mylist_detail_contact_view_contacts_check(page):
     page.wait_for_timeout(2000)
 
     page.get_by_role("button", name="삭제").click()
-    page.wait_for_timeout(1000)
+    #20251230 - 대기 시간 1초 -> 2초 코드 변경
+    page.wait_for_timeout(2000)
 
     page.locator("#modal-root").get_by_role("button", name="삭제").click()
-    page.wait_for_timeout(1000)
+    #20251230 - 대기 시간 1초 -> 2초 코드 변경
+    page.wait_for_timeout(2000)
 
     print("마이 리스트 상세 (일반) > 확인된 연락처 삭제 성공")
 

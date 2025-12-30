@@ -11,7 +11,8 @@ def test_dashboard_usage_activity_period_selector_and_plan_credit_check(page):
     page.get_by_role("button", name="로그인").click()
     # page.wait_for_timeout(1000)
     # page.get_by_role("button", name="Start Now").click()
-    page.wait_for_timeout(1000)
+    #20251230 - 대기 1초 -> 2초로 수정
+    page.wait_for_timeout(2000)
 
     # 20250929 - 탐색하기 ui(LNB 영역) 변경으로 인한 LNB 숨김처리됨 -> LNB 마우스 호버하는 코드 추가 및 수정
     lnb_hover_target = page.get_by_text("대시보드탐색하기발견하기마이 리스트").first
