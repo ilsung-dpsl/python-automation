@@ -45,9 +45,11 @@ def test_team_management_free_team_owner_addseat_click(page):
     #page.get_by_role("button").filter(has_text=re.compile(r"^$")).nth(3).click()
     #20251215 - 상단 우측 마이페이지 버튼 선택 시 앨리먼트 요소가 나타낼때까지 기다리는 timeout 10초 추가
     page.get_by_role("button").nth(3).click(timeout=10000)
-    page.wait_for_timeout(1000)
+    #20251231 - 대기 1초 -> 2초로 수정
+    page.wait_for_timeout(2000)
 
-    page.get_by_text("로그아웃").click()
+    #20251231 - 로그아웃 버튼 선택 전 앨리먼트 나올때까지 timeout 10초 코드 추가
+    page.get_by_text("로그아웃").click(timeout=10000)
     page.wait_for_timeout(1000)
 
     print("Free 계정 로그아웃 후 로그인 페이지 진입 완료")
