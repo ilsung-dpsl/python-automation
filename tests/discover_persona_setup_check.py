@@ -64,7 +64,8 @@ def test_discover_persona_setup_check(page):
     page.wait_for_timeout(1000)
     page.locator("div").filter(has_text=re.compile(r"^1 - 10$")).click()
     page.wait_for_timeout(2000)
-    page.get_by_role("button", name="새 페르소나 만들기").click()
+    #20250105 - 새 페르소나 만들기 앨리먼트 노출되었는지 타임아웃 10초 대기 확인 후 클릭으로 코드 수정
+    page.get_by_role("button", name="새 페르소나 만들기").click(timeout=10000)
     page.wait_for_timeout(2000)
 
     assert "새로운 페르소나가 생성되었습니다." == page.get_by_text("새로운 페르소나가 생성되었습니다.").inner_text(), \
@@ -79,11 +80,14 @@ def test_discover_persona_setup_check(page):
     assert "Home Health Care Services" == page.get_by_text("Home Health Care Services").inner_text(), \
         "새 페르소나 생성한 페르소나의 산업군 태그 노출 실패 - 퍼소나 설정 안내 모달 및 퍼소나 설정 추가 실패 5"
 
-    page.get_by_role("article").filter(has_text="새 페르소나를 만들어 볼까요?Home Health").get_by_role("button").click()
+    #20250105 - 해당 앨리먼트 노출 할떄까지 타임아웃 대기 10초 후 나타나면 클릭으로 코드 수정
+    page.get_by_role("article").filter(has_text="새 페르소나를 만들어 볼까요?Home Health").get_by_role("button").click(timeout=10000)
     page.wait_for_timeout(500)
-    page.get_by_role("button", name="삭제").click()
+    #20250105 - 해당 앨리먼트 노출 할떄까지 타임아웃 대기 10초 후 나타나면 클릭으로 코드 수정
+    page.get_by_role("button", name="삭제").click(timeout=10000)
     page.wait_for_timeout(500)
-    page.locator("header").filter(has_text="페르소나 관리").get_by_role("button").click()
+    #20250105 - 해당 앨리먼트 노출 할떄까지 타임아웃 대기 10초 후 나타나면 클릭으로 코드 수정
+    page.locator("header").filter(has_text="페르소나 관리").get_by_role("button").click(timeout=10000)
     page.wait_for_timeout(500)
 
     print("새 페르소나 생성 후 페르소나 관리 모달 > 생성한 페르소나 목록 정상 추가 확인 완료")
