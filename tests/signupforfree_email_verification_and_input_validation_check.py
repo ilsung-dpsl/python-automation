@@ -43,7 +43,7 @@ def test_signupforfree_email_verification_and_input_validation_check(page):
     """
     :type page: object
     """
-    print("----- 20251212 - 90번 - 회원가입 완료 전까지 프로레스 확인 스크립트 테스트 시작 -----")
+    print("----- 20251212 - 90번 - 회원가입 완료 전까지 프로세스 확인 스크립트 테스트 시작 -----")
 
     page.goto("https://deepsales.com/ko/intro", wait_until="load", timeout=30000)
     #    page.goto("https://dev.deepsales.io/ko/intro",wait_until="load", timeout=30000)
@@ -124,4 +124,4 @@ def test_signupforfree_email_verification_and_input_validation_check(page):
     assert button.is_enabled(), \
         "회원가입 > 가입하기 버튼 활성화 노출 확인 실패 - 회원가입 완료 전 프로세스 확인 실패 4"
 
-    print("----- 20251212 - 90번 - 회원가입 완료 전까지 프로레스 확인 스크립트 테스트 시작 -> 성공 -----")
+    print("----- 20251212 - 90번 - 회원가입 완료 전까지 프로세스 확인 스크립트 테스트 시작 -> 성공 -----")
