@@ -12,16 +12,17 @@ def test_prospecting_contacts_name_click_and_contact_detail_check(page):
     page.get_by_placeholder("비밀번호").fill(config.FREE_PW)
     page.get_by_role("button", name="로그인").click()
     page.wait_for_timeout(1000)
-  #  page.get_by_role("button", name="Start Now").click()
-  #  page.wait_for_timeout(1000)
+
     page.get_by_placeholder("예: 일본 화장품 제조사 세일즈 매니저").click()
-    page.get_by_placeholder("예: 일본 화장품 제조사 세일즈 매니저").fill("한국 화장품 유통 회사 중 직급이 매니저인 담당자를 찾아줘")
+    #20260108 - 검색어를 변경 (danny jung이 나올 수 있도록 검색어 조정)
+    page.get_by_placeholder("예: 일본 화장품 제조사 세일즈 매니저").fill("한국 화장품 유통 회사 중 직급이 매니저인 Danny Jung을 찾아줘")
+
     #20250930 - 탐색하기 UI 변경으로 프롬프트 창 > 검색 버튼 코드 수정
     page.locator("label").get_by_role("img").nth(1).click()
-
     page.wait_for_timeout(5000)
 
-    page.get_by_text("Danny Jung").click()
+    #20260108 - danny jung 성함 선택 시에 앨리먼트 요소가 변경되어 코드 수정 및 타임아웃 10초 추가
+    page.get_by_text("Danny Jung", exact=True).click(timeout=10000)
     page.wait_for_timeout(5000)
 
     #연락처 상세 UI 변경 QA 항목 배포로 인한 연락처 상세 페이지 확인 코드 수정 - 20250911
