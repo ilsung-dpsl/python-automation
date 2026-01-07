@@ -39,4 +39,4 @@ def test_prospecting_company_view_employees_check(page):
     #assert "Jordi Teruel" in page.content(), "리드 데이터 6 > 성함 확인 실패 3"
     assert "연락처 확인" in page.content(), "리드 데이터 > 연락처 확인 버튼 출력 여부 실패 4"
 
-    print("----- 회사 탭 > 직원 정보 확인 후 탐색하기 검색 결과 노출 확인 테스트 시작 -> 성공 -----")
+    print("----- 28번 - 회사 탭 > 직원 정보 확인 후 탐색하기 검색 결과 노출 확인 테스트 시작 -> 성공 -----")
