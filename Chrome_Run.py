@@ -49,6 +49,8 @@ def Chrome_Run_Main():
         "tests/prospecting_addtolist_flow_check.py",
         # 28번 - 회사 검색 후 View Employees 버튼 클릭 시 선택한 회사가 Company 필터 설정된 상태로 Prospecting 검색 결과 노출
         "tests/prospecting_company_view_employees_check.py",
+        # 29번 - Contact 리스트 중 담당자 이름 클릭 시 담당자 상세 페이지로 이동
+        "tests/prospecting_contacts_name_click_and_contact_detail_check.py"
         # 31번 - 퀵뷰(Quick view_contact) > view contact 정상 작동 여부 확인
         "tests/prospecting_quickview_contact_view_contacts_check.py",
         # 32번 - 퀵뷰(Quick view_contact) > add to list 정상 작동 여부 확인
@@ -144,6 +146,8 @@ def Chrome_Run_Main():
         # 25번 - 크레딧 정상 충전 및 결제 확인 (결제 취소 지연 문제로 인해 DEV 기준으로 작성)
         # "tests/dev_charge_credit_complete.py",
 
+        # 30번 - 퀵뷰(Quick view_contact) 정상 노출 (필터 이슈로 Fail - HOLDING 처리)
+        #"tests/prospecting_quickview_contact_check.py"
         # 37번 - 퀵뷰(Quick view_company) 회사 정보에서 회사명칭 클릭 시 해당 회사 페이지로 이동 (필터 이슈로 Fail - HOLDING 처리)
         # "tests/prospecting_quickview_company_companyname_click.py",
         # 38번 - 퀵뷰(Quick view_company) > 직원 정보 확인(View employees) 클릭 시 선택한 회사가 Company 필터 설정된 상태로 Prospecting 검색 결과 노출
