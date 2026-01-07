@@ -42,5 +42,4 @@ def test_dashboard_mylist_contacts_count_check(page):
 #    print("대시보드 > 마이리스트 > 팀공유 연락처 개수 영역 미출력됨 -> 해당 항목 주석 처리 -> 추후 수정 시 재추가 및 수정")
 #    assert "팀 공유" in page.content(), "대시보드 > 마이리스트 영역 > 팀 공유 문구 노출 확인 실패 6"
 
-
-    print("----- My lists 영역에 저장한 연락처, 미확인 연락처 표시 확인 테스트 종료 -> 성공 -----")
+    print("----- 14번 - My lists 영역에 저장한 연락처, 미확인 연락처 표시 확인 테스트 종료 -> 성공 -----")

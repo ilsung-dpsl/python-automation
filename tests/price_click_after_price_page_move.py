@@ -2,9 +2,7 @@ def test_price_click_after_price_page_move(page):
     print("---- 8번 - 요금제 및 결제 페이지 이동 확인 케이스 시작 ----")
     #20251125 - 가격 할인 페이지 삭제로 인해, url 변경되었고, 일반 가격 URL로 코드 재수정
     page.goto("https://deepsales.com/ko/pricing",wait_until="load", timeout=50000)
-    page.wait_for_timeout(2000)
-    #page.get_by_role("banner").get_by_role("link", name="가격").click()
-    #page.wait_for_timeout(3000)
+    page.wait_for_timeout(3000)
 
     assert "당신의 세일즈를 위한 맞춤형 요금제" in page.content(), "요금제 및 가격 페이지 이동 실패 - 요금제 및 가격 타이틀 확인 x"
     assert "Free" in page.content(), "요금제 및 가격 페이지 이동 실패 - Free 플랜 영역 확인 x"
