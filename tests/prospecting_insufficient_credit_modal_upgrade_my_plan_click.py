@@ -32,4 +32,4 @@ def test_prospecting_insufficient_credit_modal_upgrade_my_plan_click(page):
     #요금제 및 가격 페이지 > Elite 영역 > [플랜 변경하기] 버튼 확인으로 변경 - 20250805
     assert "컨설팅 받기" in page.locator("div").filter(has_text=re.compile(r"^Enterprise별도 문의컨설팅 받기$")).get_by_role("button").inner_text(), "요금제 및 가격 페이지 > Enterprise > 컨설팅 받ㄱ; 버튼 출력 실패 - 플랜 페이지 이동 실패 2"
 
-    print("----- 연락처 확인 시 크레딧이 부족할 경우 모달 노출 시 Upgrade my plan 버튼 클릭 시 플랜 페이지로 이동 테스트 시작 -> 성공 -----")
+    print("----- 23번 - 연락처 확인 시 크레딧이 부족할 경우 모달 노출 시 Upgrade my plan 버튼 클릭 시 플랜 페이지로 이동 테스트 시작 -> 성공 -----")
