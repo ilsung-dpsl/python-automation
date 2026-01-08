@@ -38,4 +38,4 @@ def test_discover_freeplan_viewmore_click(page):
     assert "요금제 업그레이드" == page.get_by_role("button", name="요금제 업그레이드").inner_text(), \
         "요금제 업그레이드 모달 > 요금제 업그레이드 버튼 노출 실패 - 발견하기 > 더보기 선택 후 요금제 업그레이드 모달 노출 실패 2"
 
-    print("----- Free plan 사용자가 발견하기 > 더보기 선택 시 요금제 업그레이드 모달 노출 테스트 시작 -> 성공 -----")
+    print("----- 41번 - Free plan 사용자가 발견하기 > 더보기 선택 시 요금제 업그레이드 모달 노출 테스트 시작 -> 성공 -----")
