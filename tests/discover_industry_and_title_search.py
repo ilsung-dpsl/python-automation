@@ -45,4 +45,4 @@ def test_discover_industry_and_title_search(page):
     assert "Hospitality, 50 - 200" ==     page.locator("[id=\"__next\"]").get_by_text("Hospitality, 50 -").inner_text(), \
         "발견하기 > 검색된 카드 > 키워드 문구 확인 실패 - 산업군 + 타이틀 검색 실패 3"
 
-    print("----- 발견하기 > 산업군 + 타이틀 문구 키워드 검색 테스트 시작 -> -----")
+    print("----- 42번 - 발견하기 > 산업군 + 타이틀 문구 키워드 검색 테스트 시작 -> -----")
