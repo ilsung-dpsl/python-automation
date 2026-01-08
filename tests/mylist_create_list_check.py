@@ -58,4 +58,4 @@ def test_mylist_create_list_check(page):
     page.get_by_role("menuitem", name="리스트 삭제").click()
     page.wait_for_timeout(1000)
 
-    print("----- 마이리스트 > 리스트 생성 확인 테스트 시작 -> 성공 -----")
+    print("----- 47번 - 마이리스트 > 리스트 생성 확인 테스트 시작 -> 성공 -----")
