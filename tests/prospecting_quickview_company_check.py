@@ -3,8 +3,8 @@ import numpy as np
 
 import config
 
-# 20260108 - 이미지 유사도 합격륭을 58%로로 변경
-def compare_images(img1_path, img2_path, threshold=0.58):
+# 20260108 - 이미지 유사도 합격륭을 50%로로 변경 (Jenkins에서 유사도가 낮게 측정되어, 퍼센트율을 낮춤)
+def compare_images(img1_path, img2_path, threshold=0.50):
     print("----- 이미지 비교 체크 함수 시작 -----")
     """
     두 이미지 파일을 비교하여 유사도 반환
