@@ -2,7 +2,7 @@ import config
 import re
 
 def test_discover_freeplan_industry_or_keyword_search_limit_check(page):
-    print("40번 - 발견하기 > 무료 회원 사용자 키워드/산업군 탐색 시 요금제 업그레이드 모달 노출 확인 테스트 시작 -----")
+    print("----- 40번 - 발견하기 > 무료 회원 사용자 키워드/산업군 탐색 시 요금제 업그레이드 모달 노출 확인 테스트 시작 -----")
 
     #20251209 - url 이동 시 로드 타임아웃 50초 코드로 수정
     page.goto("https://deepsales.com/ko/intro", wait_until="load", timeout=50000)
@@ -58,4 +58,4 @@ def test_discover_freeplan_industry_or_keyword_search_limit_check(page):
 
     page.locator("#modal-root").get_by_role("button").filter(has_text=re.compile(r"^$")).click()
 
-    print("발견하기 > 무료 회원 사용자 키워드/산업군 탐색 시 요금제 업그레이드 모달 노출 확인 테스트 시작 -> 성공 -----")
+    print("----- 40번 - 발견하기 > 무료 회원 사용자 키워드/산업군 탐색 시 요금제 업그레이드 모달 노출 확인 테스트 시작 -> 성공 -----")
