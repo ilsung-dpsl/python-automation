@@ -53,5 +53,5 @@ def test_mylist_detail_contact_delete_check(page):
     assert "연락처가 삭제되었습니다." == page.locator("div").filter(has_text=re.compile(r"^연락처가 삭제되었습니다\.$")).nth(1).inner_text(), \
         "연락처 삭제 후 연락처 삭제 토스트 메시지 출력 실패 - 연락처 삭제 완료 실패 3"
 
-    print("----- 마이리스트 상세 (일반) > 연락처 삭제 확인 테스트 시작 -> 성공-----")
+    print("----- 52번 - 마이리스트 상세 (일반) > 연락처 삭제 확인 테스트 시작 -> 성공-----")
 
