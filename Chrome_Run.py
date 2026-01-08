@@ -148,6 +148,10 @@ def Chrome_Run_Main():
 
         # 30번 - 퀵뷰(Quick view_contact) 정상 노출 (필터 이슈로 Fail - HOLDING 처리)
         #"tests/prospecting_quickview_contact_check.py"
+        # 33번 - 퀵뷰(Quick view_contact) 회사 정보에서 회사명칭 클릭 시 해당 회사 페이지로 이동 (필터 이슈로 Fail - HOLDING 처리)
+        #"tests/prospecting_quickview_company_companyname_click.py"
+        # 34번 - 회사 리스트 중 회사 이름 클릭 시 회사 상세 페이지로 이동 (필터 이슈로 Fail - HOLDING 처리)
+        #"tests/prospecting_company_companyname_click_and_company_info_move.py"
         # 37번 - 퀵뷰(Quick view_company) 회사 정보에서 회사명칭 클릭 시 해당 회사 페이지로 이동 (필터 이슈로 Fail - HOLDING 처리)
         # "tests/prospecting_quickview_company_companyname_click.py",
         # 38번 - 퀵뷰(Quick view_company) > 직원 정보 확인(View employees) 클릭 시 선택한 회사가 Company 필터 설정된 상태로 Prospecting 검색 결과 노출
