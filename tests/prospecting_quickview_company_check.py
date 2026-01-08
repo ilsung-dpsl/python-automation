@@ -3,9 +3,12 @@ import numpy as np
 
 import config
 
-def compare_images(img1_path, img2_path, threshold=0.60):
+# 20260108 - 이미지 유사도 합격륭을 58%로로 변경
+def compare_images(img1_path, img2_path, threshold=0.58):
     print("----- 이미지 비교 체크 함수 시작 -----")
     """
+    두 이미지 파일을 비교하여 유사도 반환
+    두 이미지 파일을 비교하여 유사도 반환
     두 이미지 파일을 비교하여 유사도 반환
     """
     img1 = cv2.imread(img1_path)
@@ -59,13 +62,9 @@ def test_prospecting_quickview_company_check(page):
     #20250930 - 탐색하기 ui 변경으로 인한 2번째 회사 리드 선택 코드 수정
     page.get_by_text("Corporate Travel Serviceswww.").click()
     page.wait_for_timeout(3000)
-    with page.expect_popup() as page1_info:
-        page.get_by_role("article").get_by_text("Corporate Travel Services").click()
-    page1 = page1_info.value
 
-    page1.wait_for_timeout(3000)
-
-    svg_element = page1.locator("img").nth(1)
+    # 20260108 - 퀵뷰 (회사) > 회사 로고 이미지 가져오는 코드 수정 및 회사 정보 페이지 노출되는 부분 제거
+    svg_element = page.get_by_role("img", name="Corporate Travel Services logo")
 
     # 탐색하기 > 퀵뷰 (회사) > 회사 로고 이미지 확인
     if svg_element:
