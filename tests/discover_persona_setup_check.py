@@ -34,7 +34,7 @@ def test_discover_persona_setup_check(page):
     assert "페르소나 설정" == page.locator("#modal-root").get_by_role("button", name="페르소나 설정").inner_text(), \
         "퍼소나 설정 안내 모달 > 페르소나 설정 버튼 노출 실패 - 퍼소나 설정 안내 모달 및 퍼소나 설정 추가 실패 2"
 
-    print("발견하기 페이지 진입 후 퍼솬 설정 안내 모달 노출 확인 완료")
+    print("발견하기 페이지 진입 후 페르소나 설정 안내 모달 노출 확인 완료")
     page.locator("header").filter(has_text="고객 페르소나를 통해 고객에게 다가가기 시작할 준비를 하십시오").get_by_role("button").click()
     #대기시간 2초로 수정 - 20250828
     page.wait_for_timeout(2000)
