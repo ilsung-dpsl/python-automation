@@ -45,4 +45,4 @@ def test_discover_card_prospecting_now_check(page):
     assert "Sunny Cheng" == page.get_by_text("Sunny Cheng").inner_text(), \
         "발견하기 > 카드 > 지금 탐색하기 연동 후 탐색하기 > 리드 성함 확인 실패 - 탐색하기 연동 실패 4"
 
-    print("----- 발견하기 > 임의 카드 > 지금 탐색하기 선택 시 탐색결과 연동 확인 테스트 시작 -> 성공 -----")
+    print("----- 43번 - 발견하기 > 임의 카드 > 지금 탐색하기 선택 시 탐색결과 연동 확인 테스트 시작 -> 성공 -----")
