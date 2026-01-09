@@ -71,5 +71,5 @@ def test_account_and_settings_my_profile_membership_withdrawal_flow_check(page):
 
     print("탈퇴 사유 선택창 > 취소 선택 후 알림창 닫힘 완료")
 
-    print("----- 회원 탈퇴 플로우 확인 테스트 시작 -> 성공 -----")
+    print("----- 68번 - 회원 탈퇴 플로우 확인 테스트 시작 -> 성공 -----")
 
