@@ -80,4 +80,4 @@ def test_company_register_flow_check(page):
     page.wait_for_timeout(1000)
 
     print("회사 정보 등록 후 소속된 회사 떠니기 완료")
-    print("----- 회사 정보 메인 > 등록하기 -> 회사 등록 후 확인 테스트 시작 -> 성공 -----")
+    print("----- 64번 - 회사 정보 메인 > 등록하기 -> 회사 등록 후 확인 테스트 시작 -> 성공 -----")
