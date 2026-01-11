@@ -103,4 +103,4 @@ def test_salesagent_starter_toss_payments_1_2page_input_check(page):
     page.locator("iframe[name=\"__tosspayments_payment-gateway_iframe__\"]").content_frame.get_by_role("button", name="결제 취소").click()
     page.wait_for_timeout(1000)
 
-    print("---- 84번 - 세일즈 에이전트 > Starter > 구독 결제 완료 전까지 동작 확인 -> 성공 ----")
+    print("---- 86번 - 세일즈 에이전트 > Starter > 구독 결제 완료 전까지 동작 확인 -> 성공 ----")
