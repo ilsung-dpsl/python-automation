@@ -16,7 +16,7 @@ def test_salesagent_starter_toss_payments_1_2page_input_check(page):
     page.wait_for_timeout(1000)
 
     # 20251202 - 세일즈 에이전트 > Starter > [시작하기] 버튼 선택 위치 변경으로 인해 코드 수정
-    page.get_by_role("button", name="시작하기").nth(1).click()
+    page.get_by_role("button", name="시작하기").first.click()
     page.wait_for_timeout(2000)
 
     print("회원가입 페이지 진입 완료")
