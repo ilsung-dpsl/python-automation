@@ -9,6 +9,9 @@ def Chrome_MO_Web_Run():
         # MO Web 2번 - 회원가입 > 이메일 인증 및 입력값 확인
         "tests_mo/MO_signupforfree_email_verification_and_input_validation_check.py",
 
+        # MO Web 3번 - 회원가입 완료 (1달에 1번만 돌려야 하는 항목)
+        #"tests_mo/MO_signupforfree_complete.py"
+
         # MO Web 4번 - 회원가입 변경 > 이메일 등록 확인
         "tests_mo/MO_signupforfree_change_email_register_check.py",
 
