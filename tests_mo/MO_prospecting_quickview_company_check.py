@@ -54,11 +54,11 @@ def test_MO_prospecting_quickview_company_check(mobile_page):
     mobile_page.get_by_placeholder("예: 일본 화장품 제조사 세일즈 매니저").fill("멕시코 위주의 여행 상품을 파는 업체를 찾아줘")
     mobile_page.get_by_placeholder("예: 일본 화장품 제조사 세일즈 매니저").press("Enter")
 
-    mobile_page.wait_for_timeout(10000)
+    mobile_page.wait_for_timeout(7000)
 
     print("탐색하기 > 검색 완료")
 
-    mobile_page.get_by_role("tab", name="회사 (99)").tap(timeout=10000)
+    mobile_page.get_by_role("tab", name="회사 (99)").tap(timeout=20000)
     mobile_page.wait_for_timeout(2000)
 
     # 20260108 - 회사 리드 > 2번째 본사위치 > Mexico 선택하여 퀵뷰 (회사) 노출하는 코드로 수정 (Mobile의 경우, PC처럼 동작하지 않음)

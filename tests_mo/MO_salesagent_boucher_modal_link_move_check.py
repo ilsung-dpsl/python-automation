@@ -17,16 +17,16 @@ def test_MO_salesagent_boucher_modal_link_move_check(mobile_page):
 
     print("세일즈 에이전트 랜딩 페이지 진입 완료")
 
-    mobile_page.get_by_role("button", name="플랜 확인하기").click()
+    mobile_page.get_by_role("button", name="플랜 확인하기").tap()
     mobile_page.wait_for_timeout(1000)
 
-    mobile_page.get_by_role("button", name="바우처 혜택 상세 보기").click()
+    mobile_page.get_by_role("button", name="바우처 혜택 상세 보기").tap()
     mobile_page.wait_for_timeout(1000)
 
     print("정부가 인증한 AI 기반 해외 영업 지원 서비스 모달 출력 완료")
 
     with mobile_page.expect_popup() as page2_info:
-        mobile_page.get_by_role("link", name="바로가기").first.click()
+        mobile_page.get_by_role("link", name="바로가기").first.tap( )
     mobile_page2 = page2_info.value
 
     mobile_page2.wait_for_timeout(3000)
@@ -54,7 +54,7 @@ def test_MO_salesagent_boucher_modal_link_move_check(mobile_page):
     #page.wait_for_timeout(1000)
 
     with mobile_page.expect_popup() as page2_info:
-        mobile_page.get_by_role("link", name="바로가기").nth(2).click()
+        mobile_page.get_by_role("link", name="바로가기").nth(2).tap()
     mobile_page2 = page2_info.value
 
     mobile_page2.wait_for_timeout(3000)
@@ -70,7 +70,7 @@ def test_MO_salesagent_boucher_modal_link_move_check(mobile_page):
     mobile_page.wait_for_timeout(1000)
 
     with mobile_page.expect_popup() as page2_info:
-        mobile_page.get_by_role("link", name="바로가기").nth(3).click()
+        mobile_page.get_by_role("link", name="바로가기").nth(3).tap()
     mobile_page2 = page2_info.value
 
     mobile_page2.wait_for_timeout(3000)
@@ -86,7 +86,7 @@ def test_MO_salesagent_boucher_modal_link_move_check(mobile_page):
     mobile_page.wait_for_timeout(1000)
 
     with mobile_page.expect_popup() as page2_info:
-        mobile_page.get_by_role("link", name="바로가기").nth(4).click()
+        mobile_page.get_by_role("link", name="바로가기").nth(4).tap()
     mobile_page2 = page2_info.value
 
     mobile_page2.wait_for_timeout(3000)
