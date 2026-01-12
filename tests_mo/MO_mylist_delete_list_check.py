@@ -45,7 +45,7 @@ def test_MO_mylist_delete_list_check(mobile_page):
 
     # 20260107 - 앨리먼트 나타날 때까지 타임아웃 대기 10초 추가 / 2초 -> 2.5초로 대기 수정
     mobile_page.get_by_role("menuitem", name="리스트 삭제").tap(timeout=10000)
-    mobile_page.wait_for_timeout(2500)
+    mobile_page.wait_for_timeout(3000)
 
     assert "리스트가 삭제되었습니다." == mobile_page.locator("div").filter(has_text=re.compile(r"^리스트가 삭제되었습니다\.$")).nth(1).inner_text(), \
         "리스트 삭제 후 리스트 삭제 토스트 메시지 확인 실패 - 리스트 삭제 실패 1"
