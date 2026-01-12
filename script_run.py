@@ -8,6 +8,9 @@ def script_run():
         # MO Web 31번 - Quick view_company 정상 노출
         "tests_mo/MO_prospecting_quickview_company_check.py",
 
+        # MO Web 40번 - 제목 편집(Edit title) 클릭 시 제목 변경 플로우 진행
+        "tests_mo/MO_mylist_edittitle_change_check.py"
+
     ]
 
     exit_code = pytest.main(
