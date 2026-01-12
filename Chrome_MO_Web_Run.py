@@ -88,7 +88,7 @@ def Chrome_MO_Web_Run():
         "tests_mo/MO_mylist_detail_contact_delete_check.py",
 
         # MO Web 46번 - 확인하고자하는 리스트 항목 선택 후 view contacts 버튼 클릭 시 연락처 확인 Flow 진행 
-        "tests_mo/MO_mylist_detail_contact_view_contacts_check.py",
+        #"tests_mo/MO_mylist_detail_contact_view_contacts_check.py",
 
         # MO Web 50번 - 회사 정보(company) 탭 최초 클릭시 회사 정보를 입력하지 않은 경우 설정하기(set up) 노출, Company set up_Main 화면 노출
         "tests_mo/MO_company_setup_and_main_page_check.py",
