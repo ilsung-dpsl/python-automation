@@ -67,4 +67,4 @@ def test_mylist_edittitle_change_check(page):
     page.locator("div:nth-child(3) > div:nth-child(6) > div").click()
     page.get_by_role("menuitem", name="리스트 삭제").click()
 
-    print("----- 마이리스트 > 임의 폴더 제목 편집 변경 확인 테스트 시작 -> 성공 -----")
+    print("----- 45번 - 마이리스트 > 임의 폴더 제목 편집 변경 확인 테스트 시작 -> 성공 -----")
