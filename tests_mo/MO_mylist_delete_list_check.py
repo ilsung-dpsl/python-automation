@@ -1,0 +1,54 @@
+import config
+import re
+
+def test_MO_mylist_delete_list_check(mobile_page):
+    print("----- 41번 - MO 마이리스트 > 리스트 삭제 확인 테스트 시작 -----")
+
+    # 20251209 - url 이동 시 로드 타임아웃 50초 코드로 수정
+    mobile_page.goto("https://deepsales.com/ko/intro", wait_until="load", timeout=50000)
+    mobile_page.wait_for_timeout(500)
+
+    mobile_page.get_by_role("banner").get_by_role("img").first.tap()
+    mobile_page.wait_for_timeout(1000)
+
+    mobile_page.get_by_role("button", name="로그인").tap()
+    mobile_page.wait_for_timeout(1000)
+    mobile_page.get_by_placeholder("이메일").fill(config.FREE_PA8_ACCOUNT)
+    mobile_page.get_by_placeholder("비밀번호").fill(config.FREE_PA8_PW)
+    mobile_page.get_by_role("button", name="로그인").tap()
+    mobile_page.wait_for_timeout(1000)
+
+    mobile_page.get_by_role("button", name="Confirm").tap(timeout=10000)
+    mobile_page.wait_for_timeout(1000)
+
+    # 20250930 - LNB > 마이 리스트 메뉴 영역 선택 위치 변경으로 인한 코드 수정
+    mobile_page.get_by_role("link").filter(has_text="마이 리스트").tap()
+    mobile_page.wait_for_timeout(5000)
+
+    print("마이리스트 페이지 진입 완료")
+
+    # 20250930 - 대기 시간 0.5초 코드 추가
+    mobile_page.get_by_role("button", name="리스트 만들기").tap()
+    mobile_page.wait_for_timeout(500)
+    mobile_page.get_by_role("textbox", name="/50").fill("test 1")
+    mobile_page.wait_for_timeout(500)
+    mobile_page.get_by_role("button", name="확인").tap()
+    # 20260107 - 리스트 생성 후 3초 -> 4초로 수정
+    mobile_page.wait_for_timeout(4000)
+
+    print("리스트 생성 완료 후")
+
+    # 20260107 - 새로 생성한 일반 폴더 리스트 > 더보기 버튼 선택 코드 -> 타임아웃 10초 추가
+    mobile_page.locator("div:nth-child(3) > div:nth-child(6) > div").tap(timeout=10000)
+    # 20260107 - 대기 시간 3초 -> 4초로 수정
+    mobile_page.wait_for_timeout(4000)
+
+    # 20260107 - 앨리먼트 나타날 때까지 타임아웃 대기 10초 추가 / 2초 -> 2.5초로 대기 수정
+    mobile_page.get_by_role("menuitem", name="리스트 삭제").tap(timeout=10000)
+    mobile_page.wait_for_timeout(2500)
+
+    assert "리스트가 삭제되었습니다." == mobile_page.locator("div").filter(has_text=re.compile(r"^리스트가 삭제되었습니다\.$")).nth(1).inner_text(), \
+        "리스트 삭제 후 리스트 삭제 토스트 메시지 확인 실패 - 리스트 삭제 실패 1"
+    assert "test 1" not in mobile_page.content(), "리스트 정상 삭제 실패 - 리스트 삭제 실패 2"
+
+    print("----- 41번 - MO 마이리스트 > 리스트 삭제 확인 테스트 시작 -> 성공 -----")
