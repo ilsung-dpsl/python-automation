@@ -114,4 +114,4 @@ def Chrome_MO_Web_Run():
 
 
 if __name__ == "__main__":
-    script_run()
+    Chrome_MO_Web_Run()
