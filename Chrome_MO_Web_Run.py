@@ -76,7 +76,7 @@ def Chrome_MO_Web_Run():
         "tests_mo/MO_mylist_freeplan_exporttocsv_limit_check.py",
 
         # MO Web 40번 - 제목 편집(Edit title) 클릭 시 제목 변경 플로우 진행
-        "tests_mo/MO_mylist_edittitle_change_check.py"
+        "tests_mo/MO_mylist_edittitle_change_check.py",
 
         # MO Web 41번 - 리스트 삭제(Delete list) 클릭 시 리스트 삭제 플로우 진행
         "tests_mo/MO_mylist_delete_list_check.py",
