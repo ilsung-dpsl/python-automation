@@ -22,7 +22,7 @@ def test_salesagent_scale_toss_payments_1_2page_input_check(mobile_page):
     mobile_page.get_by_role("button", name="플랜 확인하기").tap()
     mobile_page.wait_for_timeout(1000)
 
-    # 20251202 - 세일즈 에이전트 > Scale > [시작하기] 버튼 선택 위치 변경으로 인해 코드 수정
+    # 20260113 - PC의 경우, 아래의 위치가 Starter 위치이지만 MO의 경우에는 Scale 위치를 가리킴
     mobile_page.get_by_role("button", name="시작하기").nth(1).tap()
     mobile_page.wait_for_timeout(2000)
 

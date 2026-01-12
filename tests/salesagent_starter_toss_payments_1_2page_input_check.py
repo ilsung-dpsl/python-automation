@@ -15,8 +15,8 @@ def test_salesagent_starter_toss_payments_1_2page_input_check(page):
     page.get_by_role("button", name="플랜 확인하기").click()
     page.wait_for_timeout(1000)
 
-    # 20251202 - 세일즈 에이전트 > Starter > [시작하기] 버튼 선택 위치 변경으로 인해 코드 수정
-    page.get_by_role("button", name="시작하기").first.click()
+    # 20260113 - 세일즈 에이전트 > Starter > [시작하기] 버튼 선택 위치 재수정
+    page.get_by_role("button", name="시작하기").nth(1).click()
     page.wait_for_timeout(2000)
 
     print("회원가입 페이지 진입 완료")
@@ -36,7 +36,8 @@ def test_salesagent_starter_toss_payments_1_2page_input_check(page):
 
     print("로그인 완료 후 세일즈 에이전트 랜딩페이지 진입")
 
-    page.get_by_role("button", name="시작하기").nth(2).click()
+    # 20260113 - 세일즈 에이전트 > Starter > [시작하기] 버튼 선택 위치 재수정
+    page.get_by_role("button", name="시작하기").nth(1).click()
     page.wait_for_timeout(1000)
 
     print("토스페이먼츠 결제창 출력 상태 완료")
