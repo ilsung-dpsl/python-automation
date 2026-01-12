@@ -59,7 +59,7 @@ def test_MO_signupforfree_email_verification_and_input_validation_check(mobile_p
     mobile_page.get_by_role("button", name="플랜 확인하기").tap()
     mobile_page.wait_for_timeout(1000)
 
-    mobile_page.get_by_role("button", name="시작하기").nth(2).tap()
+    mobile_page.get_by_role("button", name="시작하기").nth(1).tap()
     mobile_page.wait_for_timeout(1000)
 
     print("회원가입 페이지 진입 완료")
