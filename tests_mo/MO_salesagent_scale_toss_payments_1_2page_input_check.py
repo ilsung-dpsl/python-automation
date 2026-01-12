@@ -54,6 +54,7 @@ def test_salesagent_scale_toss_payments_1_2page_input_check(mobile_page):
     mobile_page.get_by_role("textbox", name="카드번호 1 ~ 4 자리").fill(config.CARD1_1_4_NO)
     mobile_page.get_by_role("textbox", name="카드번호 5 ~ 8 자리").fill(config.CARD1_5_8_NO)
     mobile_page.get_by_role("textbox", name="카드번호 9 ~ 12 자리").fill(config.CARD1_9_12_NO)
+    mobile_page.wait_for_timeout(500)
     #mobile_page.get_by_role("textbox", name="카드번호 13 ~ 16 자리").fill(config.CARD1_13_16_NO)
 
     for i in range(1, 5, 1):
@@ -107,14 +108,14 @@ def test_salesagent_scale_toss_payments_1_2page_input_check(mobile_page):
     #mobile_page.locator("iframe[name=\"__tosspayments_payment-gateway_iframe__\"]").content_frame.get_by_role("combobox",
     #                                                                                                   name="통신사 선택").click()
 
-    mobile_page.get_by_role("listitem").filter(has_text=re.compile(r"^KT$")).locator("div").tap()
+    mobile_page.get_by_role("listitem").filter(has_text=re.compile(r"^KT$")).locator("div").tap(timeout=10000)
     mobile_page.wait_for_timeout(1000)
 
     mobile_page.get_by_placeholder("휴대폰번호").fill(config.CARD1_AUTH_PHONE)
     mobile_page.wait_for_timeout(500)
 
     mobile_page.get_by_role("button", name="다음").tap(timeout=10000)
-    mobile_page.wait_for_timeout(3000)
+    mobile_page.wait_for_timeout(5000)
 
     mobile_page.get_by_role("textbox", name="인증번호").fill("000000")
     mobile_page.wait_for_timeout(1000)
