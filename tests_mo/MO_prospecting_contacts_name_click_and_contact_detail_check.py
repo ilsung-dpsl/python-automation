@@ -22,10 +22,12 @@ def test_MO_prospecting_contacts_name_click_and_contact_detail_check(mobile_page
     mobile_page.get_by_role("button", name="Confirm").tap(timeout=10000)
     mobile_page.wait_for_timeout(1000)
 
-    mobile_page.get_by_placeholder("예: 일본 화장품 제조사 세일즈 매니저").tap()
+    mobile_page.get_by_placeholder("예: 일본 화장품 제조사 세일즈 매니저").tap(timeout=10000)
     mobile_page.get_by_placeholder("예: 일본 화장품 제조사 세일즈 매니저").fill("한국 화장품 유통 회사 중 직급이 매니저인 Danny Jung을 찾아줘")
+    mobile_page.wait_for_timeout(500)
+
     # 20250930 - 탐색하기 UI 변경으로 프롬프트 창 > 검색 버튼 코드 수정
-    mobile_page.locator("label").get_by_role("img").nth(1).tap()
+    mobile_page.locator("label").get_by_role("img").nth(1).tap(timeout=10000)
     mobile_page.wait_for_timeout(5000)
 
     mobile_page.get_by_text("Danny Jung", exact=True).click(timeout=10000)
