@@ -161,4 +161,4 @@ def test_signupforfree_complete(page):
     assert "크레딧 15/" in page.content(), \
         "대시보드 > 크레딧 보유량 확인 실패 - 회원가입 실패 3"
 
-    print("----- 회원가입 완료 스크립트 테스트 시작 -> 성공 -----")
+    print("----- 2번 - 회원가입 완료 스크립트 테스트 시작 -> 성공 -----")
