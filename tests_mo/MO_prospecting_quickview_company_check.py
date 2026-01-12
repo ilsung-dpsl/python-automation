@@ -54,7 +54,7 @@ def test_MO_prospecting_quickview_company_check(mobile_page):
     mobile_page.get_by_placeholder("예: 일본 화장품 제조사 세일즈 매니저").fill("멕시코 위주의 여행 상품을 파는 업체를 찾아줘")
     mobile_page.get_by_placeholder("예: 일본 화장품 제조사 세일즈 매니저").press("Enter")
 
-    mobile_page.wait_for_timeout(7000)
+    mobile_page.wait_for_timeout(10000)
 
     print("탐색하기 > 검색 완료")
 
