@@ -27,12 +27,12 @@ def test_MO_mylist_delete_list_check(mobile_page):
 
     print("마이리스트 페이지 진입 완료")
 
-    # 20250930 - 대기 시간 0.5초 코드 추가
-    mobile_page.get_by_role("button", name="리스트 만들기").tap()
+    # 20260113 - 타임아웃 대기 코드 추가
+    mobile_page.get_by_role("button", name="리스트 만들기").tap(timeout=10000)
     mobile_page.wait_for_timeout(500)
     mobile_page.get_by_role("textbox", name="/50").fill("test 1")
     mobile_page.wait_for_timeout(500)
-    mobile_page.get_by_role("button", name="확인").tap()
+    mobile_page.get_by_role("button", name="확인").tap(timeout=10000)
     # 20260107 - 리스트 생성 후 3초 -> 4초로 수정
     mobile_page.wait_for_timeout(4000)
 
