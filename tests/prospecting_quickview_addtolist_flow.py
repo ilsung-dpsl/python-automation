@@ -27,11 +27,11 @@ def test_prospecting_quickview_addtolist_flow(page):
     page.get_by_text("Ryo Hayashi세일즈 매니저연락처 확인Japan").click(timeout=50000)
     page.wait_for_timeout(2000)
 
-    page.get_by_role("button", name="리스트에 추가").click()
+    page.get_by_role("button", name="리스트에 추가").click(timeout=10000)
     page.wait_for_timeout(1000)
-    page.get_by_role("checkbox", name="default").click()
+    page.get_by_role("checkbox", name="default").click(timeout=10000)
     page.wait_for_timeout(500)
-    page.get_by_role("button", name="확인", exact=True).click()
+    page.get_by_role("button", name="확인", exact=True).click(timeout=10000)
     page.wait_for_timeout(1000)
 
     assert "선택한 연락처가 추가되었습니다." == page.get_by_text("선택한 연락처가 추가되었습니다").inner_text(), \
@@ -67,12 +67,12 @@ def test_prospecting_quickview_addtolist_flow(page):
 
     print("마이리스트 상세 > 리스트에 추가한 데이터 확인 완료")
 
-    page.locator("div").filter(has_text=re.compile(r"^이름 / 직함연락처회사담당자 위치산업군추가일자$")).get_by_role("checkbox").click()
+    page.locator("div").filter(has_text=re.compile(r"^이름 / 직함연락처회사담당자 위치산업군추가일자$")).get_by_role("checkbox").click(timeout=10000)
     page.wait_for_timeout(1000)
-    page.get_by_role("button", name="삭제").click()
+    page.get_by_role("button", name="삭제").click(timeout=10000)
     page.wait_for_timeout(1000)
-    page.locator("#modal-root").get_by_role("button", name="삭제").click()
+    page.locator("#modal-root").get_by_role("button", name="삭제").click(timeout=10000)
     page.wait_for_timeout(3000)
-    page.get_by_role("button", name="리스트로 돌아가기").click()
+    page.get_by_role("button", name="리스트로 돌아가기").click(timeout=10000)
     
     print("----- 퀵뷰 > 리스트에 추가 시 정상 동작 여부 확인 테스트 시작 -> 성공 -----")
