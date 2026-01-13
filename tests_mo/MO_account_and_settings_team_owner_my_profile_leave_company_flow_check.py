@@ -23,24 +23,24 @@ def test_MO_account_and_settings_team_owner_my_profile_leave_company_flow_check(
     mobile_page.wait_for_timeout(1000)
 
     # 20251001 - 상단 우측 마이페이지 버튼 선택 코드 수정
-    mobile_page.get_by_role("button").nth(2).tap()
+    mobile_page.get_by_role("button").nth(2).tap(timeout=10000)
     mobile_page.wait_for_timeout(1000)
 
-    mobile_page.get_by_text("회사 정보", exact=True).tap()
+    mobile_page.get_by_text("회사 정보", exact=True).tap(timeout=10000)
     mobile_page.wait_for_timeout(1000)
 
     print("회사 정보 페이지 진입 완료")
 
-    mobile_page.locator(".text-base > .text-FG-Primary").tap()
+    mobile_page.locator(".text-base > .text-FG-Primary").tap(timeout=10000)
     mobile_page.wait_for_timeout(1000)
 
     mobile_page.locator("#react-select-2-input").fill("deepsales")
     mobile_page.wait_for_timeout(1000)
 
-    mobile_page.locator("#react-select-2-option-0").get_by_text("DeepSales").tap()
+    mobile_page.locator("#react-select-2-option-0").get_by_text("DeepSales").tap(timeout=10000)
     mobile_page.wait_for_timeout(1000)
 
-    mobile_page.get_by_role("button", name="확인").tap()
+    mobile_page.get_by_role("button", name="확인").tap(timeout=10000)
     mobile_page.wait_for_timeout(1000)
 
     print("회사 정보 > 회사 설정 완료")
@@ -54,7 +54,7 @@ def test_MO_account_and_settings_team_owner_my_profile_leave_company_flow_check(
 
     print("계정 및 설정 > 내 프로필 페이지 진입 완료")
 
-    mobile_page.get_by_role("button", name="소속 회사 떠나기 >").tap()
+    mobile_page.get_by_role("button", name="소속 회사 떠나기 >").tap(timeout=10000)
     mobile_page.wait_for_timeout(1000)
 
     assert "소속 회사 떠나기" == mobile_page.get_by_text("소속 회사 떠나기", exact=True).inner_text(), \
@@ -68,7 +68,7 @@ def test_MO_account_and_settings_team_owner_my_profile_leave_company_flow_check(
     assert "소속 회사 떠나기 완료" == mobile_page.get_by_text("소속 회사 떠나기 완료").inner_text(), \
         "소속 회사 떠나기 완료 모달 > 타이틀 문구 확인 실패 - 내 프로필 > 팀오너 소속 회사 떠나기 플로우 실패 3"
 
-    mobile_page.get_by_role("button", name="확인").tap()
+    mobile_page.get_by_role("button", name="확인").tap(timeout=10000)
     mobile_page.wait_for_timeout(1000)
 
     print("계정 및 설정 > 팀오너 > 내 프로필 > 소속된 회사 떠나기  완료")
