@@ -45,10 +45,18 @@ def test_MO_mylist_delete_list_check(mobile_page):
 
     # 20260107 - 앨리먼트 나타날 때까지 타임아웃 대기 10초 추가 / 2초 -> 2.5초로 대기 수정
     mobile_page.get_by_role("menuitem", name="리스트 삭제").tap(timeout=10000)
-    mobile_page.wait_for_timeout(3000)
+    # 20250113 - 3초 -> 2초로 변경
+    mobile_page.wait_for_timeout(2000)
 
     assert "리스트가 삭제되었습니다." == mobile_page.locator("div").filter(has_text=re.compile(r"^리스트가 삭제되었습니다\.$")).nth(1).inner_text(), \
         "리스트 삭제 후 리스트 삭제 토스트 메시지 확인 실패 - 리스트 삭제 실패 1"
+
+    mobile_page.wait_for_timeout(3000)
+
     assert "test 1" not in mobile_page.content(), "리스트 정상 삭제 실패 - 리스트 삭제 실패 2"
+
+    # 20260113 - 마이리스트 페이지의 test 1 폴더가 남아있는 것처럼 파악되는 경우가 있어 해당 div가 있는지 확인하는 것으로 변경
+    #assert mobile_page.locator("div").filter(has_text=re.compile(r"^test 1$")).count() == 0, \
+    #    "리스트 정상 삭제 실패 - 리스트 삭제 실패 2"
 
     print("----- 41번 - MO 마이리스트 > 리스트 삭제 확인 테스트 시작 -> 성공 -----")
