@@ -47,10 +47,14 @@ def test_mylist_delete_list_check(page):
 
     #20260107 - 앨리먼트 나타날 때까지 타임아웃 대기 10초 추가 / 2초 -> 2.5초로 대기 수정
     page.get_by_role("menuitem", name="리스트 삭제").click(timeout=10000)
-    page.wait_for_timeout(2500)
+    #20260113 - 2.5초 -> 2초로 변경
+    page.wait_for_timeout(2000)
 
     assert "리스트가 삭제되었습니다." == page.locator("div").filter(has_text=re.compile(r"^리스트가 삭제되었습니다\.$")).nth(1).inner_text(), \
         "리스트 삭제 후 리스트 삭제 토스트 메시지 확인 실패 - 리스트 삭제 실패 1"
+    #20260113 - 리스트 삭제 후 3초 대기 (test 1의 tag 코드가 남아있을 수 있음)
+    page.wait_for_timeout(3000)
+
     assert "test 1" not in page.content(), "리스트 정상 삭제 실패 - 리스트 삭제 실패 2"
 
     print("----- 46번 - 마이리스트 > 리스트 삭제 확인 테스트 시작 -> 성공 -----")
