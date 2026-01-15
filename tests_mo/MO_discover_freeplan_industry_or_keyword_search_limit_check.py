@@ -24,10 +24,12 @@ def test_MO_discover_freeplan_industy_or_keyword_search_limit_check(mobile_page)
     mobile_page.get_by_role("link").filter(has_text="발견하기").tap()
     mobile_page.wait_for_timeout(3000)
 
-    print("발견하기 페이지 진입")
+    print("MO Web - 발견하기 페이지 진입")
 
     mobile_page.get_by_text("고객 페르소나를 통해 고객에게 다가가기 시작할 준비를 하십시오").tap()
     mobile_page.wait_for_timeout(1000)
+
+    print("MO Web - 페르소나 설정 안내 모달 출력 완료")
 
     # 페르소나 설정 안내 모달 > 나중에 하기 버튼 선택으로 모달을 닫는다.
     mobile_page.get_by_role("button", name="나중에 하기").tap()
@@ -37,15 +39,15 @@ def test_MO_discover_freeplan_industy_or_keyword_search_limit_check(mobile_page)
     mobile_page.locator(".cursor-pointer").first.tap()
     mobile_page.wait_for_timeout(2000)
 
-    print("요금제 제한 안내 모달 노출 전")
+    print("MO Web - 요금제 제한 안내 모달 노출 전")
 
     assert "이런! 무료 플랜에서는 키워드 검색 및\n필터 사용이 제한됩니다." == mobile_page.locator("header").filter(
         has_text="이런! 무료 플랜에서는 키워드 검색 및 필터 사용이 제한됩니다").inner_text(), \
-        "요금제 제한 안내 모달 > 타이틀 문구 노출 실패 - 발견하기 산업군 탐색 시 요금제 제한 안내 모달 출력 실패 1"
+        "MO Wew - 요금제 제한 안내 모달 > 타이틀 문구 노출 실패 - 발견하기 산업군 탐색 시 요금제 제한 안내 모달 출력 실패 1"
     assert "요금제 업그레이드" == mobile_page.get_by_role("button", name="요금제 업그레이드").inner_text(), \
-        "요금제 제한 안내 모달 > 요금제 업그레이드 버튼 노출 실패 - 발견하기 산업군 탐색 시 요금제 제한 안내 모달 출력 실패 2"
+        "MO Wew - 요금제 제한 안내 모달 > 요금제 업그레이드 버튼 노출 실패 - 발견하기 산업군 탐색 시 요금제 제한 안내 모달 출력 실패 2"
 
-    print("요금제 제한 안내 모달 노출 확인 완료")
+    print("MO Wew - 요금제 제한 안내 모달 노출 확인 완료")
 
     # 산업군 > 제목 입력창 선택하는 코드
     mobile_page.locator("#modal-root").get_by_role("button").filter(has_text=re.compile(r"^$")).tap()
@@ -58,9 +60,9 @@ def test_MO_discover_freeplan_industy_or_keyword_search_limit_check(mobile_page)
 
     assert "이런! 무료 플랜에서는 키워드 검색 및\n필터 사용이 제한됩니다." == mobile_page.locator("header").filter(
         has_text="이런! 무료 플랜에서는 키워드 검색 및 필터 사용이 제한됩니다").inner_text(), \
-        "요금제 제한 안내 모달 > 타이틀 문구 노출 실패 - 발견하기 키워드 탐색 시 요금제 제한 안내 모달 출력 실패 3"
+        "MO Web - 요금제 제한 안내 모달 > 타이틀 문구 노출 실패 - 발견하기 키워드 탐색 시 요금제 제한 안내 모달 출력 실패 3"
     assert "플랜을 변경하고 더 많은 잠재고객을 만나보세요." in mobile_page.get_by_text("플랜을 변경하고 더 많은 잠재고객을 만나보세요. AI").inner_text(), \
-        "요금제 제한 안내 모달 > 안내 문구 노출 실패 - 발견하기 키워드 탐색 시 요금제 제한 안내 모달 출력 실패 4"
+        "MO Web - 요금제 제한 안내 모달 > 안내 문구 노출 실패 - 발견하기 키워드 탐색 시 요금제 제한 안내 모달 출력 실패 4"
 
     mobile_page.locator("#modal-root").get_by_role("button").filter(has_text=re.compile(r"^$")).tap()
 

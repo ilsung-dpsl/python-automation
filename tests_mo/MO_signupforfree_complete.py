@@ -48,7 +48,7 @@ def test_MO_signupforfree_complete(mobile_page):
     mobile_page.goto("https://deepsales.com/ko/intro", wait_until="load", timeout=30000)
     mobile_page.wait_for_timeout(1000)
 
-    print("세일즈 에이전트 페이지 진입 완료")
+    print("MO Web - 세일즈 에이전트 페이지 진입 완료")
 
     mobile_page.get_by_role("banner").get_by_role("img").first.tap()
     mobile_page.wait_for_timeout(1000)
@@ -57,7 +57,7 @@ def test_MO_signupforfree_complete(mobile_page):
     mobile_page.wait_for_timeout(1000)
 
     # 20251212 - 세일즈 에이전트 진입 완료 확인용 코드 추가
-    print("세일즈 에이전트 페이지 진입 완료")
+    print("MO Web - 세일즈 에이전트 페이지 진입 완료")
 
     # 20251203 - 세일즈 에이전트 랜딩 페이지 > 상단 > [플랜 확인하기] 선택 코드 수정
     mobile_page.get_by_role("button", name="플랜 확인하기").tap()
@@ -68,7 +68,7 @@ def test_MO_signupforfree_complete(mobile_page):
     mobile_page.wait_for_timeout(1000)
 
     # 20251212 - 회원가입 페이지 진입 완료 확인용 코드 추가
-    print("회원가입 페이지 진입 완료")
+    print("MO Web - 회원가입 페이지 진입 완료")
 
     count = read_counter()
     mobile_page.get_by_placeholder("예) deepsales@deepsales.com").fill(f"ilsung.baek+pa{count}@deepsales.com")
@@ -79,7 +79,7 @@ def test_MO_signupforfree_complete(mobile_page):
     browser = mobile_page.context.browser
     pc_context = browser.new_context(
         viewport={"width": 1440, "height": 800},
-        user_agent="Chrome/143.0.7499.170"
+        user_agent="Chrome/143.0.7499.193"
     )
 
     new_tab = pc_context.new_page()
@@ -110,7 +110,7 @@ def test_MO_signupforfree_complete(mobile_page):
     mobile_page.get_by_role("button", name="확인").tap()
 
     # 20251212 - 회원가입 > 인증번호 입력 완료 확인용 코드 추가
-    print("회원가입 > 인증번호 입력 완료")
+    print("MO Web - 회원가입 > 인증번호 입력 완료")
 
     mobile_page.get_by_placeholder("성 (영문 입력)").fill("백")
     mobile_page.get_by_placeholder("이름 (영문 입력)").fill("일성")
@@ -144,11 +144,11 @@ def test_MO_signupforfree_complete(mobile_page):
     # page.get_by_role("paragraph").filter(has_text=re.compile(r"^필터$")).click()
 
     assert "탐색하기" == mobile_page.locator("#desktop-header-slot").get_by_text("탐색하기").inner_text(), \
-        "회원가입 완료 후 탐색하기 이동 > '탐색하기' 타이틀 문구 확인 실패 - 회원가입 완료 실패 1"
+        "MO Web - 회원가입 완료 후 탐색하기 이동 > '탐색하기' 타이틀 문구 확인 실패 - 회원가입 완료 실패 1"
     assert "필터" == mobile_page.get_by_text("필터").inner_text(), \
-        "회원가입 완료 후 탐색하기 이동 > 필터 > '필터' 타이틀 문구 확인 실패 - 회원가입 완료 실패 2"
+        "MO Web - 회원가입 완료 후 탐색하기 이동 > 필터 > '필터' 타이틀 문구 확인 실패 - 회원가입 완료 실패 2"
 
-    print("회원가입 완료 후 탐색하기 이동 성공")
+    print("MO Web - 회원가입 완료 후 탐색하기 이동 성공")
 
     count += 1
     write_counter(count)
@@ -160,8 +160,8 @@ def test_MO_signupforfree_complete(mobile_page):
     mobile_page.wait_for_timeout(6000)
 
     assert "백 일성님\n환영합니다!" in mobile_page.get_by_text("백 일성님 환영합니다!").inner_text(), \
-        "대시보드 환영문구 확인 실패 - 회원가입 실패 3"
+        "MO Web - 대시보드 환영문구 확인 실패 - 회원가입 실패 3"
     assert "크레딧 15/" in mobile_page.content(), \
-        "대시보드 > 크레딧 보유량 확인 실패 - 회원가입 실패 3"
+        "MO Web - 대시보드 > 크레딧 보유량 확인 실패 - 회원가입 실패 3"
 
     print("----- 3번 - MO 회원가입 완료 스크립트 테스트 시작 -> 성공 -----")

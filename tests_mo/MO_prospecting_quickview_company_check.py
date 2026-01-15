@@ -51,15 +51,19 @@ def test_MO_prospecting_quickview_company_check(mobile_page):
     mobile_page.get_by_role("button", name="Confirm").tap(timeout=10000)
     mobile_page.wait_for_timeout(1000)
 
+    print("MO Web - 탐색하기 진입 완료")
+
     mobile_page.get_by_placeholder("예: 일본 화장품 제조사 세일즈 매니저").fill("멕시코 위주의 여행 상품을 파는 업체를 찾아줘")
     mobile_page.get_by_placeholder("예: 일본 화장품 제조사 세일즈 매니저").press("Enter")
 
     mobile_page.wait_for_timeout(7000)
 
-    print("탐색하기 > 검색 완료")
+    print("MO Web - 탐색하기 > 검색 완료")
 
     mobile_page.get_by_role("tab", name="회사 (99)").tap(timeout=20000)
     mobile_page.wait_for_timeout(2000)
+
+    print("MO Web - 탐색하기 > 회사 탭 이동")
 
     # 20260108 - 회사 리드 > 2번째 본사위치 > Mexico 선택하여 퀵뷰 (회사) 노출하는 코드로 수정 (Mobile의 경우, PC처럼 동작하지 않음)
     # mobile_page.get_by_text("Corporate Travel Serviceswww.").tap()
@@ -88,22 +92,22 @@ def test_MO_prospecting_quickview_company_check(mobile_page):
     else:
         print("[X] SVG 요소를 찾지 못했습니다.")
 
-    print("퀵뷰 (회사) > 회사 로고 이미지 비교 성공")
+    print("MO Web - 퀵뷰 (회사) > 회사 로고 이미지 비교 성공")
 
     #assert "Corporate Travel Services" == mobile_page.get_by_role("article").get_by_text(
     #    "Corporate Travel Services").inner_text(), \
     #    "퀵뷰 (회사) > 회사 명칭 확인 실패 - 퀵뷰 노출 확인 실패 2"
     assert "Corporate Travel Services" == mobile_page.get_by_role("article").get_by_text(
         "Corporate Travel Services").inner_text(), \
-        "퀵뷰 (회사) > 회사 명칭 확인 실패 - 퀵뷰 노출 확인 실패 2"
+        "MO Web - 퀵뷰 (회사) > 회사 명칭 확인 실패 - 퀵뷰 노출 확인 실패 2"
     assert "1996" == mobile_page.get_by_text("1996").inner_text(), \
-        "퀵뷰 (회사) > 설립 연도 확인 실패 - 퀵뷰 노출 확인 실패 3"
+        "MO Web - 퀵뷰 (회사) > 설립 연도 확인 실패 - 퀵뷰 노출 확인 실패 3"
     # assert "Administrative and Support Services" == page.get_by_role("article").get_by_text("Administrative and Support").inner_text(), \
     #    "퀵뷰 (회사) > 산업군 확인 실패 - 퀵뷰 노출 확인 실패 2"
     assert "직원 정보 확인" == mobile_page.get_by_role("article").get_by_role("button", name="직원 정보 확인").inner_text(), \
-        "퀵뷰 (회사) > [직원정보확인] 버튼 출력 실패 - 퀵뷰 노출 확인 실패 4"
+        "MO Web - 퀵뷰 (회사) > [직원정보확인] 버튼 출력 실패 - 퀵뷰 노출 확인 실패 4"
 
-    print("퀵뷰 (회사) > 회사 명칭 / 설립 연도 / 직원정보확인 모두 확인 완료")
+    print("MO Web - 퀵뷰 (회사) > 회사 명칭 / 설립 연도 / 직원정보확인 모두 확인 완료")
     print("----- 31번 - MO 퀵뷰(회사) 정보 노출 확인 테스트 시작 -> 성공 -----")
 
 

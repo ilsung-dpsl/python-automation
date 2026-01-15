@@ -48,7 +48,7 @@ def test_MO_signupforfree_email_verification_and_input_validation_check(mobile_p
     mobile_page.goto("https://deepsales.com/ko/intro", wait_until="load", timeout=30000)
     mobile_page.wait_for_timeout(1000)
 
-    print("세일즈 에이전트 페이지 진입 완료")
+    print("MO Web - 세일즈 에이전트 페이지 진입 완료")
 
     mobile_page.get_by_role("banner").get_by_role("img").first.tap()
     mobile_page.wait_for_timeout(1000)
@@ -62,7 +62,7 @@ def test_MO_signupforfree_email_verification_and_input_validation_check(mobile_p
     mobile_page.get_by_role("button", name="시작하기").nth(1).tap()
     mobile_page.wait_for_timeout(1000)
 
-    print("회원가입 페이지 진입 완료")
+    print("MO Web - 회원가입 페이지 진입 완료")
 
     count = read_counter()
     mobile_page.get_by_placeholder("예) deepsales@deepsales.com").fill(f"ilsung.baek+pa{count}@deepsales.com")
@@ -73,7 +73,7 @@ def test_MO_signupforfree_email_verification_and_input_validation_check(mobile_p
     browser = mobile_page.context.browser
     pc_context = browser.new_context(
         viewport={"width": 1440, "height": 800},
-        user_agent="Chrome/143.0.7499.170"
+        user_agent="Chrome/143.0.7499.193"
     )
 
     new_tab = pc_context.new_page()
@@ -107,7 +107,7 @@ def test_MO_signupforfree_email_verification_and_input_validation_check(mobile_p
     mobile_page.get_by_placeholder("인증번호를 입력해주세요").fill(code)
     mobile_page.get_by_role("button", name="확인").tap()
 
-    print("회원가입 > 인증번호 입력 완료")
+    print("MO Web - 회원가입 > 인증번호 입력 완료")
 
     mobile_page.get_by_placeholder("성 (영문 입력)").fill("백")
     mobile_page.get_by_placeholder("이름 (영문 입력)").fill("일성")
@@ -120,13 +120,13 @@ def test_MO_signupforfree_email_verification_and_input_validation_check(mobile_p
     mobile_page.wait_for_timeout(7000)
 
     assert "이메일 인증이 완료되었습니다." == mobile_page.get_by_text("이메일 인증이 완료되었습니다").inner_text(), \
-        "인증번호 완료 후 이메일 인증 완료 안내 문구 확인 실패 - 회원가입 완료 전 프로세스 확인 실패 1"
+        "MO Web - 인증번호 완료 후 이메일 인증 완료 안내 문구 확인 실패 - 회원가입 완료 전 프로세스 확인 실패 1"
     assert "백" == mobile_page.get_by_placeholder("성 (영문 입력)").input_value(), \
-        "회원가입 > 성 > 입력값 확인 실패 - 회원가입 완료 전 프로세스 확인 실패 2"
+        "MO Web - 회원가입 > 성 > 입력값 확인 실패 - 회원가입 완료 전 프로세스 확인 실패 2"
     assert "일성" == mobile_page.get_by_placeholder("이름 (영문 입력)").input_value(), \
-        "회원가입 > 이름 > 입력값 확인 실패 - 회원가입 완료 전 프로세스 확인 실패 3"
+        "MO Web - 회원가입 > 이름 > 입력값 확인 실패 - 회원가입 완료 전 프로세스 확인 실패 3"
     button = mobile_page.get_by_role("button", name="가입하기")
     assert button.is_enabled(), \
-        "회원가입 > 가입하기 버튼 활성화 노출 확인 실패 - 회원가입 완료 전 프로세스 확인 실패 4"
+        "MO Web - 회원가입 > 가입하기 버튼 활성화 노출 확인 실패 - 회원가입 완료 전 프로세스 확인 실패 4"
 
     print("----- 2번 - MO 회원가입 완료 전까지 프로세스 확인 스크립트 테스트 시작 -> 성공 -----")

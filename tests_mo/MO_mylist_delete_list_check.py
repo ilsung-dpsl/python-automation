@@ -13,6 +13,9 @@ def test_MO_mylist_delete_list_check(mobile_page):
 
     mobile_page.get_by_role("button", name="로그인").tap()
     mobile_page.wait_for_timeout(1000)
+
+    print("MO Web - 로그인 페이지 진입 완료")
+
     mobile_page.get_by_placeholder("이메일").fill(config.FREE_PA8_ACCOUNT)
     mobile_page.get_by_placeholder("비밀번호").fill(config.FREE_PA8_PW)
     mobile_page.get_by_role("button", name="로그인").tap()
@@ -25,7 +28,7 @@ def test_MO_mylist_delete_list_check(mobile_page):
     mobile_page.get_by_role("link").filter(has_text="마이 리스트").tap()
     mobile_page.wait_for_timeout(5000)
 
-    print("마이리스트 페이지 진입 완료")
+    print("MO Web - 마이리스트 페이지 진입 완료")
 
     # 20260113 - 타임아웃 대기 코드 추가
     mobile_page.get_by_role("button", name="리스트 만들기").tap(timeout=10000)
@@ -36,7 +39,7 @@ def test_MO_mylist_delete_list_check(mobile_page):
     # 20260107 - 리스트 생성 후 3초 -> 4초로 수정
     mobile_page.wait_for_timeout(4000)
 
-    print("리스트 생성 완료 후")
+    print("MO Web - 리스트 생성 완료 후")
 
     # 20260107 - 새로 생성한 일반 폴더 리스트 > 더보기 버튼 선택 코드 -> 타임아웃 10초 추가
     mobile_page.locator("div:nth-child(3) > div:nth-child(6) > div").tap(timeout=10000)
@@ -49,11 +52,12 @@ def test_MO_mylist_delete_list_check(mobile_page):
     mobile_page.wait_for_timeout(2000)
 
     assert "리스트가 삭제되었습니다." == mobile_page.locator("div").filter(has_text=re.compile(r"^리스트가 삭제되었습니다\.$")).nth(1).inner_text(), \
-        "리스트 삭제 후 리스트 삭제 토스트 메시지 확인 실패 - 리스트 삭제 실패 1"
+        "MO Web - 리스트 삭제 후 리스트 삭제 토스트 메시지 확인 실패 - 리스트 삭제 실패 1"
 
     mobile_page.wait_for_timeout(3000)
 
-    assert "test 1" not in mobile_page.content(), "리스트 정상 삭제 실패 - 리스트 삭제 실패 2"
+    assert "test 1" not in mobile_page.content(), \
+        "MO Web - 리스트 정상 삭제 실패 - 리스트 삭제 실패 2"
 
     # 20260113 - 마이리스트 페이지의 test 1 폴더가 남아있는 것처럼 파악되는 경우가 있어 해당 div가 있는지 확인하는 것으로 변경
     #assert mobile_page.locator("div").filter(has_text=re.compile(r"^test 1$")).count() == 0, \

@@ -24,7 +24,7 @@ def test_MO_discover_freeplan_viewmore_click(mobile_page):
     mobile_page.get_by_role("link").filter(has_text="발견하기").tap()
     mobile_page.wait_for_timeout(3000)
 
-    print("발견하기 페이지 진입 완료")
+    print("MO Web - 발견하기 페이지 진입 완료")
 
     mobile_page.get_by_text("고객 페르소나를 통해 고객에게 다가가기 시작할 준비를 하십시오").tap()
     mobile_page.wait_for_timeout(1000)
@@ -33,12 +33,14 @@ def test_MO_discover_freeplan_viewmore_click(mobile_page):
     mobile_page.get_by_role("button", name="나중에 하기").tap()
     mobile_page.wait_for_timeout(2000)
 
+    print("MO Web - 페르소나 설정 모달 닫기 후 발견하기 페이지 진입")
+
     mobile_page.get_by_role("button", name="더보기").tap()
     mobile_page.wait_for_timeout(1000)
 
     assert "이런! 무료 플랜에서는 추가 탐색이\n제한됩니다." == mobile_page.get_by_text("이런! 무료 플랜에서는 추가 탐색이 제한됩니다").inner_text(), \
-        "요금제 업그레이드 모달 > 타이틀 문구 노출 실패 - 발견하기 > 더보기 선택 후 요금제 업그레이드 모달 노출 실패 1"
+        "MO Web - 요금제 업그레이드 모달 > 타이틀 문구 노출 실패 - 발견하기 > 더보기 선택 후 요금제 업그레이드 모달 노출 실패 1"
     assert "요금제 업그레이드" == mobile_page.get_by_role("button", name="요금제 업그레이드").inner_text(), \
-        "요금제 업그레이드 모달 > 요금제 업그레이드 버튼 노출 실패 - 발견하기 > 더보기 선택 후 요금제 업그레이드 모달 노출 실패 2"
+        "MO Web - 요금제 업그레이드 모달 > 요금제 업그레이드 버튼 노출 실패 - 발견하기 > 더보기 선택 후 요금제 업그레이드 모달 노출 실패 2"
 
     print("----- 36번 - MO Web > Free plan 사용자가 발견하기 > 더보기 선택 시 요금제 업그레이드 모달 노출 테스트 시작 -> 성공 -----")

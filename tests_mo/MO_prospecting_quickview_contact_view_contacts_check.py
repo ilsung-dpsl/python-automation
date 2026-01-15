@@ -13,6 +13,7 @@ def test_MO_prospecting_quickview_contact_view_contacts_check(mobile_page):
 
     mobile_page.get_by_role("button", name="로그인").tap()
     mobile_page.wait_for_timeout(1000)
+
     # Free plan의 pa25 계정 정보 변경 - 20250903
     mobile_page.get_by_placeholder("이메일").fill(config.FREE_PA25_ACCOUNT)
     mobile_page.get_by_placeholder("비밀번호").fill(config.FREE_PA25_PW)
@@ -22,12 +23,16 @@ def test_MO_prospecting_quickview_contact_view_contacts_check(mobile_page):
     mobile_page.get_by_role("button", name="Confirm").tap(timeout=10000)
     mobile_page.wait_for_timeout(1000)
 
+    print("MO Web - 탐색하기 진입 완료")
+
     # 검색으를 Kuwait Oil의 직급이 시니어인 직원 정보를 찾아줘 검색어 입력으로 변경 - 20250903
     mobile_page.get_by_placeholder("예: 일본 화장품 제조사 세일즈 매니저").fill("Kuwait Oil의 직급이 시니어인 직원 정보를 찾아줘")
     # 탐색하기 > 검색창 > 검색버튼 클릭하는 코드 수정 - 20250805
     mobile_page.get_by_placeholder("예: 일본 화장품 제조사 세일즈 매니저").press("Enter")
 
     mobile_page.wait_for_timeout(7000)
+
+    print("MO Web - 탐색하기 검색 완료 후")
 
     max_pages = 4
     found = False
@@ -87,14 +92,14 @@ def test_MO_prospecting_quickview_contact_view_contacts_check(mobile_page):
                         mobile_page.wait_for_timeout(2000)
 
                         assert "확인됨" == mobile_page.locator("section button:has-text('확인됨')").nth(0).inner_text(), \
-                            "퀵뷰(연락처) > 이메일 연락처 [확인됨] 변경 처리 실패 - 퀵뷰 연락처 확인 실패 1"
+                            "MO Web - 퀵뷰(연락처) > 이메일 연락처 [확인됨] 변경 처리 실패 - 퀵뷰 연락처 확인 실패 1"
                         assert "1 크레딧이 사용되었습니다." == mobile_page.get_by_role("alert").filter(
                             has_text="크레딧이 사용되었습니다.").inner_text(), \
-                            "퀵뷰(연락처) > 크레딧 소모 토스트 메시지 출력 실패 - 퀵뷰 연락처 확인 실패 2"
+                            "MO Web - 퀵뷰(연락처) > 크레딧 소모 토스트 메시지 출력 실패 - 퀵뷰 연락처 확인 실패 2"
                         mobile_page.wait_for_timeout(2000)
                         # assert False == page.locator("section button:has-text('확인됨')").nth(0).is_visible(), \
                         #    "퀵뷰(연락처) > 확인됨 비활성화 처리 안됨 - 퀵뷰 연락처 확인 실패 3"
-                        print("[V] 팝업 내 연락처 확인 버튼 클릭 완료")
+                        print("MO Web - [V] 팝업 내 연락처 확인 버튼 클릭 완료")
                     else:
                         print("[!] 팝업 내 버튼이 없습니다.")
                         raise Exception("퀵뷰 > 이메일 연락처 > [연락처 확인] 버튼 없음 -> 퀵뷰 연락처 확인 실패 4")
