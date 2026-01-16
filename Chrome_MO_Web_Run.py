@@ -8,8 +8,8 @@ def Chrome_MO_Web_Run():
         # MO Web 2번 - 회원가입 > 이메일 인증 및 입력값 확인
         "tests_mo/MO_signupforfree_email_verification_and_input_validation_check.py",
 
-        # MO Web 3번 - 회원가입 완료 (1달에 1번만 돌려야 하는 항목)
-        #"tests_mo/MO_signupforfree_complete.py"
+        # MO Web 3번 - 회원가입 완료 (1달에 1번만 돌려야 하는 항목 -> 20260116 실행)
+        "tests_mo/MO_signupforfree_complete.py",
 
         # MO Web 4번 - 회원가입 변경 > 이메일 등록 확인
         "tests_mo/MO_signupforfree_change_email_register_check.py",
@@ -42,8 +42,8 @@ def Chrome_MO_Web_Run():
         # MO Web 24번 - Contact 리스트 중 담당자 이름 클릭 시 담당자 상세 페이지로 이동
         "tests_mo/MO_prospecting_contacts_name_click_and_contact_detail_check.py",
 
-        # MO Web 26번 - 퀵뷰(Quick view_contact) > view contact 정상 작동 여부 확인 (단, 모바일의 경우 1달에 1번만 확인하는 것으로 진행 -> 2026.2.7 확인 필요)
-        ###"tests_mo/MO_prospecting_quickview_contact_view_contacts_check.py",
+        # MO Web 26번 - 퀵뷰(Quick view_contact) > view contact 정상 작동 여부 확인 (단, 모바일의 경우 1달에 1번만 확인하는 것으로 진행 -> 20260116 실행)
+        "tests_mo/MO_prospecting_quickview_contact_view_contacts_check.py",
 
         # MO Web 31번 - Quick view_company 정상 노출
         "tests_mo/MO_prospecting_quickview_company_check.py",
