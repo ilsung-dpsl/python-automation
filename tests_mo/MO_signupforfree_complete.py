@@ -157,7 +157,7 @@ def test_MO_signupforfree_complete(mobile_page):
     assert "필터" == mobile_page.get_by_text("필터").inner_text(), \
         "MO Web - 회원가입 완료 후 탐색하기 이동 > 필터 > '필터' 타이틀 문구 확인 실패 - 회원가입 완료 실패 2"
 
-    print("MO Web - 회원가입 완료 후 탐색하기 이동 성공")
+    print("MO Web - 회원가입 완료 후 제품 이용하기 -> 탐색하기 이동 성공")
 
     count += 1
     write_counter(count)
@@ -165,7 +165,7 @@ def test_MO_signupforfree_complete(mobile_page):
     print(f"counter : {count}")
 
     # 20250930 - 탐색하기 UI 변경(LNB 레이아웃)으로 인한 대시보드 선택 코드 수정
-    mobile_page.get_by_role("link").filter(has_text="대시보드").tap()
+    mobile_page.get_by_role("link").filter(has_text="대시보드").tap(timeout=10000)
     mobile_page.wait_for_timeout(6000)
 
     assert "백 일성님\n환영합니다!" in mobile_page.get_by_text("백 일성님 환영합니다!").inner_text(), \
