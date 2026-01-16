@@ -124,7 +124,11 @@ def test_MO_signupforfree_complete(mobile_page):
 
     ### ---- ## 주석 2개가 실제 사용 코드, # 주석 1개는 이전 사용했던 코드나 사용하지 않음 ------
 
-    mobile_page.get_by_role("button", name="가입하기").tap()
+    # 20260116 - 채널톡으로 인해, 가입하기 버튼 영역을 가려버림 -> 채널톡을 닫고 가입하기 버튼을 선택할 수 있도록 코드 변경
+    mobile_page.locator("iframe[name=\"intercom-notification-stack-frame\"]").content_frame.get_by_test_id(
+        "notification-close").tap(timeout=10000)
+    mobile_page.wait_for_timeout(500)
+    mobile_page.get_by_role("button", name="가입하기").tap(timeout=10000)
     mobile_page.wait_for_timeout(5000)
 
     mobile_page.get_by_role("button", name="Confirm").tap(timeout=10000)
@@ -137,8 +141,13 @@ def test_MO_signupforfree_complete(mobile_page):
     #mobile_page.get_by_role("button", name="제품 이용하기").tap()
     #mobile_page.wait_for_timeout(1000)
 
+    # 20260116 - 회원가입 완료 후 세일즈 에이전트 페이지로 이동되어 햄버거 메뉴 -> 제품 이용하기 버튼 이동 동작 추가
+    mobile_page.get_by_role("banner").get_by_role("img").first.tap()
+    mobile_page.wait_for_timeout(1000)
+    mobile_page.get_by_role("button", name="제품 이용하기").tap()
+
     # 20250930 - LNB > 탐색하기 메뉴 영역 선택 위치 변경으로 인한 코드 수정
-    mobile_page.get_by_role("link").filter(has_text="탐색하기").tap()
+    #mobile_page.get_by_role("link").filter(has_text="탐색하기").tap()
     mobile_page.wait_for_timeout(2000)
 
     # page.get_by_role("paragraph").filter(has_text=re.compile(r"^필터$")).click()
