@@ -32,7 +32,8 @@ def test_MO_prospecting_contacts_name_click_and_contact_detail_check(mobile_page
 
     # 20250930 - 탐색하기 UI 변경으로 프롬프트 창 > 검색 버튼 코드 수정
     mobile_page.locator("label").get_by_role("img").nth(1).tap(timeout=10000)
-    mobile_page.wait_for_timeout(5000)
+    # 20260116 - 5초 -> 7초 대기로 변경
+    mobile_page.wait_for_timeout(7000)
 
     print("MO Web - 탐색하기 검색 완료 후")
 

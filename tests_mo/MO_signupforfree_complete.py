@@ -120,12 +120,12 @@ def test_MO_signupforfree_complete(mobile_page):
     mobile_page.get_by_placeholder("비밀번호 생성").fill(config.COMMON_PW)
     mobile_page.get_by_role("checkbox", name="이용약관 전체 동의하기").tap()
 
-    page.wait_for_timeout(7000)
+    mobile_page.wait_for_timeout(7000)
 
     ### ---- ## 주석 2개가 실제 사용 코드, # 주석 1개는 이전 사용했던 코드나 사용하지 않음 ------
 
-    page.get_by_role("button", name="가입하기").click()
-    page.wait_for_timeout(5000)
+    mobile_page.get_by_role("button", name="가입하기").tap()
+    mobile_page.wait_for_timeout(5000)
 
     mobile_page.get_by_role("button", name="Confirm").tap(timeout=10000)
     mobile_page.wait_for_timeout(1000)
