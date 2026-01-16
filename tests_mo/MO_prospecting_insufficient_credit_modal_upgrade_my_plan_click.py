@@ -30,9 +30,8 @@ def test_MO_prospecting_insufficient_credit_modal_upgrade_my_plan_click(mobile_p
 
     print("MO Web - 탐색하기 검색 완료 후")
 
-    # 202511125 - 연락처 확인 리드 재변경 > 첫번째 페이지 > 4번째 리드로 변경
-    mobile_page.locator("div").filter(
-        has_text=re.compile(r"^Anton Kramarenko소프트웨어 엔지니어연락처 확인WalmartUnited StatesRetail$")).get_by_role(
+    # 20260116 - 연락처 확인 리드 재변경 > 첫번째 페이지 > 10번째 리드로 변경
+    mobile_page.locator("div").filter(has_text=re.compile(r"^Matt Legg디렉터연락처 확인WalmartUnited StatesRetail$")).get_by_role(
         "button").tap()
     mobile_page.wait_for_timeout(4000)
 
