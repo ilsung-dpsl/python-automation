@@ -55,7 +55,8 @@ def test_MO_mylist_delete_list_check(mobile_page):
     assert "리스트가 삭제되었습니다." == mobile_page.locator("div").filter(has_text=re.compile(r"^리스트가 삭제되었습니다\.$")).nth(1).inner_text(), \
         "MO Web - 리스트 삭제 후 리스트 삭제 토스트 메시지 확인 실패 - 리스트 삭제 실패 1"
 
-    mobile_page.wait_for_timeout(3000)
+    #20260119 - 대기사간 3초 -> 5초로 변경
+    mobile_page.wait_for_timeout(5000)
 
     assert "test 1" not in mobile_page.content(), \
         "MO Web - 리스트 정상 삭제 실패 - 리스트 삭제 실패 2"

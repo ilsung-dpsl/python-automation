@@ -19,7 +19,8 @@ def test_MO_prospecting_contacts_name_click_and_contact_detail_check(mobile_page
     mobile_page.get_by_placeholder("이메일").fill(config.FREE_ACCOUNT)
     mobile_page.get_by_placeholder("비밀번호").fill(config.FREE_PW)
     mobile_page.get_by_role("button", name="로그인").tap()
-    mobile_page.wait_for_timeout(1000)
+    #20260119 - 1초 -> 2초로 대시 시간 변경
+    mobile_page.wait_for_timeout(2000)
 
     mobile_page.get_by_role("button", name="Confirm").tap(timeout=10000)
     mobile_page.wait_for_timeout(1000)
