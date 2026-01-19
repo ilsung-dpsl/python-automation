@@ -15,7 +15,9 @@ ENTERPRISE_ACCOUNT = "deepsalesdemo@gmail.com"
 ENTERPRISE_PW = "!deepsales@36"
 
 #유료회원 - 엔터프라이즈 > 팀멤버
-ENTERPRISE_TEAM_MEMBER_AC = "ilsung.baek@deepsales.com"
+#ENTERPRISE_TEAM_MEMBER_AC = "ilsung.baek@deepsales.com"
+#20260119 - ilsung.baek@deepsales.com 게정으로 멤버가 될 경우, pa8이 엔터프라이즈 멤버로 변경되는 문제로 게정 변경
+ENTERPRISE_TEAM_MEMBER_AC = "ilsung.baek+pa8@deepsales.com"
 ENTERPRISE_TEAM_MEMBER_PW = "!deepsales@36"
 
 #유료회원 - 엔터프라이즈 > 팀오너
@@ -46,8 +48,11 @@ FREE_PRD5_PW = "!deepsales@36"
 FREE_PRD6_ACCOUNT = "ilsung.baek+prd6@deepsales.com"
 FREE_PRD6_PW = "!deepsales@36"
 
-FREE_PA8_ACCOUNT = "ilsung.baek+pa8@deepsales.com"
-FREE_PA8_PW = "!deepsales@36"
+#20260119 - 엔터프라이즈 멤버 이메일 팀 멤버 합류 시 오류로 인해, 메일 변경
+FREE_PA18_ACCOUNT = "ilsung.baek+pa18@deepsales.com"
+FREE_PA18_PW = "!deepsales@36"
+#FREE_PA8_ACCOUNT = "ilsung.baek+pa8@deepsales.com"
+#FREE_PA8_PW = "!deepsales@36"
 
 FREE_PA9_ACCOUNT = "ilsung.baek+pa9@deepsales.com"
 FREE_PA9_PW = "!deepsales@36"
