@@ -8,8 +8,9 @@ def test_discover_freeplan_viewmore_click(page):
     page.goto("https://deepsales.com/ko/intro", wait_until="load", timeout=50000)
     page.get_by_role("button", name="로그인").click()
     page.wait_for_timeout(1000)
-    page.get_by_placeholder("이메일").fill(config.FREE_PA8_ACCOUNT)
-    page.get_by_placeholder("비밀번호").fill(config.FREE_PA8_PW)
+    # 20260119 - PA18 일반 무료 계정으로 변경
+    page.get_by_placeholder("이메일").fill(config.FREE_PA18_ACCOUNT)
+    page.get_by_placeholder("비밀번호").fill(config.FREE_PA18_PW)
     page.get_by_role("button", name="로그인").click()
     page.wait_for_timeout(1000)
 

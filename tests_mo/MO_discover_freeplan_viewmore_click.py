@@ -12,8 +12,9 @@ def test_MO_discover_freeplan_viewmore_click(mobile_page):
 
     mobile_page.get_by_role("button", name="로그인").tap()
     mobile_page.wait_for_timeout(1000)
-    mobile_page.get_by_placeholder("이메일").fill(config.FREE_PA8_ACCOUNT)
-    mobile_page.get_by_placeholder("비밀번호").fill(config.FREE_PA8_PW)
+    # 20260119 - PA18 일반 무료 계정으로 변경
+    mobile_page.get_by_placeholder("이메일").fill(config.FREE_PA18_ACCOUNT)
+    mobile_page.get_by_placeholder("비밀번호").fill(config.FREE_PA18_PW)
     mobile_page.get_by_role("button", name="로그인").tap()
     mobile_page.wait_for_timeout(1000)
 

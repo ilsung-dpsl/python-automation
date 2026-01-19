@@ -29,7 +29,7 @@ def test_mylist_detail_enterpriseplan_exporttocsv_check(page):
     print("마이리스트 페이지 진입 완료")
 
     # 20250930 - 마이리스트 > test 1 (일반 폴더) 선택 코드 수정
-    page.get_by_text("test 1").click()
+    page.get_by_text("test 1").click(timeout=10000)
     page.wait_for_timeout(1000)
     print("마이리스트 상세 페이지 (일반 폴더) 진입 완료")
 

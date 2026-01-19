@@ -1,6 +1,6 @@
 import config
 
-def test_MO_mylist_edittitle_change_check(mobile_page):
+def test_MO_mylist_delete_list_check(mobile_page):
     print("----- 40번 - MO 마이리스트 > 임의 폴더 제목 편집 변경 확인 테스트 시작 -----")
 
     # 20251209 - url 이동 시 로드 타임아웃 50초 코드로 수정
@@ -15,8 +15,9 @@ def test_MO_mylist_edittitle_change_check(mobile_page):
 
     print("MO Web - 로그인 페이지 진입 완료")
 
-    mobile_page.get_by_placeholder("이메일").fill(config.FREE_PA8_ACCOUNT)
-    mobile_page.get_by_placeholder("비밀번호").fill(config.FREE_PA8_PW)
+    # 20260119 - PA18 일반 무료 계정으로 변경
+    mobile_page.get_by_placeholder("이메일").fill(config.FREE_PA18_ACCOUNT)
+    mobile_page.get_by_placeholder("비밀번호").fill(config.FREE_PA18_PW)
     mobile_page.get_by_role("button", name="로그인").tap()
     mobile_page.wait_for_timeout(1000)
 

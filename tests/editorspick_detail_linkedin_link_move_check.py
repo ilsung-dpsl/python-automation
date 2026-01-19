@@ -32,7 +32,7 @@ def test_editorspick_detail_linkedin_link_move_check(page):
 
     page1.wait_for_timeout(3000)
 
-    page1.get_by_role("link", name="LinkedIn").click()
+    page1.get_by_role("link", name="LinkedIn").click(timeout=10000)
     page1.wait_for_timeout(1000)
 
     page1.get_by_role("link", name="로그인", exact=True).click()
