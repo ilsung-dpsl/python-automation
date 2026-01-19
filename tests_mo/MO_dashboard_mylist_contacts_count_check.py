@@ -1,7 +1,7 @@
 import config
 import re
 
-def test_dashboard_mylist_contacts_count_check(mobile_page):
+def test_MO_dashboard_mylist_contacts_count_check(mobile_page):
     print("----- 12번 - MO Web > My lists 영역에 저장한 연락처, 미확인 연락처 표시 확인 테스트 시작-----")
     mobile_page.goto("https://deepsales.com/ko/intro", wait_until="load", timeout=60000)
     mobile_page.wait_for_timeout(1000)
@@ -34,8 +34,8 @@ def test_dashboard_mylist_contacts_count_check(mobile_page):
         "MO Web - 대시보드 > 마이리스트 영역 > 저장 카운트 개수 확인 실패 3"
     assert "확인되지 않은" in mobile_page.content(), \
         "MO Web - 대시보드 > 마이리스트 영역 > 미확인된 문구 노출 확인 실패 4"
-    # 20251230 - 마이리스트 확인되지 않은 카운트 개수 재수정
-    assert "6,385" in mobile_page.content(), \
+    # 20260119 - 마이리스트 확인되지 않은 카운트 개수 재수정
+    assert "6,382" in mobile_page.content(), \
         "MO Web - 대시보드 > 마이리스트 영역 > 미확인된 연락처 카운트 개수 확인 실패 5"
 
     #    print("대시보드 > 마이리스트 > 팀공유 연락처 개수 영역 미출력됨 -> 해당 항목 주석 처리 -> 추후 수정 시 재추가 및 수정")
