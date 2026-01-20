@@ -69,6 +69,10 @@ FREE_PA24_PW = "!deepsales@36"
 FREE_PA25_ACCOUNT = "ilsung.baek+pa25@deepsales.com"
 FREE_PA25_PW = "!deepsales@36"
 
+# 20260121 - 연락처 확인 시 PA25 계정 크레딧 부족으로 PA26 계정 추가
+FREE_PA26_ACCOUNT = "ilsung.baek+pa26@deepsales.com"
+FREE_PA26_PW = "!deepsales@36"
+
 #20251105 - 무료 회원 계정 하나 추가
 FREE_PA45_ACCOUNT = "ilsung.baek+pa45@deepsales.com"
 FREE_PA45_PW = "!deepsales@36"
