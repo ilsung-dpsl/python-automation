@@ -14,9 +14,9 @@ def test_MO_prospecting_quickview_contact_view_contacts_check(mobile_page):
     mobile_page.get_by_role("button", name="로그인").tap()
     mobile_page.wait_for_timeout(1000)
 
-    # Free plan의 pa25 계정 정보 변경 - 20250903
-    mobile_page.get_by_placeholder("이메일").fill(config.FREE_PA25_ACCOUNT)
-    mobile_page.get_by_placeholder("비밀번호").fill(config.FREE_PA25_PW)
+    # 20260121 - PA25 -> PA26 계정으로 변경 (사유: 크레딧 부족)
+    mobile_page.get_by_placeholder("이메일").fill(config.FREE_PA26_ACCOUNT)
+    mobile_page.get_by_placeholder("비밀번호").fill(config.FREE_PA26_PW)
     mobile_page.get_by_role("button", name="로그인").tap()
     mobile_page.wait_for_timeout(1000)
 

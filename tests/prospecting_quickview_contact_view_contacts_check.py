@@ -10,9 +10,9 @@ def test_prospecting_quickview_contact_view_contacts_check(page):
     page.goto("https://deepsales.com/ko/intro", wait_until="load", timeout=50000)
     page.get_by_role("button", name="로그인").click()
     page.wait_for_timeout(1000)
-    #Free plan의 pa25 계정 정보 변경 - 20250903
-    page.get_by_placeholder("이메일").fill(config.FREE_PA25_ACCOUNT)
-    page.get_by_placeholder("비밀번호").fill(config.FREE_PA25_PW)
+    #20260121 - PA25 -> PA26 계정으로 변경 (사유: 크레딧 부족)
+    page.get_by_placeholder("이메일").fill(config.FREE_PA26_ACCOUNT)
+    page.get_by_placeholder("비밀번호").fill(config.FREE_PA26_PW)
     page.get_by_role("button", name="로그인").click()
     page.wait_for_timeout(1000)
     #page.get_by_role("button", name="Start Now").click()
