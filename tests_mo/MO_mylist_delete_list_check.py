@@ -55,10 +55,12 @@ def test_MO_mylist_delete_list_check(mobile_page):
     assert "리스트가 삭제되었습니다." == mobile_page.locator("div").filter(has_text=re.compile(r"^리스트가 삭제되었습니다\.$")).nth(1).inner_text(), \
         "MO Web - 리스트 삭제 후 리스트 삭제 토스트 메시지 확인 실패 - 리스트 삭제 실패 1"
 
-    #20260121 - 대기사간 5초 -> 6초로 변경
-    mobile_page.wait_for_timeout(6000)
+    #20260121 - 대기사간 6초 -> 2초로 변경
+    mobile_page.wait_for_timeout(2000)
 
-    assert "test 1" not in mobile_page.content(), \
+    #20260121 - test 1 폴더의 임의 아이템 엘리먼트 유무 확인으로 코드 수정
+    list_item = mobile_page.get_by_text("test 1", exact=True)
+    assert list_item.count() == 0, \
         "MO Web - 리스트 정상 삭제 실패 - 리스트 삭제 실패 2"
 
     # 20260113 - 마이리스트 페이지의 test 1 폴더가 남아있는 것처럼 파악되는 경우가 있어 해당 div가 있는지 확인하는 것으로 변경
