@@ -26,8 +26,9 @@ def test_editorspick_detail_linkedin_link_move_check(page):
     page.get_by_role("button", name="로그인").click()
     page.wait_for_timeout(1000)
 
+    # 20260122 - 타임아웃 대기 방어코드 추가
     with page.expect_popup() as page1_info:
-        page.locator("div:nth-child(2) > div > .flex > .shrink-0").click()
+        page.locator("div:nth-child(2) > div > .flex > .shrink-0").click(timeout=10000)
     page1 = page1_info.value
 
     page1.wait_for_timeout(3000)
