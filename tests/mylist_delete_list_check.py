@@ -56,7 +56,10 @@ def test_mylist_delete_list_check(page):
     #20260113 - 리스트 삭제 후 3초 대기 (test 1의 tag 코드가 남아있을 수 있음)
     page.wait_for_timeout(3000)
 
-    assert "test 1" not in page.content(), "리스트 정상 삭제 실패 - 리스트 삭제 실패 2"
+    # 20260121 - test 1 폴더의 임의 아이템 엘리먼트 유무 확인으로 코드 수정
+    list_item = page.get_by_text("test 1", exact=True)
+    assert list_item.count() == 0, \
+        "리스트 정상 삭제 실패 - 리스트 삭제 실패 2"
 
     print("----- 46번 - 마이리스트 > 리스트 삭제 확인 테스트 시작 -> 성공 -----")
 
