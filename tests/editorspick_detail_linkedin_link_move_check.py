@@ -31,7 +31,8 @@ def test_editorspick_detail_linkedin_link_move_check(page):
         page.locator("div:nth-child(2) > div > .flex > .shrink-0").click(timeout=10000)
     page1 = page1_info.value
 
-    page1.wait_for_timeout(3000)
+    # 20250122 - 3초 -> 5초 대기 추가
+    page1.wait_for_timeout(5000)
 
     page1.get_by_role("link", name="LinkedIn").click(timeout=10000)
     page1.wait_for_timeout(1000)
