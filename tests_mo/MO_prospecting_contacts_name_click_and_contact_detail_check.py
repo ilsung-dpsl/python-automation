@@ -23,7 +23,8 @@ def test_MO_prospecting_contacts_name_click_and_contact_detail_check(mobile_page
     mobile_page.wait_for_timeout(2000)
 
     mobile_page.get_by_role("button", name="Confirm").tap(timeout=10000)
-    mobile_page.wait_for_timeout(1000)
+    # 20260123 - 1초 -> 3초로 대시 시간 변경
+    mobile_page.wait_for_timeout(3000)
 
     print("MO Web - 탐색하기 진입 완료")
 
@@ -33,8 +34,8 @@ def test_MO_prospecting_contacts_name_click_and_contact_detail_check(mobile_page
 
     # 20250930 - 탐색하기 UI 변경으로 프롬프트 창 > 검색 버튼 코드 수정
     mobile_page.locator("label").get_by_role("img").nth(1).tap(timeout=10000)
-    # 20260116 - 5초 -> 7초 대기로 변경
-    mobile_page.wait_for_timeout(7000)
+    # 20260123 - 7초 -> 10초 대기로 변경
+    mobile_page.wait_for_timeout(10000)
 
     print("MO Web - 탐색하기 검색 완료 후")
 
