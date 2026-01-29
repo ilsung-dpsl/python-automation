@@ -25,7 +25,8 @@ def test_MO_dashboard_gotomyaccount_move(mobile_page):
 
     print("MO Web - 대시보드 진입 완료")
 
-    mobile_page.get_by_text("내 계정으로 이동하기 >").click()
+    # 20260129 - 대시보드 > 내 계정으로 이동하기 > 선택 시 앨리먼트 나올 때까지 타임아웃 대기 수정
+    mobile_page.get_by_text("내 계정으로 이동하기 >").tap(timeout=10000)
     mobile_page.wait_for_timeout(2000)
 
     print("MO Web - 계정 및 설정 > 내 프로필 페이지로 이동")
