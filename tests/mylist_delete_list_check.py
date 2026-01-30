@@ -1,5 +1,7 @@
 import config
 import re
+#20260130 - expect 패키지 import 추가
+from playwright.sync_api import expect
 
 def test_mylist_delete_list_check(page):
 
@@ -57,8 +59,10 @@ def test_mylist_delete_list_check(page):
     #20260130 - 리스트 삭제 후 4초 대기로 수정 (test 1의 tag 코드가 남아있을 수 있음)
     page.wait_for_timeout(3000)
 
-    # 20260121 - test 1 폴더의 임의 아이템 엘리먼트 유무 확인으로 코드 수정
+    # 20260130 - test 1 폴더의 카운트 확인 전 DOM 변경 될때까지 기다리는 코드 추가
     list_item = page.get_by_text("test 1", exact=True)
+    expect(list_item).to_have_count(0, timeout=10000)
+
     assert list_item.count() == 0, \
         "리스트 정상 삭제 실패 - 리스트 삭제 실패 2"
 
