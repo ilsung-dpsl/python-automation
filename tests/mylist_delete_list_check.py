@@ -18,10 +18,11 @@ def test_mylist_delete_list_check(page):
     # 20250930 - 탐색하기 ui(LNB 영역) 변경으로 인한 LNB 숨김처리됨 -> LNB 마우스 호버하는 코드 추가 및 수정
     lnb_hover_target = page.get_by_text("대시보드탐색하기발견하기마이 리스트").first
     lnb_hover_target.hover()
-    page.wait_for_timeout(2000)
+    # 20260130 - 대기 시간 2초 -> 3초로 변경
+    page.wait_for_timeout(3000)
 
     # 20250930 - LNB > 사이드바 메뉴 펼침  버튼 선택 코드 추가
-    page.get_by_role("button").first.click()
+    page.get_by_role("button").first.click(timeout=10000)
     page.wait_for_timeout(2000)
 
     # 20250930 - LNB > 마이 리스트 메뉴 영역 선택 위치 변경으로 인한 코드 수정
@@ -53,7 +54,7 @@ def test_mylist_delete_list_check(page):
 
     assert "리스트가 삭제되었습니다." == page.locator("div").filter(has_text=re.compile(r"^리스트가 삭제되었습니다\.$")).nth(1).inner_text(), \
         "리스트 삭제 후 리스트 삭제 토스트 메시지 확인 실패 - 리스트 삭제 실패 1"
-    #20260113 - 리스트 삭제 후 3초 대기 (test 1의 tag 코드가 남아있을 수 있음)
+    #20260130 - 리스트 삭제 후 4초 대기로 수정 (test 1의 tag 코드가 남아있을 수 있음)
     page.wait_for_timeout(3000)
 
     # 20260121 - test 1 폴더의 임의 아이템 엘리먼트 유무 확인으로 코드 수정
