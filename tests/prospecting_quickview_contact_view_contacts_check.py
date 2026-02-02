@@ -14,16 +14,18 @@ def test_prospecting_quickview_contact_view_contacts_check(page):
     page.get_by_placeholder("이메일").fill(config.FREE_PA26_ACCOUNT)
     page.get_by_placeholder("비밀번호").fill(config.FREE_PA26_PW)
     page.get_by_role("button", name="로그인").click()
-    page.wait_for_timeout(1000)
+    # 20260202 - 로그인 후 대기 1초 -> 2초로 변경
+    page.wait_for_timeout(2000)
     #page.get_by_role("button", name="Start Now").click()
     #page.wait_for_timeout(1000)
 
     #검색으를 Kuwait Oil의 직급이 시니어인 직원 정보를 찾아줘 검색어 입력으로 변경 - 20250903
     page.get_by_placeholder("예: 일본 화장품 제조사 세일즈 매니저").fill("Kuwait Oil의 직급이 시니어인 직원 정보를 찾아줘")
+    page.wait_for_timeout(500)
     # 탐색하기 > 검색창 > 검색버튼 클릭하는 코드 수정 - 20250805
     page.get_by_placeholder("예: 일본 화장품 제조사 세일즈 매니저").press("Enter")
-
-    page.wait_for_timeout(7000)
+    # 20260202 - 대기 시간 7초 -> 8초로 수정
+    page.wait_for_timeout(8000)
 
     max_pages = 4
     found = False
@@ -56,7 +58,8 @@ def test_prospecting_quickview_contact_view_contacts_check(page):
                 #연락처 확인 버튼이 있는 리드 데이터의 담당자 위치 열을 선택해서, 퀵뷰를 오픈하는 로직
                 #산업군 > Oil, Gas, and Mining 선택 변경으로 인한 코드 수정 - 20250903
                 if "Oil, Gas, and Mining" == page.get_by_text("Oil, Gas, and Mining").nth(row_location_current).inner_text():
-                    page.get_by_text("Oil, Gas, and Mining").nth(row_location_current).click()
+                    # 20260202 - 연락처 리드 선택 시 리드 노출될 때까지 타임아웃 대기 코드 추가
+                    page.get_by_text("Oil, Gas, and Mining").nth(row_location_current).click(timeout=10000)
                     page.wait_for_timeout(3000)
                     print(f"Kuwait next : {row_location_current + 1}")
 
@@ -78,7 +81,8 @@ def test_prospecting_quickview_contact_view_contacts_check(page):
 
                     #퀵뷰 > 이메일 연락처 > [연락처 확인] 버튼 활성화 확인
                     if popup_email_view_contacts.is_visible():
-                        popup_email_view_contacts.click()
+                        # 20260202 - 퀵뷰의 연락처 확인 버튼 노출 시까지 타임아웃 대기 코드 추가
+                        popup_email_view_contacts.click(timeout=10000)
                         page.wait_for_timeout(2000)
 
                         assert "확인됨" == page.locator("section button:has-text('확인됨')").nth(0).inner_text(), \
