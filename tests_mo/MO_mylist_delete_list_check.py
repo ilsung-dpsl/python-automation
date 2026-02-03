@@ -1,5 +1,7 @@
 import config
 import re
+#20260203 - expect 패키지 import 추가
+from playwright.sync_api import expect
 
 def test_MO_mylist_delete_list_check(mobile_page):
     print("----- 41번 - MO 마이리스트 > 리스트 삭제 확인 테스트 시작 -----")
@@ -58,8 +60,10 @@ def test_MO_mylist_delete_list_check(mobile_page):
     #20260121 - 대기사간 6초 -> 2초로 변경
     mobile_page.wait_for_timeout(2000)
 
-    #20260121 - test 1 폴더의 임의 아이템 엘리먼트 유무 확인으로 코드 수정
+    # 20260203 - test 1 폴더의 카운트 확인 전 DOM 변경 될때까지 기다리는 코드 추가
     list_item = mobile_page.get_by_text("test 1", exact=True)
+    expect(list_item).to_have_count(0, timeout=10000)
+
     assert list_item.count() == 0, \
         "MO Web - 리스트 정상 삭제 실패 - 리스트 삭제 실패 2"
 
