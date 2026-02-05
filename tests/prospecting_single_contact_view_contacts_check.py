@@ -7,8 +7,9 @@ def test_prospecting_single_contact_view_contacts_check(page):
     page.goto("https://deepsales.com/ko/intro", wait_until="load", timeout=30000)
     page.get_by_role("button", name="로그인").click()
     page.wait_for_timeout(500)
-    page.get_by_placeholder("이메일").fill(config.FREE_PRD3_ACCOUNT)
-    page.get_by_placeholder("비밀번호").fill(config.FREE_PRD3_PW)
+    #20260205 - PRD3 크레딧 부족으로 인한 PRD20 계정으로 변경
+    page.get_by_placeholder("이메일").fill(config.FREE_PRD20_ACCOUNT)
+    page.get_by_placeholder("비밀번호").fill(config.FREE_PRD20_PW)
     page.get_by_role("button", name="로그인").click()
     page.wait_for_timeout(500)
  #   page.get_by_role("button", name="Start Now").click()

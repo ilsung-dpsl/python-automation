@@ -15,8 +15,9 @@ def test_MO_prospecting_addtolist_flow_check(mobile_page):
 
     print("MO Web - 로그인 페이지 진입 완료")
 
-    mobile_page.get_by_placeholder("이메일").fill(config.FREE_PRD3_ACCOUNT)
-    mobile_page.get_by_placeholder("비밀번호").fill(config.FREE_PRD3_PW)
+    # 20260205 - PRD3 크레딧 부족으로 PRD20 계정으로 변경
+    mobile_page.get_by_placeholder("이메일").fill(config.FREE_PRD20_ACCOUNT)
+    mobile_page.get_by_placeholder("비밀번호").fill(config.FREE_PRD20_PW)
     mobile_page.get_by_role("button", name="로그인").tap()
     mobile_page.wait_for_timeout(1000)
 
