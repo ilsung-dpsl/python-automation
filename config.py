@@ -32,9 +32,9 @@ FREE_ACCOUNT_PW = "!deepsales@36"
 FREE_PRD2_ACCOUNT = "ilsung.baek+prd2@deepsales.com"
 FREE_PRD2_PW = "!deepsales@36"
 
-#무료회원 4 - 확인용 prd3
-FREE_PRD3_ACCOUNT = "ilsung.baek+prd3@deepsales.com"
-FREE_PRD3_PW = "!deepsales@36"
+#무료회원 4 - 확인용 prd3 (20260205 - 크레딧부족으로 disabled 처리)
+#FREE_PRD3_ACCOUNT = "ilsung.baek+prd3@deepsales.com"
+#FREE_PRD3_PW = "!deepsales@36"
 
 #무료회원 5 - 확인용 prd4
 FREE_PRD4_ACCOUNT = "ilsung.baek+prd4@deepsales.com"
@@ -47,6 +47,10 @@ FREE_PRD5_PW = "!deepsales@36"
 #무료회원 6 - 확인용 prd6
 FREE_PRD6_ACCOUNT = "ilsung.baek+prd6@deepsales.com"
 FREE_PRD6_PW = "!deepsales@36"
+
+# 20260205 - 무료회원 7 - 확인용 prd20 추가
+FREE_PRD20_ACCOUNT = "ilsung.baek+prd20@deepsales.com"
+FREE_PRD20_PW = "!deepsales@36"
 
 #20260119 - 엔터프라이즈 멤버 이메일 팀 멤버 합류 시 오류로 인해, 메일 변경
 FREE_PA18_ACCOUNT = "ilsung.baek+pa18@deepsales.com"
