@@ -71,8 +71,9 @@ def test_editorspick_detail_linkedin_link_move_check(page):
 
     page4.wait_for_timeout(5000)
 
+
     # 20250206 - 링크드인 페이지 > 성함 / 소속 회사&직함 변경 및 링크드인 경력사항 파싱 막힘으로 인한 체크 제거
-    assert "Wanda Martinez" == page4.get_by_test_id("lazy-column").get_by_role("button", name="Wanda Martinez", exact=True).inner_text(), \
+    assert "Wanda Martinez" == page4.locator("div").filter(has_text=re.compile(r"^Wanda Martinez$")).first.inner_text(), \
         "링크드인 페이지 > 성함 노출 확인 - 에디터픽 > 링크드인 연동 확인 실패 1"
     assert "Ejecutiva de Ventas en Uno Radio Group" == page4.get_by_test_id("lazy-column").get_by_text("Ejecutiva de Ventas en Uno").inner_text(), \
            "링크드인 페이지 > 소속 회사 / 직함 노출 확인 - 에디터픽 > 링크드인 연동 확인 실패 2"
