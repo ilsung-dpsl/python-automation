@@ -1,5 +1,7 @@
 import re
 import config
+#20260206 - expect inport 추가
+from playwright.sync_api import expect
 
 def test_editorspick_detail_linkedin_link_move_check(page):
     print("---- 86번 - 에디터픽 상세 > 링크드인 연동 확인 테스트 시작 ----")
@@ -69,7 +71,16 @@ def test_editorspick_detail_linkedin_link_move_check(page):
         page.locator("div:nth-child(2) > div > .flex > .shrink-0").click()
     page4 = page3_info.value
 
-    page4.wait_for_timeout(7000)
+    page4.wait_for_timeout(2000)
+
+    #20250206 - 아래 코드 추가
+    page4.wait_for_load_state("networkidle")
+    page4.wait_for_timeout(5000)
+
+    expect(
+        page4.locator("div").filter(has_text=re.compile(r"^Wanda Martinez$")).first
+    ).to_be_visible(timeout=60000)
+
 
     # 20250206 - 링크드인 페이지 > 성함 / 소속 회사&직함 변경 및 링크드인 경력사항 파싱 막힘으로 인한 체크 제거
     assert "Wanda Martinez" == page4.locator("div").filter(has_text=re.compile(r"^Wanda Martinez$")).first.inner_text(), \
