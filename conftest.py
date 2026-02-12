@@ -30,8 +30,8 @@ def page(browser, browser_context_args):
 # 2026.1.6 - MO_Web 테스트를 위한 안드로이드 모바일용 셋팅
 @pytest.fixture
 def mobile_page(browser, playwright_instance):
-    #20260212 - Galaxy S24 -> Galaxy S8로 사이즈 변경
-    device = playwright_instance.devices["Galaxy S8"]
+    #20260212 - Galaxy S24 사이즈로 재변경
+    device = playwright_instance.devices["Galaxy S24"]
 
     context = browser.new_context(
         **device,
