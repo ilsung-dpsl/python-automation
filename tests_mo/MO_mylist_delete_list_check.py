@@ -57,12 +57,15 @@ def test_MO_mylist_delete_list_check(mobile_page):
     assert "리스트가 삭제되었습니다." == mobile_page.locator("div").filter(has_text=re.compile(r"^리스트가 삭제되었습니다\.$")).nth(1).inner_text(), \
         "MO Web - 리스트 삭제 후 리스트 삭제 토스트 메시지 확인 실패 - 리스트 삭제 실패 1"
 
-    #20260121 - 대기사간 6초 -> 2초로 변경
-    mobile_page.wait_for_timeout(2000)
+    #20260212 - 대기사간 2초 -> 3초로 변경
+    mobile_page.wait_for_timeout(3000)
 
-    # 20260203 - test 1 폴더의 카운트 확인 전 DOM 변경 될때까지 기다리는 코드 추가
+    #mobile_page.reload()
+    #mobile_page.wait_for_timeout(2000)
+
+    # 20260212 - 'test 1' 요소가 화면에서 완전히 사라질 때까지 대기 (to_be_hidden 활용)
     list_item = mobile_page.get_by_text("test 1", exact=True)
-    expect(list_item).to_have_count(0, timeout=10000)
+    expect(list_item).to_be_hidden(timeout=10000)
 
     assert list_item.count() == 0, \
         "MO Web - 리스트 정상 삭제 실패 - 리스트 삭제 실패 2"
