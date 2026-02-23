@@ -21,8 +21,10 @@ def test_prospecting_insufficient_credit_modal_upgrade_my_plan_click(page):
 
     page.wait_for_timeout(5000)
 
-    #20260116 - 연락처 확인 리드 재변경 > 첫번째 페이지 > 10번째 리드로 변경
-    page.locator("div").filter(has_text=re.compile(r"^Matt Legg디렉터연락처 확인WalmartUnited StatesRetail$")).get_by_role("button").click()
+    #20260223 - 연락처 확인 리드 재변경 > 첫번째 페이지 > 10번쟈 -> 4번째 리드로 변경
+    #page.locator("div").filter(has_text=re.compile(r"^Matt Legg디렉터연락처 확인WalmartUnited StatesRetail$")).get_by_role("button").click()
+    page.locator("div").filter(has_text=re.compile(r"^Reagan Becnel수석 리드 애널리스트연락처 확인WalmartUnited StatesRetail$")).get_by_role("button").click()
+
     page.wait_for_timeout(4000)
     page.get_by_role("button", name="요금제 업그레이드").click()
     page.wait_for_timeout(3000)
