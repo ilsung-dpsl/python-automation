@@ -29,7 +29,8 @@ def test_MO_salesagent_boucher_modal_link_move_check(mobile_page):
         mobile_page.get_by_role("link", name="바로가기").first.tap( )
     mobile_page2 = page2_info.value
 
-    mobile_page2.wait_for_timeout(3000)
+    #20260223 - 3초 -> 4초로 변경
+    mobile_page2.wait_for_timeout(4000)
 
     print("MO Web - 산업통상자원부 > 바로가기 선택 후 페이지 이동 완료")
 
@@ -39,7 +40,8 @@ def test_MO_salesagent_boucher_modal_link_move_check(mobile_page):
         "MO Web - 산업통상자원부 바로가기 1 -> 홈페이지 이동 후 수출 바우처 사업 문구 확인 실패 - 정부가 인증한 AI 기반 해외 영업 지원 서비스 모달 > 각 URL 연동 확인 실패 2"
 
     mobile_page2.close()
-    mobile_page.wait_for_timeout(1000)
+    #20260223 - 1초 -> 2초로 변경
+    mobile_page.wait_for_timeout(2000)
 
     #with page.expect_popup() as page2_info:
     #    page.get_by_role("link", name="바로가기").nth(1).click()
@@ -57,7 +59,8 @@ def test_MO_salesagent_boucher_modal_link_move_check(mobile_page):
         mobile_page.get_by_role("link", name="바로가기").nth(2).tap()
     mobile_page2 = page2_info.value
 
-    mobile_page2.wait_for_timeout(3000)
+    #20260223 - 3초 -> 4초로 변경
+    mobile_page2.wait_for_timeout(4000)
 
     print("MO Web - 과학기술정보통신부 > 바로가기 선택 후 페이지 이동 완료")
 
@@ -67,13 +70,16 @@ def test_MO_salesagent_boucher_modal_link_move_check(mobile_page):
         "MO Web - 과학기술정보통신부 바로가기 3 -> 홈페이지 이동 후 AI 바우처 사업 문구 확인 실패 - 정부가 인증한 AI 기반 해외 영업 지원 서비스 모달 > 각 URL 연동 확인 실패 6"
 
     mobile_page2.close()
-    mobile_page.wait_for_timeout(1000)
+
+    #20260223 - 1초 -> 2초로 변경
+    mobile_page.wait_for_timeout(2000)
 
     with mobile_page.expect_popup() as page2_info:
         mobile_page.get_by_role("link", name="바로가기").nth(3).tap()
     mobile_page2 = page2_info.value
 
-    mobile_page2.wait_for_timeout(3000)
+    #20260223 - 3초 -> 4초로 변경
+    mobile_page2.wait_for_timeout(4000)
 
     print("MO Web - 문화체육관광부 > 바로가기 선택 후 페이지 이동 완료")
 
@@ -83,13 +89,16 @@ def test_MO_salesagent_boucher_modal_link_move_check(mobile_page):
         "MO Web - 문화체육관광부 바로가기 4 -> 홈페이지 이동 후 전통문화포털 문구 확인 실패 - 정부가 인증한 AI 기반 해외 영업 지원 서비스 모달 > 각 URL 연동 확인 실패 8"
 
     mobile_page2.close()
-    mobile_page.wait_for_timeout(1000)
+
+    #20260223 - 1초 -> 2초로 변경
+    mobile_page.wait_for_timeout(2000)
 
     with mobile_page.expect_popup() as page2_info:
         mobile_page.get_by_role("link", name="바로가기").nth(4).tap()
     mobile_page2 = page2_info.value
 
-    mobile_page2.wait_for_timeout(3000)
+    #20260223 - 3초 -> 4초로 변경
+    mobile_page2.wait_for_timeout(4000)
     print("MO Web - 한국데이터산업진흥원 > 바로가기 선택 후 페이지 이동 완료")
 
     assert config.BOUCHER5_URL == mobile_page2.url, \
@@ -98,6 +107,8 @@ def test_MO_salesagent_boucher_modal_link_move_check(mobile_page):
         "MO Web - 한국데이터산업진흥원 바보가기 5 -> 홈페이지 이동 후 데이터바우처 소개 문구 확인 실패 - 정부가 인증한 AI 기반 해외 영업 지원 서비스 모달 > 각 URL 연동 확인 실패 8"
 
     mobile_page2.close()
+
+    #20260223 - 1초 -> 2초로 변경
     mobile_page.wait_for_timeout(1000)
 
     print("---- 89번 - 정부가 인증한 AI 기반 해외 영업 지원 서비스 모달 > 각 URL 연동 확인 테스트 시작 -> 성공 ----")
