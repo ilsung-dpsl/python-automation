@@ -32,12 +32,12 @@ def test_MO_prospecting_insufficient_credit_modal_upgrade_my_plan_click(mobile_p
 
     # 20260223 - 연락처 확인 리드 재변경 > 첫번째 페이지 > 10번째 -> 4번째 리드로 변경
     #mobile_page.locator("div").filter(has_text=re.compile(r"^Matt Legg디렉터연락처 확인WalmartUnited StatesRetail$")).get_by_role("button").tap()
-    mobile_page.locator("div").filter(has_text=re.compile(r"^Reagan Becnel수석 리드 애널리스트연락처 확인WalmartUnited StatesRetail$")).get_by_role("button").tap()
+    mobile_page.locator("div").filter(has_text=re.compile(r"^Reagan Becnel수석 리드 애널리스트연락처 확인WalmartUnited StatesRetail$")).get_by_role("button").tap(timeout=10000)
     mobile_page.wait_for_timeout(4000)
 
     print("MO Web - 크레딧 부족 모달 출력 완료")
 
-    mobile_page.get_by_role("button", name="요금제 업그레이드").tap()
+    mobile_page.get_by_role("button", name="요금제 업그레이드").tap(timeout=10000)
     mobile_page.wait_for_timeout(3000)
 
     assert "당신의 세일즈를 위한 맞춤형 요금제" in mobile_page.content(), \
