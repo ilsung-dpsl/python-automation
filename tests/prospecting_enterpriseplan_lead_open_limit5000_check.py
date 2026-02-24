@@ -19,7 +19,8 @@ def test_prospecting_enterpriseplan_lead_open_limit5000_check(page):
     page.get_by_placeholder("예: 일본 화장품 제조사 세일즈 매니저").fill("화장품을 유통하는 회사")
     page.get_by_placeholder("예: 일본 화장품 제조사 세일즈 매니저").press("Enter")
 
-    page.wait_for_timeout(5000)
+    #20260224 - 5초 -> 7초로 변경
+    page.wait_for_timeout(7000)
 
     for i in range(1, 201, 1):
         #20260224 - 다음 버튼 선택 전 노출 여후 확인을 위한 타임아웃 대기 추가
