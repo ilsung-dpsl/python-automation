@@ -22,7 +22,8 @@ def test_prospecting_enterpriseplan_lead_open_limit5000_check(page):
     page.wait_for_timeout(5000)
 
     for i in range(1, 201, 1):
-        page.locator("div").filter(has_text=re.compile(fr"^401 페이지 중 {i} 페이지페이지 바로가기$")).get_by_role("button").nth(1).click()
+        #20260224 - 다음 버튼 선택 전 노출 여후 확인을 위한 타임아웃 대기 추가
+        page.locator("div").filter(has_text=re.compile(fr"^401 페이지 중 {i} 페이지페이지 바로가기$")).get_by_role("button").nth(1).click(timeout=10000)
         print(f"{i} 페이지 체크 확인 ")
         page.wait_for_timeout(100)
 
@@ -32,5 +33,6 @@ def test_prospecting_enterpriseplan_lead_open_limit5000_check(page):
 
     page.wait_for_timeout(2000)
 
-    page.locator("#modal-root").get_by_role("button").filter(has_text=re.compile(r"^$")).click()
+    # 20260224 - 타임아웃 대기 추가
+    page.locator("#modal-root").get_by_role("button").filter(has_text=re.compile(r"^$")).click(timeout=10000)
     print("----- Enterprise 회원이 검색 결과 리스트에서 5000개 이상 연락처 탐색 시 업그레이드 모달 노출 확인 테스트 시작 -> 성공 -----")
