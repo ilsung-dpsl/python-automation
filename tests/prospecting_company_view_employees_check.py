@@ -24,10 +24,10 @@ def test_prospecting_company_view_employees_check(page):
     #20251208 - 대기 시간 5초 -> 7초로 변경
     page.wait_for_timeout(7000)
 
-    #20251014 - 회사 1개만 노출로 변경되어 코드 수정
-    page.get_by_role("tab", name="회사 (1)").click()
+    #20260226 - 타임아웃 10초 대기 코드 추가
+    page.get_by_role("tab", name="회사 (1)").click(timeout=10000)
     page.wait_for_timeout(2000)
-    page.get_by_role("button", name="직원 정보 확인").click()
+    page.get_by_role("button", name="직원 정보 확인").click(timeout=10000)
     #20251209 - 대기 시간 3초 -> 5초로 변경
     page.wait_for_timeout(5000)
 
