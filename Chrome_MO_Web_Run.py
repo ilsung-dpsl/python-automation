@@ -42,8 +42,8 @@ def Chrome_MO_Web_Run():
         # MO Web 24번 - Contact 리스트 중 담당자 이름 클릭 시 담당자 상세 페이지로 이동
         "tests_mo/MO_prospecting_contacts_name_click_and_contact_detail_check.py",
 
-        # MO Web 26번 - 퀵뷰(Quick view_contact) > view contact 정상 작동 여부 확인 (단, 모바일의 경우 1달에 1번만 확인하는 것으로 진행 -> 20260116 실행 -> 20260215 재실행 필요)
-        ###"tests_mo/MO_prospecting_quickview_contact_view_contacts_check.py",
+        # MO Web 26번 - 퀵뷰(Quick view_contact) > view contact 정상 작동 여부 확인 (단, 모바일의 경우 1달에 1번만 확인하는 것으로 진행 -> 20260226 실행 -> 20260325 재실행 필요)
+        "tests_mo/MO_prospecting_quickview_contact_view_contacts_check.py",
 
         # MO Web 31번 - Quick view_company 정상 노출
         "tests_mo/MO_prospecting_quickview_company_check.py",
