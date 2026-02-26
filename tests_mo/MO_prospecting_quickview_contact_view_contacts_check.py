@@ -2,7 +2,7 @@ import config
 import re
 
 def test_MO_prospecting_quickview_contact_view_contacts_check(mobile_page):
-    print("----- 26번 - MO 탐색하기 > 퀵뷰(연락처) > 연락처 확인 시 동작 여부 확인 테스트 시작 -----")
+    print("----- 19번 - MO 탐색하기 > 퀵뷰(연락처) > 연락처 확인 시 동작 여부 확인 테스트 시작 -----")
 
     # 20251209 - url 이동 시 로드 타임아웃 50초 코드로 수정
     mobile_page.goto("https://deepsales.com/ko/intro", wait_until="load", timeout=50000)

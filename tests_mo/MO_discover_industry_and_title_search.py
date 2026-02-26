@@ -2,7 +2,7 @@ import config
 import re
 
 def test_MO_discover_industry_and_title_search(mobile_page):
-    print("----- 37번 - MO 발견하기 > 산업군 + 타이틀 문구 키워드 검색 테스트 시작 -----")
+    print("----- 23번 - MO 발견하기 > 산업군 + 타이틀 문구 키워드 검색 테스트 시작 -----")
 
     # 20251209 - url 이동 시 로드 타임아웃 50초 코드로 수정
     mobile_page.goto("https://deepsales.com/ko/intro", wait_until="load", timeout=50000)
@@ -66,4 +66,4 @@ def test_MO_discover_industry_and_title_search(mobile_page):
     assert "Hospitality, 50 - 200" == mobile_page.locator("[id=\"__next\"]").get_by_text("Hospitality, 50 -").inner_text(), \
         "MO Web - 발견하기 > 검색된 카드 > 키워드 문구 확인 실패 - 산업군 + 타이틀 검색 실패 3"
 
-    print("----- 37번 - MO 발견하기 > 산업군 + 타이틀 문구 키워드 검색 테스트 시작 -> -----")
+    print("----- 23번 - MO 발견하기 > 산업군 + 타이틀 문구 키워드 검색 테스트 시작 -> -----")

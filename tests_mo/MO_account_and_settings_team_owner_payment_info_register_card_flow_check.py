@@ -2,7 +2,7 @@ import config
 import re
 
 def test_MO_account_and_settings_team_owner_payment_info_register_card_flow_check(mobile_page):
-    print("----- 60번 - MO 유료회원 (팀오너) > 결제 및 요금제 > 결제 정보 > 카드 등록하기 플로우 확인 테스트 시작 (등록 전까지만) 확인 -----")
+    print("----- 37번 - MO 유료회원 (팀오너) > 결제 및 요금제 > 결제 정보 > 카드 등록하기 플로우 확인 테스트 시작 (등록 전까지만) 확인 -----")
 
     #20251209 - url 이동 시 로드 타임아웃 50초 코드로 수정
     mobile_page.goto("https://deepsales.com/ko/intro", wait_until="load", timeout=50000)
@@ -72,5 +72,5 @@ def test_MO_account_and_settings_team_owner_payment_info_register_card_flow_chec
     mobile_page.get_by_role("button", name="취소").tap()
     mobile_page.wait_for_timeout(1000)
 
-    print("----- 60번 - MO 유료회원 (팀오너) > 결제 및 요금제 > 결제 정보 > 카드 등록하기 플로우 확인 테스트 시작 (등록 전까지만 확인 -----")
+    print("----- 37번 - MO 유료회원 (팀오너) > 결제 및 요금제 > 결제 정보 > 카드 등록하기 플로우 확인 테스트 시작 (등록 전까지만 확인 -----")
 

@@ -2,7 +2,7 @@ import config
 import re
 
 def test_MO_prospecting_insufficient_credit_modal_upgrade_my_plan_click(mobile_page):
-    print("----- 21번 - MO 연락처 확인 시 크레딧이 부족할 경우 모달 노출 시 Upgrade my plan 버튼 클릭 시 플랜 페이지로 이동 테스트 시작 -----")
+    print("----- 16번 - MO 연락처 확인 시 크레딧이 부족할 경우 모달 노출 시 Upgrade my plan 버튼 클릭 시 플랜 페이지로 이동 테스트 시작 -----")
 
     mobile_page.goto("https://deepsales.com/ko/intro", wait_until="load", timeout=30000)
     mobile_page.wait_for_timeout(1000)
@@ -48,4 +48,4 @@ def test_MO_prospecting_insufficient_credit_modal_upgrade_my_plan_click(mobile_p
         "button").inner_text(), \
         "MO Web - 요금제 및 가격 페이지 > Enterprise > 컨설팅 받기 버튼 출력 실패 - 플랜 페이지 이동 실패 2"
 
-    print("----- 21번 - MO 연락처 확인 시 크레딧이 부족할 경우 모달 노출 시 Upgrade my plan 버튼 클릭 시 플랜 페이지로 이동 테스트 시작 -> 성공 -----")
+    print("----- 16번 - MO 연락처 확인 시 크레딧이 부족할 경우 모달 노출 시 Upgrade my plan 버튼 클릭 시 플랜 페이지로 이동 테스트 시작 -> 성공 -----")

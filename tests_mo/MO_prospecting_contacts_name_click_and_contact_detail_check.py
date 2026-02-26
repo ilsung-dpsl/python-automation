@@ -2,7 +2,7 @@ import config
 import re
 
 def test_MO_prospecting_contacts_name_click_and_contact_detail_check(mobile_page):
-    print("----- 24번 - MO 탐색하기 > 성함 선택 후 담당자 상세 화면 이동 확인 테스트 시작 -----")
+    print("----- 18번 - MO 탐색하기 > 성함 선택 후 담당자 상세 화면 이동 확인 테스트 시작 -----")
 
     # 20251209 - url 이동 시 로드 타임아웃 50초 코드로 수정
     mobile_page.goto("https://deepsales.com/ko/intro", wait_until="load", timeout=50000)
@@ -30,12 +30,12 @@ def test_MO_prospecting_contacts_name_click_and_contact_detail_check(mobile_page
 
     mobile_page.get_by_placeholder("예: 일본 화장품 제조사 세일즈 매니저").tap(timeout=10000)
     mobile_page.get_by_placeholder("예: 일본 화장품 제조사 세일즈 매니저").fill("한국 화장품 유통 회사 중 직급이 매니저인 Danny Jung을 찾아줘")
-    mobile_page.wait_for_timeout(500)
+    mobile_page.wait_for_timeout(1000)
 
     # 20250930 - 탐색하기 UI 변경으로 프롬프트 창 > 검색 버튼 코드 수정
     mobile_page.locator("label").get_by_role("img").nth(1).tap(timeout=10000)
-    # 20260123 - 7초 -> 10초 대기로 변경
-    mobile_page.wait_for_timeout(10000)
+    # 20260226 - 10초 -> 15초 대기로 변경
+    mobile_page.wait_for_timeout(15000)
 
     print("MO Web - 탐색하기 검색 완료 후")
 
@@ -61,4 +61,4 @@ def test_MO_prospecting_contacts_name_click_and_contact_detail_check(mobile_page
         "****@skin79.com").inner_text(), \
         "MO Web - 연락 상세 페이지 > 연락처 상세 영역 > 미확인된 이메일 확인 실패 - 연락처 상세 페이지 이동 실패 5"
 
-    print("----- 24번 - MO 탐색하기 > 성함 선택 후 담당자 상세 화면 이동 확인 테스트 시작 -> 성공 -----")
+    print("----- 18번 - MO 탐색하기 > 성함 선택 후 담당자 상세 화면 이동 확인 테스트 시작 -> 성공 -----")

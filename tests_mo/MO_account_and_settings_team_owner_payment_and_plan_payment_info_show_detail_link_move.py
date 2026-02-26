@@ -2,7 +2,7 @@ import config
 import re
 
 def test_MO_account_and_settings_team_owner_payment_and_plan_payment_info_show_detail_link_move(mobile_page):
-    print("----- 61번 - MO 유료회원 (팀오너) > 결제 및 요금제 > 결제 정보 > 상세정보 표시 선택 시 결제 정보 페이지 이동 확인 테스트 시작 -----")
+    print("----- 38번 - MO 유료회원 (팀오너) > 결제 및 요금제 > 결제 정보 > 상세정보 표시 선택 시 결제 정보 페이지 이동 확인 테스트 시작 -----")
 
     #20251209 - url 이동 시 로드 타임아웃 50초 코드로 수정
     mobile_page.goto("https://deepsales.com/ko/intro", wait_until="load", timeout=50000)
@@ -47,4 +47,4 @@ def test_MO_account_and_settings_team_owner_payment_and_plan_payment_info_show_d
         "MO Web - 결제 정보 페이지 > 하단 안내 문구 확인 실패 - 결제 정보 > 상세정보 표시 링크 연동 실패 3"
 
     print("MO Web -결제 정보 페이지 확인 완료")
-    print("----- 61번 - MO 유료회원 (팀오너) > 결제 및 요금제 > 결제 정보 > 상세정보 표시 선택 시 결제 정보 페이지 이동 확인 테스트 시작 -> 성공 -----")
+    print("----- 38번 - MO 유료회원 (팀오너) > 결제 및 요금제 > 결제 정보 > 상세정보 표시 선택 시 결제 정보 페이지 이동 확인 테스트 시작 -> 성공 -----")

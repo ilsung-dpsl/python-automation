@@ -2,7 +2,7 @@ import config
 import re
 
 def test_MO_company_register_flow_check(mobile_page):
-    print("----- 51번 - MO 회사 정보 메인 > 등록하기 -> 회사 등록 후 확인 테스트 시작 -----")
+    print("----- 32번 - MO 회사 정보 메인 > 등록하기 -> 회사 등록 후 확인 테스트 시작 -----")
 
     #20251209 - url 이동 시 로드 타임아웃 50초 코드로 수정
     mobile_page.goto("https://deepsales.com/ko/intro", wait_until="load", timeout=50000)
@@ -92,4 +92,4 @@ def test_MO_company_register_flow_check(mobile_page):
     mobile_page.wait_for_timeout(1000)
 
     print("MO Web - 회사 정보 등록 후 소속된 회사 떠니기 완료")
-    print("----- 51번 - MO 회사 정보 메인 > 등록하기 -> 회사 등록 후 확인 테스트 시작 -> 성공 -----")
+    print("----- 32번 - MO 회사 정보 메인 > 등록하기 -> 회사 등록 후 확인 테스트 시작 -> 성공 -----")

@@ -2,7 +2,7 @@ import config
 import re
 
 def test_MO_discover_freeplan_industy_or_keyword_search_limit_check(mobile_page):
-    print("---- 35번 - MO 발견하기 > 무료 회원 사용자 키워드/산업군 탐색 시 요금제 업그레이드 모달 노출 확인 테스트 시작 -----")
+    print("---- 21번 - MO 발견하기 > 무료 회원 사용자 키워드/산업군 탐색 시 요금제 업그레이드 모달 노출 확인 테스트 시작 -----")
 
     mobile_page.goto("https://deepsales.com/ko/intro", wait_until="load", timeout=50000)
     mobile_page.wait_for_timeout(500)
@@ -66,4 +66,4 @@ def test_MO_discover_freeplan_industy_or_keyword_search_limit_check(mobile_page)
 
     mobile_page.locator("#modal-root").get_by_role("button").filter(has_text=re.compile(r"^$")).tap()
 
-    print("----- 35번 - MO 발견하기 > 무료 회원 사용자 키워드/산업군 탐색 시 요금제 업그레이드 모달 노출 확인 테스트 시작 -> 성공 -----")
+    print("----- 21번 - MO 발견하기 > 무료 회원 사용자 키워드/산업군 탐색 시 요금제 업그레이드 모달 노출 확인 테스트 시작 -> 성공 -----")

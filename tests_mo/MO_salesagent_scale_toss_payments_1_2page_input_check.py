@@ -4,7 +4,7 @@ from conftest import mobile_page
 
 
 def test_salesagent_scale_toss_payments_1_2page_input_check(mobile_page):
-    print("---- 67번 - MO 세일즈 에이전트 > Scale > 구독 결제 완료 전까지 동작 확인 ----")
+    print("---- 42번 - MO 세일즈 에이전트 > Scale > 구독 결제 완료 전까지 동작 확인 ----")
 
     # 20251209 - url 이동 시 로드 타임아웃 50초 코드로 수정
     mobile_page.goto("https://deepsales.com/ko/intro", wait_until="load", timeout=50000)
@@ -137,4 +137,4 @@ def test_salesagent_scale_toss_payments_1_2page_input_check(mobile_page):
 
     mobile_page.wait_for_timeout(1000)
 
-    print("---- 67번 - MO 세일즈 에이전트 > Scale > 구독 결제 완료 전까지 동작 확인 -> 성공 ----")
+    print("---- 42번 - MO 세일즈 에이전트 > Scale > 구독 결제 완료 전까지 동작 확인 -> 성공 ----")

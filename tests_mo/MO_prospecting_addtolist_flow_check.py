@@ -2,7 +2,7 @@ import config
 import re
 
 def test_MO_prospecting_addtolist_flow_check(mobile_page):
-    print("----- 22번 - MO 탐색하기 > 리스트에 추가 동작 확인 테스트 시작 -----")
+    print("----- 17번 - MO 탐색하기 > 리스트에 추가 동작 확인 테스트 시작 -----")
 
     mobile_page.goto("https://deepsales.com/ko/intro", wait_until="load", timeout=50000)
     mobile_page.wait_for_timeout(1000)
@@ -142,4 +142,4 @@ def test_MO_prospecting_addtolist_flow_check(mobile_page):
     mobile_page.wait_for_timeout(3000)
 
     print("MO Web - 마이리스트 메인 > test 1 리스트 삭제 완료")
-    print("----- 22번 - MO 탐색하기 > 리스트에 추가 동작 확인 테스트 시작 -> 성공 -----")
+    print("----- 17번 - MO 탐색하기 > 리스트에 추가 동작 확인 테스트 시작 -> 성공 -----")

@@ -4,7 +4,7 @@ import cv2
 import numpy as np
 
 def test_MO_salesagent_boucher_modal_ui_check(mobile_page):
-    print("---- 69번 - MO 세일즈 에이전트 > 플랜 혜택 보기의 바우처 혜택 상세 보기 선택 시 정부가 인증한 AI 기반 해외 영업 지원 서비스 모달 노출 확인 테스트 시작 ----")
+    print("---- 43번 - MO 세일즈 에이전트 > 플랜 혜택 보기의 바우처 혜택 상세 보기 선택 시 정부가 인증한 AI 기반 해외 영업 지원 서비스 모달 노출 확인 테스트 시작 ----")
 
     mobile_page.goto("https://deepsales.com/ko/intro",wait_until="load", timeout=30000)
     mobile_page.wait_for_timeout(1000)
@@ -47,4 +47,4 @@ def test_MO_salesagent_boucher_modal_ui_check(mobile_page):
     mobile_page.wait_for_timeout(1000)
     print("MO Web - 세일즈 에이전트 > 정부가 인증한 AI 기반 해외 영업 지원 서비스 모달 UI 체크 확인 완료")
 
-    print("---- 69번 - MO 세일즈 에이전트 > 플랜 혜택 보기의 바우처 혜택 상세 보기 선택 시 정부가 인증한 AI 기반 해외 영업 지원 서비스 모달 노출 확인 테스트 시작 -> 성공 ----")
+    print("---- 43번 - MO 세일즈 에이전트 > 플랜 혜택 보기의 바우처 혜택 상세 보기 선택 시 정부가 인증한 AI 기반 해외 영업 지원 서비스 모달 노출 확인 테스트 시작 -> 성공 ----")

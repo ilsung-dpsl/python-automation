@@ -2,7 +2,7 @@ import config
 import re
 
 def test_MO_mylist_detail_contact_delete_check(mobile_page):
-    print("----- 45번 - MO 마이리스트 상세 (일반) > 연락처 삭제 확인 테스트 시작 -----")
+    print("----- 29번 - MO 마이리스트 상세 (일반) > 연락처 삭제 확인 테스트 시작 -----")
 
     # 20251209 - url 이동 시 로드 타임아웃 50초 코드로 수정
     mobile_page.goto("https://deepsales.com/ko/intro", wait_until="load", timeout=50000)
@@ -57,4 +57,4 @@ def test_MO_mylist_detail_contact_delete_check(mobile_page):
     assert "연락처가 삭제되었습니다." == mobile_page.locator("div").filter(has_text=re.compile(r"^연락처가 삭제되었습니다\.$")).nth(1).inner_text(), \
         "MO Web - 연락처 삭제 후 연락처 삭제 토스트 메시지 출력 실패 - 연락처 삭제 완료 실패 3"
 
-    print("----- 45번 - MO 마이리스트 상세 (일반) > 연락처 삭제 확인 테스트 시작 -> 성공-----")
+    print("----- 29번 - MO 마이리스트 상세 (일반) > 연락처 삭제 확인 테스트 시작 -> 성공-----")

@@ -2,7 +2,7 @@ import config
 import re
 
 def test_MO_account_and_settings_freeplan_charging_credit_payment_info_not_display_check(mobile_page):
-    print("----- 58번 - MO 무료회원(유료 결제 내역 있음) > 크레딧 충전하기 / 결제정보 미노출 확인 테스트 시작 -----")
+    print("----- 36번 - MO 무료회원(유료 결제 내역 있음) > 크레딧 충전하기 / 결제정보 미노출 확인 테스트 시작 -----")
 
     #20251209 - url 이동 시 로드 타임아웃 50초 코드로 수정
     mobile_page.goto("https://deepsales.com/ko/intro", wait_until="load", timeout=50000)
@@ -39,4 +39,4 @@ def test_MO_account_and_settings_freeplan_charging_credit_payment_info_not_displ
         "MO Web - 결제 및 요금제 > 결제 정보 타이틀 문구 미노출 확인 실패 - 결제 및 요금제 > 무료 회원 > 결제 정보 미출력 확인 실패 2"
 
     print("MO Web - 결제 및 요금제 > 크레딧 충전하기 / 결제 정보 영역 미노출 확인 완료")
-    print("----- 58번 - MO 무료회원(유료 결제 내역 있음) > 크레딧 충전하기 / 결제정보 미노출 확인 테스트 시작 -----")
+    print("----- 36번 - MO 무료회원(유료 결제 내역 있음) > 크레딧 충전하기 / 결제정보 미노출 확인 테스트 시작 -----")

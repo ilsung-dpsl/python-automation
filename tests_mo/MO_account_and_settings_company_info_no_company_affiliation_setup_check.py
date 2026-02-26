@@ -2,7 +2,7 @@ import config
 import re
 
 def test_MO_account_and_settings_company_info_no_company_affiliation_setup_check(mobile_page):
-    print("---- 57번 - MO 소속된 회사가 없을 경우, 회사 정보 > [설정하기] 버튼 노출 및 선택 시 회사 설정 페이지 이동 확인 테스트 시작 -----")
+    print("---- 35번 - MO 소속된 회사가 없을 경우, 회사 정보 > [설정하기] 버튼 노출 및 선택 시 회사 설정 페이지 이동 확인 테스트 시작 -----")
 
     #20251209 - url 이동 시 로드 타임아웃 50초 코드로 수정
     mobile_page.goto("https://deepsales.com/ko/intro", wait_until="load", timeout=50000)
@@ -50,4 +50,4 @@ def test_MO_account_and_settings_company_info_no_company_affiliation_setup_check
         "MO Web - 회사 정보 페이지 > 회사 입력창 > Placeholder 확인 실패 - 소속된 회사 없는 회사 정보 > 설정하기 선택 후 회사 정보 페이지 이동 확인 실패 3"
 
     print("MO Web - 회사 정보 페이지 > 타이틀 / 회사 입력창 확인 완료")
-    print("----- 57번 - MO 소속된 회사가 없을 경우, 회사 정보 > [설정하기] 버튼 노출 및 선택 시 회사 설정 페이지 이동 확인 테스트 시작 -> 성공 -----")
+    print("----- 35번 - MO 소속된 회사가 없을 경우, 회사 정보 > [설정하기] 버튼 노출 및 선택 시 회사 설정 페이지 이동 확인 테스트 시작 -> 성공 -----")

@@ -2,7 +2,7 @@ import config
 import re
 
 def test_MO_mylist_freeplan_exporttocsv_limit_check(mobile_page):
-    print("----- 39번 - MO 마이리스트 > Free 플랜 사용자 csv 내보내기 시 요금제 제한 안내 모달 노출 확인 테스트 시작 -----")
+    print("----- 25번 - MO 마이리스트 > Free 플랜 사용자 csv 내보내기 시 요금제 제한 안내 모달 노출 확인 테스트 시작 -----")
 
     mobile_page.goto("https://deepsales.com/ko/intro", wait_until="load", timeout=50000)
     mobile_page.wait_for_timeout(500)
@@ -47,4 +47,4 @@ def test_MO_mylist_freeplan_exporttocsv_limit_check(mobile_page):
 
     mobile_page.locator("#modal-root").get_by_role("button").filter(has_text=re.compile(r"^$")).tap()
 
-    print("----- 39번 - MO 마이리스트 > Free 플랜 사용자 csv 내보내기 시 요금제 제한 안내 모달 노출 확인 테스트 시작 -> 성공 -----")
+    print("----- 25번 - MO 마이리스트 > Free 플랜 사용자 csv 내보내기 시 요금제 제한 안내 모달 노출 확인 테스트 시작 -> 성공 -----")

@@ -2,7 +2,7 @@ import re
 import config
 
 def test_MO_salesagent_ui_check(mobile_page):
-    print("---- 66번 - MO 세일즈 에이전트 UI 확인 테스트 시작 ----")
+    print("---- 41번 - MO 세일즈 에이전트 UI 확인 테스트 시작 ----")
 
     # 20251209 - url 이동 시 로드 타임아웃 50초 코드로 수정
     mobile_page.goto("https://deepsales.com/ko/intro", wait_until="load", timeout=50000)
@@ -41,4 +41,4 @@ def test_MO_salesagent_ui_check(mobile_page):
     assert "시작하기" == mobile_page.get_by_role("button", name="시작하기").nth(2).inner_text(), \
         "MO Web - 세일즈 에이전트 UI > Enterprise > [시작하기] 버튼 노출 확인 실패 - 세일즈 에이전트 UI 확인 실패 5"
 
-    print("---- 66번 - MO 세일즈 에이전트 UI 확인 테스트 시작 -> 성공 ----")
+    print("---- 41번 - MO 세일즈 에이전트 UI 확인 테스트 시작 -> 성공 ----")

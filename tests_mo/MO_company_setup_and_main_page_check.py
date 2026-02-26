@@ -2,7 +2,7 @@ import config
 import re
 
 def test_MO_company_setup_and_main_page_check(mobile_page):
-    print("----- 50번 - MO 회사 정보 > setup 버튼 및 메인 페이지 진입 테스트 시작 -----")
+    print("----- 31번 - MO 회사 정보 > setup 버튼 및 메인 페이지 진입 테스트 시작 -----")
 
     #20251209 - url 이동 시 로드 타임아웃 50초 코드로 수정
     mobile_page.goto("https://deepsales.com/ko/intro", wait_until="load", timeout=50000)
@@ -44,4 +44,4 @@ def test_MO_company_setup_and_main_page_check(mobile_page):
         "MO Web - 회사 정보 메인 페이지 > [등록하기] 버튼 출력 실패 - 회사 정보 > 메인 페이지 진입 실패 4"
 
     print("MO Web - 회사 정보 메인 페이지 진입 완료")
-    print("----- 50번 - MO 회사 정보 > setup 버튼 및 메인 페이지 진입 테스트 시작 -> 성공 -----")
+    print("----- 31번 - MO 회사 정보 > setup 버튼 및 메인 페이지 진입 테스트 시작 -> 성공 -----")

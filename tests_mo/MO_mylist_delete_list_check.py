@@ -4,7 +4,7 @@ import re
 from playwright.sync_api import expect
 
 def test_MO_mylist_delete_list_check(mobile_page):
-    print("----- 41번 - MO 마이리스트 > 리스트 삭제 확인 테스트 시작 -----")
+    print("----- 27번 - MO 마이리스트 > 리스트 삭제 확인 테스트 시작 -----")
 
     # 20251209 - url 이동 시 로드 타임아웃 50초 코드로 수정
     mobile_page.goto("https://deepsales.com/ko/intro", wait_until="load", timeout=50000)
@@ -74,4 +74,4 @@ def test_MO_mylist_delete_list_check(mobile_page):
     #assert mobile_page.locator("div").filter(has_text=re.compile(r"^test 1$")).count() == 0, \
     #    "리스트 정상 삭제 실패 - 리스트 삭제 실패 2"
 
-    print("----- 41번 - MO 마이리스트 > 리스트 삭제 확인 테스트 시작 -> 성공 -----")
+    print("----- 27번 - MO 마이리스트 > 리스트 삭제 확인 테스트 시작 -> 성공 -----")

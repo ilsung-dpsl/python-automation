@@ -2,7 +2,7 @@ import config
 import re
 
 def test_MO_mylist_detail_contact_view_contacts_check(mobile_page):
-    print("----- 46번 - MO 마이리스트 상세 > 임의 연락처 > 연락처 확인 시 동작 확인 테스트 시작 -----")
+    print("----- 30번 - MO 마이리스트 상세 > 임의 연락처 > 연락처 확인 시 동작 확인 테스트 시작 -----")
 
     # 20251209 - url 이동 시 로드 타임아웃 50초 코드로 수정
     mobile_page.goto("https://deepsales.com/ko/intro", wait_until="load", timeout=50000)
@@ -126,4 +126,4 @@ def test_MO_mylist_detail_contact_view_contacts_check(mobile_page):
         "MO Web - 크레딧 부족 계정 > 마이리스트 상세 (일반) > 연락처 확인 시 크레딧 부족 모달 > 요금제 업그레이드 버튼 노출 실패 - 크레딧 부족 모달 확인 실패 1"
 
     print("MO Web - 크레딧 부족 모달 노출 확인 완료")
-    print("----- 46번 - MO 마이리스트 상세 > 임의 연락처 > 연락처 확인 시 동작 확인 테스트 시작 -> 성공 -----")
+    print("----- 30번 - MO 마이리스트 상세 > 임의 연락처 > 연락처 확인 시 동작 확인 테스트 시작 -> 성공 -----")

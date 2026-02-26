@@ -1,7 +1,7 @@
 import config
 
 def test_MO_mylist_delete_list_check(mobile_page):
-    print("----- 40번 - MO 마이리스트 > 임의 폴더 제목 편집 변경 확인 테스트 시작 -----")
+    print("----- 26번 - MO 마이리스트 > 임의 폴더 제목 편집 변경 확인 테스트 시작 -----")
 
     # 20251209 - url 이동 시 로드 타임아웃 50초 코드로 수정
     mobile_page.goto("https://deepsales.com/ko/intro", wait_until="load", timeout=50000)
@@ -74,4 +74,4 @@ def test_MO_mylist_delete_list_check(mobile_page):
     mobile_page.wait_for_timeout(1000)
     mobile_page.get_by_role("menuitem", name="리스트 삭제").tap()
 
-    print("----- 40번 - MO 마이리스트 > 임의 폴더 제목 편집 변경 확인 테스트 시작 -> 성공 -----")
+    print("----- 26번 - MO 마이리스트 > 임의 폴더 제목 편집 변경 확인 테스트 시작 -> 성공 -----")

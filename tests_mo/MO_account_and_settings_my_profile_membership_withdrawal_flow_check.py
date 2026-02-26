@@ -2,7 +2,7 @@ import config
 import re
 
 def test_MO_account_and_settings_my_profile_membership_withdrawal_flow_check(mobile_page):
-    print("----- 54번 - MO 회원 탈퇴 플로우 확인 테스트 시작 -----")
+    print("----- 33번 - MO 회원 탈퇴 플로우 확인 테스트 시작 -----")
 
     #20251209 - url 이동 시 로드 타임아웃 50초 코드로 수정
     mobile_page.goto("https://deepsales.com/ko/intro", wait_until="load", timeout=50000)
@@ -78,5 +78,5 @@ def test_MO_account_and_settings_my_profile_membership_withdrawal_flow_check(mob
 
     print("MO Web - 탈퇴 사유 선택창 > 취소 선택 후 알림창 닫힘 완료")
 
-    print("----- 54번 - MO 회원 탈퇴 플로우 확인 테스트 시작 -> 성공 -----")
+    print("----- 33번 - MO 회원 탈퇴 플로우 확인 테스트 시작 -> 성공 -----")
 

@@ -4,7 +4,7 @@ import cv2
 import numpy as np
 
 def test_MO_salesagent_boucher_modal_link_move_check(mobile_page):
-    print("---- 89번 - 정부가 인증한 AI 기반 해외 영업 지원 서비스 모달 > 각 URL 연동 확인 테스트 시작 ----")
+    print("---- 44번 - 정부가 인증한 AI 기반 해외 영업 지원 서비스 모달 > 각 URL 연동 확인 테스트 시작 ----")
 
     mobile_page.goto("https://deepsales.com/ko/intro", wait_until="load", timeout=30000)
     mobile_page.wait_for_timeout(1000)
@@ -111,5 +111,5 @@ def test_MO_salesagent_boucher_modal_link_move_check(mobile_page):
     #20260223 - 1초 -> 2초로 변경
     mobile_page.wait_for_timeout(1000)
 
-    print("---- 89번 - 정부가 인증한 AI 기반 해외 영업 지원 서비스 모달 > 각 URL 연동 확인 테스트 시작 -> 성공 ----")
+    print("---- 44번 - 정부가 인증한 AI 기반 해외 영업 지원 서비스 모달 > 각 URL 연동 확인 테스트 시작 -> 성공 ----")
 

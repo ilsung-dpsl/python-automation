@@ -2,7 +2,7 @@ import re
 import config
 
 def test_MO_editorspick_detail_enterpriseplan_all_contact_open_check(mobile_page):
-    print("---- 83번 - MO 유료 회원일 경우, 에디터픽 상세 > 모든 연락처 정보 노출 확인 테스트 시작 ----")
+    print("---- 40번 - MO 유료 회원일 경우, 에디터픽 상세 > 모든 연락처 정보 노출 확인 테스트 시작 ----")
 
     #20251209 - url 이동 시 로드 타임아웃 50초 코드로 수정
     mobile_page.goto("https://deepsales.com/ko/intro", wait_until="load", timeout=50000)
@@ -46,4 +46,4 @@ def test_MO_editorspick_detail_enterpriseplan_all_contact_open_check(mobile_page
     assert "mcarriou@labogilbert.fr" == mobile_page.get_by_text("mcarriou@labogilbert.fr").inner_text(), \
         "MO Web - 에디터픽 상세 > 가장 하단 연락처 이메일 확인 실패 - 유료 회원일 경우, 에디터픽 상세 > 모든 연락처 정보 노출 확인 실패 4"
 
-    print("---- 83번 - MO 유료 회원일 경우, 에디터픽 상세 > 모든 연락처 정보 노출 확인 테스트 시작 -> 성공 ----")
+    print("---- 40번 - MO 유료 회원일 경우, 에디터픽 상세 > 모든 연락처 정보 노출 확인 테스트 시작 -> 성공 ----")

@@ -32,7 +32,7 @@ def compare_images(img1_path, img2_path, threshold=0.60):
 
 
 def test_MO_prospecting_quickview_company_check(mobile_page):
-    print("----- 31번 - MO 퀵뷰(Quickview_company) 정보 노출 확인 테스트 시작 -----")
+    print("----- 20번 - MO 퀵뷰(Quickview_company) 정보 노출 확인 테스트 시작 -----")
 
     mobile_page.goto("https://deepsales.com/ko/intro", wait_until="load", timeout=50000)
     mobile_page.wait_for_timeout(1000)
@@ -108,6 +108,6 @@ def test_MO_prospecting_quickview_company_check(mobile_page):
         "MO Web - 퀵뷰 (회사) > [직원정보확인] 버튼 출력 실패 - 퀵뷰 노출 확인 실패 4"
 
     print("MO Web - 퀵뷰 (회사) > 회사 명칭 / 설립 연도 / 직원정보확인 모두 확인 완료")
-    print("----- 31번 - MO 퀵뷰(회사) 정보 노출 확인 테스트 시작 -> 성공 -----")
+    print("----- 20번 - MO 퀵뷰(회사) 정보 노출 확인 테스트 시작 -> 성공 -----")
 
 

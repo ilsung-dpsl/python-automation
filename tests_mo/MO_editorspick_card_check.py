@@ -2,7 +2,7 @@ import config
 import re
 
 def test_MO_editorspick_card_check(mobile_page):
-    print("---- 79번 - MO 에디터픽 카드 노출 확인 테스트 시작 ----")
+    print("---- 39번 - MO 에디터픽 카드 노출 확인 테스트 시작 ----")
 
     #20251209 - url 이동 시 로드 타임아웃 50초 코드로 수정
     mobile_page.goto("https://deepsales.com/ko/intro", wait_until="load", timeout=50000)
@@ -29,4 +29,4 @@ def test_MO_editorspick_card_check(mobile_page):
     assert "+ 17개 기업" == mobile_page.get_by_text("+ 17개 기업").nth(4).inner_text(), \
         "MO Web - 에디터픽 메인 > 일본 화장품 E-커머스 및 마케팅 업체 리스트 카드 > + 기업 개수 노출 확인 실패 = 에디터픽 카드 노출 확인 실패 6"
 
-    print("---- 79번 - MO 에디터픽 카드 노출 확인 테스트 시작 -> 성공 ----")
+    print("---- 39번 - MO 에디터픽 카드 노출 확인 테스트 시작 -> 성공 ----")

@@ -2,7 +2,7 @@ import config
 import re
 
 def test_MO_mylist_create_list_check(mobile_page):
-    print("----- 42번 - MO 마이리스트 > 리스트 생성 확인 테스트 시작 -----")
+    print("----- 28번 - MO 마이리스트 > 리스트 생성 확인 테스트 시작 -----")
 
     #20251209 - url 이동 시 로드 타임아웃 50초 코드로 수정
     mobile_page.goto("https://deepsales.com/ko/intro", wait_until="load", timeout=50000)
@@ -63,4 +63,4 @@ def test_MO_mylist_create_list_check(mobile_page):
     mobile_page.wait_for_timeout(1000)
 
     print("MO Web - 생성한 일반 폴더 삭제 완료")
-    print("----- 42번 - MO 마이리스트 > 리스트 생성 확인 테스트 시작 -> 성공 -----")
+    print("----- 28번 - MO 마이리스트 > 리스트 생성 확인 테스트 시작 -> 성공 -----")

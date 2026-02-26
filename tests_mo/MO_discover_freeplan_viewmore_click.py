@@ -2,7 +2,7 @@ import config
 import re
 
 def test_MO_discover_freeplan_viewmore_click(mobile_page):
-    print("----- 36번 - MO Web > Free plan 사용자가 발견하기 > 더보기 선택 시 요금제 업그레이드 모달 노출 테스트 시작  -----")
+    print("----- 22번 - MO Web > Free plan 사용자가 발견하기 > 더보기 선택 시 요금제 업그레이드 모달 노출 테스트 시작  -----")
 
     mobile_page.goto("https://deepsales.com/ko/intro", wait_until="load", timeout=50000)
     mobile_page.wait_for_timeout(1000)
@@ -44,4 +44,4 @@ def test_MO_discover_freeplan_viewmore_click(mobile_page):
     assert "요금제 업그레이드" == mobile_page.get_by_role("button", name="요금제 업그레이드").inner_text(), \
         "MO Web - 요금제 업그레이드 모달 > 요금제 업그레이드 버튼 노출 실패 - 발견하기 > 더보기 선택 후 요금제 업그레이드 모달 노출 실패 2"
 
-    print("----- 36번 - MO Web > Free plan 사용자가 발견하기 > 더보기 선택 시 요금제 업그레이드 모달 노출 테스트 시작 -> 성공 -----")
+    print("----- 22번 - MO Web > Free plan 사용자가 발견하기 > 더보기 선택 시 요금제 업그레이드 모달 노출 테스트 시작 -> 성공 -----")

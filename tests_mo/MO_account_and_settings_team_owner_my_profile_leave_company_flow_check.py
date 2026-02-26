@@ -2,7 +2,7 @@ import config
 import re
 
 def test_MO_account_and_settings_team_owner_my_profile_leave_company_flow_check(mobile_page):
-    print("----- 55번 - MO 계정 및 설정 > 팀오너 > 내프로필 > 소속회사 떠나기 플로우 확인 테스트 시작 -----")
+    print("----- 34번 - MO 계정 및 설정 > 팀오너 > 내프로필 > 소속회사 떠나기 플로우 확인 테스트 시작 -----")
 
     #20251209 - url 이동 시 로드 타임아웃 50초 코드로 수정
     mobile_page.goto("https://deepsales.com/ko/intro", wait_until="load", timeout=50000)
@@ -98,4 +98,4 @@ def test_MO_account_and_settings_team_owner_my_profile_leave_company_flow_check(
         "MO Web -내 프로필 > 회사 > 회사 설정 링크 확인 실패 - 내 프로필 - 팀오너 소속 회사 떠나기 플로우 실패 6"
 
     print("MO Web - 소속된 회사 떠나기 후 저장 -> 내 프로필 재진입 -> 회사 설정 초기화 확인 완료")
-    print("----- 55번 - MO 계정 및 설정 > 팀오너 > 내프로필 > 소속회사 떠나기 플로우 확인 테스트 시작 -> 성공 -----")
+    print("----- 34번 - MO 계정 및 설정 > 팀오너 > 내프로필 > 소속회사 떠나기 플로우 확인 테스트 시작 -> 성공 -----")

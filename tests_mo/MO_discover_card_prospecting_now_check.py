@@ -2,7 +2,7 @@ import config
 import re
 
 def test_MO_discover_card_prospecting_now_check(mobile_page):
-    print("----- 38번 - MO 발견하기 > 임의 카드 > 지금 탐색하기 선택 시 탐색결과 연동 확인 테스트 시작 -----")
+    print("----- 24번 - MO 발견하기 > 임의 카드 > 지금 탐색하기 선택 시 탐색결과 연동 확인 테스트 시작 -----")
 
     mobile_page.goto("https://deepsales.com/ko/intro", wait_until="load", timeout=50000)
     mobile_page.wait_for_timeout(500)
@@ -49,4 +49,4 @@ def test_MO_discover_card_prospecting_now_check(mobile_page):
     assert "Sunny Cheng" == mobile_page.get_by_text("Sunny Cheng").inner_text(), \
         "MO Web - 발견하기 > 카드 > 지금 탐색하기 연동 후 탐색하기 > 리드 성함 확인 실패 - 탐색하기 연동 실패 4"
 
-    print("----- 38번 - MO 발견하기 > 임의 카드 > 지금 탐색하기 선택 시 탐색결과 연동 확인 테스트 시작 -> 성공 -----")
+    print("----- 24번 - MO 발견하기 > 임의 카드 > 지금 탐색하기 선택 시 탐색결과 연동 확인 테스트 시작 -> 성공 -----")
