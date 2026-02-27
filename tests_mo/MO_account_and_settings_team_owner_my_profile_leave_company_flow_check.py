@@ -37,10 +37,19 @@ def test_MO_account_and_settings_team_owner_my_profile_leave_company_flow_check(
     mobile_page.locator("#react-select-2-input").fill("deepsales")
     mobile_page.wait_for_timeout(1000)
 
-    mobile_page.locator("#react-select-2-option-0").get_by_text("DeepSales").tap(timeout=10000)
-    mobile_page.wait_for_timeout(1000)
+    # 20260227 - deepsales 입력 시 자동 완성 리스트 화면 영역을 벗어나 enter 동작 코드 추가
+    mobile_page.locator("#react-select-2-input").press("Enter")
+    mobile_page.wait_for_timeout(2000)
 
-    mobile_page.get_by_role("button", name="확인").tap(timeout=10000)
+    # 20260227 - 기존 앵리먼트 코드 블락
+    #mobile_page.locator("#react-select-2-option-0").get_by_text("DeepSales").tap(timeout=10000)
+    #mobile_page.locator("#react-select-10-option-0").get_by_text("DeepSales").tap(timeout=10000)
+    #mobile_page.wait_for_timeout(2000)
+
+    # 20250227 - 확인 버튼 클릭 전 노출 여부 확인 후 동작 코드로 수정
+    button = mobile_page.get_by_role("button", name="확인")
+    button.wait_for(state="visible", timeout=10000)
+    button.tap(force=True, timeout=10000)
     mobile_page.wait_for_timeout(1000)
 
     print("MO Web - 회사 정보 > 회사 설정 완료")
