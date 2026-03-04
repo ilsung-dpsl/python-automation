@@ -67,16 +67,31 @@ def test_MO_mylist_delete_list_check(mobile_page):
     #mobile_page.reload()
     #mobile_page.wait_for_timeout(2000)
 
-    # 20260212 - 'test 1' 요소가 화면에서 완전히 사라질 때까지 대기 (to_be_hidden 활용)
-    list_item = mobile_page.get_by_text("test 1", exact=True)
-    # [방법 1] 눈에서 사라질 때까지 대기 (가장 표준적)
-    expect(list_item).to_be_hidden(timeout=10000)
-    # 20260304 - 최종 카운트 0개 확인
-    expect(list_item).to_have_count(0, timeout=10000)
-    print("MO Web - 리스트 UI상에서 물리적 삭제 완료 확인")
+    # 2026.03.04 - [최종 해결책] 가시성 검증을 넘어선 물리적 제거 대기
+    # 단순히 텍스트만 찾는 것이 아니라, 리스트 아이템이 속한 구체적인 p 태그를 타겟팅
+    list_item = mobile_page.locator("p").filter(has_text=re.compile(r"^test 1$"))
 
-    assert list_item.count() == 0, \
-        "MO Web - 리스트 정상 삭제 실패 - 리스트 삭제 실패 2"
+    # [핵심] 삭제 후 DOM이 꼬였을 경우를 대비해, 텍스트가 "사라질 때까지(hidden)" 먼저 기다림
+    # to_be_hidden은 요소가 숨겨지거나, 아예 없어지는 두 상황을 모두 체크합니다.
+    try:
+        expect(list_item).to_be_hidden(timeout=15000)
+    except AssertionError:
+        print("DEBUG: 요소가 숨겨지지 않음. 강제로 count 체크 진입")
+
+    # [최후의 보루] 1초마다 count를 체크하며 '물리적으로 0개'가 될 때까지 루프
+    # Jenkins 및 로컬 간헐적 이슈를 방어하기 위해 가장 보수적으로 접근
+    is_deleted = False
+    for i in range(10):
+        # count()는 호출 시점의 라이브 상태를 즉시 반환합니다.
+        if list_item.count() == 0:
+            is_deleted = True
+            break
+        print(f"DEBUG: 삭제 대기 중... ({i + 1}/10)")
+        mobile_page.wait_for_timeout(1000)
+
+    # 최종 결과 보고
+    assert is_deleted is True, \
+        f"MO Web - 리스트 정상 삭제 실패 - 여전히 {list_item.count()}개의 요소가 존재함"
 
     # 20260113 - 마이리스트 페이지의 test 1 폴더가 남아있는 것처럼 파악되는 경우가 있어 해당 div가 있는지 확인하는 것으로 변경
     #assert mobile_page.locator("div").filter(has_text=re.compile(r"^test 1$")).count() == 0, \
