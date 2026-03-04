@@ -54,6 +54,10 @@ def test_MO_mylist_delete_list_check(mobile_page):
     # 20250113 - 3초 -> 2초로 변경
     mobile_page.wait_for_timeout(2000)
 
+    # 20260304 - [검증 1] 삭제 성공 토스트 메시지 확인 (서버 응답 확인)
+    toast_msg = mobile_page.locator("div").filter(has_text=re.compile(r"^리스트가 삭제되었습니다\.$")).nth(1)
+    expect(toast_msg).to_be_visible(timeout=10000)
+
     assert "리스트가 삭제되었습니다." == mobile_page.locator("div").filter(has_text=re.compile(r"^리스트가 삭제되었습니다\.$")).nth(1).inner_text(), \
         "MO Web - 리스트 삭제 후 리스트 삭제 토스트 메시지 확인 실패 - 리스트 삭제 실패 1"
 
@@ -65,7 +69,11 @@ def test_MO_mylist_delete_list_check(mobile_page):
 
     # 20260212 - 'test 1' 요소가 화면에서 완전히 사라질 때까지 대기 (to_be_hidden 활용)
     list_item = mobile_page.get_by_text("test 1", exact=True)
+    # [방법 1] 눈에서 사라질 때까지 대기 (가장 표준적)
     expect(list_item).to_be_hidden(timeout=10000)
+    # 20260304 - 최종 카운트 0개 확인
+    expect(list_item).to_have_count(0, timeout=10000)
+    print("MO Web - 리스트 UI상에서 물리적 삭제 완료 확인")
 
     assert list_item.count() == 0, \
         "MO Web - 리스트 정상 삭제 실패 - 리스트 삭제 실패 2"

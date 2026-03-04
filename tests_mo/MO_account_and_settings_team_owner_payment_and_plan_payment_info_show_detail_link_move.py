@@ -16,6 +16,8 @@ def test_MO_account_and_settings_team_owner_payment_and_plan_payment_info_show_d
 
     mobile_page.get_by_placeholder("이메일").fill(config.ENTERPRISE_SUB_ACCOUNT)
     mobile_page.get_by_placeholder("비밀번호").fill(config.ENTERPRISE_SUB_PW)
+    # 20260304 - 대기 시간 1초 추가 (방어코드)
+    mobile_page.wait_for_timeout(1000)
     mobile_page.get_by_role("button", name="로그인").tap()
     mobile_page.wait_for_timeout(1000)
 
