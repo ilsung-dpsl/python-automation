@@ -1,3 +1,5 @@
+from redshift_connector.utils.type_utils import time_out
+
 import config
 import re
 
@@ -55,11 +57,12 @@ def test_company_register_for_a_new_company_flow_check(page):
 
     #page.get_by_text("Accommodation Services > Food").click()
 
-    page.get_by_text("회사 위치를 검색해 주세요").click()
-    page.wait_for_timeout(1000)
+    #20260310 - 타임아웃 대기 추가 및 대기 시간 변경 (1초 -> 5초)
+    page.get_by_text("회사 위치를 검색해 주세요").click(timeout=10000)
+    page.wait_for_timeout(5000)
 
-    #위치 정보 입력창 선택하는 코드 추가 - 20250902
-    page.get_by_placeholder("귀사의 주소를 검색하세요").click()
+    #20260310 - 타임 아웃 대기 추가
+    page.get_by_placeholder("귀사의 주소를 검색하세요").click(timeout=10000)
     page.get_by_placeholder("귀사의 주소를 검색하세요").fill("송파대로 111")
     #대기 시간 3초 -> 5초로 증가 - 20250904
     page.wait_for_timeout(5000)

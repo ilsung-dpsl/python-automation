@@ -73,8 +73,8 @@ def test_discover_persona_setup_check(page):
 
     print("새 페르소나 생성 후 페르소나 관리 모달 > 생성한 페르소나 목록 확인 전")
 
-    #20260210 - 대기시간 2초 -> 3초로 증가
-    page.wait_for_timeout(3000)
+    #20260310 - 대기시간 3초 -> 5초로 증가
+    page.wait_for_timeout(5000)
 
     assert "새 페르소나를 만들어 볼까요?" == page.get_by_text("새 페르소나를 만들어 볼까요?").inner_text(), \
         "새 페르소나 생성한 제목 노출 실패 - 퍼소나 설정 안내 모달 및 퍼소나 설정 추가 실패 4"
@@ -83,13 +83,13 @@ def test_discover_persona_setup_check(page):
 
     #20250105 - 해당 앨리먼트 노출 할떄까지 타임아웃 대기 10초 후 나타나면 클릭으로 코드 수정
     page.get_by_role("article").filter(has_text="새 페르소나를 만들어 볼까요?Home Health").get_by_role("button").click(timeout=10000)
-    page.wait_for_timeout(1000)
+    page.wait_for_timeout(2000)
     #20250105 - 해당 앨리먼트 노출 할떄까지 타임아웃 대기 10초 후 나타나면 클릭으로 코드 수정
     page.get_by_role("button", name="삭제").click(timeout=10000)
-    page.wait_for_timeout(1000)
+    page.wait_for_timeout(2000)
     #20250105 - 해당 앨리먼트 노출 할떄까지 타임아웃 대기 10초 후 나타나면 클릭으로 코드 수정
     page.locator("header").filter(has_text="페르소나 관리").get_by_role("button").click(timeout=10000)
-    page.wait_for_timeout(1000)
+    page.wait_for_timeout(2000)
 
     print("새 페르소나 생성 후 페르소나 관리 모달 > 생성한 페르소나 목록 정상 추가 확인 완료")
 
