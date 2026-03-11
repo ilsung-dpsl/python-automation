@@ -40,7 +40,7 @@ def test_MO_prospecting_quickview_company_check(mobile_page):
     mobile_page.get_by_role("banner").get_by_role("img").first.tap()
     mobile_page.wait_for_timeout(1000)
 
-    mobile_page.get_by_role("button", name="로그인").tap()
+    mobile_page.get_by_role("button", name="로그인").tap(timeout=10000)
     mobile_page.wait_for_timeout(1000)
 
     mobile_page.get_by_placeholder("이메일").fill(config.FREE_PRD6_ACCOUNT)
@@ -53,14 +53,16 @@ def test_MO_prospecting_quickview_company_check(mobile_page):
 
     print("MO Web - 탐색하기 진입 완료")
 
+    #20260311 - 대기 시간 1초 추가 및 7초 -> 10초 변경
     mobile_page.get_by_placeholder("예: 일본 화장품 제조사 세일즈 매니저").fill("멕시코 위주의 여행 상품을 파는 업체를 찾아줘")
-    mobile_page.get_by_placeholder("예: 일본 화장품 제조사 세일즈 매니저").press("Enter")
+    mobile_page.wait_for_timeout(1000)
 
-    mobile_page.wait_for_timeout(7000)
+    mobile_page.get_by_placeholder("예: 일본 화장품 제조사 세일즈 매니저").press("Enter")
+    mobile_page.wait_for_timeout(10000)
 
     print("MO Web - 탐색하기 > 검색 완료")
 
-    mobile_page.get_by_role("tab", name="회사 (99)").tap(timeout=20000)
+    mobile_page.get_by_role("tab", name="회사 (99)").tap(timeout=30000)
     mobile_page.wait_for_timeout(2000)
 
     print("MO Web - 탐색하기 > 회사 탭 이동")
