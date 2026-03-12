@@ -2,6 +2,7 @@ import re
 import config
 import cv2
 import numpy as np
+from playwright.sync_api import expect
 
 def test_MO_salesagent_boucher_modal_link_move_check(mobile_page):
     print("---- 44번 - 정부가 인증한 AI 기반 해외 영업 지원 서비스 모달 > 각 URL 연동 확인 테스트 시작 ----")
@@ -61,6 +62,10 @@ def test_MO_salesagent_boucher_modal_link_move_check(mobile_page):
 
     #20260223 - 3초 -> 4초로 변경
     mobile_page2.wait_for_timeout(4000)
+
+    #20260312 -과학기술정보통신부 URL 연동 후 특정 앨리먼트 노출되는지 확인하는 코드 추가
+    target_text = mobile_page2.get_by_text("AI바우처 지원")
+    expect(target_text).to_be_visible(timeout=10000)
 
     print("MO Web - 과학기술정보통신부 > 바로가기 선택 후 페이지 이동 완료")
 
