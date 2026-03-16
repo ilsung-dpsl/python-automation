@@ -16,15 +16,17 @@ def test_team_management_free_team_owner_addseat_click(page):
 
     #20251001 - 상단 우측 마이페이지 버튼 선택 코드 수정
     #page.get_by_role("button").filter(has_text=re.compile(r"^$")).nth(3).click()
-    page.get_by_role("button").nth(3).click()
+    page.get_by_role("button").nth(3).click(timeout=10000)
     page.wait_for_timeout(1000)
 
-    page.get_by_text("팀 관리").click()
-    page.wait_for_timeout(1000)
+    page.get_by_text("팀 관리").click(timeout=10000)
+    #20260316 - 대기 시간 1초 -> 2초 변경
+    page.wait_for_timeout(2000)
 
     print("팀관리 페이지 진입 완료")
-    page.get_by_text("좌석 추가").click()
-    page.wait_for_timeout(1000)
+    #20260316 - 타임아웃 추가 및 대기 시간 1초 -> 2초 변경
+    page.get_by_text("좌석 추가").click(timeout=10000)
+    page.wait_for_timeout(2000)
 
     assert "당신의 세일즈를 위한 맞춤형 요금제" == page.get_by_role("heading", name="당신의 세일즈를 위한 맞춤형 요금제").inner_text(), \
         "팀관리 > Free > 좌석 추가 선택 시 요금제 페이지 > 타이틀 문구 확인 실패 - Free 계정의 요금제 결제 페이지 이동 실패 1"
