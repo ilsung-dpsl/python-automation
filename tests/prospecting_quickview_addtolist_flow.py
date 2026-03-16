@@ -15,7 +15,9 @@ def test_prospecting_quickview_addtolist_flow(page):
     page.get_by_role("button", name="로그인").click()
     page.wait_for_timeout(1000)
 
-    page.get_by_placeholder("예: 일본 화장품 제조사 세일즈 매니저").fill("일본의 여행 가이드 업체의 직급이 매니저인 사람")
+    #page.get_by_placeholder("예: 일본 화장품 제조사 세일즈 매니저").fill("일본의 여행 가이드 업체의 직급이 매니저인 사람")
+    #20260316 - 간헐적으로 직급이 매니저로 필터되지 않아 검색어 변경 (이슈지만, 3월 리젠 종료로 인해 수정 제외)
+    page.get_by_placeholder("예: 일본 화장품 제조사 세일즈 매니저").fill("일본 여행 가이드 업체의 직급이 매니저인 사원의 정보를 찾아줘")
     page.get_by_placeholder("예: 일본 화장품 제조사 세일즈 매니저").press("Enter")
 
     #20251212 - 탐색하기 검색 후 이전 대기 시간 7초로 재변경
