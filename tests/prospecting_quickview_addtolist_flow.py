@@ -16,7 +16,7 @@ def test_prospecting_quickview_addtolist_flow(page):
     page.wait_for_timeout(1000)
 
     #page.get_by_placeholder("예: 일본 화장품 제조사 세일즈 매니저").fill("일본의 여행 가이드 업체의 직급이 매니저인 사람")
-    #20260316 - 간헐적으로 직급이 매니저로 필터되지 않아 검색어 변경 (이슈지만, 3월 리젠 종료로 인해 수정 제외)
+    #20260316 - 간헐적으로 직급이 manager 영문으로 출력되어 필터되지 않아 검색어 변경 (매니저 영문으로 필터되어 발생한 현상)
     page.get_by_placeholder("예: 일본 화장품 제조사 세일즈 매니저").fill("일본 여행 가이드 업체의 직급이 매니저인 사원의 정보를 찾아줘")
     page.get_by_placeholder("예: 일본 화장품 제조사 세일즈 매니저").press("Enter")
 
