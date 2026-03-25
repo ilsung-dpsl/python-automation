@@ -23,7 +23,7 @@ def test_prospecting_search_and_tag_data_print_check(page):
     page.locator("label").get_by_role("img").nth(1).click()
 
     #20260325 - 리드 데이터 대기 시간 12초 -> 13초로 코드 수정
-    page.wait_for_timeout(12000)
+    page.wait_for_timeout(13000)
 
     assert "도매 화장품" in page.content(), "탐색하기 > AI 산업군 > 키워드 1 노출 실패"
 #    assert "도매 의약품 및 잡화" in page.content(), "탐색하기 > AI 산업군 > 키워드 2 노출 실패"
