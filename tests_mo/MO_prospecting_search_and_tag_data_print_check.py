@@ -27,8 +27,8 @@ def test_MO_prospecting_search_and_tag_data_print_check(mobile_page):
     mobile_page.get_by_placeholder("예: 일본 화장품 제조사 세일즈 매니저").fill("한국 화장품 유통회사를 찾아줘")
     mobile_page.locator("label").get_by_role("img").nth(1).tap()
 
-    # 20250930 - 리드 데이터 대기 시간 10초 -> 12초로 코드 수정
-    mobile_page.wait_for_timeout(12000)
+    # 20260325 - 리드 데이터 대기 시간 12초 -> 13초로 코드 수정
+    mobile_page.wait_for_timeout(13000)
 
     print("MO Web - 탐색하기 검색 완료 후")
 
