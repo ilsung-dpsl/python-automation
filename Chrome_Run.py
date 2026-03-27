@@ -13,7 +13,7 @@ def Chrome_Run_Main():
         "tests/signupforfree_change_email_register_check.py",
         # 3번 - 로그인 완료
         "tests/login.py",
-        # 7번 - 제품 이용하기 연동 확인S
+        # 7번 - 제품 이용하기 연동 확인
         "tests/gotoproduct_click_after_prospecting_page_move.py",
         # 8번 - "가격" 선택 시, 결제 페이지로 이동
         "tests/price_click_after_price_page_move.py",
