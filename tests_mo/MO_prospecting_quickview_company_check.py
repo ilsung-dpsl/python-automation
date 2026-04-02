@@ -4,7 +4,8 @@ import numpy as np
 import config
 import re
 
-def compare_images(img1_path, img2_path, threshold=0.60):
+#20260402 - 이미지 유사도 60% -> 50%로 조정
+def compare_images(img1_path, img2_path, threshold=0.50):
     print("----- 이미지 비교 체크 함수 시작 -----")
     """
     두 이미지 파일을 비교하여 유사도 반환
@@ -58,7 +59,8 @@ def test_MO_prospecting_quickview_company_check(mobile_page):
     mobile_page.wait_for_timeout(1000)
 
     mobile_page.get_by_placeholder("예: 일본 화장품 제조사 세일즈 매니저").press("Enter")
-    mobile_page.wait_for_timeout(10000)
+    #20260402 - 대기 시간 10초 -> 12초로 수정
+    mobile_page.wait_for_timeout(12000)
 
     print("MO Web - 탐색하기 > 검색 완료")
 
