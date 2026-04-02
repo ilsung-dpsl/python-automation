@@ -72,7 +72,8 @@ def test_MO_prospecting_quickview_company_check(mobile_page):
     # 20260108 - 회사 리드 > 2번째 본사위치 > Mexico 선택하여 퀵뷰 (회사) 노출하는 코드로 수정 (Mobile의 경우, PC처럼 동작하지 않음)
     # mobile_page.get_by_text("Corporate Travel Serviceswww.").tap()
     mobile_page.locator("div:nth-child(2) > div:nth-child(4) > .flex-1").first.click(timeout=10000)
-    mobile_page.wait_for_timeout(3000)
+    # 20260402 - 대기 시간 3초 -> 5초로 변경
+    mobile_page.wait_for_timeout(5000)
 
     svg_element = mobile_page.get_by_role("img", name="Corporate Travel Services logo")
 
