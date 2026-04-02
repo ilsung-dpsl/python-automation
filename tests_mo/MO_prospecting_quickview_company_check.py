@@ -4,8 +4,8 @@ import numpy as np
 import config
 import re
 
-#20260402 - 이미지 유사도 60% -> 50%로 조정
-def compare_images(img1_path, img2_path, threshold=0.50):
+#20260402 - 이미지 유사도 60% -> 56%로 조정
+def compare_images(img1_path, img2_path, threshold=0.56):
     print("----- 이미지 비교 체크 함수 시작 -----")
     """
     두 이미지 파일을 비교하여 유사도 반환
