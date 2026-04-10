@@ -61,10 +61,11 @@ def test_MO_mylist_detail_contact_view_contacts_check(mobile_page):
     mobile_page.wait_for_timeout(3000)
 
     # 20251001 - 한번에 체크되지 않아 첫번째 리드 선택 -> 다른 리드체크 선택/해제 후 다시 첫번째 리드 선택하는 동작으로 코드 수정 - 동작상에 문제로 인해 수정)
+    # 20260410 - 대기 시간 0.5 -> 1초로 변경
     mobile_page.get_by_role("checkbox").nth(1).tap(force=True)
-    mobile_page.wait_for_timeout(500)
+    mobile_page.wait_for_timeout(1000)
     mobile_page.get_by_role("checkbox").nth(2).dblclick(force=True)
-    mobile_page.wait_for_timeout(500)
+    mobile_page.wait_for_timeout(1000)
     mobile_page.get_by_role("checkbox").nth(1).tap(force=True)
     mobile_page.wait_for_timeout(2000)
 
