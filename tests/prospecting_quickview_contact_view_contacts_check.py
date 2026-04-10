@@ -68,7 +68,8 @@ def test_prospecting_quickview_contact_view_contacts_check(page):
                 # 오른쪽 팝업 대기
                 try:
                     #page.wait_for_selector("div.drawer-content", timeout=5000)
-                    page.wait_for_timeout(3000)
+                    #20260410 - 대기시간 3초 -> 5초로 변경
+                    page.wait_for_timeout(5000)
                     #popup_button = page.locator("div.drawer-content button:has-text('연락처 확인')")
 
                     popup_button = page.locator("section button:has-text('연락처 확인')")

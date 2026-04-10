@@ -38,7 +38,8 @@ def test_salesagent_starter_toss_payments_1_2page_input_check(page):
 
     # 20260113 - 세일즈 에이전트 > Starter > [시작하기] 버튼 선택 위치 재수정
     page.get_by_role("button", name="시작하기").nth(1).click()
-    page.wait_for_timeout(1000)
+    # 20260410 - 대기 시간 1초 -> 3초로 변경
+    page.wait_for_timeout(3000)
 
     print("토스페이먼츠 결제창 출력 상태 완료")
 
